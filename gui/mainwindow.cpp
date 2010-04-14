@@ -5,9 +5,16 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    glWidget = new GLWidget(parent);
+    ui->verticalLayout_2->addWidget( glWidget );
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    glWidget->updateGL();
 }

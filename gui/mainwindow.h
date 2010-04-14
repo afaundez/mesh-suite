@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
+#include <glwidget.h>
 
 namespace Ui
 {
@@ -18,6 +19,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    GLWidget::GLWidget *glWidget;
+
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // MAINWINDOW_H
