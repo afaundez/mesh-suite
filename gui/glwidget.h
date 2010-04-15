@@ -24,10 +24,10 @@ protected:
     void initializeGL();
     void resizeGL(int width, int height);
     void paintGL();
-    void paintEvent(QPaintEvent *event);
+    //void paintEvent(QPaintEvent *event);
 
 private:
-    int elapsed;
+    //int elapsed;
 };
 //! [0]
 

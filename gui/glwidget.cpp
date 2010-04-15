@@ -5,7 +5,6 @@
 GLWidget::GLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    elapsed = 0;
     setAutoFillBackground(false);
 }
 //! [0]
@@ -13,14 +12,14 @@ GLWidget::GLWidget(QWidget *parent)
 //! [1]
 void GLWidget::animate()
 {
-    elapsed = (elapsed + qobject_cast<QTimer*>(sender())->interval()) % 1000;
+    //paintGL();
 }
 //! [1]
 
 //! [2]
 void GLWidget::initializeGL(){
     qDebug("initializeGL()");
-    glClearColor(1.0, 0.0, 0.0, 0.0);
+    glClearColor(1.0, 0.0, 0.0, 1.0);
     glClearDepth(1.0);
     glDisable(GL_DEPTH_TEST);
     glShadeModel(GL_SMOOTH);
@@ -36,7 +35,8 @@ void GLWidget::resizeGL(int width, int heigth){
     qDebug("resizeGL(%d, %d)", width, heigth);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glViewport(0, 0, (GLint)width, (GLint)heigth);
+    glViewport(0.0, 0.0, (GLint)width, (GLint)heigth);
+    gluOrtho2D(0.0, (GLdouble)width, 0.0, (GLdouble)heigth);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -44,24 +44,27 @@ void GLWidget::resizeGL(int width, int heigth){
 
 //! [4]
 void GLWidget::paintGL(){
-    qDebug("paintGL()");
-    glBegin(GL_TRIANGLES);
+    qDebug("paintGL(%d, %d)",this->width(), this->height());
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_QUADS);
     glColor4f(1.0, 0.0 , 0.0 , 1.0);
-    glVertex2d(10, 10);
+    glVertex2f(0.0,0.0);
     glColor4f(0.0, 1.0 , 0.0 , 1.0);
-    glVertex2d(70, 10);
+    glVertex2f(this->width(), 0.0);
     glColor4f(0.0, 0.0 , 1.0 , 1.0);
-    glVertex2d(40, 50);
+    glVertex2f(this->width(), this->height());
+    glColor4f(1.0, 1.0 , 1.0 , 1.0);
+    glVertex2f(0.0,this->height());
     glEnd();
 }
 //! [4]
 
 //! [5]
-void GLWidget::paintEvent(QPaintEvent *event)
+/*void GLWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter;
     painter.begin(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.end();
-}
+}*/
 //! [5]
