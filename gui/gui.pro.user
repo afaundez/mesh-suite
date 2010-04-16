@@ -45,6 +45,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
   </valuemap>
  </data>
  <data>
@@ -52,12 +53,55 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
   </valuemap>
  </data>
  <data>
   <variable>buildconfiguration-Debug-buildstep0</variable>
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WLQ4vEPIxp,guid=85ba0a82047c4a9c8ea70d88000004a3</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >GDMSESSION=default</value>
+    <value type="QString" >GDM_LANG=en_US.UTF-8</value>
+    <value type="QString" >GDM_XSERVER_LOCATION=local</value>
+    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString" >GNOME_KEYRING_PID=2340</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-mJX0Cw/socket</value>
+    <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/alvaro/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >HOME=/home/alvaro</value>
+    <value type="QString" >LANG=en_US.UTF-8</value>
+    <value type="QString" >LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString" >LOGNAME=alvaro</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-alvaro</value>
+    <value type="QString" >PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/home/alvaro</value>
+    <value type="QString" >QTDIR=/usr</value>
+    <value type="QString" >SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/2415,unix/nube:/tmp/.ICE-unix/2415</value>
+    <value type="QString" >SHELL=/bin/zsh</value>
+    <value type="QString" >SSH_AGENT_PID=2455</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-mJX0Cw/socket.ssh</value>
+    <value type="QString" >USER=alvaro</value>
+    <value type="QString" >USERNAME=alvaro</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XAUTHORITY=/home/alvaro/.Xauthority</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
+    <value type="QString" >XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1271386248.545390-667615849</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >/home/alvaro/workspace/QTCreatorProjects/MeshSuite/gui/gui.pro</value>
+    <value type="QString" >-spec</value>
+    <value type="QString" >/usr/share/qt4/mkspecs/linux-g++</value>
+    <value type="QString" >-r</value>
+    <value type="QString" >CONFIG+=debug</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/qmake-qt4</value>
+   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/alvaro/workspace/QTCreatorProjects/MeshSuite/gui</value>
    <value key="buildConfiguration" type="int" >2</value>
   </valuemap>
  </data>
@@ -65,6 +109,44 @@
   <variable>buildconfiguration-Debug-buildstep1</variable>
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-WLQ4vEPIxp,guid=85ba0a82047c4a9c8ea70d88000004a3</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >GDMSESSION=default</value>
+    <value type="QString" >GDM_LANG=en_US.UTF-8</value>
+    <value type="QString" >GDM_XSERVER_LOCATION=local</value>
+    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString" >GNOME_KEYRING_PID=2340</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-mJX0Cw/socket</value>
+    <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/alvaro/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >HOME=/home/alvaro</value>
+    <value type="QString" >LANG=en_US.UTF-8</value>
+    <value type="QString" >LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString" >LOGNAME=alvaro</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-alvaro</value>
+    <value type="QString" >PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/home/alvaro</value>
+    <value type="QString" >QTDIR=/usr</value>
+    <value type="QString" >SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/2415,unix/nube:/tmp/.ICE-unix/2415</value>
+    <value type="QString" >SHELL=/bin/zsh</value>
+    <value type="QString" >SSH_AGENT_PID=2455</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-mJX0Cw/socket.ssh</value>
+    <value type="QString" >USER=alvaro</value>
+    <value type="QString" >USERNAME=alvaro</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XAUTHORITY=/home/alvaro/.Xauthority</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
+    <value type="QString" >XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1271386248.545390-667615849</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/alvaro/workspace/QTCreatorProjects/MeshSuite/gui</value>
   </valuemap>
  </data>
  <data>
