@@ -3,6 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <glwidget.h>
+#include "Mesh.h"
 
 namespace Ui
 {
@@ -15,14 +16,19 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = 0);
+    Mesh* getMesh();
     ~MainWindow();
 
+
 private:
+    QString currentMesh;
+    Mesh* mesh;
     Ui::MainWindow *ui;
     GLWidget::GLWidget *glWidget;
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_actionLoad_triggered();
 };
 
 #endif // MAINWINDOW_H

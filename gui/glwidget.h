@@ -3,7 +3,6 @@
 #include <QGLWidget>
 
 //! [0]
-
 class Helper;
 QT_BEGIN_NAMESPACE
 class QPaintEvent;
@@ -24,10 +23,9 @@ protected:
     void initializeGL();
     void resizeGL(int width, int height);
     void paintGL();
-    //void paintEvent(QPaintEvent *event);
 
 private:
-    //int elapsed;
+    QWidget* parent;
 };
 //! [0]
 

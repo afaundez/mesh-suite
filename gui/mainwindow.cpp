@@ -1,13 +1,17 @@
+#include <QFileDialog>
+#include <QMessageBox>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "Mesh.h"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    glWidget = new GLWidget(parent);
+    this->glWidget = new GLWidget(this);
     ui->glLayout->addWidget( glWidget );
+    this->mesh = 0;
 }
 //! [0]
 
@@ -18,9 +22,32 @@ MainWindow::~MainWindow()
 }
 //! [1]
 
-//! [2]
-void MainWindow::on_pushButton_clicked()
-{
-    glWidget->updateGL();
+//! [3]
+Mesh* MainWindow::getMesh(){
+    return this->mesh;
 }
-//! [2]
+//! [3]
+
+void MainWindow::on_actionLoad_triggered()
+{
+    if( this->mesh == 0){
+        this->mesh = new Mesh(QFileDialog::getOpenFileName());
+
+        this->glWidget->updateGL();
+    }
+    else{
+        QMessageBox msgBox;
+        msgBox.setText("La malla ha sido modificada");
+        msgBox.setInformativeText("Desea guardar los cambios?");
+        msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Save);
+        int ret = msgBox.exec();
+
+    }
+    return;
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}
