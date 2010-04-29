@@ -1,8 +1,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
-#include "mainwindow.h"
+#include "headers/mainwindow.h"
 #include "ui_mainwindow.h"
-#include "Mesh.h"
+#include "headers/Mesh.h"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)

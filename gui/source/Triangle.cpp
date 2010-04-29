@@ -1,4 +1,4 @@
-#include "Triangle.h"
+#include "headers/Triangle.h"
 
 //! [0]
 Triangle::Triangle(int _id, Vertex* A, Vertex* B, Vertex* C){

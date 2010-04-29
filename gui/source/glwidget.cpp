@@ -1,8 +1,8 @@
 #include <QtGui>
 
-#include "glwidget.h"
-#include "Mesh.h"
-#include "mainwindow.h"
+#include "headers/glwidget.h"
+#include "headers/Mesh.h"
+#include "headers/mainwindow.h"
 
 //! [0]
 GLWidget::GLWidget(QWidget *parent)

@@ -1,5 +1,5 @@
-#include "loadmesh.h"
-#include "ui_loadmesh.h"
+#include "headers/loadmesh.h"
+#include "headers/ui_loadmesh.h"
 
 LoadMesh::LoadMesh(QWidget *parent) :
     QDialog(parent),

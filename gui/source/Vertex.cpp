@@ -1,4 +1,4 @@
-#include "Vertex.h"
+#include "headers/Vertex.h"
 
 //! [0]
 Vertex::Vertex(int _id, double _x, double _y)

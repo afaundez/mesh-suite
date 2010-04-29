@@ -77,12 +77,12 @@
          <widget class="QComboBox" name="comboBox">
           <item>
            <property name="text">
-            <string>Revisar Diametro</string>
+            <string>Ninguno</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Ninguno</string>
+            <string>Revisar Diametro</string>
            </property>
           </item>
          </widget>
@@ -105,17 +105,17 @@
          <widget class="QComboBox" name="comboBox_2">
           <item>
            <property name="text">
+            <string>Lepp-Bisection</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Circumcenter</string>
            </property>
           </item>
           <item>
            <property name="text">
             <string>Bisection</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Bisection</string>
            </property>
           </item>
           <item>
@@ -172,12 +172,12 @@
          <widget class="QComboBox" name="comboBox_8">
           <item>
            <property name="text">
-            <string>Flip Diagonals</string>
+            <string>Cavidad*</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Cavidad*</string>
+            <string>Flip Diagonals</string>
            </property>
           </item>
          </widget>
@@ -200,12 +200,12 @@
          <widget class="QComboBox" name="comboBox_3">
           <item>
            <property name="text">
-            <string>Ruppert</string>
+            <string>Rivara</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Rivara</string>
+            <string>Ruppert</string>
            </property>
           </item>
          </widget>
@@ -228,12 +228,12 @@
          <widget class="QComboBox" name="comboBox_4">
           <item>
            <property name="text">
-            <string>Ruppert</string>
+            <string>Rivara</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Rivara</string>
+            <string>Ruppert</string>
            </property>
           </item>
          </widget>

@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QGLWidget>
 #include <cassert>
-#include "Mesh.h"
+#include "headers/Mesh.h"
 
 //! [0]
 Mesh::Mesh(QString fileName){

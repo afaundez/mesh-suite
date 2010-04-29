@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
-#include <glwidget.h>
+#include "headers/glwidget.h"
 #include "Mesh.h"
 
 namespace Ui
