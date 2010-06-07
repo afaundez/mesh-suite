@@ -430,14 +430,14 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
     <item row="4" column="0" colspan="2">
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="controlFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSplitter" name="splitter_3">
+      <widget class="QSplitter" name="controlVerticalSplitter">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -449,36 +449,36 @@ p, li { white-space: pre-wrap; }
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QSplitter" name="splitter">
+       <widget class="QSplitter" name="controlHorizontalSplitter">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="refine">
          <property name="text">
           <string>||</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="refineOnce">
          <property name="text">
           <string>&gt;</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pause">
          <property name="text">
           <string>&gt;&gt;</string>
          </property>
         </widget>
        </widget>
-       <widget class="QSplitter" name="splitter_2">
+       <widget class="QSplitter" name="optionsVerticalSplitter">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="zoomLabel">
          <property name="text">
           <string>Zoom</string>
          </property>
         </widget>
-        <widget class="QSlider" name="horizontalSlider">
+        <widget class="QSlider" name="zoomHorizontalSlider">
          <property name="minimum">
           <number>1</number>
          </property>
@@ -504,7 +504,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>850</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -589,6 +589,30 @@ p, li { white-space: pre-wrap; }
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>processTab</tabstop>
+  <tabstop>comboBox_10</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>comboBox_8</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>refineOnce</tabstop>
+  <tabstop>refine</tabstop>
+  <tabstop>pause</tabstop>
+  <tabstop>zoomHorizontalSlider</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>comboBox_6</tabstop>
+  <tabstop>comboBox_5</tabstop>
+  <tabstop>comboBox_7</tabstop>
+  <tabstop>comboBox_9</tabstop>
+  <tabstop>textEdit_2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
+ <slots>
+  <slot>on_refineOnce_clicked()</slot>
+ </slots>
 </ui>

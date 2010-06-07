@@ -1,8 +1,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
-#include "headers/mainwindow.h"
-#include "ui_mainwindow.h"
+#include "headers/MainWindow.h"
 #include "headers/Mesh.h"
+#include "ui_MainWindow.h"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
@@ -28,6 +28,7 @@ Mesh* MainWindow::getMesh(){
 }
 //! [3]
 
+//! [4]
 void MainWindow::on_actionLoad_triggered()
 {
     if( this->mesh == 0){
@@ -42,12 +43,16 @@ void MainWindow::on_actionLoad_triggered()
         msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Save);
         int ret = msgBox.exec();
-
+        qDebug("Loading mesh return: %d", ret);
     }
     return;
 }
+//! [4]
 
-void MainWindow::on_pushButton_2_clicked()
+//! [5]
+void MainWindow::on_refineOnce_clicked()
 {
-
+    qDebug("MainWindow::on_refineOnce_clicked()");
+    qDebug("Current Tab %d", ui->processTab->currentIndex());
 }
+//! [5]

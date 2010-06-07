@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
-#include "headers/glwidget.h"
+#include "GLWidget.h"
 #include "Mesh.h"
 
 namespace Ui
@@ -27,7 +27,7 @@ private:
     GLWidget::GLWidget *glWidget;
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_refineOnce_clicked();
     void on_actionLoad_triggered();
 };
 

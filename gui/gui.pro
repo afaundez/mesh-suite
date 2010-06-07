@@ -4,12 +4,12 @@
 QT += opengl
 TARGET = ../MeshSuite
 TEMPLATE = app
-HEADERS += headers/mainwindow.h \
-    headers/glwidget.h \
+HEADERS += headers/MainWindow.h \
+    headers/GLWidget.h \
     headers/Mesh.h \
     headers/Triangle.h \
     headers/Vertex.h \
-    headers/loadmesh.h \
+    headers/LoadMeshDialog.h \
     headers/QualityCriterionFactory.h \
     headers/PreProcessCriterionFactory.h \
     headers/InsertionSelectionFactory.h \
@@ -18,12 +18,12 @@ HEADERS += headers/mainwindow.h \
     headers/RestrictedInsertionFactory.h \
     headers/InsertionMethodFactory.h \
     headers/QualityCriterion.h
-FORMS += forms/mainwindow.ui \
-    forms/loadmesh.ui
+FORMS += forms/MainWindow.ui \
+    forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
     sources/Triangle.cpp \
     sources/Mesh.cpp \
-    sources/mainwindow.cpp \
+    sources/MainWindow.cpp \
     sources/main.cpp \
-    sources/loadmesh.cpp \
-    sources/glwidget.cpp
+    sources/LoadMeshDialog.cpp \
+    sources/GLWidget.cpp
