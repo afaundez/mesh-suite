@@ -210,7 +210,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/alvaro/workspace/QTCreatorProjects/MeshSuite/gui</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/alvaro/workspace/QTCreatorProjects/MeshSuite/gui/bin</value>
    <value key="cleanConfig" type="bool">true</value>
    <valuelist key="makeargs" type="QVariantList">
     <value type="QString">clean</value>
