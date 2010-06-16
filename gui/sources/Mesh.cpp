@@ -4,8 +4,8 @@
 #include <QtCore/QTextStream>
 #include <QHashIterator>
 #include <QDebug>
-#include <QGLWidget>
 #include <cassert>
+#include <GL/gl.h>
 #include "headers/Mesh.h"
 
 //! [0]
@@ -79,33 +79,25 @@ Vertex* Mesh::createAndAddVertex(double x, double y){
 }
 //! [2]
 
-void Mesh::drawMesh(int w, int h){
+void Mesh::drawMesh(int w, int h, QPoint lastPos){
     glPushMatrix();
-    //glTranslated(-lowerX +5, -lowerY+5, 0.0);
-    //this->scale = w/higherX < h/higherY ? (w-10)/higherX : (h-10)/higherY;
-    //glScalef(this->scale, this->scale, this->scale);
-    glBegin(GL_LINES);
+    glScalef(this->scale, this->scale, this->scale);
     foreach (Triangle* aux, this->triangles){
-        Vertex* v0 = aux->getVertex(0);
-        Vertex* v1 = aux->getVertex(1);
-        Vertex* v2 = aux->getVertex(2);
-        glColor4f(0.0, 0.0, 1.0, 1.0);
-        glVertex2f(v0->getX(), v0->getY());
-        glVertex2f(v1->getX(), v1->getY());
-        glVertex2f(v1->getX(), v1->getY());
-        glVertex2f(v2->getX(), v2->getY());
-        glVertex2f(v2->getX(), v2->getY());
-        glVertex2f(v0->getX(), v0->getY());
+        if( lastPos.isNull() )
+            aux->glDraw(Constant::NOT_SELECTED);
+        else{
+            switch(aux->include(lastPos)){
+            case Constant::INCLUDED:
+            case Constant::BORDER_INCLUDED:
+                aux->glDraw(Constant::SELECTED);
+                break;
+            case Constant::NOT_INCLUDED:
+                aux->glDraw(Constant::NOT_SELECTED);
+            default:
+                break;
+            }
+        }
     }
-    glEnd();
-    glPointSize(3.0);
-    glBegin(GL_POINTS);
-    foreach (Vertex* aux, this->vertexs){
-        glColor3f(0.0, 0.0, 0.0);
-        glVertex2f(aux->getX(), aux->getY());
-    }
-    glEnd();
-    glPointSize(1.0);
     glPopMatrix();
 }
 

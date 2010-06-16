@@ -43,7 +43,16 @@ void MainWindow::on_actionLoad_triggered()
         msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Save);
         int ret = msgBox.exec();
-        qDebug("Loading mesh return: %d", ret);
+        switch(ret){
+        case QMessageBox::Save:
+        case QMessageBox::Discard:
+            delete this->mesh;
+            this->mesh = new Mesh(QFileDialog::getOpenFileName());
+            break;
+        case QMessageBox::Cancel:
+        default:
+            break;
+        }
     }
     return;
 }

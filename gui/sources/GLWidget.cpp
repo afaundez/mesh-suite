@@ -76,7 +76,7 @@ void GLWidget::paintGL(){
     // drawing the mesh
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if( mesh != 0 )
-        mesh->drawMesh(this->width(), this->height());
+        mesh->drawMesh(this->width(), this->height(), this->lastPos);
 }
 //! [3]
 
@@ -93,10 +93,10 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
  {
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if(mesh != 0 && mesh->hasTriangles()){
-        qDebug("mousePressEvent(event)");
         int x = event->x();
         int y = event->y();
-        qDebug("real position x:%d y:%d", x, y);
-        qDebug("scaled position x:%f y:%f", x*mesh->scale, y*mesh->scale);
+        this->lastPos = QPoint(x - this->width()/2, this->height()/2 - y);
+        this->paintGL();
     }
+    this->updateGL();
  }

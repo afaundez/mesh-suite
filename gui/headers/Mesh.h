@@ -2,6 +2,7 @@
 #define MESH_H
 
 #include <QHash>
+#include <QPoint>
 #include "Triangle.h"
 
 class Mesh
@@ -14,7 +15,7 @@ public:
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
-    void drawMesh(int w, int h);
+    void drawMesh(int w, int h, QPoint lastPos);
     float lowerX, lowerY;
     float higherX, higherY;
     float scale;

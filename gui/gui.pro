@@ -17,7 +17,8 @@ HEADERS += headers/MainWindow.h \
     headers/BorderInsertionFactory.h \
     headers/RestrictedInsertionFactory.h \
     headers/InsertionMethodFactory.h \
-    headers/QualityCriterion.h
+    headers/QualityCriterion.h \
+    headers/Constant.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \

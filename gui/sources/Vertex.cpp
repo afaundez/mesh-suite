@@ -1,4 +1,6 @@
 #include "headers/Vertex.h"
+#include <GL/gl.h>
+#include <math.h>
 
 //! [0]
 Vertex::Vertex(int _id, double _x, double _y)
@@ -26,3 +28,11 @@ double Vertex::getY(){
     return this->y;
 }
 //! [3]
+
+double Vertex::distance(Vertex *Q){
+    return sqrt(pow(this->x - Q->getX(), 2) + pow(this->y - Q->getY(), 2));
+}
+
+void Vertex::glDraw(){
+    glVertex2f(this->x, this->y);
+}

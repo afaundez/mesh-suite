@@ -105,8 +105,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>324</width>
-            <height>403</height>
+            <width>153</width>
+            <height>43</height>
            </rect>
           </property>
           <attribute name="label">
@@ -130,6 +130,14 @@
           </layout>
          </widget>
          <widget class="QWidget" name="insertionSelectionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>174</width>
+            <height>154</height>
+           </rect>
+          </property>
           <attribute name="label">
            <string>Selección de Nuevo Punto</string>
           </attribute>
@@ -227,6 +235,14 @@
           </layout>
          </widget>
          <widget class="QWidget" name="regularInsertionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>136</width>
+            <height>43</height>
+           </rect>
+          </property>
           <attribute name="label">
            <string>Inserción Regular</string>
           </attribute>
@@ -248,6 +264,14 @@
           </layout>
          </widget>
          <widget class="QWidget" name="borderInsertionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>98</width>
+            <height>43</height>
+           </rect>
+          </property>
           <attribute name="label">
            <string>Inserción en Borde</string>
           </attribute>
@@ -269,6 +293,14 @@
           </layout>
          </widget>
          <widget class="QWidget" name="restrictedinsertionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>98</width>
+            <height>43</height>
+           </rect>
+          </property>
           <attribute name="label">
            <string>Inserción Restringida</string>
           </attribute>
@@ -324,7 +356,7 @@
            <item>
             <widget class="QSlider" name="zoomHorizontalSlider">
              <property name="minimum">
-              <number>1</number>
+              <number>0</number>
              </property>
              <property name="value">
               <number>50</number>

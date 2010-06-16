@@ -1,6 +1,7 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
+#include <QPoint>
 #include <vector>
 #include "Vertex.h"
 
@@ -16,6 +17,9 @@ public:
     Triangle* getOppositeTriangle(Vertex* P);
     Triangle* getOppositeTriangle(int p);
     Vertex* getVertex(int p);
+    void glDraw(Constant::GLTriangleType type);
+    double orientation(Vertex* A, Vertex* B, QPoint P);
+    Constant::IncludeType include(QPoint point);
 
 private:
     int id;

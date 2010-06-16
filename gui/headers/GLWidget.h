@@ -17,7 +17,8 @@ public:
     GLWidget(QWidget *parent);
     bool isEmpty();
     void setEmpty(bool _empty);
-    GLuint axis;
+    void setLastPos(QPoint _lastPos);
+    QPoint getLastPos();
 
 protected:
     void initializeGL();
@@ -27,7 +28,9 @@ protected:
 
 private:
     QWidget* parent;
+    GLuint axis;
     bool empty;
+    QPoint lastPos;
 };
 //! [0]
 

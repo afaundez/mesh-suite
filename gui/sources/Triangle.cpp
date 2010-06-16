@@ -1,4 +1,7 @@
+#include <QMatrix4x4>
+#include <QMatrix2x2>
 #include "headers/Triangle.h"
+#include <GL/gl.h>
 
 //! [0]
 Triangle::Triangle(int _id, Vertex* A, Vertex* B, Vertex* C){
@@ -46,3 +49,66 @@ Vertex* Triangle::getVertex(int p){
     return 0;
 }
 //! [5]
+
+void Triangle::glDraw(Constant::GLTriangleType type){
+    Vertex* v0 = this->getVertex(0);
+    Vertex* v1 = this->getVertex(1);
+    Vertex* v2 = this->getVertex(2);
+    switch(type){
+    case Constant::SELECTED:
+        glBegin(GL_TRIANGLES);
+        glColor4f(1.0, 0.0, 0.0, 0.1);
+        glVertex2f(v0->getX(), v0->getY());
+        glVertex2f(v1->getX(), v1->getY());
+        glVertex2f(v2->getX(), v2->getY());
+        glEnd();
+    case Constant::NOT_SELECTED:
+        glBegin(GL_LINE_STRIP);
+        glColor4f(0.0, 0.0, 1.0, 1.0);
+        glVertex2f(v0->getX(), v0->getY());
+        glVertex2f(v1->getX(), v1->getY());
+        glVertex2f(v2->getX(), v2->getY());
+        glVertex2f(v0->getX(), v0->getY());
+        glEnd();
+        glPointSize(3.0);
+        glBegin(GL_POINTS);
+        glColor4f(0.0, 0.0, 0.0, 1.0);
+        glVertex2f(v0->getX(), v0->getY());
+        glVertex2f(v1->getX(), v1->getY());
+        glVertex2f(v2->getX(), v2->getY());
+        glEnd();
+        glPointSize(1.0);
+    default:
+        break;
+    }
+}
+
+double Triangle::orientation(Vertex *A, Vertex *B, QPoint P){
+    int ax, ay, bx, by, cx, cy;
+    ax = A->getX();
+    ay = A->getY();
+    bx = B->getX();
+    by = B->getY();
+    cx = P.x();
+    cy = P.y();
+    QMatrix4x4 M(1, 0, 0, 0, 0, ax, ay, 1, 0, bx, by, 1, 0, cx, cy, 1);
+    return M.determinant();
+}
+
+Constant::IncludeType Triangle::include(QPoint point){
+    Vertex* A = this->getVertex(0);
+    Vertex* B = this->getVertex(1);
+    Vertex* C = this->getVertex(2);
+    double orA, orB, orC;
+    orA = this->orientation(A, B, point);
+    orB = this->orientation(B, C, point);
+    orC = this->orientation(C, A, point);
+    qDebug("%f %f %f", orA, orB, orC);
+    if (0.0 < orA && 0.0 < orB && 0.0 < orC)
+        return Constant::INCLUDED;
+    else if ((orA == 0.0 && orB == 0.0 && orC == 0.0) || (0.0 < orA && orB == 0.0 && orC == 0.0) || (orA == 0.0 && 0.0 < orB && orC == 0.0)  || (orA == 0.0 && orB == 0.0 && 0.0 < orC) || (0 < orA && orB && orC == 0) || (orA == 0.0 && 0.0 < orB && 0.0 < orC)  || (0.0 < orA && orB == 0.0 && 0.0 < orC))
+        return Constant::BORDER_INCLUDED;
+    else
+        return Constant::NOT_INCLUDED;
+}
+

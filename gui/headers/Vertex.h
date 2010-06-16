@@ -1,6 +1,8 @@
 #ifndef VERTEX_H
 #define VERTEX_H
 
+#include "headers/Constant.h"
+
 class Vertex
 {
 
@@ -11,6 +13,7 @@ public:
     double getX();
     double getY();
     double distance(Vertex* Q);
+    void glDraw();
 
 private:
     int id;
