@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
+    <width>1061</width>
     <height>662</height>
    </rect>
   </property>
@@ -21,415 +21,280 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0" rowspan="4" colspan="2">
-     <layout class="QHBoxLayout" name="glLayout"/>
-    </item>
-    <item row="0" column="2" rowspan="5">
-     <widget class="QTabWidget" name="processTab">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+    <item row="0" column="0" colspan="2">
+     <widget class="QFrame" name="glFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="currentIndex">
-       <number>0</number>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QWidget" name="automaticPage">
-       <attribute name="title">
-        <string>Automático</string>
-       </attribute>
-       <layout class="QFormLayout" name="processLayout">
-        <property name="fieldGrowthPolicy">
-         <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>Criterio Calidad</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="comboBox_10">
-          <item>
-           <property name="text">
-            <string>Menor ángulo interior</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="2" column="0" colspan="2">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Pre-proceso</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox">
-          <item>
-           <property name="text">
-            <string>Ninguno</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Revisar Diametro</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="4" column="0" colspan="2">
-         <widget class="Line" name="line_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Selección de punto</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QComboBox" name="comboBox_2">
-          <item>
-           <property name="text">
-            <string>Lepp-Bisection</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Circumcenter</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Bisection</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Centroid</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Centroid</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Delaunay</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Off-Center</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QCheckBox" name="checkBox">
-          <property name="text">
-           <string>Iterar</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0" colspan="2">
-         <widget class="Line" name="line_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Tipo Inserción</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QComboBox" name="comboBox_8">
-          <item>
-           <property name="text">
-            <string>Cavidad*</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Flip Diagonals</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="9" column="0" colspan="2">
-         <widget class="Line" name="line_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Inserción en Borde</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QComboBox" name="comboBox_3">
-          <item>
-           <property name="text">
-            <string>Rivara</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Ruppert</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="11" column="0" colspan="2">
-         <widget class="Line" name="line_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="0">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Inserción Restringida</string>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="1">
-         <widget class="QComboBox" name="comboBox_4">
-          <item>
-           <property name="text">
-            <string>Rivara</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Ruppert</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="14" column="0" colspan="2">
-         <widget class="Line" name="line_6">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="15" column="0">
-         <widget class="QLabel" name="label_13">
-          <property name="text">
-           <string>Resumen</string>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="0" colspan="2">
-         <widget class="QTextEdit" name="textEdit_2">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QSplitter" name="splitter_4">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="opaqueResize">
-           <bool>true</bool>
-          </property>
-          <property name="handleWidth">
-           <number>6</number>
-          </property>
-          <property name="childrenCollapsible">
-           <bool>true</bool>
-          </property>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="text">
-            <string>30</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>º</string>
-           </property>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="manualPage">
-       <attribute name="title">
-        <string>Manual</string>
-       </attribute>
-       <layout class="QFormLayout" name="formLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Selección de punto</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="comboBox_5">
-          <item>
-           <property name="text">
-            <string>Circumcenter</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Bisection</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Bisection</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Centroid</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Centroid</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lepp-Delaunay</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Off-Center</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Inserción en Borde</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Inserción Restringida</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QComboBox" name="comboBox_6">
-          <item>
-           <property name="text">
-            <string>Rupert</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Rivara</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox_7">
-          <item>
-           <property name="text">
-            <string>Ruppert</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Rivara</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QComboBox" name="comboBox_9">
-          <item>
-           <property name="text">
-            <string>Flip Diagonal</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Cavidad*</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Tipo Inserción</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Log</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QTextEdit" name="textEdit">
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="glLayout"/>
+       </item>
+       <item row="0" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2">
+    <item row="0" column="2" rowspan="2">
+     <widget class="QFrame" name="optionFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QToolBox" name="optionToolBox">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="qualityCriterionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>324</width>
+            <height>403</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>Criterio de Calidad</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+           </property>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="text">
+              <string>30</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_10">
+             <item>
+              <property name="text">
+               <string>Menor ángulo interior</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="preProcessCriterionPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>324</width>
+            <height>403</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>Pre-Proceso</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_2">
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox">
+             <item>
+              <property name="text">
+               <string>Ninguno</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Revisar Diametro</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="insertionSelectionPage">
+          <attribute name="label">
+           <string>Selección de Nuevo Punto</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_3">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+           </property>
+           <item row="0" column="0" colspan="2">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Selección de punto</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_2">
+             <item>
+              <property name="text">
+               <string>Lepp-Bisection</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Circumcenter</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bisection</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Centroid</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lepp-Centroid</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lepp-Delaunay</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Off-Center</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>200</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="checkBox">
+             <property name="text">
+              <string>Iterar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Tipo Inserción</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_9">
+             <item>
+              <property name="text">
+               <string>Flip Diagonal</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Cavidad*</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="regularInsertionPage">
+          <attribute name="label">
+           <string>Inserción Regular</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_4">
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_8">
+             <item>
+              <property name="text">
+               <string>Cavidad*</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Flip Diagonals</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="borderInsertionPage">
+          <attribute name="label">
+           <string>Inserción en Borde</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_5">
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_3">
+             <item>
+              <property name="text">
+               <string>Rivara</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ruppert</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="restrictedinsertionPage">
+          <attribute name="label">
+           <string>Inserción Restringida</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_6">
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="comboBox_4">
+             <item>
+              <property name="text">
+               <string>Rivara</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ruppert</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
      <widget class="QFrame" name="controlFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -437,64 +302,120 @@ p, li { white-space: pre-wrap; }
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSplitter" name="controlVerticalSplitter">
-       <property name="geometry">
-        <rect>
-         <x>60</x>
-         <y>20</y>
-         <width>391</width>
-         <height>73</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <widget class="QSplitter" name="controlHorizontalSplitter">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <widget class="QPushButton" name="refine">
-         <property name="text">
-          <string>||</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="refineOnce">
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pause">
-         <property name="text">
-          <string>&gt;&gt;</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QSplitter" name="optionsVerticalSplitter">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <widget class="QLabel" name="zoomLabel">
-         <property name="text">
-          <string>Zoom</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="zoomHorizontalSlider">
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="value">
-          <number>50</number>
-         </property>
-         <property name="sliderPosition">
-          <number>50</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </widget>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="zoomLabel">
+             <property name="text">
+              <string>Zoom     </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>0.1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="zoomHorizontalSlider">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="value">
+              <number>50</number>
+             </property>
+             <property name="sliderPosition">
+              <number>50</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="zoomLabel_2">
+             <property name="text">
+              <string>Inserción</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton">
+             <property name="text">
+              <string>Manual</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_2">
+             <property name="text">
+              <string>Automático</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="refine">
+             <property name="text">
+              <string>||</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="refineOnce">
+             <property name="text">
+              <string>&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pause">
+             <property name="text">
+              <string>&gt;&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
+    </item>
+    <item row="1" column="1">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
@@ -503,7 +424,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>1061</width>
      <height>25</height>
     </rect>
    </property>
@@ -590,25 +511,10 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>processTab</tabstop>
-  <tabstop>comboBox_10</tabstop>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>comboBox</tabstop>
-  <tabstop>comboBox_2</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>comboBox_8</tabstop>
-  <tabstop>comboBox_3</tabstop>
-  <tabstop>comboBox_4</tabstop>
   <tabstop>refineOnce</tabstop>
   <tabstop>refine</tabstop>
   <tabstop>pause</tabstop>
   <tabstop>zoomHorizontalSlider</tabstop>
-  <tabstop>textEdit</tabstop>
-  <tabstop>comboBox_6</tabstop>
-  <tabstop>comboBox_5</tabstop>
-  <tabstop>comboBox_7</tabstop>
-  <tabstop>comboBox_9</tabstop>
-  <tabstop>textEdit_2</tabstop>
  </tabstops>
  <resources/>
  <connections/>

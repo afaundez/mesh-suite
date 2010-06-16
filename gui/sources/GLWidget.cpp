@@ -8,22 +8,39 @@
 GLWidget::GLWidget(QWidget *parent)
     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
-    this->parent = parent;
+    this->axis      = 0;
+    this->empty     = true;
+    this->parent    = parent;
     setAutoFillBackground(false);
-
 }
 //! [0]
 
-//! [1]
-void GLWidget::animate()
-{
-    //paintGL();
-}
-//! [1]
 
-//! [2]
+static void theAxis(){
+    glBegin(GL_LINES);
+    glVertex4f(0.0, 1.0, 0.0, 0.0);
+    glVertex4f(0.0, 0.0, 0.0, 1.0);
+
+    glVertex4f(0.0, -1.0, 0.0, 0.0);
+    glVertex4f(0.0,  0.0, 0.0, 1.0);
+
+    glVertex4f(1.0, 0.0, 0.0, 0.0);
+    glVertex4f(0.0, 0.0, 0.0, 1.0);
+
+    glVertex4f(-1.0, 0.0, 0.0, 0.0);
+    glVertex4f( 0.0, 0.0, 0.0, 1.0);
+    glEnd();
+}
+
+//! [1]
 void GLWidget::initializeGL(){
     qDebug("initializeGL()");
+
+    this->axis      = glGenLists (1);
+    glNewList(axis, GL_COMPILE);
+    theAxis();
+    glEndList();
+
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glClearDepth(1.0);
     glDisable(GL_DEPTH_TEST);
@@ -33,26 +50,53 @@ void GLWidget::initializeGL(){
     glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glHint (GL_LINE_SMOOTH_HINT, GL_NICEST);
 }
-//! [2]
+//! [1]
 
-//! [3]
+//! [2]
 void GLWidget::resizeGL(int width, int heigth){
     qDebug("resizeGL(%d, %d)", width, heigth);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glViewport(0.0, 0.0, (GLint)width, (GLint)heigth);
-    gluOrtho2D(0.0, (GLdouble)width, 0.0, (GLdouble)heigth);
+    glViewport(0.0, 0.0, (GLsizei)width, (GLsizei)heigth);
+    gluOrtho2D((GLdouble)(-width/2.0), (GLdouble)(width/2.0), (GLdouble)(-heigth/2.0), (GLdouble)(heigth/2.0));
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
-//! [3]
+//! [2]
 
-//! [4]
+//! [3]
 void GLWidget::paintGL(){
     qDebug("paintGL(%d, %d)",this->width(), this->height());
     glClear(GL_COLOR_BUFFER_BIT);
+
+    // drawing the axis
+    glColor4f(0.0, 0.0, 0.0, 0.2);
+    glCallList(this->axis);
+
+    // drawing the mesh
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if( mesh != 0 )
         mesh->drawMesh(this->width(), this->height());
 }
-//! [4]
+//! [3]
+
+
+bool GLWidget::isEmpty(){
+    return this->empty;
+}
+
+void GLWidget::setEmpty(bool _empty){
+    this->empty = _empty;
+}
+
+void GLWidget::mousePressEvent(QMouseEvent *event)
+ {
+    Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    if(mesh != 0 && mesh->hasTriangles()){
+        qDebug("mousePressEvent(event)");
+        int x = event->x();
+        int y = event->y();
+        qDebug("real position x:%d y:%d", x, y);
+        qDebug("scaled position x:%f y:%f", x*mesh->scale, y*mesh->scale);
+    }
+ }

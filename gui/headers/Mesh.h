@@ -17,6 +17,8 @@ public:
     void drawMesh(int w, int h);
     float lowerX, lowerY;
     float higherX, higherY;
+    float scale;
+    bool hasTriangles();
 
 private:
     QHash<int, Triangle*>    triangles;

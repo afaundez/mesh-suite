@@ -52,7 +52,7 @@ void MainWindow::on_actionLoad_triggered()
 //! [5]
 void MainWindow::on_refineOnce_clicked()
 {
-    qDebug("MainWindow::on_refineOnce_clicked()");
-    qDebug("Current Tab %d", ui->processTab->currentIndex());
+    //qDebug("MainWindow::on_refineOnce_clicked()");
+    //qDebug("Current Tab %d", ui->processTab->currentIndex());
 }
 //! [5]

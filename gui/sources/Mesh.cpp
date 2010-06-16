@@ -46,9 +46,6 @@ Mesh::Mesh(QString fileName){
         else if( line.toLower().startsWith('f') ){QStringList splitLine = line.split(' ');
             splitLine = line.split(' ');
             if( 3 < splitLine.length() ){
-                qDebug() << QString(splitLine.at(1).toLocal8Bit().constData()).toInt()
-                         << QString(splitLine.at(2).toLocal8Bit().constData()).toInt()
-                         << QString(splitLine.at(3).toLocal8Bit().constData()).toInt();
                 this->createAndAddTriangle(this->vertexs[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                            this->vertexs[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()],
                                            this->vertexs[QString(splitLine.at(3).toLocal8Bit().constData()).toInt()]);
@@ -56,6 +53,7 @@ Mesh::Mesh(QString fileName){
         }
     }
     inputFile.close();
+    this->scale = 1.0;
 }
 //! [0]
 
@@ -83,11 +81,9 @@ Vertex* Mesh::createAndAddVertex(double x, double y){
 
 void Mesh::drawMesh(int w, int h){
     glPushMatrix();
-    glTranslated(-lowerX +5, -lowerY+5, 0.0);
-    if( w/higherX < h/higherY)
-        glScalef((w-10)/higherX, (w-10)/higherX, (w-10)/higherX);
-    else
-        glScalef((h-10)/higherY, (h-10)/higherY, (h-10)/higherY);
+    //glTranslated(-lowerX +5, -lowerY+5, 0.0);
+    //this->scale = w/higherX < h/higherY ? (w-10)/higherX : (h-10)/higherY;
+    //glScalef(this->scale, this->scale, this->scale);
     glBegin(GL_LINES);
     foreach (Triangle* aux, this->triangles){
         Vertex* v0 = aux->getVertex(0);
@@ -111,4 +107,8 @@ void Mesh::drawMesh(int w, int h){
     glEnd();
     glPointSize(1.0);
     glPopMatrix();
+}
+
+bool Mesh::hasTriangles(){
+    return this->triangles.size() > 0 ? true : false;
 }

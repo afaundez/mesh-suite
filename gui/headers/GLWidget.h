@@ -15,17 +15,19 @@ class GLWidget : public QGLWidget
 
 public:
     GLWidget(QWidget *parent);
-
-public slots:
-    void animate();
+    bool isEmpty();
+    void setEmpty(bool _empty);
+    GLuint axis;
 
 protected:
     void initializeGL();
     void resizeGL(int width, int height);
     void paintGL();
+    void mousePressEvent(QMouseEvent *event);
 
 private:
     QWidget* parent;
+    bool empty;
 };
 //! [0]
 
