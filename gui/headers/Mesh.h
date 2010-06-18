@@ -15,7 +15,7 @@ public:
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
-    void drawMesh(int w, int h, QPoint lastPos);
+    void drawMesh(QPoint lastPos);
     float lowerX, lowerY;
     float higherX, higherY;
     float scale;

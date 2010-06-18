@@ -1,8 +1,12 @@
 #include <QFileDialog>
 #include <QMessageBox>
+#include "ui_MainWindow.h"
 #include "headers/MainWindow.h"
 #include "headers/Mesh.h"
-#include "ui_MainWindow.h"
+#include "headers/InsertionType.h"
+#include "headers/InsertionTypeFactory.h"
+#include "headers/InsertionMethod.h"
+#include "headers/InsertionMethodFactory.h"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
@@ -48,6 +52,7 @@ void MainWindow::on_actionLoad_triggered()
         case QMessageBox::Discard:
             delete this->mesh;
             this->mesh = new Mesh(QFileDialog::getOpenFileName());
+            this->glWidget->updateGL();
             break;
         case QMessageBox::Cancel:
         default:
@@ -61,7 +66,11 @@ void MainWindow::on_actionLoad_triggered()
 //! [5]
 void MainWindow::on_refineOnce_clicked()
 {
-    //qDebug("MainWindow::on_refineOnce_clicked()");
-    //qDebug("Current Tab %d", ui->processTab->currentIndex());
+    qDebug("MainWindow::on_refineOnce_clicked()");
+    InsertionType* it = InsertionTypeFactory::build(ui->insertionTypeComboBox->currentIndex());
+    InsertionMethod* iim = InsertionMethodFactory::build(Constant::INSIDE, ui->insideInsertionMethodComboBox->currentIndex());
+    InsertionMethod* bim = InsertionMethodFactory::build(Constant::ON_BORDER, ui->borderInsertionMethodComboBox->currentIndex());
+    InsertionMethod* rim = InsertionMethodFactory::build(Constant::RESTRICTED, ui->restrictedInsertionMethodComboBox->currentIndex());
+
 }
 //! [5]

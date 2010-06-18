@@ -60,8 +60,11 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <widget class="QToolBox" name="optionToolBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>5</number>
          </property>
          <widget class="QWidget" name="qualityCriterionPage">
           <property name="geometry">
@@ -80,7 +83,7 @@
             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
            </property>
            <item row="2" column="1">
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="angleLineEdit">
              <property name="text">
               <string>30</string>
              </property>
@@ -90,7 +93,7 @@
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_10">
+            <widget class="QComboBox" name="qualityCriterionComboBox">
              <item>
               <property name="text">
                <string>Menor ángulo interior</string>
@@ -105,8 +108,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>153</width>
-            <height>43</height>
+            <width>324</width>
+            <height>403</height>
            </rect>
           </property>
           <attribute name="label">
@@ -114,7 +117,7 @@
           </attribute>
           <layout class="QFormLayout" name="formLayout_2">
            <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox">
+            <widget class="QComboBox" name="preProcessComboBox">
              <item>
               <property name="text">
                <string>Ninguno</string>
@@ -134,36 +137,51 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>174</width>
-            <height>154</height>
+            <width>324</width>
+            <height>403</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Selección de Nuevo Punto</string>
+           <string>Tipo de Inserción</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_3">
            <property name="fieldGrowthPolicy">
             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
            </property>
-           <item row="0" column="0" colspan="2">
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string>Selección de punto</string>
-             </property>
+           <item row="2" column="0" colspan="2">
+            <widget class="QComboBox" name="insertionTypeComboBox">
+             <item>
+              <property name="text">
+               <string>Flip Diagonal</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Cavity</string>
+              </property>
+             </item>
             </widget>
            </item>
-           <item row="1" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_2">
-             <item>
-              <property name="text">
-               <string>Lepp-Bisection</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Circumcenter</string>
-              </property>
-             </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="insideInsertionMethodPage">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>324</width>
+            <height>403</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>Método Inserción Interna</string>
+          </attribute>
+          <layout class="QFormLayout" name="formLayout_4">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+           </property>
+           <item row="0" column="0" colspan="2">
+            <widget class="QComboBox" name="insideInsertionMethodComboBox">
              <item>
               <property name="text">
                <string>Bisection</string>
@@ -171,7 +189,7 @@
              </item>
              <item>
               <property name="text">
-               <string>Centroid</string>
+               <string>Lepp-Bisection</string>
               </property>
              </item>
              <item>
@@ -186,98 +204,38 @@
              </item>
              <item>
               <property name="text">
+               <string>Circumcenter</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Centroid</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
                <string>Off-Center</string>
               </property>
              </item>
             </widget>
            </item>
-           <item row="3" column="0">
-            <spacer name="horizontalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>200</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="3" column="1">
-            <widget class="QCheckBox" name="checkBox">
-             <property name="text">
-              <string>Iterar</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>Tipo Inserción</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_9">
-             <item>
-              <property name="text">
-               <string>Flip Diagonal</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Cavidad*</string>
-              </property>
-             </item>
-            </widget>
-           </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="regularInsertionPage">
+         <widget class="QWidget" name="borderInsertionMethodPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>136</width>
-            <height>43</height>
+            <width>324</width>
+            <height>403</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Inserción Regular</string>
-          </attribute>
-          <layout class="QFormLayout" name="formLayout_4">
-           <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_8">
-             <item>
-              <property name="text">
-               <string>Cavidad*</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Flip Diagonals</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="borderInsertionPage">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>98</width>
-            <height>43</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Inserción en Borde</string>
+           <string>Método Inserción en Borde</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_5">
            <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_3">
+            <widget class="QComboBox" name="borderInsertionMethodComboBox">
              <item>
               <property name="text">
                <string>Rivara</string>
@@ -292,21 +250,21 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="restrictedinsertionPage">
+         <widget class="QWidget" name="restrictedinsertionMethodPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>43</height>
+            <width>324</width>
+            <height>403</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Inserción Restringida</string>
+           <string>Método Inserción Restringida</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_6">
            <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_4">
+            <widget class="QComboBox" name="restrictedInsertionMethodComboBox">
              <item>
               <property name="text">
                <string>Rivara</string>
@@ -347,7 +305,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label">
+            <widget class="QLabel" name="lowestValueLabel">
              <property name="text">
               <string>0.1</string>
              </property>
@@ -370,7 +328,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_3">
+            <widget class="QLabel" name="highestValueLabel">
              <property name="text">
               <string>10</string>
              </property>
@@ -381,14 +339,14 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLabel" name="zoomLabel_2">
+            <widget class="QLabel" name="InsertionLabel">
              <property name="text">
               <string>Inserción</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton">
+            <widget class="QRadioButton" name="ManualRadioButton">
              <property name="text">
               <string>Manual</string>
              </property>
@@ -398,7 +356,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_2">
+            <widget class="QRadioButton" name="automaticRadioButton">
              <property name="text">
               <string>Automático</string>
              </property>

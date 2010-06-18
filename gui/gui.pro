@@ -12,13 +12,17 @@ HEADERS += headers/MainWindow.h \
     headers/LoadMeshDialog.h \
     headers/QualityCriterionFactory.h \
     headers/PreProcessCriterionFactory.h \
-    headers/InsertionSelectionFactory.h \
     headers/RegularInsertionFactory.h \
     headers/BorderInsertionFactory.h \
     headers/RestrictedInsertionFactory.h \
-    headers/InsertionMethodFactory.h \
     headers/QualityCriterion.h \
-    headers/Constant.h
+    headers/Constant.h \
+    headers/InsertionType.h \
+    headers/InsertionTypeFactory.h \
+    headers/InsertionMethod.h \
+    headers/InsertionMethodFactory.h \
+    headers/FlipDiagonalInsertionType.h \
+    headers/CavityInsertionType.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -27,4 +31,6 @@ SOURCES += sources/Vertex.cpp \
     sources/MainWindow.cpp \
     sources/main.cpp \
     sources/LoadMeshDialog.cpp \
-    sources/GLWidget.cpp
+    sources/GLWidget.cpp \
+    sources/InsertionTypeFactory.cpp \
+    sources/InsertionMethodFactory.cpp

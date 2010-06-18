@@ -76,7 +76,7 @@ void GLWidget::paintGL(){
     // drawing the mesh
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if( mesh != 0 )
-        mesh->drawMesh(this->width(), this->height(), this->lastPos);
+        mesh->drawMesh(this->lastPos);
 }
 //! [3]
 
@@ -96,7 +96,6 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
         int x = event->x();
         int y = event->y();
         this->lastPos = QPoint(x - this->width()/2, this->height()/2 - y);
-        this->paintGL();
+        this->updateGL();
     }
-    this->updateGL();
  }

@@ -1,7 +1,7 @@
 #include <QMatrix4x4>
 #include <QMatrix2x2>
-#include "headers/Triangle.h"
 #include <GL/gl.h>
+#include "headers/Triangle.h"
 
 //! [0]
 Triangle::Triangle(int _id, Vertex* A, Vertex* B, Vertex* C){
@@ -103,7 +103,6 @@ Constant::IncludeType Triangle::include(QPoint point){
     orA = this->orientation(A, B, point);
     orB = this->orientation(B, C, point);
     orC = this->orientation(C, A, point);
-    qDebug("%f %f %f", orA, orB, orC);
     if (0.0 < orA && 0.0 < orB && 0.0 < orC)
         return Constant::INCLUDED;
     else if ((orA == 0.0 && orB == 0.0 && orC == 0.0) || (0.0 < orA && orB == 0.0 && orC == 0.0) || (orA == 0.0 && 0.0 < orB && orC == 0.0)  || (orA == 0.0 && orB == 0.0 && 0.0 < orC) || (0 < orA && orB && orC == 0) || (orA == 0.0 && 0.0 < orB && 0.0 < orC)  || (0.0 < orA && orB == 0.0 && 0.0 < orC))

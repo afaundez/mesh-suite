@@ -1,7 +1,7 @@
 #ifndef VERTEX_H
 #define VERTEX_H
 
-#include "headers/Constant.h"
+#include "Constant.h"
 
 class Vertex
 {

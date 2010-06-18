@@ -79,7 +79,7 @@ Vertex* Mesh::createAndAddVertex(double x, double y){
 }
 //! [2]
 
-void Mesh::drawMesh(int w, int h, QPoint lastPos){
+void Mesh::drawMesh(QPoint lastPos){
     glPushMatrix();
     glScalef(this->scale, this->scale, this->scale);
     foreach (Triangle* aux, this->triangles){
