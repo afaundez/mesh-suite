@@ -5,4 +5,5 @@ class InsertionMethod{
 public:
     virtual ~InsertionMethod() {};
 };
+
 #endif // INSERTIONMETHOD_H

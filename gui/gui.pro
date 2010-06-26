@@ -10,19 +10,20 @@ HEADERS += headers/MainWindow.h \
     headers/Triangle.h \
     headers/Vertex.h \
     headers/LoadMeshDialog.h \
-    headers/QualityCriterionFactory.h \
-    headers/PreProcessCriterionFactory.h \
     headers/RegularInsertionFactory.h \
     headers/BorderInsertionFactory.h \
     headers/RestrictedInsertionFactory.h \
-    headers/QualityCriterion.h \
     headers/Constant.h \
     headers/InsertionType.h \
     headers/InsertionTypeFactory.h \
     headers/InsertionMethod.h \
     headers/InsertionMethodFactory.h \
     headers/FlipDiagonalInsertionType.h \
-    headers/CavityInsertionType.h
+    headers/CavityInsertionType.h \
+    headers/TriangleSelection.h \
+    headers/TriangleSelectionFactory.h \
+    headers/PreProcessFactory.h \
+    headers/PreProcess.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -33,4 +34,8 @@ SOURCES += sources/Vertex.cpp \
     sources/LoadMeshDialog.cpp \
     sources/GLWidget.cpp \
     sources/InsertionTypeFactory.cpp \
-    sources/InsertionMethodFactory.cpp
+    sources/InsertionMethodFactory.cpp \
+    sources/TriangleSelection.cpp \
+    sources/TriangleSelectionFactory.cpp \
+    sources/PreProcess.cpp \
+    sources/PreProcessFactory.cpp

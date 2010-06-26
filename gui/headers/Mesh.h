@@ -20,12 +20,22 @@ public:
     float higherX, higherY;
     float scale;
     bool hasTriangles();
+    Triangle* getSelectedTriangle();
+    void setSelectedTriangle(Triangle* T);
+    void removeTriangle(Triangle* T);
+    void removeTriangle(int tid);
+    void removeAndDeleteTriangle(Triangle* T);
+    void removeAndDeleteTriangle(int tid);
+    bool isVirgin();
+    void setVirgin(bool virgin);
 
 private:
     QHash<int, Triangle*>    triangles;
     QHash<int, Vertex*>      vertexs;
     int cv;
     int ct;
+    Triangle* selectedTriangle;
+    bool virginp;
 };
 
 #endif // MESH_H

@@ -5,19 +5,23 @@
 
 //! [0]
 Triangle::Triangle(int _id, Vertex* A, Vertex* B, Vertex* C){
-    this->id =  _id;
+    this->idp =  _id;
     this->vertexs.insert(this->vertexs.begin() + 0, A);
     this->vertexs.insert(this->vertexs.begin() + 1, B);
     this->vertexs.insert(this->vertexs.begin() + 2, C);
     this->triangles.insert(this->triangles.begin() + 0,0);
     this->triangles.insert(this->triangles.begin() + 1,0);
     this->triangles.insert(this->triangles.begin() + 2,0);
+
+    this->restricted.insert(this->restricted.begin() + 0, false);
+    this->restricted.insert(this->restricted.begin() + 1, false);
+    this->restricted.insert(this->restricted.begin() + 2, false);
 }
 //! [0]
 
 //! [1]
 int Triangle::getId(){
-    return this->id;
+    return this->idp;
 }
 //! [1]
 
@@ -109,5 +113,14 @@ Constant::IncludeType Triangle::include(QPoint point){
         return Constant::BORDER_INCLUDED;
     else
         return Constant::NOT_INCLUDED;
+}
+
+
+int Triangle::id(){
+    return this->idp;
+}
+
+Triangle::~Triangle(){
+
 }
 

@@ -54,6 +54,8 @@ Mesh::Mesh(QString fileName){
     }
     inputFile.close();
     this->scale = 1.0;
+    this->selectedTriangle = 0;
+    this->virginp = true;
 }
 //! [0]
 
@@ -89,6 +91,7 @@ void Mesh::drawMesh(QPoint lastPos){
             switch(aux->include(lastPos)){
             case Constant::INCLUDED:
             case Constant::BORDER_INCLUDED:
+                this->selectedTriangle = aux;
                 aux->glDraw(Constant::SELECTED);
                 break;
             case Constant::NOT_INCLUDED:
@@ -103,4 +106,42 @@ void Mesh::drawMesh(QPoint lastPos){
 
 bool Mesh::hasTriangles(){
     return this->triangles.size() > 0 ? true : false;
+}
+
+Triangle* Mesh::getSelectedTriangle(){
+    return this->selectedTriangle;
+}
+
+void Mesh::setSelectedTriangle(Triangle* T){
+    this->selectedTriangle = T;
+}
+
+void Mesh::removeTriangle(Triangle* T){
+    this->triangles.remove(T->id());
+}
+
+void Mesh::removeTriangle(int tid){
+    this->triangles.remove(tid);
+}
+
+void Mesh::removeAndDeleteTriangle(Triangle* T){
+    if(this->triangles.contains(T->id())){
+        this->triangles.remove(T->id());
+        delete T;
+    }
+}
+
+void Mesh::removeAndDeleteTriangle(int tid){
+    if(this->triangles.contains(tid)){
+        Triangle* T = this->triangles.value(tid);
+        this->triangles.remove(tid);
+        delete T;
+    }
+}
+
+bool Mesh::isVirgin(){
+    return this->virginp;
+}
+void Mesh::setVirgin(bool virgin){
+    this->virginp = virgin;
 }

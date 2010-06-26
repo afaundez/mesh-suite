@@ -7,6 +7,9 @@
 #include "headers/InsertionTypeFactory.h"
 #include "headers/InsertionMethod.h"
 #include "headers/InsertionMethodFactory.h"
+#include "headers/TriangleSelection.h"
+#include "headers/TriangleSelectionFactory.h"
+#include "headers/PreProcessFactory.h"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
@@ -67,10 +70,47 @@ void MainWindow::on_actionLoad_triggered()
 void MainWindow::on_refineOnce_clicked()
 {
     qDebug("MainWindow::on_refineOnce_clicked()");
-    InsertionType* it = InsertionTypeFactory::build(ui->insertionTypeComboBox->currentIndex());
-    InsertionMethod* iim = InsertionMethodFactory::build(Constant::INSIDE, ui->insideInsertionMethodComboBox->currentIndex());
-    InsertionMethod* bim = InsertionMethodFactory::build(Constant::ON_BORDER, ui->borderInsertionMethodComboBox->currentIndex());
-    InsertionMethod* rim = InsertionMethodFactory::build(Constant::RESTRICTED, ui->restrictedInsertionMethodComboBox->currentIndex());
+    Triangle* A;
+
+    // SELECT TRIANGLE
+    if(ui->manualRadioButton->isChecked()){
+        A = this->mesh->getSelectedTriangle();
+    }
+    else if (ui->automaticRadioButton->isChecked()){
+        // TODO: implement triangle selection methods
+        A = TriangleSelectionFactory::build((Constant::TriangleSelectionType)this->ui->automaticTriangleSelectionComboBox->currentIndex())->process(this->mesh, this->ui->automaticTriangleSelectionSpinBox->value());
+    }
+    // PRE PROCESS
+    bool onlyFirst = this->ui->preProcessCheckBox->isChecked();
+    if( !onlyFirst || (onlyFirst && this->mesh->isVirgin()) )
+        PreProcessFactory::build((Constant::PreProcessType)this->ui->preProcessComboBox->currentIndex())->execute();
+
+    // PROCESS
+    if( A != 0){
+        InsertionType* it = InsertionTypeFactory::build(ui->insertionTypeComboBox->currentIndex());
+        InsertionMethod* iim = InsertionMethodFactory::build(Constant::INSIDE, ui->insideInsertionMethodComboBox->currentIndex());
+        InsertionMethod* bim = InsertionMethodFactory::build(Constant::ON_BORDER, ui->borderInsertionMethodComboBox->currentIndex());
+        InsertionMethod* rim = InsertionMethodFactory::build(Constant::RESTRICTED, ui->restrictedInsertionMethodComboBox->currentIndex());
+        this->mesh->removeAndDeleteTriangle(A);
+        this->mesh->setSelectedTriangle(0);
+    }
+
+
+    this->glWidget->updateGL();
 
 }
 //! [5]
+
+//! [6]
+void MainWindow::on_automaticRadioButton_clicked(){
+    ui->automaticTriangleSelectionComboBox->setEnabled(true);
+    ui->automaticTriangleSelectionSpinBox->setEnabled(true);
+}
+//! [6]
+
+//! [7]
+void MainWindow::on_manualRadioButton_clicked(){
+    ui->automaticTriangleSelectionComboBox->setEnabled(false);
+    ui->automaticTriangleSelectionSpinBox->setEnabled(false);
+}
+//! [7]

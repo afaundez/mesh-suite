@@ -11,8 +11,8 @@ class Triangle
 
 public:
     Triangle(int id, Vertex* A, Vertex* B, Vertex* C);
-    ~Triangle();
     int getId();
+    int id();
     void setTriangles(Triangle* A, Triangle* B, Triangle* C);
     Triangle* getOppositeTriangle(Vertex* P);
     Triangle* getOppositeTriangle(int p);
@@ -20,11 +20,13 @@ public:
     void glDraw(Constant::GLTriangleType type);
     double orientation(Vertex* A, Vertex* B, QPoint P);
     Constant::IncludeType include(QPoint point);
+    ~Triangle();
 
 private:
-    int id;
+    int idp;
     std::vector<int> angles;
     std::vector<Vertex*> vertexs;
     std::vector<Triangle*> triangles;
+    std::vector<bool> restricted;
 };
 #endif // TRIANGLE_H
