@@ -10,15 +10,15 @@ public:
     Constant::TriangleSelection triangleSelection();
     void setTriangleSelectionValue(int value);
     int triangleSelectionValue();
-    void setNewPointMethod(int value);
+    void setNewPointMethod(int index);
     Constant::NewPoint newPointMethod();
-    void setOutsideNewPointMethod(int value);
+    void setOutsideNewPointMethod(int index);
     Constant::NewPoint outsideNewPointMethod();
     void setManual(bool manual);
     bool manual();
     void setOnlyFirstPreProcess(bool onlyFirst);
     bool onlyFirstPreProcess();
-    void setPreProcess(Constant::PreProcess pp);
+    void setPreProcess(int index);
     Constant::PreProcess preProcess();
     ~Options();
 

@@ -50,8 +50,8 @@ bool Options::onlyFirstPreProcess(){
     return this->ofp;
 }
 
-void Options::setPreProcess(Constant::PreProcess pp){
-    this->ppp = pp;
+void Options::setPreProcess(int pp){
+    this->ppp = (Constant::PreProcess)pp;
 }
 
 Constant::PreProcess Options::preProcess(){

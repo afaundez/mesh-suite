@@ -63,6 +63,8 @@ void MainWindow::on_actionLoad_triggered()
 
 Options* MainWindow::getOptions(){
     Options* ret =  new Options();
+    ret->setOnlyFirstPreProcess(this->ui->preProcessCheckBox->isChecked());
+    ret->setPreProcess(this->ui->preProcessComboBox->currentIndex());
     ret->setTriangleSelection(this->ui->automaticTriangleSelectionComboBox->currentIndex());
     ret->setTriangleSelectionValue(this->ui->automaticTriangleSelectionSpinBox->value());
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
