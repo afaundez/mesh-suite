@@ -15,7 +15,7 @@ public:
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
-    void drawMesh(QPoint lastPos);
+    void drawMesh(Point* lastPos);
     float lowerX, lowerY;
     float higherX, higherY;
     float scale;
@@ -32,8 +32,7 @@ public:
 private:
     QHash<int, Triangle*>    triangles;
     QHash<int, Vertex*>      vertexs;
-    int cv;
-    int ct;
+    int cv, ct;
     Triangle* selectedTriangle;
     bool virginp;
 };

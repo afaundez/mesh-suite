@@ -4,8 +4,8 @@
 class PreProcess{
 
 public:
-    virtual ~PreProcess();
-    virtual void execute();
+    virtual ~PreProcess() {};
+    virtual void execute() = 0;
 };
 
 #endif // PREPROCESS_H

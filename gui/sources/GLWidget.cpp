@@ -95,7 +95,7 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
     if(mesh != 0 && mesh->hasTriangles()){
         int x = event->x();
         int y = event->y();
-        this->lastPos = QPoint(x - this->width()/2, this->height()/2 - y);
+        this->lastPos = new Point(x - this->width()/2, this->height()/2 - y);
         this->updateGL();
     }
  }

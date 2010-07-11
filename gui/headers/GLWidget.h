@@ -1,6 +1,7 @@
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 #include <QGLWidget>
+#include "Point.h"
 
 //! [0]
 class Helper;
@@ -30,7 +31,7 @@ private:
     QWidget* parent;
     GLuint axis;
     bool empty;
-    QPoint lastPos;
+    Point* lastPos;
 };
 //! [0]
 

@@ -3,36 +3,36 @@
 #include <math.h>
 
 //! [0]
-Vertex::Vertex(int _id, double _x, double _y)
+Vertex::Vertex(int id, double x, double y)
 {
-    this->id    = _id;
-    this->x     = _x;
-    this->y     = _y;
+    this->idp    = id;
+    this->xp     = x;
+    this->yp     = y;
 }
 //! [0]
 
 //! [1]
-int Vertex::getId(){
-    return this->id;
+int Vertex::id(){
+    return this->idp;
 }
 //! [1]
 
 //! [2]
-double Vertex::getX(){
-    return this->x;
+double Vertex::x(){
+    return this->xp;
 }
 //! [2]
 
 //! [3]
-double Vertex::getY(){
-    return this->y;
+double Vertex::y(){
+    return this->yp;
 }
 //! [3]
 
 double Vertex::distance(Vertex *Q){
-    return sqrt(pow(this->x - Q->getX(), 2) + pow(this->y - Q->getY(), 2));
+    return sqrt(pow(this->xp - Q->x(), 2) + pow(this->yp - Q->y(), 2));
 }
 
 void Vertex::glDraw(){
-    glVertex2f(this->x, this->y);
+    glVertex2f(this->xp, this->yp);
 }

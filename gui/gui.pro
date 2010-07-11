@@ -10,20 +10,31 @@ HEADERS += headers/MainWindow.h \
     headers/Triangle.h \
     headers/Vertex.h \
     headers/LoadMeshDialog.h \
-    headers/RegularInsertionFactory.h \
-    headers/BorderInsertionFactory.h \
-    headers/RestrictedInsertionFactory.h \
     headers/Constant.h \
-    headers/InsertionType.h \
-    headers/InsertionTypeFactory.h \
-    headers/InsertionMethod.h \
-    headers/InsertionMethodFactory.h \
-    headers/FlipDiagonalInsertionType.h \
-    headers/CavityInsertionType.h \
     headers/TriangleSelection.h \
-    headers/TriangleSelectionFactory.h \
-    headers/PreProcessFactory.h \
-    headers/PreProcess.h
+    headers/PreProcess.h \
+    headers/InsideInsertion.h \
+    headers/Point.h \
+    headers/Configuration.h \
+    headers/Options.h \
+    headers/NewPointMethod.h \
+    headers/FactoryNewPointMethod.h \
+    headers/FactoryPreProcess.h \
+    headers/PreProcessNone.h \
+    headers/FactoryTriangleSelection.h \
+    headers/PreProcessEdgeDiameterCircle.h \
+    headers/InsideInsertionSimple.h \
+    headers/InsideInsertionCavity.h \
+    headers/InsideInsertionFlipDiagonal.h \
+    headers/InsertionMethod.h \
+    headers/NewPointMethodBisection.h \
+    headers/NewPointMethodLeppBisection.h \
+    headers/NewPointMethodCircumcenter.h \
+    headers/TriangleSelectionSmallestEdgeBorderTriangleFirst.h \
+    headers/TriangleSelectionSmallestEdge.h \
+    headers/TriangleSelectionSmallestInternalAngle.h \
+    headers/FactoryInsertionMethod.h \
+    headers/RefineProcess.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -33,9 +44,16 @@ SOURCES += sources/Vertex.cpp \
     sources/main.cpp \
     sources/LoadMeshDialog.cpp \
     sources/GLWidget.cpp \
-    sources/InsertionTypeFactory.cpp \
-    sources/InsertionMethodFactory.cpp \
-    sources/TriangleSelection.cpp \
-    sources/TriangleSelectionFactory.cpp \
-    sources/PreProcess.cpp \
-    sources/PreProcessFactory.cpp
+    sources/Point.cpp \
+    sources/RefineProcess.cpp \
+    sources/FactoryPreProcess.cpp \
+    sources/FactoryTriangleSelection.cpp \
+    sources/Options.cpp \
+    sources/FactoryNewPointMethod.cpp \
+    sources/Configuration.cpp \
+    sources/FactoryInsertionMethod.cpp \
+    sources/PreProcessNone.cpp \
+    sources/PreProcessEdgeDiameterCircle.cpp \
+    sources/TriangleSelectionSmallestInternalAngle.cpp \
+    sources/TriangleSelectionSmallestEdgeBorderTriangleFirst.cpp \
+    sources/TriangleSelectionSmallestEdge.cpp

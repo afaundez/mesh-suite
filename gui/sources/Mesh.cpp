@@ -52,6 +52,15 @@ Mesh::Mesh(QString fileName){
             }
         }
     }
+    // TODO: add neighbours
+    foreach(Triangle* t1, this->triangles){
+        foreach(Triangle* t2, this->triangles){
+            int pos = t1->isNeighbour(t2);
+            if( 0 <= pos){
+                t1->setNeighbour(pos, t2);
+            }
+        }
+    }
     inputFile.close();
     this->scale = 1.0;
     this->selectedTriangle = 0;
@@ -68,7 +77,7 @@ Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
     assert( v1 != 0);
     assert( v2 != 0);
     Triangle* aux = new Triangle(++ct, v0, v1, v2);
-    this->triangles.insert(aux->getId(), aux);
+    this->triangles.insert(aux->id(), aux);
     return aux;
 }
 //! [1]
@@ -76,16 +85,16 @@ Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
 //! [2]
 Vertex* Mesh::createAndAddVertex(double x, double y){
     Vertex* aux = new Vertex(++cv, x, y);
-    this->vertexs.insert(aux->getId(), aux);
+    this->vertexs.insert(aux->id(), aux);
     return aux;
 }
 //! [2]
 
-void Mesh::drawMesh(QPoint lastPos){
+void Mesh::drawMesh(Point* lastPos){
     glPushMatrix();
     glScalef(this->scale, this->scale, this->scale);
     foreach (Triangle* aux, this->triangles){
-        if( lastPos.isNull() )
+        if( lastPos == 0 )
             aux->glDraw(Constant::NOT_SELECTED);
         else{
             switch(aux->include(lastPos)){

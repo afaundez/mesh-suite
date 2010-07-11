@@ -6,8 +6,8 @@
 
 class TriangleSelection{
 public:
-    virtual ~TriangleSelection();
-    virtual Triangle* process(Mesh* mesh, int value);
+    virtual ~TriangleSelection() {};
+    virtual Triangle* process(Mesh* mesh, int value) = 0;
 };
 
 #endif // TRIANGLESELECTION_H

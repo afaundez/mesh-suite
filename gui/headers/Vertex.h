@@ -9,16 +9,16 @@ class Vertex
 public:
     Vertex(int id, double _x, double _y);
     ~Vertex();
-    int getId();
-    double getX();
-    double getY();
+    int id();
+    double x();
+    double y();
     double distance(Vertex* Q);
     void glDraw();
 
 private:
-    int id;
-    double x;
-    double y;
+    int idp;
+    double xp;
+    double yp;
 };
 
 #endif // VERTEX_H

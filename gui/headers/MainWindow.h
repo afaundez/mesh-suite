@@ -4,6 +4,7 @@
 #include <QtGui/QMainWindow>
 #include "GLWidget.h"
 #include "Mesh.h"
+#include "Options.h"
 
 namespace Ui
 {
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     Mesh* getMesh();
+    Options* getOptions();
     ~MainWindow();
 
 

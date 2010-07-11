@@ -1,13 +1,14 @@
-#ifndef PREPROCESSFACTORY_H
-#define PREPROCESSFACTORY_H
+#ifndef FACTORYPREPROCESS_H
+#define FACTORYPREPROCESS_H
 
 #include "PreProcess.h"
 #include "Constant.h"
 
-class PreProcessFactory
+class FactoryPreProcess
 {
 public:
     static PreProcess* build(Constant::PreProcess type);
 
 };
-#endif // PREPROCESSFACTORY_H
+
+#endif // FACTORYPREPROCESS_H
