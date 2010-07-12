@@ -23,7 +23,6 @@ HEADERS += headers/MainWindow.h \
     headers/PreProcessNone.h \
     headers/FactoryTriangleSelection.h \
     headers/PreProcessEdgeDiameterCircle.h \
-    headers/InsideInsertionSimple.h \
     headers/InsideInsertionCavity.h \
     headers/InsideInsertionFlipDiagonal.h \
     headers/InsertionMethod.h \
@@ -34,7 +33,8 @@ HEADERS += headers/MainWindow.h \
     headers/TriangleSelectionSmallestEdge.h \
     headers/TriangleSelectionSmallestInternalAngle.h \
     headers/FactoryInsertionMethod.h \
-    headers/RefineProcess.h
+    headers/RefineProcess.h \
+    headers/InsideInsertionBasic.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -56,4 +56,8 @@ SOURCES += sources/Vertex.cpp \
     sources/PreProcessEdgeDiameterCircle.cpp \
     sources/TriangleSelectionSmallestInternalAngle.cpp \
     sources/TriangleSelectionSmallestEdgeBorderTriangleFirst.cpp \
-    sources/TriangleSelectionSmallestEdge.cpp
+    sources/TriangleSelectionSmallestEdge.cpp \
+    sources/NewPointMethodBisection.cpp \
+    sources/InsideInsertionBasic.cpp \
+    sources/InsideInsertion.cpp \
+    sources/NewPointMethodCircumcenter.cpp

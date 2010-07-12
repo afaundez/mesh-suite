@@ -33,9 +33,14 @@ Mesh* MainWindow::getMesh(){
 //! [4]
 void MainWindow::on_actionLoad_triggered()
 {
-    if( this->mesh == 0){
+    if( this->mesh == 0 || mesh->isVirgin()){
         this->mesh = new Mesh(QFileDialog::getOpenFileName());
-
+        if(this->mesh != 0 && 0 < this->mesh->trianglesSize()){
+            this->ui->refineOnceButton->setEnabled(true);
+            this->ui->refineButton->setEnabled(true);
+            this->ui->unRefineOnceButton->setEnabled(true);
+            this->ui->stopButton->setEnabled(false);
+        }
         this->glWidget->updateGL();
     }
     else{
@@ -43,6 +48,9 @@ void MainWindow::on_actionLoad_triggered()
         msgBox.setText("La malla ha sido modificada");
         msgBox.setInformativeText("Desea guardar los cambios?");
         msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+        msgBox.setButtonText(QMessageBox::Save, "Guardar Cambios");
+        msgBox.setButtonText(QMessageBox::Discard, "Descartar cambios");
+        msgBox.setButtonText(QMessageBox::Cancel, "Cancelar");
         msgBox.setDefaultButton(QMessageBox::Save);
         int ret = msgBox.exec();
         switch(ret){
@@ -69,27 +77,39 @@ Options* MainWindow::getOptions(){
     ret->setTriangleSelectionValue(this->ui->automaticTriangleSelectionSpinBox->value());
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
     ret->setOutsideNewPointMethod(this->ui->outsideNewPointCaseComboBox->currentIndex());
+    ret->setOneEdgeRestrictedInsertion(this->ui->oneRestrictedNewPointCaseComboBox->currentIndex());
+    ret->setTwoEdgeRestrictedInsertion(this->ui->twoRestrictedNewPointCaseComboBox->currentIndex());
+    ret->setThreeEdgeRestrictedInsertion(this->ui->threeRestrictedNewPointCaseComboBox->currentIndex());
     return ret;
 }
 
 //! [5]
 void MainWindow::on_refineOnce_clicked()
 {
+    this->ui->refineOnceButton->setEnabled(false);
+    this->ui->refineButton->setEnabled(false);
+    this->ui->unRefineOnceButton->setEnabled(false);
+    this->ui->stopButton->setEnabled(true);
     qDebug("MainWindow::on_refineOnce_clicked()");
     Options* options;
-
     // GET OPTIONS
     qDebug("Getting GUI selected options...");
     options = this->getOptions();
-
-    // REFINE
-    qDebug("Refining...");
-    RefineProcess::refine(mesh, options);
-
-
-
-
+    try{
+        // REFINE
+        qDebug("Refining...");
+        RefineProcess::refine(mesh, options);
+    }
+    catch (...)
+    {
+        qDebug("An exception occurred");
+    }
     this->glWidget->updateGL();
+
+    this->ui->refineOnceButton->setEnabled(true);
+    this->ui->refineButton->setEnabled(true);
+    this->ui->unRefineOnceButton->setEnabled(true);
+    this->ui->stopButton->setEnabled(false);
 
 }
 //! [5]

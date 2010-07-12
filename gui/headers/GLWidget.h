@@ -31,7 +31,6 @@ private:
     QWidget* parent;
     GLuint axis;
     bool empty;
-    Point* lastPos;
 };
 //! [0]
 

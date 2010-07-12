@@ -2,6 +2,7 @@
 #include <QMatrix2x2>
 #include <GL/gl.h>
 #include "headers/Triangle.h"
+#include <math.h>
 
 //! [0]
 Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2){
@@ -9,12 +10,23 @@ Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2){
     this->vertexs.insert(0, v0);
     this->vertexs.insert(1, v1);
     this->vertexs.insert(2, v2);
+
     this->neighbours.insert(0,0);
     this->neighbours.insert(1,0);
     this->neighbours.insert(2,0);
-    this->internalAngles.insert(0, 0.0);
-    this->internalAngles.insert(1, 0.0);
-    this->internalAngles.insert(2, 0.0);
+
+    double d0 = v1->distance(v2);
+    double d1 = v2->distance(v0);
+    double d2 = v0->distance(v1);
+
+    double a0	= acos( (d1*d1+d2*d2-d0*d0)/(2*d1*d2) )/Constant::pi*180.0;
+    double a1	= acos( (d2*d2+d0*d0-d1*d1)/(2*d2*d0) )/Constant::pi*180.0;
+    double a2	= acos( (d0*d0+d1*d1-d2*d2)/(2*d0*d1) )/Constant::pi*180.0;
+
+    this->internalAngles.insert(0, a0);
+    this->internalAngles.insert(1, a1);
+    this->internalAngles.insert(2, a2);
+
     this->restrictedEdges.insert(0, false);
     this->restrictedEdges.insert(1, false);
     this->restrictedEdges.insert(2, false);
@@ -23,9 +35,9 @@ Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2){
 
 //! [2]
 void Triangle::setNeighbours(Triangle* A, Triangle* B, Triangle* C){
-    this->neighbours.insert(this->neighbours.begin() + 0,A);
-    this->neighbours.insert(this->neighbours.begin() + 1,B);
-    this->neighbours.insert(this->neighbours.begin() + 2,C);
+    this->neighbours.replace(0,A);
+    this->neighbours.replace(1,B);
+    this->neighbours.replace(2,C);
     return;
 }
 //! [2]
@@ -107,19 +119,37 @@ double Triangle::orientation(Vertex *A, Vertex *B, Point* P){
     return M.determinant();
 }
 
-Constant::IncludeCase Triangle::include(Point* point){
-    Vertex* A = this->getVertex(0);
-    Vertex* B = this->getVertex(1);
-    Vertex* C = this->getVertex(2);
-    double orA, orB, orC;
-    orA = this->orientation(A, B, point);
-    orB = this->orientation(B, C, point);
-    orC = this->orientation(C, A, point);
-    if (0.0 < orA && 0.0 < orB && 0.0 < orC)
+int Triangle::wichBorder(Point* p){
+    Vertex* v0 = this->getVertex(0);
+    Vertex* v1 = this->getVertex(1);
+    Vertex* v2 = this->getVertex(2);
+    double or0, or1, or2;
+    or0 = this->orientation(v1, v2, p);
+    or1 = this->orientation(v2, v0, p);
+    or2 = this->orientation(v0, v1, p);
+    if(0.0 == or0)
+        return 0;
+    else if(0.0 == or1)
+        return 1;
+    else if(0.0 == or2)
+        return 2;
+    else
+        return -1;
+}
+
+Constant::IncludeCase Triangle::include(Point* p){
+    Vertex* v0 = this->getVertex(0);
+    Vertex* v1 = this->getVertex(1);
+    Vertex* v2 = this->getVertex(2);
+    double or0, or1, or2;
+    or0 = this->orientation(v1, v2, p);
+    or1 = this->orientation(v2, v0, p);
+    or2 = this->orientation(v0, v1, p);
+    if (0.0 < or0 && 0.0 < or1 && 0.0 < or2)
         return Constant::INCLUDED;
-    else if ((0.0 < orA && orB == 0.0 && orC == 0.0) || (orA == 0.0 && 0.0 < orB && orC == 0.0)  || (orA == 0.0 && orB == 0.0 && 0.0 < orC))
+    else if ((0.0 < or0 && or1 == 0.0 && or2 == 0.0) || (or0 == 0.0 && 0.0 < or1 && or2 == 0.0)  || (or0 == 0.0 && or1 == 0.0 && 0.0 < or2))
         return Constant::CORNER_INCLUDED;
-    else if ((0.0 < orA && 0.0 < orB && orC == 0.0) || (orA == 0.0 && 0.0 < orB && 0.0 < orC)  || (0.0 < orA && orB == 0.0 && 0.0 < orC))
+    else if ((0.0 < or0 && 0.0 < or1 && or2 == 0.0) || (or0 == 0.0 && 0.0 < or1 && 0.0 < or2)  || (0.0 < or0 && or1 == 0.0 && 0.0 < or2))
         return Constant::BORDER_INCLUDED;
     else
         return Constant::NOT_INCLUDED;
@@ -135,12 +165,36 @@ int Triangle::getLongestEdge(){
     l0 = this->vertexs.at(1)->distance(this->vertexs.at(2));
     l1 = this->vertexs.at(2)->distance(this->vertexs.at(0));
     l2 = this->vertexs.at(0)->distance(this->vertexs.at(1));
-    if(l0 <= l1 && l0 <= l2)
+    if(l1 <= l0 && l2 <= l0)
         return 0;
-    else if (l1 <= l0 && l1 <= l2)
+    else if (l0 <= l1 && l2 <= l1)
         return 1;
     else
-        return 0;
+        return 2;
+}
+
+int Triangle::getRestrictedType(){
+    int count = 0;
+    for(unsigned int i = 0; i < 3; i++)
+        if(this->restrictedEdges.at(i))
+            count++;
+    return count;
+}
+
+int Triangle::getIndex(Vertex *v){
+    for(unsigned int i = 0; i < 3; i++)
+        if( this->vertexs.at(i) == v)
+            return i;
+    return -1;
+}
+
+void Triangle::replaceNeighbour(Triangle *ti, Triangle *tf){
+    for(unsigned int i = 0; i < 3; i++)
+        if(this->neighbours.at(i) == ti){
+            this->neighbours.replace(i, tf);
+            return;
+        }
+    return;
 }
 
 bool  Triangle::hasNeighbour(int pos){

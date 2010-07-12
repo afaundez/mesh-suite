@@ -10,10 +10,20 @@ public:
     Constant::TriangleSelection triangleSelection();
     void setTriangleSelectionValue(int value);
     int triangleSelectionValue();
+
     void setNewPointMethod(int index);
     Constant::NewPoint newPointMethod();
     void setOutsideNewPointMethod(int index);
-    Constant::NewPoint outsideNewPointMethod();
+    Constant::OutsideNewPoint outsideNewPointMethod();
+    void setInsideInsertion(int index);
+    Constant::InsideInsertion insideInsertion();
+    void setOneEdgeRestrictedInsertion(int index);
+    Constant::OneEdgeRestrictedInsertion oneEdgeRestrictedInsertion();
+    void setTwoEdgeRestrictedInsertion(int index);
+    Constant::TwoEdgeRestrictedInsertion twoEdgeRestrictedInsertion();
+    void setThreeEdgeRestrictedInsertion(int index);
+    Constant::ThreeEdgeRestrictedInsertion threeEdgeRestrictedInsertion();
+
     void setManual(bool manual);
     bool manual();
     void setOnlyFirstPreProcess(bool onlyFirst);
@@ -26,7 +36,11 @@ private:
     Constant::TriangleSelection tsp;
     int tsvp;
     Constant::NewPoint npp;
-    Constant::NewPoint onpp;
+    Constant::OutsideNewPoint onpp;
+    Constant::InsideInsertion inpp;
+    Constant::OneEdgeRestrictedInsertion ornpp;
+    Constant::TwoEdgeRestrictedInsertion trnpp;
+    Constant::ThreeEdgeRestrictedInsertion ttrnpp;
     bool mp;
     bool ofp;
     Constant::PreProcess ppp;

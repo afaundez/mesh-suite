@@ -76,7 +76,7 @@ void GLWidget::paintGL(){
     // drawing the mesh
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if( mesh != 0 )
-        mesh->drawMesh(this->lastPos);
+        mesh->drawMesh();
 }
 //! [3]
 
@@ -95,7 +95,8 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
     if(mesh != 0 && mesh->hasTriangles()){
         int x = event->x();
         int y = event->y();
-        this->lastPos = new Point(x - this->width()/2, this->height()/2 - y);
+        Point* pos = new Point(x - this->width()/2, this->height()/2 - y);
+        mesh->setSelectedTriangle(mesh->getTriangle(pos));
         this->updateGL();
     }
  }

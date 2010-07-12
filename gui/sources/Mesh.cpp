@@ -4,7 +4,6 @@
 #include <QtCore/QTextStream>
 #include <QHashIterator>
 #include <QDebug>
-#include <cassert>
 #include <GL/gl.h>
 #include "headers/Mesh.h"
 
@@ -73,9 +72,6 @@ Mesh::~Mesh(){
 
 //! [1]
 Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
-    assert( v0 != 0);
-    assert( v1 != 0);
-    assert( v2 != 0);
     Triangle* aux = new Triangle(++ct, v0, v1, v2);
     this->triangles.insert(aux->id(), aux);
     return aux;
@@ -90,24 +86,14 @@ Vertex* Mesh::createAndAddVertex(double x, double y){
 }
 //! [2]
 
-void Mesh::drawMesh(Point* lastPos){
+void Mesh::drawMesh(){
     glPushMatrix();
     glScalef(this->scale, this->scale, this->scale);
     foreach (Triangle* aux, this->triangles){
-        if( lastPos == 0 )
+        if( aux != this->selectedTriangle)
             aux->glDraw(Constant::NOT_SELECTED);
         else{
-            switch(aux->include(lastPos)){
-            case Constant::INCLUDED:
-            case Constant::BORDER_INCLUDED:
-                this->selectedTriangle = aux;
-                aux->glDraw(Constant::SELECTED);
-                break;
-            case Constant::NOT_INCLUDED:
-                aux->glDraw(Constant::NOT_SELECTED);
-            default:
-                break;
-            }
+            aux->glDraw(Constant::SELECTED);
         }
     }
     glPopMatrix();
@@ -123,6 +109,14 @@ Triangle* Mesh::getSelectedTriangle(){
 
 void Mesh::setSelectedTriangle(Triangle* T){
     this->selectedTriangle = T;
+}
+
+Triangle* Mesh::getTriangle(Point *p){
+    foreach (Triangle* aux, this->triangles){
+        if(aux->include(p))
+            return aux;
+    }
+    return 0;
 }
 
 void Mesh::removeTriangle(Triangle* T){
@@ -142,9 +136,8 @@ void Mesh::removeAndDeleteTriangle(Triangle* T){
 
 void Mesh::removeAndDeleteTriangle(int tid){
     if(this->triangles.contains(tid)){
-        Triangle* T = this->triangles.value(tid);
-        this->triangles.remove(tid);
-        delete T;
+        Triangle* t = this->triangles.take(tid);
+        delete t;
     }
 }
 
@@ -153,4 +146,12 @@ bool Mesh::isVirgin(){
 }
 void Mesh::setVirgin(bool virgin){
     this->virginp = virgin;
+}
+
+int Mesh::vertexsSize(){
+    return this->vertexs.size();
+}
+
+int Mesh::trianglesSize(){
+    return this->triangles.size();
 }

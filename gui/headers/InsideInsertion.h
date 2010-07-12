@@ -7,11 +7,12 @@
 #include "Triangle.h"
 
 class InsideInsertion: public InsertionMethod{
-
 public:
     InsideInsertion(Configuration* conf);
-    virtual void execute();
-    ~InsideInsertion() {};
+    virtual void execute() = 0;
+    ~InsideInsertion();
+protected:
+    Configuration* confp;
 };
 
 #endif // INSIDEINSERTION_H

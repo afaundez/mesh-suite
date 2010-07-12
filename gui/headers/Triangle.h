@@ -25,6 +25,10 @@ public:
     Constant::IncludeCase include(Point* point);
     void setNeighbour(int pos, Triangle* neighbour);
     int getLongestEdge();
+    int getRestrictedType();
+    int getIndex(Vertex* v);
+    void replaceNeighbour(Triangle* ti, Triangle* tf);
+    int wichBorder(Point* p);
     ~Triangle();
 
 private:

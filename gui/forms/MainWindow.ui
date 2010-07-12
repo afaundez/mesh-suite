@@ -120,28 +120,40 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QPushButton" name="unRefineOnce">
+            <widget class="QPushButton" name="unRefineOnceButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>&lt;</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="refine">
+            <widget class="QPushButton" name="stopButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>||</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="refineOnce">
+            <widget class="QPushButton" name="refineOnceButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>&gt;</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pause">
+            <widget class="QPushButton" name="refineButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>&gt;&gt;</string>
              </property>
@@ -176,8 +188,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>304</width>
-            <height>432</height>
+            <width>252</width>
+            <height>69</height>
            </rect>
           </property>
           <attribute name="label">
@@ -213,7 +225,7 @@
             <x>0</x>
             <y>0</y>
             <width>315</width>
-            <height>432</height>
+            <height>132</height>
            </rect>
           </property>
           <attribute name="label">
@@ -273,8 +285,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>304</width>
-            <height>432</height>
+            <width>175</width>
+            <height>43</height>
            </rect>
           </property>
           <attribute name="label">
@@ -325,7 +337,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="InsertionPage">
+         <widget class="QWidget" name="insertionPage">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -338,15 +350,87 @@
            <string>Inserción</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout">
-           <item row="0" column="0" colspan="2">
-            <widget class="QLabel" name="label_2">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+           </property>
+           <item row="3" column="0" colspan="2">
+            <widget class="QLabel" name="oneRestrictedNewPointCaseLabel">
              <property name="text">
-              <string>Interior</string>
+              <string>Una Arista Restringida</string>
              </property>
             </widget>
            </item>
+           <item row="5" column="1">
+            <widget class="QComboBox" name="oneRestrictedNewPointCaseComboBox">
+             <item>
+              <property name="text">
+               <string>Inserción Básica</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Intercambio de Diagonales Restringido</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <widget class="QLabel" name="twoRestrictedNewPointCaseLabel">
+             <property name="text">
+              <string>Dos Aristas Restringidas</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QComboBox" name="twoRestrictedNewPointCaseComboBox">
+             <item>
+              <property name="text">
+               <string>Inserción Básica</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="8" column="0" colspan="2">
+            <widget class="QLabel" name="threeRestrictedNewPointCaseLabel">
+             <property name="text">
+              <string>Triangulo Restringido</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QComboBox" name="threeRestrictedNewPointCaseComboBox">
+             <item>
+              <property name="text">
+               <string>Omitir</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="outsideNewPointCaseLabel">
+             <property name="text">
+              <string>Fuera de Malla</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QComboBox" name="outsideNewPointCaseComboBox">
+             <item>
+              <property name="text">
+               <string>Bisectar Arista Más Larga</string>
+              </property>
+             </item>
+            </widget>
+           </item>
            <item row="1" column="1">
-            <widget class="QComboBox" name="borderInsertionMethodComboBox">
+            <widget class="QComboBox" name="insideNewPointCaseComboBox">
              <item>
               <property name="text">
                <string>Inserción Básica</string>
@@ -364,84 +448,22 @@
              </item>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QComboBox" name="outsideNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Bisectar Arista Más Larga</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="4" column="0" colspan="2">
-            <widget class="QLabel" name="label_3">
+           <item row="0" column="0" colspan="2">
+            <widget class="QLabel" name="insideNewPointCaseLabel">
              <property name="text">
-              <string>Una Arista Restringida</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="1">
-            <widget class="QComboBox" name="restrictedInsertionMethodComboBox">
-             <item>
-              <property name="text">
-               <string>Inserción Básica</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Intercambio de Diagonales Restringido</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="6" column="0" colspan="2">
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>Dos Aristas Restringidas</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1">
-            <widget class="QComboBox" name="comboBox">
-             <item>
-              <property name="text">
-               <string>Inserción Básica</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="8" column="0" colspan="2">
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>Triangulo Restringido</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="1">
-            <widget class="QComboBox" name="comboBox_3">
-             <item>
-              <property name="text">
-               <string>Omitir</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_4">
-             <property name="text">
-              <string>Fuera de Malla</string>
+              <string>Interior</string>
              </property>
             </widget>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page">
+         <widget class="QWidget" name="algorithmPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>304</width>
-            <height>432</height>
+            <width>151</width>
+            <height>43</height>
            </rect>
           </property>
           <attribute name="label">
@@ -449,7 +471,7 @@
           </attribute>
           <layout class="QFormLayout" name="formLayout_4">
            <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="comboBox_2">
+            <widget class="QComboBox" name="algorithmComboBox">
              <item>
               <property name="text">
                <string>LEPP - Bisection</string>
@@ -578,9 +600,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>refineOnce</tabstop>
-  <tabstop>refine</tabstop>
-  <tabstop>pause</tabstop>
+  <tabstop>refineOnceButton</tabstop>
+  <tabstop>stopButton</tabstop>
+  <tabstop>refineButton</tabstop>
   <tabstop>zoomHorizontalSlider</tabstop>
  </tabstops>
  <resources/>

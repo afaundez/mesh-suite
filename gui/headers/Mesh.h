@@ -15,19 +15,22 @@ public:
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
-    void drawMesh(Point* lastPos);
+    void drawMesh();
     float lowerX, lowerY;
     float higherX, higherY;
     float scale;
     bool hasTriangles();
     Triangle* getSelectedTriangle();
     void setSelectedTriangle(Triangle* T);
+    Triangle* getTriangle(Point* p);
     void removeTriangle(Triangle* T);
     void removeTriangle(int tid);
     void removeAndDeleteTriangle(Triangle* T);
     void removeAndDeleteTriangle(int tid);
     bool isVirgin();
     void setVirgin(bool virgin);
+    int vertexsSize();
+    int trianglesSize();
 
 private:
     QHash<int, Triangle*>    triangles;
