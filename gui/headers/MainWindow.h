@@ -29,9 +29,9 @@ private:
     GLWidget::GLWidget *glWidget;
 
 private slots:
+    void on_refineOnceButton_clicked();
     void on_manualRadioButton_clicked();
     void on_automaticRadioButton_clicked();
-    void on_refineOnce_clicked();
     void on_actionLoad_triggered();
 };
 

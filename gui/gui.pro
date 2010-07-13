@@ -60,4 +60,5 @@ SOURCES += sources/Vertex.cpp \
     sources/NewPointMethodBisection.cpp \
     sources/InsideInsertionBasic.cpp \
     sources/InsideInsertion.cpp \
-    sources/NewPointMethodCircumcenter.cpp
+    sources/NewPointMethodCircumcenter.cpp \
+    sources/InsideInsertionFlipDiagonal.cpp

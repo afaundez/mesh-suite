@@ -34,7 +34,7 @@ static void theAxis(){
 
 //! [1]
 void GLWidget::initializeGL(){
-    qDebug("initializeGL()");
+    //qDebug("initializeGL()");
 
     this->axis      = glGenLists (1);
     glNewList(axis, GL_COMPILE);
@@ -54,7 +54,7 @@ void GLWidget::initializeGL(){
 
 //! [2]
 void GLWidget::resizeGL(int width, int heigth){
-    qDebug("resizeGL(%d, %d)", width, heigth);
+    //qDebug("resizeGL(%d, %d)", width, heigth);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glViewport(0.0, 0.0, (GLsizei)width, (GLsizei)heigth);
@@ -66,7 +66,7 @@ void GLWidget::resizeGL(int width, int heigth){
 
 //! [3]
 void GLWidget::paintGL(){
-    qDebug("paintGL(%d, %d)",this->width(), this->height());
+    //qDebug("paintGL(%d, %d)",this->width(), this->height());
     glClear(GL_COLOR_BUFFER_BIT);
 
     // drawing the axis

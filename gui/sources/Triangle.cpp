@@ -155,6 +155,52 @@ Constant::IncludeCase Triangle::include(Point* p){
         return Constant::NOT_INCLUDED;
 }
 
+Constant::IncludeCase Triangle::circumcircleInclude(Vertex *v){
+    return this->circumcircleInclude(new Point(v->x(), v->y()));
+}
+
+Constant::IncludeCase Triangle::circumcircleInclude(Point *p){
+    Constant::IncludeCase ic;
+    Point* c =  this->getCircumcenter();
+
+    double d = (this->getCircumradius() - c->distance(p)) ;
+    if (0.0 < d)
+        ic = Constant::INCLUDED;
+    else if(d == 0.0)
+        ic = Constant::BORDER_INCLUDED;
+    else
+        ic = Constant::NOT_INCLUDED;
+
+    return ic;
+}
+
+double Triangle::getCircumradius(){
+    double a, b, c, s;
+
+    a = this->vertexs.at(0)->distance(this->vertexs.at(1));
+    b = this->vertexs.at(1)->distance(this->vertexs.at(2));
+    c = this->vertexs.at(2)->distance(this->vertexs.at(0));
+    s = (a + b + c)/2.0;
+
+    return (a*b*c)/(4*sqrt(s*(s-a)*(s-b)*(s-c)));
+}
+
+Point* Triangle::getCircumcenter(){
+    int ax, ay, bx, by, cx, cy, d, x, y;
+
+    ax = this->vertexs.at(0)->x();
+    ay = this->vertexs.at(0)->y();
+    bx = this->vertexs.at(1)->x();
+    by = this->vertexs.at(1)->y();
+    cx = this->vertexs.at(2)->x();
+    cy = this->vertexs.at(2)->y();
+    d = 2.0*(ax*(by-cy) + bx*(cy-ay) + cx*(ay-by));
+    x = ((ay*ay+ax*ax)*(by-cy) + (by*by+bx*bx)*(cy-ay) + (cy*cy+cx*cx)*(ay-by))/d;
+    y = ((ay*ay+ax*ax)*(cx-bx) + (by*by+bx*bx)*(ax-cx) + (cy*cy+cx*cx)*(bx-ax))/d;
+
+    return new Point(x,y);
+}
+
 
 int Triangle::id(){
     return this->idp;
@@ -173,12 +219,12 @@ int Triangle::getLongestEdge(){
         return 2;
 }
 
-int Triangle::getRestrictedType(){
+Constant::RestrictedType Triangle::getRestrictedType(){
     int count = 0;
     for(unsigned int i = 0; i < 3; i++)
         if(this->restrictedEdges.at(i))
             count++;
-    return count;
+    return (Constant::RestrictedType)count;
 }
 
 int Triangle::getIndex(Vertex *v){

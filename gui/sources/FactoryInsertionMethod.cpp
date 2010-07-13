@@ -1,5 +1,6 @@
 #include "headers/FactoryInsertionMethod.h"
 #include "headers/InsideInsertionBasic.h"
+#include "headers/InsideInsertionFlipDiagonal.h"
 
 InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
     InsertionMethod* ret;
@@ -8,29 +9,38 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
     case Constant::CORNER_INCLUDED:
     case Constant::BORDER_INCLUDED:
         switch(c->triangle()->getRestrictedType()){
-        case 0:
+        case Constant::NOT_RESTRICTED:
+            qDebug("-->\tNo Restricted Case");
             switch(o->insideInsertion()){
             case Constant::BASIC:
+                qDebug("-->\tSelection InsideInsertionBasic");
                 ret = new InsideInsertionBasic(c);
-            default:
-                ret = new InsideInsertionBasic(c);
+            case Constant::FLIP_DIAGONAL:
+                qDebug("-->\tSelection InsideInsertionFlipDiagonal");
+                ret = new InsideInsertionFlipDiagonal(c);
+                break;
+            case Constant::CAVITY:
+                qDebug("-->\tSelection InsideInsertionCavity. Not Implemented");
+                // TODO IMPLEMENT THIS CASE
                 break;
             }
             break;
-        case 1:
+        case Constant::ONE_RESTRICTED:
+            qDebug("-->\tOne Restricted Case");
+            // TODO IMPLEMENT THIS CASE
             break;
-        case 2:
+        case Constant::TWO_RESTRICTED:
+            qDebug("-->\tTwo Restricted Case");
+            // TODO IMPLEMENT THIS CASE
             break;
-        case 3:
-            break;
-        default:
+        case Constant::THREE_RESTRICTED:
+            qDebug("-->\tThree Restricted Case");
+            // TODO IMPLEMENT THIS CASE
             break;
         }
 
         break;
     case Constant::NOT_INCLUDED:
-        break;
-    default:
         break;
     }
     return ret;

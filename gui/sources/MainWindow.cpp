@@ -76,6 +76,7 @@ Options* MainWindow::getOptions(){
     ret->setTriangleSelection(this->ui->automaticTriangleSelectionComboBox->currentIndex());
     ret->setTriangleSelectionValue(this->ui->automaticTriangleSelectionSpinBox->value());
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
+    ret->setInsideInsertion(this->ui->insideNewPointCaseComboBox->currentIndex());
     ret->setOutsideNewPointMethod(this->ui->outsideNewPointCaseComboBox->currentIndex());
     ret->setOneEdgeRestrictedInsertion(this->ui->oneRestrictedNewPointCaseComboBox->currentIndex());
     ret->setTwoEdgeRestrictedInsertion(this->ui->twoRestrictedNewPointCaseComboBox->currentIndex());
@@ -84,7 +85,7 @@ Options* MainWindow::getOptions(){
 }
 
 //! [5]
-void MainWindow::on_refineOnce_clicked()
+void MainWindow::on_refineOnceButton_clicked()
 {
     this->ui->refineOnceButton->setEnabled(false);
     this->ui->refineButton->setEnabled(false);

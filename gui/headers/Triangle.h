@@ -23,9 +23,13 @@ public:
     void glDraw(Constant::GLTriangleType type);
     double orientation(Vertex* A, Vertex* B, Point* P);
     Constant::IncludeCase include(Point* point);
+    Constant::IncludeCase circumcircleInclude(Point* p);
+    Constant::IncludeCase circumcircleInclude(Vertex* v);
+    Point* getCircumcenter();
+    double getCircumradius();
     void setNeighbour(int pos, Triangle* neighbour);
     int getLongestEdge();
-    int getRestrictedType();
+    Constant::RestrictedType getRestrictedType();
     int getIndex(Vertex* v);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     int wichBorder(Point* p);

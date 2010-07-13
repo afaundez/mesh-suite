@@ -11,6 +11,7 @@ namespace Constant{
     enum NewPoint{ BISECT_LONGEST_EDGE, CENTROID, LEPP_BISECTION, CIRCUMCENTER, LEPP_CENTROID, LEPP_DELAUNAY, OFF_CENTER};
     enum OutsideNewPoint{ OUTSIDE_BISECT_LONGEST_EDGE};
     enum InsideInsertion{ BASIC, FLIP_DIAGONAL, CAVITY };
+    enum RestrictedType{ NOT_RESTRICTED, ONE_RESTRICTED, TWO_RESTRICTED, THREE_RESTRICTED};
     enum OneEdgeRestrictedInsertion{ONE_BASIC};
     enum TwoEdgeRestrictedInsertion{TWO_BASIC};
     enum ThreeEdgeRestrictedInsertion{THREE_NONE, THREE_BASIC};
