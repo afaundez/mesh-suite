@@ -6,7 +6,6 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
     InsertionMethod* ret;
     switch(c->includeCase()){
     case Constant::INCLUDED:
-    case Constant::CORNER_INCLUDED:
     case Constant::BORDER_INCLUDED:
         switch(c->triangle()->getRestrictedType()){
         case Constant::NOT_RESTRICTED:
@@ -15,6 +14,7 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
             case Constant::BASIC:
                 qDebug("-->\tSelection InsideInsertionBasic");
                 ret = new InsideInsertionBasic(c);
+                break;
             case Constant::FLIP_DIAGONAL:
                 qDebug("-->\tSelection InsideInsertionFlipDiagonal");
                 ret = new InsideInsertionFlipDiagonal(c);
@@ -38,7 +38,9 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
             // TODO IMPLEMENT THIS CASE
             break;
         }
-
+        break;
+    case Constant::CORNER_INCLUDED:
+        qDebug("Weird Case, it should not happen");
         break;
     case Constant::NOT_INCLUDED:
         break;

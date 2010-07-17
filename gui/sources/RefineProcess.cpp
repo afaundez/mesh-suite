@@ -12,6 +12,11 @@ void RefineProcess::refine(Mesh *mesh, Options *options){
     Configuration* conf;
     InsertionMethod* im;
 
+    // PRE PROCESS
+    qDebug("-->\tPre-processing mesh...");
+    if( !options->onlyFirstPreProcess()|| (options->onlyFirstPreProcess() && mesh->isVirgin()) )
+        FactoryPreProcess::build((Constant::PreProcess)(options->preProcess()), mesh, options)->execute();
+
     // SELECT TRIANGLE
     qDebug("-->\tSelecting triangle");
     if(options->manual()){
@@ -21,11 +26,7 @@ void RefineProcess::refine(Mesh *mesh, Options *options){
         // TODO: implement triangle selection methods
         targetTriangle = FactoryTriangleSelection::build(options->triangleSelection())->process(mesh, options->triangleSelectionValue());
     }
-
-    // PRE PROCESS
-    qDebug("-->\tPre-processing mesh...");
-    if( !options->onlyFirstPreProcess()|| (options->onlyFirstPreProcess() && mesh->isVirgin()) )
-        FactoryPreProcess::build((Constant::PreProcess)(options->preProcess()))->execute();
+    
 
     // PROCESS
     qDebug("-->\tProcessing...");

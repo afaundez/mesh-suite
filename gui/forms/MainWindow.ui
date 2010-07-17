@@ -49,7 +49,7 @@
       </layout>
      </widget>
     </item>
-    <item row="5" column="1">
+    <item row="6" column="1">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -62,7 +62,7 @@
       </property>
      </spacer>
     </item>
-    <item row="5" column="0">
+    <item row="6" column="0">
      <widget class="QFrame" name="controlFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -76,39 +76,69 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="zoomLabel">
+            <widget class="QLabel" name="scaleLabel">
              <property name="text">
               <string>Zoom     </string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="lowestValueLabel">
-             <property name="text">
-              <string>0.1x</string>
+            <widget class="QDoubleSpinBox" name="scaleSpinBox">
+             <property name="maximum">
+              <double>1000.000000000000000</double>
              </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="zoomHorizontalSlider">
-             <property name="minimum">
-              <number>0</number>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
              </property>
              <property name="value">
-              <number>50</number>
-             </property>
-             <property name="sliderPosition">
-              <number>50</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <double>1.000000000000000</double>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="highestValueLabel">
+            <widget class="QLabel" name="openCenterLavel">
              <property name="text">
-              <string>10x</string>
+              <string>Center (</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="xTranslateSpinBox">
+             <property name="minimum">
+              <number>-1000</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="singleStep">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="commaCenterLabel">
+             <property name="text">
+              <string>,</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="yTranslateSpinBox">
+             <property name="minimum">
+              <number>-1000</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="singleStep">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="closeCenterLabel">
+             <property name="text">
+              <string>)</string>
              </property>
             </widget>
            </item>
@@ -166,7 +196,7 @@
       </layout>
      </widget>
     </item>
-    <item row="0" column="2" rowspan="6">
+    <item row="0" column="2" rowspan="7">
      <widget class="QFrame" name="optionFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -188,8 +218,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>252</width>
-            <height>69</height>
+            <width>304</width>
+            <height>432</height>
            </rect>
           </property>
           <attribute name="label">
@@ -198,6 +228,9 @@
           <layout class="QFormLayout" name="formLayout_2">
            <item row="0" column="0" colspan="2">
             <widget class="QComboBox" name="preProcessComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
              <item>
               <property name="text">
                <string>Ninguno</string>
@@ -205,7 +238,7 @@
              </item>
              <item>
               <property name="text">
-               <string>Revisar Diametro</string>
+               <string>Arreglar Vértices Involucrados</string>
               </property>
              </item>
             </widget>
@@ -225,7 +258,7 @@
             <x>0</x>
             <y>0</y>
             <width>315</width>
-            <height>132</height>
+            <height>432</height>
            </rect>
           </property>
           <attribute name="label">
@@ -285,52 +318,90 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>175</width>
-            <height>43</height>
+            <width>304</width>
+            <height>432</height>
            </rect>
           </property>
           <attribute name="label">
            <string>Nuevo Punto</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_3">
-           <property name="fieldGrowthPolicy">
-            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-           </property>
-           <item row="0" column="0" colspan="2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Método para Nuevo Punto:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="outsideNewPointCaseLabel">
+             <property name="text">
+              <string>Si Nuevo punto cae fuera de la malla:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
             <widget class="QComboBox" name="newPointMethodComboBox">
+             <property name="currentIndex">
+              <number>5</number>
+             </property>
              <item>
               <property name="text">
-               <string>Bisect Longest Edge</string>
+               <string>Punto Medio Arista Más Larga</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Centroid</string>
+               <string>Centroide</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp-Bisection</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Circumcenter</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Lepp-Centroid</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Lepp-Delaunay</string>
+               <string>Circuncentro</string>
               </property>
              </item>
              <item>
               <property name="text">
                <string>Off-Center</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lepp - Bisección</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ruppert</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lepp - Centroide</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lepp - Delaunay</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ungor</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QComboBox" name="outsideNewPointCaseComboBox">
+             <item>
+              <property name="text">
+               <string>Punto Medio Arista Más Larga</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Punto Medio Borde Involucrado</string>
               </property>
              </item>
             </widget>
@@ -342,7 +413,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>387</width>
+            <width>304</width>
             <height>432</height>
            </rect>
           </property>
@@ -406,31 +477,11 @@
              </item>
             </widget>
            </item>
-           <item row="12" column="0">
-            <widget class="QLabel" name="outsideNewPointCaseLabel">
-             <property name="text">
-              <string>Fuera de Malla</string>
-             </property>
-            </widget>
-           </item>
-           <item row="12" column="1">
-            <widget class="Line" name="line">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="13" column="1">
-            <widget class="QComboBox" name="outsideNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Bisectar Arista Más Larga</string>
-              </property>
-             </item>
-            </widget>
-           </item>
            <item row="1" column="1">
             <widget class="QComboBox" name="insideNewPointCaseComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
              <item>
               <property name="text">
                <string>Inserción Básica</string>
@@ -462,8 +513,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>151</width>
-            <height>43</height>
+            <width>304</width>
+            <height>432</height>
            </rect>
           </property>
           <attribute name="label">
@@ -603,7 +654,6 @@
   <tabstop>refineOnceButton</tabstop>
   <tabstop>stopButton</tabstop>
   <tabstop>refineButton</tabstop>
-  <tabstop>zoomHorizontalSlider</tabstop>
  </tabstops>
  <resources/>
  <connections/>

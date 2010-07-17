@@ -23,6 +23,8 @@ public:
     Constant::TwoEdgeRestrictedInsertion twoEdgeRestrictedInsertion();
     void setThreeEdgeRestrictedInsertion(int index);
     Constant::ThreeEdgeRestrictedInsertion threeEdgeRestrictedInsertion();
+    void setParameter(double p);
+    double parameter();
 
     void setManual(bool manual);
     bool manual();
@@ -41,6 +43,7 @@ private:
     Constant::OneEdgeRestrictedInsertion ornpp;
     Constant::TwoEdgeRestrictedInsertion trnpp;
     Constant::ThreeEdgeRestrictedInsertion ttrnpp;
+    double pp;
     bool mp;
     bool ofp;
     Constant::PreProcess ppp;

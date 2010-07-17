@@ -40,7 +40,6 @@ void InsideInsertionBasic::execute(){
             t2->replaceNeighbour(T, A);
 
         this->confp->mesh()->removeAndDeleteTriangle(T);
-        this->confp->mesh()->setSelectedTriangle(A);
         break;
     case Constant::BORDER_INCLUDED:
         i0 = this->confp->edges().at(0);
@@ -68,7 +67,6 @@ void InsideInsertionBasic::execute(){
                 t2->replaceNeighbour(T, A);
     
             this->confp->mesh()->removeAndDeleteTriangle(T);
-            this->confp->mesh()->setSelectedTriangle(A);
         }
         else{
             int j2 = t0->getIndex(v1);
@@ -102,7 +100,6 @@ void InsideInsertionBasic::execute(){
     
             this->confp->mesh()->removeAndDeleteTriangle(T);
             this->confp->mesh()->removeAndDeleteTriangle(t0);
-            this->confp->mesh()->setSelectedTriangle(A);
         }
         break;
     case Constant::NOT_INCLUDED:
@@ -110,6 +107,7 @@ void InsideInsertionBasic::execute(){
     default:
         break;
     }
+    this->confp->mesh()->setSelectedTriangle(0);
 }
 
 

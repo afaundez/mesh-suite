@@ -2,20 +2,13 @@
 #define INSIDEINSERTIONFLIPDIAGONAL_H
 
 #include "InsideInsertion.h"
-#include <QVector>
-
-struct Comb{
-    Triangle* T;
-    int i;
-};
 
 class InsideInsertionFlipDiagonal: public InsideInsertion
 {
 public:
     InsideInsertionFlipDiagonal(Configuration* conf);
     void execute();
-    QVector<Comb> flipDiagonal(Triangle* t, int i);
-    void fixDelaunay(Triangle* t, int i);
+    void fixDelaunay(QVector<int> tv);
     ~InsideInsertionFlipDiagonal();
 };
 

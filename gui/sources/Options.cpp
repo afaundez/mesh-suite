@@ -90,6 +90,14 @@ Constant::PreProcess Options::preProcess(){
     return this->ppp;
 }
 
+void Options::setParameter(double p){
+    this->pp = p;
+}
+
+double Options::parameter(){
+    return this->parameter();
+}
+
 Options::~Options(){
 
 }

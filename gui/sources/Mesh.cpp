@@ -11,10 +11,6 @@
 Mesh::Mesh(QString fileName){
     cv = 0;
     ct = 0;
-    lowerX = INT_MAX;
-    lowerY = INT_MAX;
-    higherX = INT_MIN;
-    higherY = INT_MIN;
     QFile inputFile(fileName);
     if( !inputFile.open(QIODevice::ReadOnly)){
         return;
@@ -31,29 +27,21 @@ Mesh::Mesh(QString fileName){
             if( 2 < splitLine.length() ){
                 double newX = QString(splitLine.at(1).toLocal8Bit().constData()).toFloat();
                 double newY = QString(splitLine.at(2).toLocal8Bit().constData()).toFloat();
-                if (newX < lowerX)
-                    lowerX = newX;
-                if (newY < lowerY)
-                    lowerY = newY;
-                if (higherX < newX)
-                    higherX = newX;
-                if (higherY < newY)
-                    higherY = newY;
                 this->createAndAddVertex(newX, newY);
             }
         }
         else if( line.toLower().startsWith('f') ){QStringList splitLine = line.split(' ');
             splitLine = line.split(' ');
             if( 3 < splitLine.length() ){
-                this->createAndAddTriangle(this->vertexs[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
-                                           this->vertexs[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()],
-                                           this->vertexs[QString(splitLine.at(3).toLocal8Bit().constData()).toInt()]);
+                this->createAndAddTriangle(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
+                                           this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()],
+                                           this->vertexsp[QString(splitLine.at(3).toLocal8Bit().constData()).toInt()]);
             }
         }
     }
     // TODO: add neighbours
-    foreach(Triangle* t1, this->triangles){
-        foreach(Triangle* t2, this->triangles){
+    foreach(Triangle* t1, this->trianglesp){
+        foreach(Triangle* t2, this->trianglesp){
             int pos = t1->isNeighbour(t2);
             if( 0 <= pos){
                 t1->setNeighbour(pos, t2);
@@ -61,7 +49,8 @@ Mesh::Mesh(QString fileName){
         }
     }
     inputFile.close();
-    this->scale = 1.0;
+    this->scalep = 1.0;
+    this->centerp = new Point(0.0, 0.0);
     this->selectedTriangle = 0;
     this->virginp = true;
 }
@@ -73,7 +62,7 @@ Mesh::~Mesh(){
 //! [1]
 Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
     Triangle* aux = new Triangle(++ct, v0, v1, v2);
-    this->triangles.insert(aux->id(), aux);
+    this->trianglesp.insert(aux->id(), aux);
     return aux;
 }
 //! [1]
@@ -81,15 +70,16 @@ Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
 //! [2]
 Vertex* Mesh::createAndAddVertex(double x, double y){
     Vertex* aux = new Vertex(++cv, x, y);
-    this->vertexs.insert(aux->id(), aux);
+    this->vertexsp.insert(aux->id(), aux);
     return aux;
 }
 //! [2]
 
 void Mesh::drawMesh(){
     glPushMatrix();
-    glScalef(this->scale, this->scale, this->scale);
-    foreach (Triangle* aux, this->triangles){
+    glScalef(this->scalep, this->scalep, this->scalep);
+    glTranslatef(-this->centerp->x(), -this->centerp->y(), 0.0);
+    foreach (Triangle* aux, this->trianglesp){
         if( aux != this->selectedTriangle)
             aux->glDraw(Constant::NOT_SELECTED);
         else{
@@ -100,7 +90,7 @@ void Mesh::drawMesh(){
 }
 
 bool Mesh::hasTriangles(){
-    return this->triangles.size() > 0 ? true : false;
+    return this->trianglesp.size() > 0 ? true : false;
 }
 
 Triangle* Mesh::getSelectedTriangle(){
@@ -112,7 +102,7 @@ void Mesh::setSelectedTriangle(Triangle* T){
 }
 
 Triangle* Mesh::getTriangle(Point *p){
-    foreach (Triangle* aux, this->triangles){
+    foreach (Triangle* aux, this->trianglesp){
         if(aux->include(p))
             return aux;
     }
@@ -120,25 +110,26 @@ Triangle* Mesh::getTriangle(Point *p){
 }
 
 void Mesh::removeTriangle(Triangle* T){
-    this->triangles.remove(T->id());
+    this->trianglesp.remove(T->id());
 }
 
 void Mesh::removeTriangle(int tid){
-    this->triangles.remove(tid);
+    this->trianglesp.remove(tid);
 }
 
 void Mesh::removeAndDeleteTriangle(Triangle* T){
-    if(this->triangles.contains(T->id())){
-        this->triangles.remove(T->id());
+    if(this->trianglesp.contains(T->id())){
+        this->trianglesp.remove(T->id());
         delete T;
     }
 }
 
 void Mesh::removeAndDeleteTriangle(int tid){
-    if(this->triangles.contains(tid)){
-        Triangle* t = this->triangles.take(tid);
+    if(this->trianglesp.contains(tid)){
+        Triangle* t = this->trianglesp.take(tid);
         delete t;
     }
+    
 }
 
 bool Mesh::isVirgin(){
@@ -149,9 +140,43 @@ void Mesh::setVirgin(bool virgin){
 }
 
 int Mesh::vertexsSize(){
-    return this->vertexs.size();
+    return this->vertexsp.size();
 }
 
 int Mesh::trianglesSize(){
-    return this->triangles.size();
+    return this->trianglesp.size();
+}
+
+void Mesh::setScale(double scale){
+    this->scalep = scale;
+}
+
+double Mesh::scale(){
+    return this->scalep;
+}
+
+void Mesh::setXCenter(int x){
+    this->centerp->setX(x);
+}
+
+void Mesh::setYCenter(int y){
+    this->centerp->setY(y);
+}
+
+Point* Mesh::center(){
+    return this->centerp;
+}
+
+Triangle* Mesh::triangle(int id){
+    if(this->trianglesp.contains(id))
+        return this->trianglesp.value(id);
+    return 0;
+}
+
+QHash<int, Triangle*> Mesh::triangles(){
+    return this->trianglesp;
+}
+
+QHash<int, Vertex*> Mesh::vertexs(){
+    return this->vertexsp;
 }

@@ -1,5 +1,6 @@
-#include "headers/Point.h"
+#include <GL/gl.h>
 #include <math.h>
+#include "headers/Point.h"
 
 Point::Point(double x, double y){
     this->xp = x;
@@ -14,10 +15,14 @@ double Point::y(){
     return this->yp;
 }
 
-double Point::distance(Vertex *v){
-    return this->distance(new Point(v->x(), v->y()));
+void Point::setX(int x){
+    this->xp = x;
 }
 
-double Point::distance(Point *p){
-    return sqrt(pow(this->xp - p->x(), 2) + pow(this->yp-p->y(), 2));
+void Point::setY(int y){
+    this->yp = y;
+}
+
+void Point::glDraw(){
+    glVertex2f(this->xp, this->yp);
 }

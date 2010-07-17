@@ -1,4 +1,5 @@
 #include "headers/NewPointMethodBisection.h"
+#include "headers/Util.h"
 
 
 NewPointMethodBisection::NewPointMethodBisection(Mesh* m, Triangle* t){
@@ -19,7 +20,7 @@ Configuration* NewPointMethodBisection::getConfiguration(){
     a = this->tp->getVertex((i+1)%3);
     b = this->tp->getVertex((i+2)%3);
 
-    p = new Point((a->x() + b->x())/2.0, (a->y() + b->y())/2.0);
+    p = Util::midpoint(a, b);
     ps.insert(0, p);
     es.insert(0, i);
 

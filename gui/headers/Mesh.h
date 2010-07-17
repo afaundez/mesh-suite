@@ -10,15 +10,11 @@ class Mesh
 
 public:
     Mesh(QString fileName);
-    ~Mesh();
     void addTriangle(Triangle* T);
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
     void drawMesh();
-    float lowerX, lowerY;
-    float higherX, higherY;
-    float scale;
     bool hasTriangles();
     Triangle* getSelectedTriangle();
     void setSelectedTriangle(Triangle* T);
@@ -31,11 +27,23 @@ public:
     void setVirgin(bool virgin);
     int vertexsSize();
     int trianglesSize();
+    void setScale(double scale);
+    double scale();
+    void setXCenter(int x);
+    void setYCenter(int y);
+    Point* center();
+
+    Triangle* triangle(int id);
+    QHash<int, Triangle*>    triangles();
+    QHash<int, Vertex*>      vertexs();
+    ~Mesh();
 
 private:
-    QHash<int, Triangle*>    triangles;
-    QHash<int, Vertex*>      vertexs;
+    QHash<int, Triangle*>    trianglesp;
+    QHash<int, Vertex*>      vertexsp;
     int cv, ct;
+    double scalep;
+    Point* centerp;
     Triangle* selectedTriangle;
     bool virginp;
 };

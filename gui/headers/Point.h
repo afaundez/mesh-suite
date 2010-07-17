@@ -1,15 +1,17 @@
 #ifndef POINT_H
 #define POINT_H
 
-#include "Vertex.h"
 class Point{
+
 public:
     Point(double x, double y);
     double x();
     double y();
-    double distance(Point* p);
-    double distance(Vertex* v);
-private:
+    void setX(int x);
+    void setY(int y);
+    void glDraw();
+
+protected:
     double xp, yp;
 };
 

@@ -22,7 +22,6 @@ HEADERS += headers/MainWindow.h \
     headers/FactoryPreProcess.h \
     headers/PreProcessNone.h \
     headers/FactoryTriangleSelection.h \
-    headers/PreProcessEdgeDiameterCircle.h \
     headers/InsideInsertionCavity.h \
     headers/InsideInsertionFlipDiagonal.h \
     headers/InsertionMethod.h \
@@ -34,7 +33,16 @@ HEADERS += headers/MainWindow.h \
     headers/TriangleSelectionSmallestInternalAngle.h \
     headers/FactoryInsertionMethod.h \
     headers/RefineProcess.h \
-    headers/InsideInsertionBasic.h
+    headers/InsideInsertionBasic.h \
+    headers/NewPointMethodCentroid.h \
+    headers/NewPointMethodMidpointEncroachedBorder.h \
+    headers/NewPointMethodOffCenter.h \
+    headers/NewPointMethodRuppert.h \
+    headers/NewPointMethodLeppCentroid.h \
+    headers/NewPointMethodLeppDelaunay.h \
+    headers/NewPointMethodUngor.h \
+    headers/Util.h \
+    headers/PreProcessFixEncroachedVertexs.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -53,7 +61,6 @@ SOURCES += sources/Vertex.cpp \
     sources/Configuration.cpp \
     sources/FactoryInsertionMethod.cpp \
     sources/PreProcessNone.cpp \
-    sources/PreProcessEdgeDiameterCircle.cpp \
     sources/TriangleSelectionSmallestInternalAngle.cpp \
     sources/TriangleSelectionSmallestEdgeBorderTriangleFirst.cpp \
     sources/TriangleSelectionSmallestEdge.cpp \
@@ -61,4 +68,9 @@ SOURCES += sources/Vertex.cpp \
     sources/InsideInsertionBasic.cpp \
     sources/InsideInsertion.cpp \
     sources/NewPointMethodCircumcenter.cpp \
-    sources/InsideInsertionFlipDiagonal.cpp
+    sources/InsideInsertionFlipDiagonal.cpp \
+    sources/NewPointMethodCentroid.cpp \
+    sources/NewPointMethodMidpointEncroachedBorder.cpp \
+    sources/NewPointMethodOffCenter.cpp \
+    sources/NewPointMethodRuppert.cpp \
+    sources/PreProcessFixEncroachedVertexs.cpp

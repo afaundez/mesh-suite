@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->glWidget = new GLWidget(this);
     ui->glLayout->addWidget( glWidget );
     this->mesh = 0;
+    this->enableControl(false);
 }
 //! [0]
 
@@ -30,18 +31,27 @@ Mesh* MainWindow::getMesh(){
 }
 //! [3]
 
+void MainWindow::enableControl(bool active){
+    this->ui->refineOnceButton->setEnabled(active);
+    this->ui->refineButton->setEnabled(active);
+    this->ui->unRefineOnceButton->setEnabled(active);
+    this->ui->stopButton->setEnabled(!active);
+}
+
+void MainWindow::setManual(bool manual){
+    this->ui->automaticTriangleSelectionComboBox->setEnabled(manual);
+    this->ui->automaticTriangleSelectionSpinBox->setEnabled(manual);
+}
+
 //! [4]
 void MainWindow::on_actionLoad_triggered()
 {
     if( this->mesh == 0 || mesh->isVirgin()){
         this->mesh = new Mesh(QFileDialog::getOpenFileName());
         if(this->mesh != 0 && 0 < this->mesh->trianglesSize()){
-            this->ui->refineOnceButton->setEnabled(true);
-            this->ui->refineButton->setEnabled(true);
-            this->ui->unRefineOnceButton->setEnabled(true);
-            this->ui->stopButton->setEnabled(false);
+            this->enableControl(true);
+            this->glWidget->updateGL();
         }
-        this->glWidget->updateGL();
     }
     else{
         QMessageBox msgBox;
@@ -87,44 +97,48 @@ Options* MainWindow::getOptions(){
 //! [5]
 void MainWindow::on_refineOnceButton_clicked()
 {
-    this->ui->refineOnceButton->setEnabled(false);
-    this->ui->refineButton->setEnabled(false);
-    this->ui->unRefineOnceButton->setEnabled(false);
-    this->ui->stopButton->setEnabled(true);
-    qDebug("MainWindow::on_refineOnce_clicked()");
-    Options* options;
-    // GET OPTIONS
-    qDebug("Getting GUI selected options...");
-    options = this->getOptions();
-    try{
-        // REFINE
-        qDebug("Refining...");
-        RefineProcess::refine(mesh, options);
-    }
-    catch (...)
-    {
-        qDebug("An exception occurred");
-    }
+    this->enableControl(false);
+    Options* options = this->getOptions();
+    RefineProcess::refine(mesh, options);
     this->glWidget->updateGL();
-
-    this->ui->refineOnceButton->setEnabled(true);
-    this->ui->refineButton->setEnabled(true);
-    this->ui->unRefineOnceButton->setEnabled(true);
-    this->ui->stopButton->setEnabled(false);
-
+    this->enableControl(true);
 }
 //! [5]
 
 //! [6]
 void MainWindow::on_automaticRadioButton_clicked(){
-    ui->automaticTriangleSelectionComboBox->setEnabled(true);
-    ui->automaticTriangleSelectionSpinBox->setEnabled(true);
+    this->setManual(true);
 }
 //! [6]
 
 //! [7]
 void MainWindow::on_manualRadioButton_clicked(){
-    ui->automaticTriangleSelectionComboBox->setEnabled(false);
-    ui->automaticTriangleSelectionSpinBox->setEnabled(false);
+    this->setManual(false);
 }
 //! [7]
+
+//! [8]
+void MainWindow::on_scaleSpinBox_editingFinished(){
+    if(this->mesh != 0)
+        this->mesh->setScale(this->ui->scaleSpinBox->value());
+    this->glWidget->updateGL();
+}
+//! [8]
+
+//! [9]
+void MainWindow::on_xTranslateSpinBox_editingFinished(){
+    if(this->mesh != 0){
+        this->mesh->setXCenter(this->ui->xTranslateSpinBox->value());
+    }
+    this->glWidget->updateGL();
+}
+//! [9]
+
+//! [10]
+void MainWindow::on_yTranslateSpinBox_editingFinished(){
+    if(this->mesh != 0){
+        this->mesh->setYCenter(this->ui->yTranslateSpinBox->value());
+    }
+    this->glWidget->updateGL();
+}
+//! [10]

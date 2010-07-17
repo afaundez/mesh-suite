@@ -48,7 +48,9 @@ void GLWidget::initializeGL(){
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     glEnable (GL_BLEND);
     glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable (GL_LINE_SMOOTH);
     glHint (GL_LINE_SMOOTH_HINT, GL_NICEST);
+    glLineWidth (1.5);
 }
 //! [1]
 
@@ -95,7 +97,7 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
     if(mesh != 0 && mesh->hasTriangles()){
         int x = event->x();
         int y = event->y();
-        Point* pos = new Point(x - this->width()/2, this->height()/2 - y);
+        Point* pos = new Point((x - this->width()/2)/mesh->scale() + mesh->center()->x(), (this->height()/2 - y)/mesh->scale() + mesh->center()->y());
         mesh->setSelectedTriangle(mesh->getTriangle(pos));
         this->updateGL();
     }

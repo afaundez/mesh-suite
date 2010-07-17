@@ -3,11 +3,13 @@
 
 #include "PreProcess.h"
 #include "Constant.h"
+#include "Mesh.h"
+#include "Options.h"
 
 class FactoryPreProcess
 {
 public:
-    static PreProcess* build(Constant::PreProcess type);
+    static PreProcess* build(Constant::PreProcess type, Mesh* m, Options* options);
 
 };
 
