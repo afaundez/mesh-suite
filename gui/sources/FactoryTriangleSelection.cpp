@@ -7,15 +7,16 @@ TriangleSelection* FactoryTriangleSelection::build(Constant::TriangleSelection t
     TriangleSelection* ret;
     switch(type){
     case Constant::SMALLEST_INTERNAL_ANGLE:
+        qDebug("-->\tGetting triangle with smallest internal angle");
         ret =  new TriangleSelectionSmallestInternalAngle();
         break;
     case Constant::SMALLEST_EDGE:
+        qDebug("-->\tGetting triangle with smallest edge");
         ret = new TriangleSelectionSmallestEdge();
         break;
     case Constant::SMALLEST_EDGE_BORDER_TRIANGLE_FIRST:
+        qDebug("-->\tGetting triangle with smallest edge, preference for border triangles");
         ret =  new TriangleSelectionSmallestEdgeBorderTriangleFirst();
-        break;
-    default:
         break;
     }
     return ret;

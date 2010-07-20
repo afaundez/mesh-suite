@@ -11,7 +11,7 @@ Configuration* NewPointMethodCentroid::getConfiguration(){
     QVector<Point*> ps;
     QVector<int>    es;
     Constant::IncludeCase ic;
-    Triangle* t;
+    Triangle *t, *t1, *t2;
 
     p = this->tp->getCentroid();
     t = this->mp->getTriangle(p);

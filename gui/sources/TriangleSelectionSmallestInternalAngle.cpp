@@ -4,9 +4,15 @@ TriangleSelectionSmallestInternalAngle::TriangleSelectionSmallestInternalAngle()
 
 }
 
-Triangle* TriangleSelectionSmallestInternalAngle::process(Mesh* mesh, int value){
-    Triangle* ret;
-
+Triangle* TriangleSelectionSmallestInternalAngle::process(Mesh* mesh, double value){
+    Triangle* ret = 0;
+    double minAngle = 180.0;
+    foreach(Triangle* t, mesh->triangles()){
+        if( t->getSmallestAngleValue() < value && t->getSmallestAngleValue() <= minAngle){
+            minAngle = t->getSmallestAngleValue();
+            ret = t;
+        }
+    }
     return ret;
 }
 

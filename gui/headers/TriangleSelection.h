@@ -7,7 +7,7 @@
 class TriangleSelection{
 public:
     virtual ~TriangleSelection() {};
-    virtual Triangle* process(Mesh* mesh, int value) = 0;
+    virtual Triangle* process(Mesh* mesh, double value) = 0;
 };
 
 #endif // TRIANGLESELECTION_H

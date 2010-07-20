@@ -5,25 +5,19 @@ InsideInsertionFlipDiagonal::InsideInsertionFlipDiagonal(Configuration* conf): I
 }
 
 void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
-    qDebug("InsideInsertionFlipDiagonal::fixDelaunay");
     Triangle *T, *t0, *t1, *l1, *l2, *t2, *A, *B;
     Vertex *v0, *v1, *v2, *b0;
     int i0, i1, i2, j0, j1, j2;
     QVector<int> tv;
-
     foreach(int id, ids){
-        if(id != -1 && this->confp->mesh()->triangles().contains(id)){
-            qDebug("included in flip diagonal check foreach. Checking tid:%d", id);
+        if(this->confp->mesh()->triangles().contains(id)){
             T = this->confp->mesh()->triangle(id);
             for(int i = 0; i < 3; i++){
                 i0 = i;
                 i1 = (i0+1)%3;
                 i2 = (i1+1)%3;
 
-                if(T == 0)
-                    qDebug("WROOOONG");
                 if(T->getNeighbour(i0) != 0){
-                    qDebug("Triangle has neighbour");
                     t0 = T->getNeighbour(i0);
                     t1 = T->getNeighbour(i1);
                     t2 = T->getNeighbour(i2);
@@ -42,7 +36,6 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                     B = 0;
 
                     if( T->circumcircleInclude(b0) == Constant::INCLUDED){
-                        qDebug("included in flip diagonal check INCLUDED fixing with tid:%d ", t0->id());
                         l1 = t0->getNeighbour(j1);
                         l2 = t0->getNeighbour(j2);
 
@@ -61,15 +54,15 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                         if(t1 != 0)
                             t1->replaceNeighbour(T, B);
 
-                        qDebug("old:%d, news %d %d", T->id(), A->id(), B->id());
+                        qDebug("oldt1: %d oldt2: %d newt1: %d newt2: %d size", T->id(), t0->id(), A->id(), B->id(), this->confp->mesh()->trianglesSize());
 
                         this->confp->mesh()->removeAndDeleteTriangle(T);
                         this->confp->mesh()->removeAndDeleteTriangle(t0);
-                        tv.append(A == 0? -1 :B->id());
-                        tv.append(B == 0? -1 :A->id());
+
+                        tv.append(A->id());
+                        tv.append(B->id());
                         break;
                     }
-                    qDebug("Triangle has neighbour out");
                 }
             }
         }
@@ -79,7 +72,6 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 }
 
 void InsideInsertionFlipDiagonal::execute(){
-    qDebug("InsideInsertionFlipDiagonal::execute()");
 
     Triangle *T, *t0, *t1, *t2, *A, *B, *C, *D;
     Vertex *v0, *v1, *v2;
@@ -99,7 +91,7 @@ void InsideInsertionFlipDiagonal::execute(){
     D = 0;
     switch(this->confp->includeCase()){
     case Constant::INCLUDED:
-        qDebug("InsideInsertionFlipDiagonal::execute() INCLUDED");
+        qDebug("1");
         t0 = T->getNeighbour(0);
         t1 = T->getNeighbour(1);
         t2 = T->getNeighbour(2);
@@ -124,12 +116,13 @@ void InsideInsertionFlipDiagonal::execute(){
             t2->replaceNeighbour(T, A);
 
         this->confp->mesh()->removeAndDeleteTriangle(T);
-        tv.append(A == 0? -1 :A->id());
-        tv.append(B == 0? -1 :B->id());
-        tv.append(C == 0? -1 :C->id());
+        if( A != 0) tv.append(A->id());
+        if( B != 0) tv.append(B->id());
+        if( C != 0) tv.append(C->id());
+        qDebug("2");
         break;
     case Constant::BORDER_INCLUDED:
-        qDebug("InsideInsertionFlipDiagonal::execute() BORDER_INCLUDED");
+        qDebug("3");
         i0 = this->confp->edges().at(0);
         i1 = (i0+1)%3;
         i2 = (i1+1)%3;
@@ -146,7 +139,6 @@ void InsideInsertionFlipDiagonal::execute(){
         B = this->confp->mesh()->createAndAddTriangle(v0, P, v2);
 
         if(t0 == 0){
-            qDebug("InsideInsertionFlipDiagonal:: BORDER_INCLUDED NO NEIGHBOUR");
             A->setNeighbours(0, B, t2);
             B->setNeighbours(0, t1, A);
 
@@ -156,11 +148,10 @@ void InsideInsertionFlipDiagonal::execute(){
                 t2->replaceNeighbour(T, A);
 
             this->confp->mesh()->removeAndDeleteTriangle(T);
-            tv.append(A == 0? -1 :A->id());
-            tv.append(B == 0? -1 :B->id());
+            if( A != 0) tv.append(A->id());
+            if( B != 0) tv.append(B->id());
         }
         else{
-            qDebug("InsideInsertionFlipDiagonal::execute() BORDER_INCLUDED NEIGHBOUR");
             j2 = t0->getIndex(v1);
             j0 = (j2+1)%3;
             j1 = (j0+1)%3;
@@ -191,19 +182,23 @@ void InsideInsertionFlipDiagonal::execute(){
 
             this->confp->mesh()->removeAndDeleteTriangle(T);
             this->confp->mesh()->removeAndDeleteTriangle(t0);
-            tv.append(A == 0? -1 :D->id());
-            tv.append(B == 0? -1 :C->id());
-            tv.append(C == 0? -1 :B->id());
-            tv.append(D == 0? -1 :A->id());
+            if( A != 0) tv.append(A->id());
+            if( B != 0) tv.append(B->id());
+            if( C != 0) tv.append(C->id());
+            if( D != 0) tv.append(D->id());
+
         }
+        qDebug("4");
         break;
     case Constant::NOT_INCLUDED:
     case Constant::CORNER_INCLUDED:
-    default:
+        throw QString("FlipDiagonal Perdida de presicion...");
         break;
     }
+    qDebug("7");
     if(!tv.isEmpty())
         this->fixDelaunay(tv);
+    qDebug("8");
     this->confp->mesh()->setSelectedTriangle(0);
 }
 

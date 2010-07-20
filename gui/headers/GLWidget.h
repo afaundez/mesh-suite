@@ -26,6 +26,7 @@ protected:
     void resizeGL(int width, int height);
     void paintGL();
     void mousePressEvent(QMouseEvent *event);
+    void wheelEvent(QWheelEvent *event);
 
 private:
     QWidget* parent;

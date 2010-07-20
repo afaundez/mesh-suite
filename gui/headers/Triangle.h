@@ -23,7 +23,7 @@ public:
     int isNeighbour(Triangle* neighbour);
 
     Vertex* getVertex(int p);
-    void glDraw(Constant::GLTriangleType type);
+    void glDraw(Constant::GLTriangleType type, double value);
     double orientation(Vertex* A, Vertex* B, Point* P);
     Constant::IncludeCase include(Point* point);
     Constant::IncludeCase circumcircleInclude(Point* p);
@@ -32,19 +32,30 @@ public:
     Point* getCentroid();
     void setNeighbour(int pos, Triangle* neighbour);
     int getLongestEdge();
+    int getSecondLongestEdge();
+    int getSmallestEdge();
+    int getSmallestAngle();
+    double getSmallestAngleValue();
+    double getSmallestEdgeValue();
     Constant::RestrictedType getRestrictedType();
     int getIndex(Vertex* v);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     bool isAnnoying(double angle);
+    bool isConstrained(int edge);
     int wichBorder(Point* p);
+    void printInfo();
 
 
     Constant::IncludeCase edgeInclude(int edge, Point* p);
+    QVector<Triangle*> lepp();
 
     Point* midpoint(int edge);
+    Triangle* neighbour(int edge);
     Vertex* vertex(int i);
     QVector<Vertex*> vertexs();
     QVector<Triangle*> neighbours();
+    double internalAngle(int i);
+    QVector<double> internalAngles();
     ~Triangle();
 
 private:

@@ -8,10 +8,35 @@ namespace Util{
 
     static double distance(Point* a, Point *b){
         return sqrt(pow(b->x() - a->x(), 2) + pow(b->y() - a->y(), 2));
-    }
+    };
 
     static Point* midpoint(Point* a, Point *b){
         return new Point( (b->x() + a->x())/2.0, (b->y() + a->y())/2.0 );
+    };
+
+    static Point* centroid(Point *a, Point *b, Point *c, Point* d){
+        double x0, y0, x1, y1, x2, y2, x3, y3;
+        x0 = a->x();
+        x1 = b->x();
+        x2 = c->x();
+        x3 = d->x();
+        y0 = a->y();
+        y1 = b->y();
+        y2 = c->y();
+        y3 = d->y();
+        double A = 0.5*( (x0*y1 - x1*y0) +
+                         (x1*y2 - x2*y1) +
+                         (x2*y3 - x3*y2) +
+                         (x3*y0 - x0*y3) );
+        double x = ( (x0+x1)*(x0*y1-x1*y0) +
+                     (x1+x2)*(x1*y2-x2*y1) +
+                     (x2+x3)*(x2*y3-x3*y2) +
+                     (x3+x0)*(x3*y0-x0*y3) ) / (6.0*A);
+        double y = ( (y0+y1)*(x0*y1-x1*y0) +
+                     (y1+y2)*(x1*y2-x2*y1) +
+                     (y2+y3)*(x2*y3-x3*y2) +
+                     (y3+y0)*(x3*y0-x0*y3) ) / (6.0*A);
+        return new Point(x, y);
     }
 
     static double circleTest(Point *a, Point *b, Point *c, Point* p){
@@ -28,7 +53,7 @@ namespace Util{
         double I = (c->x() * c->x() - pxs) + (c->y() * c->y() - pys);
 
         return A*E*I - A*F*H + B*F*G - B*D*I + C*D*H - C*E*G;
-    }
+    };
 }
 
 #endif // UTIL_H

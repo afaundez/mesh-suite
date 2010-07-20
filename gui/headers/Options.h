@@ -8,8 +8,8 @@ public:
     Options();
     void setTriangleSelection(int index);
     Constant::TriangleSelection triangleSelection();
-    void setTriangleSelectionValue(int value);
-    int triangleSelectionValue();
+    void setTriangleSelectionValue(double value);
+    double triangleSelectionValue();
 
     void setNewPointMethod(int index);
     Constant::NewPoint newPointMethod();
@@ -26,8 +26,15 @@ public:
     void setParameter(double p);
     double parameter();
 
+    void setLepp(bool active);
+    bool lepp();
+    void setEncroached(bool active);
+    bool encroached();
+
     void setManual(bool manual);
     bool manual();
+    void setAutomatic(bool automatic);
+    bool automatic();
     void setOnlyFirstPreProcess(bool onlyFirst);
     bool onlyFirstPreProcess();
     void setPreProcess(int index);
@@ -36,7 +43,7 @@ public:
 
 private:
     Constant::TriangleSelection tsp;
-    int tsvp;
+    double tsvp;
     Constant::NewPoint npp;
     Constant::OutsideNewPoint onpp;
     Constant::InsideInsertion inpp;
@@ -45,7 +52,10 @@ private:
     Constant::ThreeEdgeRestrictedInsertion ttrnpp;
     double pp;
     bool mp;
+    bool ap;
     bool ofp;
+    bool lp;
+    bool ep;
     Constant::PreProcess ppp;
 };
 

@@ -33,6 +33,8 @@ public:
     void setYCenter(int y);
     Point* center();
 
+    void setValue(double v);
+    double value();
     Triangle* triangle(int id);
     QHash<int, Triangle*>    triangles();
     QHash<int, Vertex*>      vertexs();
@@ -46,6 +48,7 @@ private:
     Point* centerp;
     Triangle* selectedTriangle;
     bool virginp;
+    double valuep;
 };
 
 #endif // MESH_H

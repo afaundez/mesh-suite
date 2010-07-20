@@ -7,7 +7,7 @@ class NewPointMethodLeppBisection: public NewPointMethod{
 public:
     NewPointMethodLeppBisection(Mesh* m, Triangle* t);
     Configuration* getConfiguration();
-    ~NewPointMethodBisection();
+    ~NewPointMethodLeppBisection();
 private:
     Mesh* mp;
     Triangle* tp;

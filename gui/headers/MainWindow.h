@@ -20,6 +20,9 @@ public:
     Mesh* getMesh();
     void enableControl(bool active);
     void setManual(bool manual);
+    void setScale(double scale);
+    void setCenter(Point* center);
+    void updateInfo();
     Options* getOptions();
     ~MainWindow();
 
@@ -31,13 +34,15 @@ private:
     GLWidget::GLWidget *glWidget;
 
 private slots:
+    void on_automaticTriangleSelectionDoubleSpinBox_editingFinished();
     void on_yTranslateSpinBox_editingFinished();
     void on_xTranslateSpinBox_editingFinished();
     void on_scaleSpinBox_editingFinished();
-    void on_refineOnceButton_clicked();
     void on_manualRadioButton_clicked();
     void on_automaticRadioButton_clicked();
     void on_actionLoad_triggered();
+    void on_refineOnceButton_clicked();
+    void on_refineButton_clicked();
 };
 
 #endif // MAINWINDOW_H

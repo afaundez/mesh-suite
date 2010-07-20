@@ -39,10 +39,11 @@ HEADERS += headers/MainWindow.h \
     headers/NewPointMethodOffCenter.h \
     headers/NewPointMethodRuppert.h \
     headers/NewPointMethodLeppCentroid.h \
-    headers/NewPointMethodLeppDelaunay.h \
     headers/NewPointMethodUngor.h \
     headers/Util.h \
-    headers/PreProcessFixEncroachedVertexs.h
+    headers/PreProcessFixEncroachedVertexs.h \
+    ../NewPointMethodLeppCircumcenter.h \
+    headers/NewPointMethodLeppCircumcenter.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -73,4 +74,8 @@ SOURCES += sources/Vertex.cpp \
     sources/NewPointMethodMidpointEncroachedBorder.cpp \
     sources/NewPointMethodOffCenter.cpp \
     sources/NewPointMethodRuppert.cpp \
-    sources/PreProcessFixEncroachedVertexs.cpp
+    sources/PreProcessFixEncroachedVertexs.cpp \
+    sources/NewPointMethodLeppBisection.cpp \
+    sources/NewPointMethodLeppCentroid.cpp \
+    sources/NewPointMethodLeppCircumcenter.cpp \
+    sources/NewPointMethodUngor.cpp

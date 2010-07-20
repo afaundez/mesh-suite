@@ -7,10 +7,11 @@
 #include "headers/FactoryInsertionMethod.h"
 
 
-void RefineProcess::refine(Mesh *mesh, Options *options){
+bool RefineProcess::refine(Mesh *mesh, Options *options){
     Triangle* targetTriangle;
     Configuration* conf;
     InsertionMethod* im;
+
 
     // PRE PROCESS
     qDebug("-->\tPre-processing mesh...");
@@ -20,13 +21,13 @@ void RefineProcess::refine(Mesh *mesh, Options *options){
     // SELECT TRIANGLE
     qDebug("-->\tSelecting triangle");
     if(options->manual()){
+        qDebug("-->\tGetting triangle manually...");
         targetTriangle = mesh->getSelectedTriangle();
     }
     else{
-        // TODO: implement triangle selection methods
+        qDebug("-->\tGetting triangle automatically...");
         targetTriangle = FactoryTriangleSelection::build(options->triangleSelection())->process(mesh, options->triangleSelectionValue());
     }
-    
 
     // PROCESS
     qDebug("-->\tProcessing...");
@@ -51,5 +52,8 @@ void RefineProcess::refine(Mesh *mesh, Options *options){
         // EXECUTE
         qDebug("-->\tExecuting inserting method...");
         im->execute();
+        return true;
     }
+    qDebug("-->\tNo more triangle to process");
+    return false;
 }

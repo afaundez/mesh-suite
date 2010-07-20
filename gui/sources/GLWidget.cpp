@@ -79,6 +79,7 @@ void GLWidget::paintGL(){
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if( mesh != 0 )
         mesh->drawMesh();
+
 }
 //! [3]
 
@@ -91,14 +92,44 @@ void GLWidget::setEmpty(bool _empty){
     this->empty = _empty;
 }
 
-void GLWidget::mousePressEvent(QMouseEvent *event)
- {
+void GLWidget::mousePressEvent(QMouseEvent *event){
+    Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    switch(event->button()){
+    case Qt::LeftButton:
+        if(mesh != 0 && mesh->hasTriangles()){
+            int x = event->x();
+            int y = event->y();
+            Point* pos = new Point((x - this->width()/2)/mesh->scale() + mesh->center()->x(), (this->height()/2 - y)/mesh->scale() + mesh->center()->y());
+            mesh->setSelectedTriangle(mesh->getTriangle(pos));
+            this->updateGL();
+        }
+        break;
+    case Qt::RightButton:
+        if(mesh != 0 && mesh->hasTriangles()){
+            int x = event->x();
+            int y = event->y();
+            Point* pos = new Point((x - this->width()/2)/mesh->scale() + mesh->center()->x(), (this->height()/2 - y)/mesh->scale() + mesh->center()->y());
+            mesh->setSelectedTriangle(mesh->getTriangle(pos));
+            mesh->setXCenter(pos->x());
+            mesh->setYCenter(pos->y());
+            this->updateGL();
+            ((MainWindow*)this->parent)->setCenter(pos);
+        }
+        break;
+    default:
+        break;
+
+    }
+}
+
+void GLWidget::wheelEvent(QWheelEvent * event){
     Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
     if(mesh != 0 && mesh->hasTriangles()){
-        int x = event->x();
-        int y = event->y();
-        Point* pos = new Point((x - this->width()/2)/mesh->scale() + mesh->center()->x(), (this->height()/2 - y)/mesh->scale() + mesh->center()->y());
-        mesh->setSelectedTriangle(mesh->getTriangle(pos));
+        double numDegrees = event->delta() / 8;
+        double numSteps = numDegrees / 15.0 / 10.0;
+        double newScale = mesh->scale() + numSteps;
+        mesh->setScale(newScale);
         this->updateGL();
+        ((MainWindow*)this->parent)->setScale(newScale);
     }
- }
+}

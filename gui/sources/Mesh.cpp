@@ -49,6 +49,7 @@ Mesh::Mesh(QString fileName){
         }
     }
     inputFile.close();
+    this->valuep = 0.0;
     this->scalep = 1.0;
     this->centerp = new Point(0.0, 0.0);
     this->selectedTriangle = 0;
@@ -81,9 +82,9 @@ void Mesh::drawMesh(){
     glTranslatef(-this->centerp->x(), -this->centerp->y(), 0.0);
     foreach (Triangle* aux, this->trianglesp){
         if( aux != this->selectedTriangle)
-            aux->glDraw(Constant::NOT_SELECTED);
+            aux->glDraw(Constant::NOT_SELECTED, this->value());
         else{
-            aux->glDraw(Constant::SELECTED);
+            aux->glDraw(Constant::SELECTED, this->value());
         }
     }
     glPopMatrix();
@@ -165,6 +166,15 @@ void Mesh::setYCenter(int y){
 
 Point* Mesh::center(){
     return this->centerp;
+}
+
+
+void Mesh::setValue(double v){
+    this->valuep = v;
+}
+
+double Mesh::value(){
+    return this->valuep;
 }
 
 Triangle* Mesh::triangle(int id){

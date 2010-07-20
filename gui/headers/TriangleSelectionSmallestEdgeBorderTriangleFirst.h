@@ -6,7 +6,7 @@
 class TriangleSelectionSmallestEdgeBorderTriangleFirst: public TriangleSelection{
 public:
     TriangleSelectionSmallestEdgeBorderTriangleFirst();
-    Triangle* process(Mesh* mesh, int value);
+    Triangle* process(Mesh* mesh, double value);
     ~TriangleSelectionSmallestEdgeBorderTriangleFirst();
 };
 

@@ -11,11 +11,11 @@ Constant::TriangleSelection Options::triangleSelection(){
     return this->tsp;
 }
 
-void Options::setTriangleSelectionValue(int value){
+void Options::setTriangleSelectionValue(double value){
     this->tsvp = value;
 }
 
-int Options::triangleSelectionValue(){
+double Options::triangleSelectionValue(){
     return this->tsvp;
 }
 
@@ -75,6 +75,14 @@ bool Options::manual(){
     return this->mp;
 }
 
+void Options::setAutomatic(bool automatic){
+    this->ap = automatic;
+}
+
+bool Options::automatic(){
+    return this->ap;
+}
+
 void Options::setOnlyFirstPreProcess(bool onlyFirst){
     this->ofp = onlyFirst;
 }
@@ -97,6 +105,24 @@ void Options::setParameter(double p){
 double Options::parameter(){
     return this->parameter();
 }
+
+void Options::setLepp(bool active){
+    this->lp = active;
+}
+
+bool Options::lepp(){
+    return this->lp;
+}
+
+void Options::setEncroached(bool active){
+    this->ep = active;
+}
+
+bool Options::encroached(){
+    return this->ep;
+}
+
+bool Options::encroached();
 
 Options::~Options(){
 

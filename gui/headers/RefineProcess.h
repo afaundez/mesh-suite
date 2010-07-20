@@ -6,7 +6,7 @@
 
 class RefineProcess{
 public:
-    static void refine(Mesh* mesh, Options* options);
+    static bool refine(Mesh* mesh, Options* options);
 };
 
 #endif // REFINEPROCESS_H
