@@ -12,12 +12,10 @@ Configuration* NewPointMethodLeppCircumcenter::getConfiguration(){
     QVector<int>    es;
     Constant::IncludeCase ic;
     Triangle* t;
-    qDebug("1");
     t = this->tp->lepp().last();
     if(t->neighbour(t->getLongestEdge()) != 0)
         t = t->neighbour(t->getLongestEdge());
 
-    qDebug("2");
     p = t->getCircumcenter();
     foreach(Triangle* T, this->mp->triangles()){
         for(int  i  = 0; i < 3; i++){
@@ -31,7 +29,6 @@ Configuration* NewPointMethodLeppCircumcenter::getConfiguration(){
         }
     }
 
-    qDebug("3");
     t = this->mp->getTriangle(p);
     ps.insert(0, p);
     if(t == 0){

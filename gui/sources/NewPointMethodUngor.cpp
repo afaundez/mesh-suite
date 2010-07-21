@@ -1,8 +1,9 @@
 #include "headers/NewPointMethodUngor.h"
 
-NewPointMethodUngor::NewPointMethodUngor(Mesh* m, Triangle* t){
+NewPointMethodUngor::NewPointMethodUngor(Mesh* m, Triangle* t, double a){
     this->mp = m;
     this->tp = t;
+    this->ap = a;
 }
 
 Configuration* NewPointMethodUngor::getConfiguration(){
@@ -13,7 +14,8 @@ Configuration* NewPointMethodUngor::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle* t;
 
-    p = this->tp->getCircumcenter();
+    p = this->tp->getOffCenter(this->ap);
+
     foreach(Triangle* T, this->mp->triangles()){
         for(int  i  = 0; i < 3; i++){
             if(!T->hasNeighbour(i) && T->edgeInclude(i, p)){

@@ -5,12 +5,13 @@
 
 class NewPointMethodUngor: public NewPointMethod{
 public:
-    NewPointMethodUngor(Mesh* m, Triangle* t);
+    NewPointMethodUngor(Mesh* m, Triangle* t, double angle);
     Configuration* getConfiguration();
     ~NewPointMethodUngor();
 private:
     Mesh* mp;
     Triangle* tp;
+    double ap;
 };
 
 #endif // NEWPOINTMETHODUNGOR_H

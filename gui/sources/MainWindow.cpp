@@ -58,7 +58,8 @@ void MainWindow::updateInfo(){
     if(this->mesh != 0){
         QString t   = QString::number(this->mesh->trianglesSize());
         QString v   = QString::number(this->mesh->vertexsSize());
-        this->ui->infoPlainTextEdit->appendPlainText("\nnt:\t" + t + "\tnv\t:" + v);
+        QString a   = QString::number(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
+        this->ui->infoPlainTextEdit->appendPlainText("ma:" + a + "\tnt:" + t + "\tnv:" + v);
     }
     else{
         this->ui->infoPlainTextEdit->appendPlainText("No hay malla cargada");
@@ -149,6 +150,7 @@ void MainWindow::on_refineButton_clicked()
             this->glWidget->updateGL();
         }
         this->enableControl(true);
+        this->glWidget->updateGL();
         this->updateInfo();
     }
     catch(QString e){

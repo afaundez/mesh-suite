@@ -43,7 +43,8 @@ HEADERS += headers/MainWindow.h \
     headers/Util.h \
     headers/PreProcessFixEncroachedVertexs.h \
     ../NewPointMethodLeppCircumcenter.h \
-    headers/NewPointMethodLeppCircumcenter.h
+    headers/NewPointMethodLeppCircumcenter.h \
+    headers/TriangleSelectionSmallestCircumradius.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -78,4 +79,5 @@ SOURCES += sources/Vertex.cpp \
     sources/NewPointMethodLeppBisection.cpp \
     sources/NewPointMethodLeppCentroid.cpp \
     sources/NewPointMethodLeppCircumcenter.cpp \
-    sources/NewPointMethodUngor.cpp
+    sources/NewPointMethodUngor.cpp \
+    sources/TriangleSelectionSmallestCircumradius.cpp

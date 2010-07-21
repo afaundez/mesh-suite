@@ -37,12 +37,19 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
         if(t1->include(p) == Constant::INCLUDED || t1->include(p) == Constant::BORDER_INCLUDED){
             t = t1;
             ic = t1->include(p);
+            i = t1->wichBorder(p);
         }
         else if(t2->include(p) == Constant::INCLUDED || t2->include(p) == Constant::BORDER_INCLUDED){
             t = t2;
             ic = t2->include(p);
+            i = t2->wichBorder(p);
         }
         else{
+            qDebug("(%f, %f), (%f, %f), (%f, %f), (%f, %f)",  t1->vertex(i)->x(), t1->vertex(i)->y(),
+                        t1->vertex((i+1)%3)->x(), t1->vertex((i+1)%3)->y(),
+                        t2->vertex(j)->x(), t2->vertex(j)->y(),
+                        t1->vertex((i+2)%3)->x(), t1->vertex((i+2)%3)->y());
+            qDebug("%f %f %d %d ", p->x(), p->y(), t1->include(p), t2->include(p));
             throw QString("Se ha perdido presicion en la obtencion de configuracion");
         }
     }
@@ -90,6 +97,7 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
 
     ps.insert(0, p);
     es.insert(0, i);
+    qDebug("%d %d", i, ic);
     ret = new Configuration(this->mp, t, ps, es, ic);
 
     return ret;

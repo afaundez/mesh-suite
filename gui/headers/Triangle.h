@@ -24,10 +24,10 @@ public:
 
     Vertex* getVertex(int p);
     void glDraw(Constant::GLTriangleType type, double value);
-    double orientation(Vertex* A, Vertex* B, Point* P);
     Constant::IncludeCase include(Point* point);
     Constant::IncludeCase circumcircleInclude(Point* p);
     Point* getCircumcenter();
+    Point* getOffCenter(double alpha);
     double getCircumradius();
     Point* getCentroid();
     void setNeighbour(int pos, Triangle* neighbour);

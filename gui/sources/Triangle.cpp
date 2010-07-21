@@ -1,10 +1,7 @@
-#include <QMatrix4x4>
-#include <QMatrix2x2>
 #include <GL/gl.h>
 #include <math.h>
 #include "headers/Triangle.h"
 #include "headers/Util.h"
-#include <limits>
 
 //! [0]
 Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2){
@@ -73,26 +70,13 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
     int step;
     switch(type){
     case Constant::SELECTED:
-        //this->printInfo();
+        this->printInfo();
         // TRIANGLE ITSELF
         glBegin(GL_TRIANGLES);
         glColor4f(0.0, 1.0, 0.0, 0.5);
         glVertex2f(v0->x(), v0->y());
         glVertex2f(v1->x(), v1->y());
         glVertex2f(v2->x(), v2->y());
-        // TRIANGLE NEIGHBOURS
-        for(unsigned int i = 0; i < 3; i++){
-            Triangle* neighbour = this->getNeighbour(i);
-            if(neighbour != 0){
-                Vertex* nv0 = neighbour->getVertex(0);
-                Vertex* nv1 = neighbour->getVertex(1);
-                Vertex* nv2 = neighbour->getVertex(2);
-                glColor4f(0.0, 0.0, 0.2, 0.5);
-                glVertex2f(nv0->x(), nv0->y());
-                glVertex2f(nv1->x(), nv1->y());
-                glVertex2f(nv2->x(), nv2->y());
-            }
-        }
         glEnd();
         // EDGE DIAMETER CIRCLE ONLY BORDER
         for(int k = 0; k < 3; k++){
@@ -117,6 +101,9 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
         glEnd();
         glPointSize(3.0);
         glBegin(GL_POINTS);
+        glVertex2f(c->x(), c->y());
+        glColor4f(0.0, 1.0, 0.0, 1.0);
+        c = this->getOffCenter(34.0);
         glVertex2f(c->x(), c->y());
         glEnd();
         glPointSize(1.0);
@@ -147,31 +134,19 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
     }
 }
 
-double Triangle::orientation(Vertex *A, Vertex *B, Point* P){
-    int ax, ay, bx, by, cx, cy;
-    ax = A->x();
-    ay = A->y();
-    bx = B->x();
-    by = B->y();
-    cx = P->x();
-    cy = P->y();
-    QMatrix4x4 M(1, 0, 0, 0, 0, ax, ay, 1, 0, bx, by, 1, 0, cx, cy, 1);
-    return M.determinant();
-}
-
 int Triangle::wichBorder(Point* p){
-    Vertex* v0 = this->getVertex(0);
-    Vertex* v1 = this->getVertex(1);
-    Vertex* v2 = this->getVertex(2);
+    Vertex* v0 = this->vertex(0);
+    Vertex* v1 = this->vertex(1);
+    Vertex* v2 = this->vertex(2);
     double or0, or1, or2;
-    or0 = this->orientation(v1, v2, p);
-    or1 = this->orientation(v2, v0, p);
-    or2 = this->orientation(v0, v1, p);
-    if(0.0 == or0)
+    or0 = Util::orientation(v1, v2, p);
+    or1 = Util::orientation(v2, v0, p);
+    or2 = Util::orientation(v0, v1, p);
+    if(0.0 - 0.000001 < or0 && or0 < 0.0 + 0.000001)
         return 0;
-    else if(0.0 == or1)
+    else if(0.0 - 0.000001 < or1 && or1 < 0.0 + 0.000001)
         return 1;
-    else if(0.0 == or2)
+    else if(0.0 - 0.000001 < or2 && or2 < 0.0 + 0.000001)
         return 2;
     else
         return -1;
@@ -182,15 +157,19 @@ Constant::IncludeCase Triangle::include(Point* p){
     Vertex* v1 = this->getVertex(1);
     Vertex* v2 = this->getVertex(2);
     double or0, or1, or2;
-    or0 = this->orientation(v1, v2, p);
-    or1 = this->orientation(v2, v0, p);
-    or2 = this->orientation(v0, v1, p);
-    if (0.0 < or0 && 0.0 < or1 && 0.0 < or2)
+    or0 = Util::orientation(v1, v2, p);
+    or1 = Util::orientation(v2, v0, p);
+    or2 = Util::orientation(v0, v1, p);
+    if (0.0 + 0.000001 < or0 && 0.0 + 0.000001 < or1 && 0.0 + 0.000001 < or2)
         return Constant::INCLUDED;
-    else if ((0.0 < or0 && or1 == 0.0 && or2 == 0.0) || (or0 == 0.0 && 0.0 < or1 && or2 == 0.0)  || (or0 == 0.0 && or1 == 0.0 && 0.0 < or2))
-        return Constant::CORNER_INCLUDED;
-    else if ((0.0 < or0 && 0.0 < or1 && or2 == 0.0) || (or0 == 0.0 && 0.0 < or1 && 0.0 < or2)  || (0.0 < or0 && or1 == 0.0 && 0.0 < or2))
+    else if ((0.0 + 0.000001 < or0  && 0.0 + 0.000001 < or1  && 0.0 - 0.000001 <= or2 && or2 <= 0.0 + 0.000001) ||
+             (0.0 - 0.000001 <= or0  && or0 <= 0.0 + 0.000001  && 0.0 + 0.000001 < or1 && 0.0 + 0.000001 < or2) ||
+             (0.0 + 0.000001 < or0  && 0.0 - 0.000001 <= or1  && or1 <= 0.0 + 0.000001 && 0.0 + 0.000001 < or2))
         return Constant::BORDER_INCLUDED;
+    else if ((0.0 + 0.000001 < or0 && 0.0 - 0.000001 <= or1 && or1 <= 0.0 + 0.000001 && 0.0 - 0.000001 <= or2 && or2 <= 0.0 + 0.000001) ||
+             (0.0 - 0.000001 <= or0 && or0 <= 0.0 + 0.000001 && 0.0 + 0.000001 < or1 && 0.0 - 0.000001 <= or2 && or2 <= 0.0 + 0.000001) ||
+             (0.0 - 0.000001 <= or0 && or0 <= 0.0 + 0.000001 && 0.0 - 0.000001 <= or1 && or1 <= 0.0 + 0.000001 && 0.0 + 0.000001 < or2))
+        return Constant::CORNER_INCLUDED;
     else
         return Constant::NOT_INCLUDED;
 }
@@ -228,7 +207,6 @@ QVector<Triangle*> Triangle::lepp(){
     ret.append(this);
     Triangle* aux = this->neighbour(this->getLongestEdge());
     while(aux != 0){
-        aux->printInfo();
         if(aux->neighbour(aux->getLongestEdge()) == 0){
             ret.append(aux);
             break;
@@ -262,6 +240,43 @@ Point* Triangle::getCircumcenter(){
         qDebug("denom: %f x:%f, y:%f", d, x, y);
 
     return new Point(x,y);
+}
+
+Point* Triangle::getOffCenter(double alpha){
+    Point *B, *C, *P, *O, *Q;
+    double c, oref, PB, CP, OPref, OP;
+    int se;
+
+    oref = alpha/2.0;
+    se =  this->getSmallestEdge();
+    B = this->vertex((se+2)%3);
+    C = this->getCircumcenter();
+    P = this->midpoint(se);
+    PB = Util::distance(P, B);
+    CP = Util::distance(C, P);
+    c = atan(PB/CP);
+    if( oref <= c*180.0/Constant::pi){
+        return C;
+    }
+    else{
+        OPref = PB/tan(oref*Constant::pi/180.0);
+        qDebug("%f %f", OPref, CP);
+        Q = P;
+        while(true){
+            O = Util::midpoint(C, P);
+            OP = Util::distance(O, Q);
+            if(OPref - 0.000001 < OP && OP < OPref + 0.000001)
+                return O;
+            else{
+                if(OPref + 0.000001 <= OP){
+                    C = O;
+                }
+                else{
+                    P = O;
+                }
+            }
+        }
+    }
 }
 
 Point* Triangle::getCentroid(){
@@ -433,11 +448,11 @@ Triangle* Triangle::neighbour(int i){
 }
 
 void Triangle::printInfo(){
-    qDebug("tid:%d v0(%f, %f) b0(%f, %f) c0(%f, %f) l0:%f l1:%f l2:%f a0:%f a1:%f a2:%f",
+    qDebug("tid:%d v%d(%f, %f) v%d(%f, %f) v%d(%f, %f) l0:%f l1:%f l2:%f a0:%f a1:%f a2:%f",
             this->id(),
-            this->vertex(0)->x(), this->vertex(0)->y(),
-            this->vertex(1)->x(), this->vertex(1)->y(),
-            this->vertex(2)->x(), this->vertex(2)->y(),
+            this->vertex(0)->id(), this->vertex(0)->x(), this->vertex(0)->y(),
+            this->vertex(1)->id(), this->vertex(1)->x(), this->vertex(1)->y(),
+            this->vertex(2)->id(), this->vertex(2)->x(), this->vertex(2)->y(),
             Util::distance(this->vertex(1), this->vertex(2)),
             Util::distance(this->vertex(2), this->vertex(0)),
             Util::distance(this->vertex(0), this->vertex(1)),

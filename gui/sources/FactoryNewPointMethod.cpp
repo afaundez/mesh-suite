@@ -4,8 +4,9 @@
 #include "headers/NewPointMethodLeppCentroid.h"
 #include "headers/NewPointMethodLeppCircumcenter.h"
 #include "headers/NewPointMethodBisection.h"
+#include "headers/NewPointMethodUngor.h"
 
-Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::NewPoint np){
+Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::NewPoint np, double value){
     Configuration* ret;
     NewPointMethod* npm;
     switch(np){
@@ -22,6 +23,7 @@ Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::New
         npm = new NewPointMethodLeppCircumcenter(m, t);
         break;
     case Constant::UNGOR:
+        npm = new NewPointMethodUngor(m, t, value);
         break;
     }
     ret = npm->getConfiguration();

@@ -34,7 +34,7 @@ bool RefineProcess::refine(Mesh *mesh, Options *options){
     if( targetTriangle != 0){
         // NEW POINT METHOD
         qDebug("-->\tGetting configuration for new point...");
-        conf = FactoryNewPointMethod::create(mesh, targetTriangle, options->newPointMethod());
+        conf = FactoryNewPointMethod::create(mesh, targetTriangle, options->newPointMethod(), options->triangleSelectionValue());
 
         // CHECK INSERTION WHETER INSIDE OR OUTSIDE INSERTION
         if(conf->triangle() == 0){ //OUTSIDE

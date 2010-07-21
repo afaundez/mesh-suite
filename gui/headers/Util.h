@@ -39,6 +39,19 @@ namespace Util{
         return new Point(x, y);
     }
 
+
+
+    static double orientation(Point *A, Point* B, Point* P){
+        double ax, ay, bx, by, px, py;
+        ax = A->x();
+        ay = A->y();
+        bx = B->x();
+        by = B->y();
+        px = P->x();
+        py = P->y();
+        return (ax-px)*(by-py) - (ay-py)*(bx-px);
+    }
+
     static double circleTest(Point *a, Point *b, Point *c, Point* p){
         double pxs = p->x() * p->x();
         double pys = p->y() * p->y();

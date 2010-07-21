@@ -64,7 +64,7 @@
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="preProcessPage">
           <property name="geometry">
@@ -111,7 +111,7 @@
             <x>0</x>
             <y>0</y>
             <width>315</width>
-            <height>132</height>
+            <height>432</height>
            </rect>
           </property>
           <attribute name="label">
@@ -152,7 +152,12 @@
              </item>
              <item>
               <property name="text">
-               <string>Menor longitud Arista, Triángulos en Borde</string>
+               <string>Menor ángulo interno, Aristas restrigidas</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Menor Circumcentro</string>
               </property>
              </item>
             </widget>
@@ -160,7 +165,7 @@
            <item row="4" column="1">
             <widget class="QDoubleSpinBox" name="automaticTriangleSelectionDoubleSpinBox">
              <property name="value">
-              <double>38.000000000000000</double>
+              <double>20.000000000000000</double>
              </property>
             </widget>
            </item>
