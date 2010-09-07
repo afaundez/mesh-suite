@@ -78,15 +78,16 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-GPMk0zbMEs,guid=025feea00fec8e84d459efd80000002e</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-zlHWZp3PNB,guid=1528c761cf28cc1e4259222a00006890</value>
+    <value type="QString">DESKTOP_AUTOSTART_ID=10b160b8ccc7b68055128375172244008100000115270002</value>
     <value type="QString">DESKTOP_SESSION=default</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=default</value>
     <value type="QString">GDM_LANG=en_US.UTF-8</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-UEEvQ0</value>
-    <value type="QString">GNOME_KEYRING_PID=2173</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-afEzTh</value>
+    <value type="QString">GNOME_KEYRING_PID=11518</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/alvaro/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/alvaro</value>
@@ -97,16 +98,16 @@
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/alvaro</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/2254,unix/nube:/tmp/.ICE-unix/2254</value>
-    <value type="QString">SHELL=/bin/zsh</value>
-    <value type="QString">SSH_AGENT_PID=2320</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-UEEvQ0/ssh</value>
+    <value type="QString">SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/11527,unix/nube:/tmp/.ICE-unix/11527</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SSH_AGENT_PID=11567</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-afEzTh/ssh</value>
     <value type="QString">USER=alvaro</value>
     <value type="QString">USERNAME=alvaro</value>
-    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">WINDOWPATH=8</value>
     <value type="QString">XAUTHORITY=/home/alvaro/.Xauthority</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString">XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1279716377.18522-1017044630</value>
+    <value type="QString">XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1283751722.135146-1314498459</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
     <value type="QString">/home/alvaro/workspace/MeshSuite/gui/gui.pro</value>
@@ -127,15 +128,16 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-GPMk0zbMEs,guid=025feea00fec8e84d459efd80000002e</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-zlHWZp3PNB,guid=1528c761cf28cc1e4259222a00006890</value>
+    <value type="QString">DESKTOP_AUTOSTART_ID=10b160b8ccc7b68055128375172244008100000115270002</value>
     <value type="QString">DESKTOP_SESSION=default</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=default</value>
     <value type="QString">GDM_LANG=en_US.UTF-8</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-UEEvQ0</value>
-    <value type="QString">GNOME_KEYRING_PID=2173</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-afEzTh</value>
+    <value type="QString">GNOME_KEYRING_PID=11518</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/alvaro/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/alvaro</value>
@@ -146,16 +148,16 @@
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/alvaro</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/2254,unix/nube:/tmp/.ICE-unix/2254</value>
-    <value type="QString">SHELL=/bin/zsh</value>
-    <value type="QString">SSH_AGENT_PID=2320</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-UEEvQ0/ssh</value>
+    <value type="QString">SESSION_MANAGER=local/nube:@/tmp/.ICE-unix/11527,unix/nube:/tmp/.ICE-unix/11527</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SSH_AGENT_PID=11567</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-afEzTh/ssh</value>
     <value type="QString">USER=alvaro</value>
     <value type="QString">USERNAME=alvaro</value>
-    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">WINDOWPATH=8</value>
     <value type="QString">XAUTHORITY=/home/alvaro/.Xauthority</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString">XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1279716377.18522-1017044630</value>
+    <value type="QString">XDG_SESSION_COOKIE=78c63bbd49df5d8780fd12b04ae7ed94-1283751722.135146-1314498459</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">

@@ -113,10 +113,6 @@ Options* MainWindow::getOptions(){
     ret->setTriangleSelectionValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
     ret->setInsideInsertion(this->ui->insideNewPointCaseComboBox->currentIndex());
-    ret->setOutsideNewPointMethod(this->ui->outsideNewPointCaseComboBox->currentIndex());
-    ret->setOneEdgeRestrictedInsertion(this->ui->oneRestrictedNewPointCaseComboBox->currentIndex());
-    ret->setTwoEdgeRestrictedInsertion(this->ui->twoRestrictedNewPointCaseComboBox->currentIndex());
-    ret->setThreeEdgeRestrictedInsertion(this->ui->threeRestrictedNewPointCaseComboBox->currentIndex());
     ret->setManual(this->ui->manualRadioButton->isChecked());
     return ret;
 }

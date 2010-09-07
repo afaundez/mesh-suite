@@ -64,15 +64,15 @@
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="preProcessPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>252</width>
-            <height>69</height>
+            <width>295</width>
+            <height>434</height>
            </rect>
           </property>
           <attribute name="label">
@@ -82,7 +82,7 @@
            <item row="0" column="0" colspan="2">
             <widget class="QComboBox" name="preProcessComboBox">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <item>
               <property name="text">
@@ -101,6 +101,9 @@
              <property name="text">
               <string>Sólo antes de primera inserción</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
           </layout>
@@ -110,8 +113,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>315</width>
-            <height>432</height>
+            <width>306</width>
+            <height>434</height>
            </rect>
           </property>
           <attribute name="label">
@@ -169,6 +172,16 @@
              </property>
             </widget>
            </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QCheckBox" name="checkBox">
+             <property name="text">
+              <string>Repetir triángulo hasta destruir</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="newPointPage">
@@ -177,7 +190,7 @@
             <x>0</x>
             <y>0</y>
             <width>295</width>
-            <height>432</height>
+            <height>434</height>
            </rect>
           </property>
           <attribute name="label">
@@ -201,17 +214,17 @@
              </property>
              <item>
               <property name="text">
-               <string>Lepp - Bisección</string>
+               <string>Punto Medio Arista Terminal Lepp</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Ruppert</string>
+               <string>Circumcentro o Punto Medio Arista Involucrada</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp - Centroide</string>
+               <string>Centroide Arista Terminal Lepp</string>
               </property>
              </item>
              <item>
@@ -226,27 +239,6 @@
              </item>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="outsideNewPointCaseLabel">
-             <property name="text">
-              <string>Si Nuevo punto cae fuera de la malla:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0" colspan="2">
-            <widget class="QComboBox" name="outsideNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Punto Medio Arista Más Larga</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Punto Medio Borde Involucrado</string>
-              </property>
-             </item>
-            </widget>
-           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="insertionPage">
@@ -255,7 +247,7 @@
             <x>0</x>
             <y>0</y>
             <width>296</width>
-            <height>232</height>
+            <height>434</height>
            </rect>
           </property>
           <attribute name="label">
@@ -265,60 +257,7 @@
            <property name="fieldGrowthPolicy">
             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
            </property>
-           <item row="3" column="0" colspan="2">
-            <widget class="QLabel" name="oneRestrictedNewPointCaseLabel">
-             <property name="text">
-              <string>Una Arista Restringida</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="1">
-            <widget class="QComboBox" name="oneRestrictedNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Inserción Básica</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Intercambio de Diagonales Restringido</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="6" column="0" colspan="2">
-            <widget class="QLabel" name="twoRestrictedNewPointCaseLabel">
-             <property name="text">
-              <string>Dos Aristas Restringidas</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1">
-            <widget class="QComboBox" name="twoRestrictedNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Inserción Básica</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="8" column="0" colspan="2">
-            <widget class="QLabel" name="threeRestrictedNewPointCaseLabel">
-             <property name="text">
-              <string>Triangulo Restringido</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="1">
-            <widget class="QComboBox" name="threeRestrictedNewPointCaseComboBox">
-             <item>
-              <property name="text">
-               <string>Omitir</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="1">
+           <item row="0" column="1">
             <widget class="QComboBox" name="insideNewPointCaseComboBox">
              <property name="currentIndex">
               <number>1</number>
@@ -340,53 +279,36 @@
              </item>
             </widget>
            </item>
-           <item row="0" column="0" colspan="2">
-            <widget class="QLabel" name="insideNewPointCaseLabel">
-             <property name="text">
-              <string>Interior</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="algorithmPage">
+         <widget class="QWidget" name="restrictionRecoveryPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>151</width>
-            <height>43</height>
+            <width>295</width>
+            <height>434</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Algoritmos</string>
+           <string>Recuperación de Restricciones</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_4">
            <item row="0" column="0" colspan="2">
             <widget class="QComboBox" name="algorithmComboBox">
              <item>
               <property name="text">
-               <string>LEPP - Bisection</string>
+               <string>No Recuperar</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>LEPP - Centroid</string>
+               <string>Recuperar por Unión</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>LEPP - Delaunay</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Ruppert</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Off - Center</string>
+               <string>Recupearación Completa</string>
               </property>
              </item>
             </widget>
@@ -561,7 +483,7 @@
      <x>0</x>
      <y>0</y>
      <width>1061</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

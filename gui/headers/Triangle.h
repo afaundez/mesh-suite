@@ -37,7 +37,6 @@ public:
     int getSmallestAngle();
     double getSmallestAngleValue();
     double getSmallestEdgeValue();
-    Constant::RestrictedType getRestrictedType();
     int getIndex(Vertex* v);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     bool isAnnoying(double angle);

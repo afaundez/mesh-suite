@@ -18,11 +18,6 @@ public:
     void setInsideInsertion(int index);
     Constant::InsideInsertion insideInsertion();
     void setOneEdgeRestrictedInsertion(int index);
-    Constant::OneEdgeRestrictedInsertion oneEdgeRestrictedInsertion();
-    void setTwoEdgeRestrictedInsertion(int index);
-    Constant::TwoEdgeRestrictedInsertion twoEdgeRestrictedInsertion();
-    void setThreeEdgeRestrictedInsertion(int index);
-    Constant::ThreeEdgeRestrictedInsertion threeEdgeRestrictedInsertion();
     void setParameter(double p);
     double parameter();
 
@@ -47,9 +42,6 @@ private:
     Constant::NewPoint npp;
     Constant::OutsideNewPoint onpp;
     Constant::InsideInsertion inpp;
-    Constant::OneEdgeRestrictedInsertion ornpp;
-    Constant::TwoEdgeRestrictedInsertion trnpp;
-    Constant::ThreeEdgeRestrictedInsertion ttrnpp;
     double pp;
     bool mp;
     bool ap;

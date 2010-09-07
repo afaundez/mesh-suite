@@ -347,14 +347,6 @@ double Triangle::getSmallestEdgeValue(){
     return Util::distance(this->vertex( (this->getSmallestEdge()+1)%3 ), this->vertex( (this->getSmallestEdge()+2)%3));
 }
 
-Constant::RestrictedType Triangle::getRestrictedType(){
-    int count = 0;
-    for(unsigned int i = 0; i < 3; i++)
-        if(this->restrictedEdgesp.at(i))
-            count++;
-    return (Constant::RestrictedType)count;
-}
-
 int Triangle::getIndex(Vertex *v){
     for(unsigned int i = 0; i < 3; i++)
         if( this->vertexsp.at(i) == v)
