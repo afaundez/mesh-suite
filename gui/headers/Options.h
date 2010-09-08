@@ -32,6 +32,12 @@ public:
     bool automatic();
     void setOnlyFirstPreProcess(bool onlyFirst);
     bool onlyFirstPreProcess();
+
+    void setUseLepp(bool use);
+    bool useLepp();
+
+    void setRepeatLastSelectedTriangle(bool repeat);
+    bool repeatLastSelectedTriangle();
     void setPreProcess(int index);
     Constant::PreProcess preProcess();
     ~Options();
@@ -42,6 +48,8 @@ private:
     Constant::NewPoint npp;
     Constant::OutsideNewPoint onpp;
     Constant::InsideInsertion inpp;
+    bool repeatLastSelectedTrianglep;
+    bool useLeppp;
     double pp;
     bool mp;
     bool ap;

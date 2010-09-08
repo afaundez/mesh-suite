@@ -193,7 +193,6 @@ void InsideInsertionFlipDiagonal::execute(){
     }
     if(!tv.isEmpty())
         this->fixDelaunay(tv);
-    this->confp->mesh()->setSelectedTriangle(0);
 }
 
 InsideInsertionFlipDiagonal::~InsideInsertionFlipDiagonal(){

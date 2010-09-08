@@ -9,41 +9,59 @@
 
 bool RefineProcess::refine(Mesh *mesh, Options *options){
     Triangle* targetTriangle;
+    Triangle* selectedTriangle;
     Configuration* conf;
     InsertionMethod* im;
+    bool insertion = false;
 
 
     qDebug("-->\tPre-processing mesh...");
     if( !options->onlyFirstPreProcess()|| (options->onlyFirstPreProcess() && mesh->isVirgin()) )
         FactoryPreProcess::build((Constant::PreProcess)(options->preProcess()), mesh, options)->execute();
 
-    qDebug("-->\tSelecting triangle");
-    if(options->manual()){
-        qDebug("-->\tGetting triangle manually...");
-        targetTriangle = mesh->getSelectedTriangle();
+
+    qDebug("-->\tGetting triangle");
+    if(options->repeatLastSelectedTriangle() && mesh->triangles().contains(mesh->lastSelectedTriangleID())){
+        selectedTriangle = mesh->triangle(mesh->lastSelectedTriangleID());
     }
     else{
-        qDebug("-->\tGetting triangle automatically...");
-        targetTriangle = FactoryTriangleSelection::build(options->triangleSelection())->process(mesh, options->triangleSelectionValue());
+        selectedTriangle = mesh->getSelectedTriangle();
+        if(selectedTriangle == 0)
+            selectedTriangle = FactoryTriangleSelection::build(options->triangleSelection())->process(mesh, options->triangleSelectionValue());
     }
+    mesh->setLastSelectedTriangleID(selectedTriangle == 0 ? -1 : selectedTriangle->id());
 
     qDebug("-->\tProcessing...");
-    if( targetTriangle != 0){
+    if( selectedTriangle != 0){
+
+        /*if(options->useLepp()){
+            qDebug("-->\tUsing Lepp");
+            targetTriangle = selectedTriangle->lepp().last();
+        }
+        else{*/
+            targetTriangle = selectedTriangle;
+        //}
+
         qDebug("-->\tGetting configuration for new point...");
         conf = FactoryNewPointMethod::create(mesh, targetTriangle, options->newPointMethod(), options->triangleSelectionValue());
 
-        if(conf->triangle() == 0){ //OUTSIDE
-            qDebug("-->\tNew Point is outside the mesh. Forcing outside configuration for new point...");
-            conf = FactoryNewPointMethod::create(mesh, targetTriangle, options->outsideNewPointMethod());
+        if(conf->triangle() != 0){
+            qDebug("-->\tCreating inserting method...");
+            im = FactoryInsertionMethod::create(conf, options);
+
+            qDebug("-->\tExecuting inserting method...");
+            im->execute();
+            insertion = true;
         }
+        qDebug("-->\tNew Point Ouside Mesh Domain");
 
-        qDebug("-->\tCreating inserting method...");
-        im = FactoryInsertionMethod::create(conf, options);
-
-        qDebug("-->\tExecuting inserting method...");
-        im->execute();
-        return true;
     }
-    qDebug("-->\tNo more triangle to process");
-    return false;
+
+    if(mesh->triangles().contains(mesh->lastSelectedTriangleID()))
+        mesh->setSelectedTriangle(mesh->triangle(mesh->lastSelectedTriangleID()));
+    else{
+        mesh->setLastSelectedTriangleID(-1);
+        mesh->setSelectedTriangle(0);
+    }
+    return insertion;
 }

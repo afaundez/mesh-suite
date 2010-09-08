@@ -29,18 +29,3 @@ Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::New
     ret = npm->getConfiguration();
     return ret;
 }
-
-
-Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::OutsideNewPoint np){
-    Configuration* ret;
-    NewPointMethod* npm;
-    switch(np){
-    case Constant::OUTSIDE_MIDPOINT_LONGEST_EDGE:
-        npm = new NewPointMethodBisection(m, t);
-        break;
-    case Constant::MIDPOINT_ENCROACHED_BORDER:
-        break;
-    }
-    ret = npm->getConfiguration();
-    return ret;
-}

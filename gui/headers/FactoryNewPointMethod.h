@@ -7,7 +7,6 @@
 class FactoryNewPointMethod{
 public:
     static Configuration* create(Mesh* m, Triangle* t, Constant::NewPoint np, double value);
-    static Configuration* create(Mesh *m, Triangle *t, Constant::OutsideNewPoint onp);
     ~FactoryNewPointMethod();
 };
 

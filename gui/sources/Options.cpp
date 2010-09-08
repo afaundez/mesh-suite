@@ -100,6 +100,22 @@ bool Options::encroached(){
 
 bool Options::encroached();
 
+void Options::setUseLepp(bool use){
+    this->useLeppp = use;
+}
+
+bool Options::useLepp(){
+    return this->useLeppp;
+}
+
+void Options::setRepeatLastSelectedTriangle(bool repeat){
+    this->repeatLastSelectedTrianglep = repeat;
+}
+
+bool Options::repeatLastSelectedTriangle(){
+    return this->repeatLastSelectedTrianglep;
+}
+
 Options::~Options(){
 
 }

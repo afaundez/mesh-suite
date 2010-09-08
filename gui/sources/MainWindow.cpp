@@ -113,7 +113,7 @@ Options* MainWindow::getOptions(){
     ret->setTriangleSelectionValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
     ret->setInsideInsertion(this->ui->insideNewPointCaseComboBox->currentIndex());
-    ret->setManual(this->ui->manualRadioButton->isChecked());
+    ret->setRepeatLastSelectedTriangle(this->ui->repeatSelectedTriangleCheckBox->isChecked());
     return ret;
 }
 

@@ -33,6 +33,9 @@ public:
     void setYCenter(int y);
     Point* center();
 
+    void setLastSelectedTriangleID(int id);
+    int lastSelectedTriangleID();
+
     void setValue(double v);
     double value();
     Triangle* triangle(int id);
@@ -47,6 +50,7 @@ private:
     double scalep;
     Point* centerp;
     Triangle* selectedTriangle;
+    int lastSelectedTriangleIDp;
     bool virginp;
     double valuep;
 };

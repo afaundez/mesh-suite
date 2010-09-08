@@ -53,6 +53,7 @@ Mesh::Mesh(QString fileName){
     this->scalep = 1.0;
     this->centerp = new Point(0.0, 0.0);
     this->selectedTriangle = 0;
+    this->lastSelectedTriangleIDp = -1;
     this->virginp = true;
 }
 //! [0]
@@ -166,6 +167,14 @@ void Mesh::setYCenter(int y){
 
 Point* Mesh::center(){
     return this->centerp;
+}
+
+void Mesh::setLastSelectedTriangleID(int id){
+    this->lastSelectedTriangleIDp = id;
+}
+
+int Mesh::lastSelectedTriangleID(){
+    return this->lastSelectedTriangleIDp;
 }
 
 

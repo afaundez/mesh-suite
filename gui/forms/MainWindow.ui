@@ -121,27 +121,13 @@
            <string>Selección de Triángulo</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_7">
-           <item row="0" column="0">
-            <widget class="QRadioButton" name="manualRadioButton">
-             <property name="text">
-              <string>Manual</string>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QRadioButton" name="automaticRadioButton">
-             <property name="text">
-              <string>Automático</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0" colspan="2">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+           </property>
+           <item row="1" column="0" colspan="2">
             <widget class="QComboBox" name="automaticTriangleSelectionComboBox">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <item>
               <property name="text">
@@ -165,20 +151,27 @@
              </item>
             </widget>
            </item>
-           <item row="4" column="1">
+           <item row="4" column="0" colspan="2">
+            <widget class="QCheckBox" name="repeatSelectedTriangleCheckBox">
+             <property name="text">
+              <string>Repetir triángulo hasta destruir</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
             <widget class="QDoubleSpinBox" name="automaticTriangleSelectionDoubleSpinBox">
              <property name="value">
               <double>20.000000000000000</double>
              </property>
             </widget>
            </item>
-           <item row="5" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkBox">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>Repetir triángulo hasta destruir</string>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
+              <string>Mínimo Ángulo Interior [º]</string>
              </property>
             </widget>
            </item>
@@ -189,7 +182,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>295</width>
+            <width>340</width>
             <height>434</height>
            </rect>
           </property>
@@ -214,27 +207,27 @@
              </property>
              <item>
               <property name="text">
-               <string>Punto Medio Arista Terminal Lepp</string>
+               <string>Lepp-Bisección</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Circumcentro o Punto Medio Arista Involucrada</string>
+               <string>Ruppert</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Centroide Arista Terminal Lepp</string>
+               <string>Lepp-Centroide</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp - Ruppert</string>
+               <string>Lepp-Ruppert</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Ungor</string>
+               <string>Off-Center</string>
               </property>
              </item>
             </widget>
@@ -246,7 +239,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>296</width>
+            <width>295</width>
             <height>434</height>
            </rect>
           </property>
