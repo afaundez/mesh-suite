@@ -47,12 +47,20 @@ Mesh::Mesh(QString fileName){
             }
         }
     }
-//    int ti = 1;
-//    foreach(Triangle* taux, this->trianglesp){
-//        for(int pos = 0; pos < 3; pos++ )
-//            if(taux->getNeighbour(pos) == 0)
-//                qDebug("%d %d %d", ti++,taux->vertex((pos+1)%3)->id(), taux->vertex((pos+2)%3)->id());
-//    }
+
+    qDebug("%d %d", this->vertexs().size(), 2);
+    foreach(Vertex* v, this->vertexs()){
+        qDebug("%d %f %f", v->id(), v->x(), v->y());
+    }
+
+
+    qDebug("X 0");
+    int ti = 1;
+    foreach(Triangle* taux, this->triangles()){
+        for(int pos = 0; pos < 3; pos++ )
+            if(taux->getNeighbour(pos) == 0)
+                qDebug("%d %d %d", ti++,taux->vertex((pos+1)%3)->id(), taux->vertex((pos+2)%3)->id());
+    }
 
     inputFile.close();
     this->valuep = 0.0;
@@ -163,11 +171,12 @@ double Mesh::scale(){
     return this->scalep;
 }
 
-void Mesh::setXCenter(int x){
+void Mesh::setXCenter(double x){
     this->centerp->setX(x);
+    qDebug("%f %f", x, this->centerp->x());
 }
 
-void Mesh::setYCenter(int y){
+void Mesh::setYCenter(double y){
     this->centerp->setY(y);
 }
 

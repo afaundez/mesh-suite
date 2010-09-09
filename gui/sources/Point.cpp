@@ -15,11 +15,11 @@ double Point::y(){
     return this->yp;
 }
 
-void Point::setX(int x){
+void Point::setX(double x){
     this->xp = x;
 }
 
-void Point::setY(int y){
+void Point::setY(double y){
     this->yp = y;
 }
 

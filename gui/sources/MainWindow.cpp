@@ -44,8 +44,8 @@ void MainWindow::setScale(double scale){
 }
 
 void MainWindow::setCenter(Point *center){
-    this->ui->xTranslateSpinBox->setValue(center->x());
-    this->ui->yTranslateSpinBox->setValue(center->y());
+    this->ui->xTranslateDoubleSpinBox->setValue(center->x());
+    this->ui->yTranslateDoubleSpinBox->setValue(center->y());
 }
 
 void MainWindow::updateInfo(){
@@ -229,18 +229,18 @@ void MainWindow::on_scaleSpinBox_editingFinished(){
 //! [8]
 
 //! [9]
-void MainWindow::on_xTranslateSpinBox_editingFinished(){
+void MainWindow::on_xTranslateDoubleSpinBox_editingFinished(){
     if(this->mesh != 0){
-        this->mesh->setXCenter(this->ui->xTranslateSpinBox->value());
+        this->mesh->setXCenter(this->ui->xTranslateDoubleSpinBox->value());
     }
     this->glWidget->updateGL();
 }
 //! [9]
 
 //! [10]
-void MainWindow::on_yTranslateSpinBox_editingFinished(){
+void MainWindow::on_yTranslateDoubleSpinBox_editingFinished(){
     if(this->mesh != 0){
-        this->mesh->setYCenter(this->ui->yTranslateSpinBox->value());
+        this->mesh->setYCenter(this->ui->yTranslateDoubleSpinBox->value());
     }
     this->glWidget->updateGL();
 }

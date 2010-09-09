@@ -71,8 +71,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>362</width>
-            <height>434</height>
+            <width>251</width>
+            <height>420</height>
            </rect>
           </property>
           <attribute name="label">
@@ -342,8 +342,11 @@
          </item>
          <item>
           <widget class="QDoubleSpinBox" name="scaleSpinBox">
+           <property name="decimals">
+            <number>3</number>
+           </property>
            <property name="maximum">
-            <double>1000.000000000000000</double>
+            <double>999999999.000000000000000</double>
            </property>
            <property name="singleStep">
             <double>0.500000000000000</double>
@@ -361,15 +364,15 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="xTranslateSpinBox">
+          <widget class="QDoubleSpinBox" name="xTranslateDoubleSpinBox">
+           <property name="decimals">
+            <number>3</number>
+           </property>
            <property name="minimum">
-            <number>-1000</number>
+            <double>-999999999.000000000000000</double>
            </property>
            <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="singleStep">
-            <number>10</number>
+            <double>999999999.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -381,15 +384,15 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="yTranslateSpinBox">
+          <widget class="QDoubleSpinBox" name="yTranslateDoubleSpinBox">
+           <property name="decimals">
+            <number>3</number>
+           </property>
            <property name="minimum">
-            <number>-1000</number>
+            <double>-999999999.000000000000000</double>
            </property>
            <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="singleStep">
-            <number>10</number>
+            <double>999999999.000000000000000</double>
            </property>
           </widget>
          </item>

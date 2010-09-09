@@ -38,8 +38,8 @@ private:
 
 private slots:
     void on_automaticTriangleSelectionDoubleSpinBox_editingFinished();
-    void on_yTranslateSpinBox_editingFinished();
-    void on_xTranslateSpinBox_editingFinished();
+    void on_yTranslateDoubleSpinBox_editingFinished();
+    void on_xTranslateDoubleSpinBox_editingFinished();
     void on_scaleSpinBox_editingFinished();
     void on_manualRadioButton_clicked();
     void on_automaticRadioButton_clicked();

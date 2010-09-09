@@ -29,8 +29,8 @@ public:
     int trianglesSize();
     void setScale(double scale);
     double scale();
-    void setXCenter(int x);
-    void setYCenter(int y);
+    void setXCenter(double x);
+    void setYCenter(double y);
     Point* center();
 
     double minAngle();
