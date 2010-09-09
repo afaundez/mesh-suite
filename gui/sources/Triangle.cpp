@@ -70,43 +70,34 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
     int step;
     switch(type){
     case Constant::SELECTED:
-        this->printInfo();
         // TRIANGLE ITSELF
         glBegin(GL_TRIANGLES);
-        glColor4f(0.0, 1.0, 0.0, 0.5);
+        glColor4f(0.0, 0.0, 1.0, 0.5);
         glVertex2f(v0->x(), v0->y());
         glVertex2f(v1->x(), v1->y());
         glVertex2f(v2->x(), v2->y());
         glEnd();
         // EDGE DIAMETER CIRCLE ONLY BORDER
-        for(int k = 0; k < 3; k++){
-            if(!this->hasNeighbour(k))
-            glBegin(GL_LINE_LOOP);
-            step = 100;
-            c = this->midpoint(k);
-            radius =  Util::distance(this->vertex((k+1)%3), c);
-            glColor4f(1.0, 0.0, 0.0, 0.1);
-            for(int i = 0; i < step; i++)
-                glVertex2f(c->x() + radius*cos(2*Constant::pi/step*i), c->y() + radius*sin(2*Constant::pi/step*i));
-            glEnd();
-        }
-        // CIRCUMCENTER AND CIRCUMRADIUS
+//        for(int k = 0; k < 3; k++){
+//            if(!this->hasNeighbour(k))
+//            glBegin(GL_LINE_LOOP);
+//            step = 100;
+//            c = this->midpoint(k);
+//            radius =  Util::distance(this->vertex((k+1)%3), c);
+//            glColor4f(1.0, 0.0, 0.0, 0.1);
+//            for(int i = 0; i < step; i++)
+//                glVertex2f(c->x() + radius*cos(2*Constant::pi/step*i), c->y() + radius*sin(2*Constant::pi/step*i));
+//            glEnd();
+//        }
+        // CIRCUNCIRCLE
         glBegin(GL_LINE_LOOP);
         step = 100;
-        c = this->getCircumcenter();
-        radius =  this->getCircumradius();
+        c = this->circumcenter();
+        radius =  this->circumradius();
         glColor4f(1.0, 0.0, 0.0, 1.0);
         for(int i = 0; i < step; i++)
             glVertex2f(c->x() + radius*cos(2*Constant::pi/step*i), c->y() + radius*sin(2*Constant::pi/step*i));
         glEnd();
-        glPointSize(3.0);
-        glBegin(GL_POINTS);
-        glVertex2f(c->x(), c->y());
-        glColor4f(0.0, 1.0, 0.0, 1.0);
-        c = this->getOffCenter(34.0);
-        glVertex2f(c->x(), c->y());
-        glEnd();
-        glPointSize(1.0);
     case Constant::NOT_SELECTED:
         // IF ANNOYING
         if(this->isAnnoying(value)){
@@ -220,12 +211,12 @@ QVector<Triangle*> Triangle::lepp(){
     return ret;
 }
 
-double Triangle::getCircumradius(){
-    return Util::distance(this->getCircumcenter(), this->vertex(0));
+double Triangle::circumradius(){
+    return Util::distance(this->circumcenter(), this->vertex(0));
 }
 
-Point* Triangle::getCircumcenter(){
-    double ax, ay, bx, by, cx, cy, d, x, y;
+Point* Triangle::circumcenter(){
+    double ax, ay, bx, by, cx, cy;
 
     ax = this->vertexsp.at(0)->x();
     ay = this->vertexsp.at(0)->y();
@@ -233,53 +224,101 @@ Point* Triangle::getCircumcenter(){
     by = this->vertexsp.at(1)->y();
     cx = this->vertexsp.at(2)->x();
     cy = this->vertexsp.at(2)->y();
-    d = 2.0*( (ax-cx)*(by-cy) - (ay-cy)*(bx-cx) );
-    x = cx + ( ((ax-cx)*(ax-cx)+(ay-cy)*(ay-cy))*(by-cy) - (ay-cy)*((bx-cx)*(bx-cx)+(by-cy)*(by-cy)) )/d;
-    y = cy + ( (ax-cx)*((bx-cx)*(bx-cx)+(by-cy)*(by-cy)) - ((ax-cx)*(ax-cx)+(ay-cy)*(ay-cy))*(bx-cx) )/d;
-    if(d == 0.000)
-        qDebug("denom: %f x:%f, y:%f", d, x, y);
 
-    return new Point(x,y);
+    double xdo, ydo, xao, yao;
+    double dodist, aodist, dadist;
+    double denominator;
+    double dx, dy;
+
+
+    xdo = cx - bx;
+    ydo = cy - by;
+    xao = ax - bx;
+    yao = ay - by;
+    dodist = xdo * xdo + ydo * ydo;
+    aodist = xao * xao + yao * yao;
+    dadist = (cx - ax) * (cx - ax) +
+           (cy - ay) * (cy - ay);
+    denominator = 0.5 / (xdo * yao - xao * ydo);
+    dx = (yao * dodist - ydo * aodist) * denominator;
+    dy = (xdo * aodist - xao * dodist) * denominator;
+
+    return new Point(bx + dx, by + dy);
 }
 
-Point* Triangle::getOffCenter(double alpha){
-    Point *B, *C, *P, *O, *Q;
-    double c, oref, PB, CP, OPref, OP;
-    int se;
+Point* Triangle::offCenter(double alpha){
+    double ax, ay, bx, by, cx, cy;
 
-    oref = alpha/2.0;
-    se =  this->getSmallestEdge();
-    B = this->vertex((se+2)%3);
-    C = this->getCircumcenter();
-    P = this->midpoint(se);
-    PB = Util::distance(P, B);
-    CP = Util::distance(C, P);
-    c = atan(PB/CP);
-    if( oref <= c*180.0/Constant::pi){
-        return C;
+    ax = this->vertexsp.at(0)->x();
+    ay = this->vertexsp.at(0)->y();
+    bx = this->vertexsp.at(1)->x();
+    by = this->vertexsp.at(1)->y();
+    cx = this->vertexsp.at(2)->x();
+    cy = this->vertexsp.at(2)->y();
+
+    double xdo, ydo, xao, yao;
+    double dodist, aodist, dadist;
+    double denominator;
+    double dx, dy, dxoff, dyoff;
+    double goodangle, offconstant;
+
+    xdo = cx - bx;
+    ydo = cy - by;
+    xao = ax - bx;
+    yao = ay - by;
+    dodist = xdo * xdo + ydo * ydo;
+    aodist = xao * xao + yao * yao;
+    dadist = (cx - ax) * (cx - ax) +
+           (cy - ay) * (cy - ay);
+    denominator = 0.5 / (xdo * yao - xao * ydo);
+
+    dx = (yao * dodist - ydo * aodist) * denominator;
+    dy = (xdo * aodist - xao * dodist) * denominator;
+
+
+    goodangle = cos(alpha * Constant::pi / 180.0);
+    if (goodangle == 1.0) {
+        offconstant = 0.0;
+    } else {
+        offconstant = 0.475 * sqrt((1.0 + goodangle) / (1.0 - goodangle));
     }
-    else{
-        OPref = PB/tan(oref*Constant::pi/180.0);
-        qDebug("%f %f", OPref, CP);
-        Q = P;
-        while(true){
-            O = Util::midpoint(C, P);
-            OP = Util::distance(O, Q);
-            if(OPref - 0.000001 < OP && OP < OPref + 0.000001)
-                return O;
-            else{
-                if(OPref + 0.000001 <= OP){
-                    C = O;
-                }
-                else{
-                    P = O;
-                }
+    if ((dodist < aodist) && (dodist < dadist)) {
+        if (offconstant > 0.0) {
+            dxoff = 0.5 * xdo - offconstant * ydo;
+            dyoff = 0.5 * ydo + offconstant * xdo;
+            if (dxoff * dxoff + dyoff * dyoff < dx * dx + dy * dy) {
+                dx = dxoff;
+                dy = dyoff;
             }
         }
     }
+    else if (aodist < dadist) {
+        if ((offconstant > 0.0)) {
+            dxoff = 0.5 * xao + offconstant * yao;
+            dyoff = 0.5 * yao - offconstant * xao;
+            if (dxoff * dxoff + dyoff * dyoff < dx * dx + dy * dy) {
+                dx = dxoff;
+                dy = dyoff;
+            }
+        }
+    }
+    else {
+        if ( (offconstant > 0.0)) {
+            dxoff = 0.5 * (ax - cx) -
+                    offconstant * (ay - cy);
+            dyoff = 0.5 * (ay - cy) +
+                    offconstant * (ax - cx);
+            if (dxoff * dxoff + dyoff * dyoff <
+                (dx - xdo) * (dx - xdo) + (dy - ydo) * (dy - ydo)) {
+                    dx = xdo + dxoff;
+                    dy = ydo + dyoff;
+            }
+        }
+    }
+    return new Point(bx + dx, by + dy);
 }
 
-Point* Triangle::getCentroid(){
+Point* Triangle::centroid(){
     return new Point( (this->vertexsp.at(0)->x()+this->vertexsp.at(1)->x()+this->vertexsp.at(2)->x())/3.0, (this->vertexsp.at(0)->y()+this->vertexsp.at(1)->y()+this->vertexsp.at(2)->y())/3.0);
 }
 

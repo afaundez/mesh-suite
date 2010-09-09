@@ -13,7 +13,7 @@ Configuration* NewPointMethodRuppert::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle* t;
 
-    p = this->tp->getCircumcenter();
+    p = this->tp->circumcenter();
     foreach(Triangle* T, this->mp->triangles()){
         for(int  i  = 0; i < 3; i++){
             if(!T->hasNeighbour(i) && T->edgeInclude(i, p)){

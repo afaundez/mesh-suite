@@ -26,10 +26,10 @@ public:
     void glDraw(Constant::GLTriangleType type, double value);
     Constant::IncludeCase include(Point* point);
     Constant::IncludeCase circumcircleInclude(Point* p);
-    Point* getCircumcenter();
-    Point* getOffCenter(double alpha);
-    double getCircumradius();
-    Point* getCentroid();
+    Point* circumcenter();
+    Point* offCenter(double alpha);
+    double circumradius();
+    Point* centroid();
     void setNeighbour(int pos, Triangle* neighbour);
     int getLongestEdge();
     int getSecondLongestEdge();

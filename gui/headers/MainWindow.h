@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    friend void *ptest(void*);
     MainWindow(QWidget *parent = 0);
     Mesh* getMesh();
     void enableControl(bool active);
@@ -23,6 +24,8 @@ public:
     void setScale(double scale);
     void setCenter(Point* center);
     void updateInfo();
+    void addInfo(Options* options);
+    void test();
     Options* getOptions();
     ~MainWindow();
 

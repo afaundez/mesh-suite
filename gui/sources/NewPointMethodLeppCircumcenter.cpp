@@ -16,7 +16,7 @@ Configuration* NewPointMethodLeppCircumcenter::getConfiguration(){
     if(t->neighbour(t->getLongestEdge()) != 0)
         t = t->neighbour(t->getLongestEdge());
 
-    p = t->getCircumcenter();
+    p = t->circumcenter();
     foreach(Triangle* T, this->mp->triangles()){
         for(int  i  = 0; i < 3; i++){
             if(!T->hasNeighbour(i) && T->edgeInclude(i, p)){

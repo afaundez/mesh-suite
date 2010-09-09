@@ -13,7 +13,7 @@ Configuration* NewPointMethodCircumcenter::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle* t;
 
-    p = this->tp->getCircumcenter();
+    p = this->tp->circumcenter();
     t = this->mp->getTriangle(p);
     ps.insert(0, p);
     if(t == 0){

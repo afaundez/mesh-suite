@@ -27,14 +27,6 @@ Constant::NewPoint Options::newPointMethod(){
     return this->npp;
 }
 
-void Options::setOutsideNewPointMethod(int value){
-    this->onpp = (Constant::OutsideNewPoint)value;
-}
-
-Constant::OutsideNewPoint Options::outsideNewPointMethod(){
-    return this->onpp;
-}
-
 void Options::setInsideInsertion(int value){
     this->inpp = (Constant::InsideInsertion)value;
 }

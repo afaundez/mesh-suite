@@ -14,7 +14,7 @@ Configuration* NewPointMethodUngor::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle* t;
 
-    p = this->tp->getOffCenter(this->ap);
+    p = this->tp->offCenter(this->ap);
 
     foreach(Triangle* T, this->mp->triangles()){
         for(int  i  = 0; i < 3; i++){

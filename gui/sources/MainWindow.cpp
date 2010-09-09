@@ -5,6 +5,7 @@
 #include "headers/Mesh.h"
 #include "headers/Options.h"
 #include "headers/RefineProcess.h"
+#include <pthread.h>
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
@@ -33,16 +34,9 @@ Mesh* MainWindow::getMesh(){
 }
 //! [3]
 
-void MainWindow::enableControl(bool active){
-    this->ui->refineOnceButton->setEnabled(active);
-    this->ui->refineButton->setEnabled(active);
-    this->ui->unRefineOnceButton->setEnabled(active);
-    this->ui->stopButton->setEnabled(!active);
-}
-
 void MainWindow::setManual(bool manual){
-    this->ui->automaticTriangleSelectionComboBox->setEnabled(manual);
-    this->ui->automaticTriangleSelectionDoubleSpinBox->setEnabled(manual);
+    this->ui->automaticRadioButton->setChecked(!manual);
+    this->ui->manualRadioButton->setChecked(manual);
 }
 
 void MainWindow::setScale(double scale){
@@ -58,12 +52,13 @@ void MainWindow::updateInfo(){
     if(this->mesh != 0){
         QString t   = QString::number(this->mesh->trianglesSize());
         QString v   = QString::number(this->mesh->vertexsSize());
-        QString a   = QString::number(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
-        this->ui->infoPlainTextEdit->appendPlainText("ma:" + a + "\tnt:" + t + "\tnv:" + v);
+        QString a   = QString::number(this->mesh->minAngle());
+        this->ui->infoTextEdit->append("<strong>&Aacute;ngulo M&iacute;nimo:</strong> " + a + "<br /><strong>Tri&aacute;ngulos:</strong> " + t + "<br /><strong>V&eacute;rtices:</strong> " + v);
     }
     else{
-        this->ui->infoPlainTextEdit->appendPlainText("No hay malla cargada");
+        this->ui->infoTextEdit->append("No hay malla cargada");
     }
+    this->ui->infoTextEdit->append("===============<br />");
 }
 
 //! [4]
@@ -72,11 +67,14 @@ void MainWindow::on_actionLoad_triggered()
     if( this->mesh == 0 || mesh->isVirgin()){
         QString filepath = QFileDialog::getOpenFileName(this, "Open Mesh...", "../data");
         if(!filepath.isEmpty()){
+            this->ui->infoTextEdit->append("<strong>Opening:</strong> <code>" + filepath + "</code>");
             this->mesh = new Mesh(filepath);
             if(this->mesh != 0 && 0 < this->mesh->trianglesSize()){
                 this->enableControl(true);
                 this->glWidget->updateGL();
             }
+            this->ui->infoTextEdit->append("===============<br />");
+            this->updateInfo();
         }
     }
     else{
@@ -114,8 +112,30 @@ Options* MainWindow::getOptions(){
     ret->setNewPointMethod(this->ui->newPointMethodComboBox->currentIndex());
     ret->setInsideInsertion(this->ui->insideNewPointCaseComboBox->currentIndex());
     ret->setRepeatLastSelectedTriangle(this->ui->repeatSelectedTriangleCheckBox->isChecked());
+    ret->setAutomatic(this->ui->automaticRadioButton->isChecked());
     return ret;
 }
+
+void MainWindow::enableControl(bool active){
+    this->ui->refineOnceButton->setEnabled(active);
+    this->ui->refineButton->setEnabled(active);
+    this->ui->stopButton->setEnabled(!active);
+    this->ui->automaticRadioButton->setEnabled(active);
+    this->ui->manualRadioButton->setEnabled(active);
+}
+
+void MainWindow::addInfo(Options* options){
+    if(!options->onlyFirstPreProcess() || ( options->onlyFirstPreProcess() && this->mesh->isVirgin() ))
+        this->ui->infoTextEdit->append("<strong>Pre-proceso:</strong>: " + QString(Constant::preProcessNames[options->preProcess()]) + "<br />");
+    if(options->automatic())
+        this->ui->infoTextEdit->append("<strong>Selecci&oacute;n Tri&aacute;ngulo:</strong> " + QString(Constant::triangleSelectionNames[options->triangleSelection()]) + "<br />");
+    else
+        this->ui->infoTextEdit->append("Selecci&oacute;n Manual<br />");
+    this->ui->infoTextEdit->append("<strong>&Aacute;ngulo exigido:</strong> " + QString::number(options->triangleSelectionValue()) + "&deg;<br />");
+    this->ui->infoTextEdit->append("<strong>Nuevo Punto:</strong> " + QString(Constant::newPointNames[options->newPointMethod()]) + "<br />");
+    this->ui->infoTextEdit->append("<strong>Tipo Inserci&oacute;n:</strong> " + QString(Constant::insertionNames[options->insideInsertion()]) + "<br />");
+}
+
 
 //! [5]
 void MainWindow::on_refineOnceButton_clicked()
@@ -123,6 +143,7 @@ void MainWindow::on_refineOnceButton_clicked()
     try{
         this->enableControl(false);
         Options* options = this->getOptions();
+        this->addInfo(options);
         RefineProcess::refine(mesh, options);
         this->glWidget->updateGL();
         this->enableControl(true);
@@ -135,13 +156,42 @@ void MainWindow::on_refineOnceButton_clicked()
 //! [5]
 
 
+void MainWindow::test()
+{
+    try{
+        bool go = true;
+        this->enableControl(false);
+        Options* options = this->getOptions();
+        this->addInfo(options);
+        while(go){
+            go = RefineProcess::refine(mesh, options);
+            //this->glWidget->updateGL();
+        }
+        this->enableControl(true);
+        //this->glWidget->updateGL();
+        this->updateInfo();
+    }
+    catch(QString e){
+        qDebug(e.toUtf8());
+    }
+}
+
+void *ptest(void* ptr){
+    static_cast<MainWindow*>(ptr)->test();
+}
+
 void MainWindow::on_refineButton_clicked()
 {
     try{
-        this->enableControl(false);
+//        this->enableControl(false);
+//        pthread_t refine;
+//        int iret1 = pthread_create( &refine, NULL, ptest, (void*)this);
+
         bool go = true;
+        this->enableControl(false);
+        Options* options = this->getOptions();
+        this->addInfo(options);
         while(go){
-            Options* options = this->getOptions();
             go = RefineProcess::refine(mesh, options);
             this->glWidget->updateGL();
         }
@@ -154,15 +204,19 @@ void MainWindow::on_refineButton_clicked()
     }
 }
 
+
 //! [6]
 void MainWindow::on_automaticRadioButton_clicked(){
-    this->setManual(true);
+    this->setManual(false);
+    this->ui->refineButton->setEnabled(true);
 }
 //! [6]
 
 //! [7]
 void MainWindow::on_manualRadioButton_clicked(){
-    this->setManual(false);
+    this->setManual(true);
+    this->ui->stopButton->setEnabled(false);
+    this->ui->refineButton->setEnabled(false);
 }
 //! [7]
 

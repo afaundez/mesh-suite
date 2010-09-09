@@ -13,7 +13,7 @@ Configuration* NewPointMethodCentroid::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle *t;
 
-    p = this->tp->getCentroid();
+    p = this->tp->centroid();
     t = this->mp->getTriangle(p);
     ps.insert(0, p);
     if(t == 0){

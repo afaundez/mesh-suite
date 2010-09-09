@@ -39,15 +39,21 @@ Mesh::Mesh(QString fileName){
             }
         }
     }
-    // TODO: add neighbours
     foreach(Triangle* t1, this->trianglesp){
         foreach(Triangle* t2, this->trianglesp){
             int pos = t1->isNeighbour(t2);
-            if( 0 <= pos){
+            if( 0 <= pos ){
                 t1->setNeighbour(pos, t2);
             }
         }
     }
+//    int ti = 1;
+//    foreach(Triangle* taux, this->trianglesp){
+//        for(int pos = 0; pos < 3; pos++ )
+//            if(taux->getNeighbour(pos) == 0)
+//                qDebug("%d %d %d", ti++,taux->vertex((pos+1)%3)->id(), taux->vertex((pos+2)%3)->id());
+//    }
+
     inputFile.close();
     this->valuep = 0.0;
     this->scalep = 1.0;
@@ -167,6 +173,16 @@ void Mesh::setYCenter(int y){
 
 Point* Mesh::center(){
     return this->centerp;
+}
+
+double Mesh::minAngle(){
+    if(this->triangles().isEmpty())
+        return 0.0;
+    double ret = this->triangle(this->triangles().keys().first())->getSmallestAngleValue();
+    foreach(Triangle*t, this->triangles())
+        if(t->getSmallestAngleValue() < ret)
+            ret = t->getSmallestAngleValue();
+    return ret;
 }
 
 void Mesh::setLastSelectedTriangleID(int id){

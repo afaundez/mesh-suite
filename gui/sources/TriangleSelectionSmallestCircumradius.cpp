@@ -10,11 +10,11 @@ Triangle* TriangleSelectionSmallestCircumradius::process(Mesh* mesh, double valu
     double minCircumradius = -1.0;
     foreach(Triangle* t, mesh->triangles()){
         if( t->getSmallestAngleValue() < value && minCircumradius == -1.0){
-            minCircumradius = t->getCircumradius();
+            minCircumradius = t->circumradius();
             ret = t;
         }
-        else if( t->getSmallestAngleValue() < value && t->getCircumradius() <= minCircumradius){
-            minCircumradius = t->getCircumradius();
+        else if( t->getSmallestAngleValue() < value && t->circumradius() <= minCircumradius){
+            minCircumradius = t->circumradius();
             ret = t;
         }
     }

@@ -33,6 +33,8 @@ public:
     void setYCenter(int y);
     Point* center();
 
+    double minAngle();
+
     void setLastSelectedTriangleID(int id);
     int lastSelectedTriangleID();
 

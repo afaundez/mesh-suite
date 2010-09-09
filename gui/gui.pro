@@ -2,7 +2,7 @@
 # Project created by QtCreator 2010-04-14T15:48:19
 # -------------------------------------------------
 QT += opengl
-TARGET = ../MeshSuite
+TARGET = MeshSuite
 TEMPLATE = app
 HEADERS += headers/MainWindow.h \
     headers/GLWidget.h \
@@ -42,9 +42,9 @@ HEADERS += headers/MainWindow.h \
     headers/NewPointMethodUngor.h \
     headers/Util.h \
     headers/PreProcessFixEncroachedVertexs.h \
-    ../NewPointMethodLeppCircumcenter.h \
     headers/NewPointMethodLeppCircumcenter.h \
-    headers/TriangleSelectionSmallestCircumradius.h
+    headers/TriangleSelectionSmallestCircumradius.h \
+    headers/NewPointMethodLeppDelaunay.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -80,4 +80,6 @@ SOURCES += sources/Vertex.cpp \
     sources/NewPointMethodLeppCentroid.cpp \
     sources/NewPointMethodLeppCircumcenter.cpp \
     sources/NewPointMethodUngor.cpp \
-    sources/TriangleSelectionSmallestCircumradius.cpp
+    sources/TriangleSelectionSmallestCircumradius.cpp \
+    sources/NewPointMethodLeppDelaunay.cpp \
+    sources/Constant.cpp

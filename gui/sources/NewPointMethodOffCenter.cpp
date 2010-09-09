@@ -14,7 +14,7 @@ Configuration* NewPointMethodOffCenter::getConfiguration(){
     Constant::IncludeCase ic;
     Triangle* t;
 
-    p = this->tp->getCircumcenter();
+    p = this->tp->offCenter(this->ap);
     t = this->mp->getTriangle(p);
     ps.insert(0, p);
     if(t == 0){

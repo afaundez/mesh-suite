@@ -14,7 +14,6 @@ public:
     void setNewPointMethod(int index);
     Constant::NewPoint newPointMethod();
     void setOutsideNewPointMethod(int index);
-    Constant::OutsideNewPoint outsideNewPointMethod();
     void setInsideInsertion(int index);
     Constant::InsideInsertion insideInsertion();
     void setOneEdgeRestrictedInsertion(int index);
@@ -46,7 +45,6 @@ private:
     Constant::TriangleSelection tsp;
     double tsvp;
     Constant::NewPoint npp;
-    Constant::OutsideNewPoint onpp;
     Constant::InsideInsertion inpp;
     bool repeatLastSelectedTrianglep;
     bool useLeppp;

@@ -7,23 +7,28 @@ TriangleSelectionSmallestEdgeBorderTriangleFirst::TriangleSelectionSmallestEdgeB
 Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh, double value){
     Triangle* ret = 0;
     foreach(Triangle* t, mesh->triangles()){
-        if( t->getSmallestAngleValue() < value && ret == 0){;
-            ret = t;
-        }
-        else if( t->getSmallestAngleValue() < value) {
-            if(ret->isConstrained(ret->getSmallestEdge())){
-                if(t->isConstrained(t->getSmallestEdge()))
-                    if(t->getSmallestEdgeValue() < ret->getSmallestEdgeValue())
-                        ret = t;
+        if( t->getSmallestAngleValue() < value ){
+            if( t->isConstrained(t->getSmallestEdge()) )
+                return t;
+            if(ret == 0){
+                ret = t;
             }
             else{
-                if(t->isConstrained(ret->getSmallestEdge())){
-                    ret = t;
-                }
-                else{
-                    if(t->getSmallestAngleValue() < ret->getSmallestAngleValue())
+
+                /*if( t->isConstrained(t->getSmallestEdge()) && ret->isConstrained(ret->getSmallestEdge()) ){
+                   if( t->getSmallestEdgeValue() < ret->getSmallestEdgeValue() )
                         ret = t;
                 }
+                else if (t->isConstrained(t->getSmallestEdge()) && !ret->isConstrained(ret->getSmallestEdge()) ){
+                    ret = t;
+                }
+                else if (!t->isConstrained(t->getSmallestEdge()) && ret->isConstrained(ret->getSmallestEdge()) ){
+                    continue;
+                }
+                else{
+                    if( t->getSmallestEdgeValue() < ret->getSmallestEdgeValue() )
+                         ret = t;
+                }*/
             }
         }
     }

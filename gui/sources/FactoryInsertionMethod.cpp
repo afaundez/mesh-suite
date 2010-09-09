@@ -7,24 +7,23 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
     switch(c->includeCase()){
     case Constant::INCLUDED:
     case Constant::BORDER_INCLUDED:
-        qDebug("-->\tNo Restricted Case");
         switch(o->insideInsertion()){
         case Constant::BASIC:
-            qDebug("-->\tSelection InsideInsertionBasic");
+            qDebug("--> Using Basic Insertion");
             ret = new InsideInsertionBasic(c);
             break;
         case Constant::FLIP_DIAGONAL:
-            qDebug("-->\tSelection InsideInsertionFlipDiagonal");
+            qDebug("-->Using Recursive Diagonal Flip");
             ret = new InsideInsertionFlipDiagonal(c);
             break;
         case Constant::CAVITY:
-            qDebug("-->\tSelection InsideInsertionCavity. Not Implemented");
-            // TODO IMPLEMENT THIS CASE
+            qDebug("-->Using Cavity");
+            ret = new InsideInsertionFlipDiagonal(c);
             break;
         }
         break;
     case Constant::CORNER_INCLUDED:
-        qDebug("Weird Case, it should not happen");
+        qCritical("FactoryInsertionMethid::create() CORNER_INCLUDED case, it should not happen.");
         break;
     case Constant::NOT_INCLUDED:
         break;
