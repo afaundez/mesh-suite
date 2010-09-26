@@ -32,6 +32,7 @@ public:
     Point* centroid();
     void setNeighbour(int pos, Triangle* neighbour);
     int getLongestEdge();
+    double getLongestEdgeValue();
     int getSecondLongestEdge();
     int getSmallestEdge();
     int getSmallestAngle();
@@ -40,9 +41,15 @@ public:
     int getIndex(Vertex* v);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     bool isAnnoying(double angle);
+    void setRestricted(int edge);
+    bool isRestricted(int edge);
     bool isConstrained(int edge);
+    bool isConstrained();
+    bool isBoundary(int edge);
+    bool isBoundary();
     int wichBorder(Point* p);
     void printInfo();
+
 
 
     Constant::IncludeCase edgeInclude(int edge, Point* p);

@@ -32,6 +32,14 @@ Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2){
 }
 //! [0]
 
+void Triangle::setRestricted(int edge){
+    this->restrictedEdgesp.replace(edge, true);
+}
+
+bool Triangle::isRestricted(int edge){
+    return this->restrictedEdgesp.at(edge);
+}
+
 //! [2]
 void Triangle::setNeighbours(Triangle* A, Triangle* B, Triangle* C){
     this->neighboursp.replace(0,A);
@@ -72,29 +80,18 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
     case Constant::SELECTED:
         // TRIANGLE ITSELF
         glBegin(GL_TRIANGLES);
-        glColor4f(0.0, 0.0, 1.0, 0.5);
+        glColor4f(0.415686275, 0.415686275, 1.0, 0.5);
         glVertex2f(v0->x(), v0->y());
         glVertex2f(v1->x(), v1->y());
         glVertex2f(v2->x(), v2->y());
         glEnd();
-        // EDGE DIAMETER CIRCLE ONLY BORDER
-//        for(int k = 0; k < 3; k++){
-//            if(!this->hasNeighbour(k))
-//            glBegin(GL_LINE_LOOP);
-//            step = 100;
-//            c = this->midpoint(k);
-//            radius =  Util::distance(this->vertex((k+1)%3), c);
-//            glColor4f(1.0, 0.0, 0.0, 0.1);
-//            for(int i = 0; i < step; i++)
-//                glVertex2f(c->x() + radius*cos(2*Constant::pi/step*i), c->y() + radius*sin(2*Constant::pi/step*i));
-//            glEnd();
-//        }
+
         // CIRCUNCIRCLE
         glBegin(GL_LINE_LOOP);
         step = 100;
         c = this->circumcenter();
         radius =  this->circumradius();
-        glColor4f(1.0, 0.0, 0.0, 1.0);
+        glColor4f(0.0, 1.0, 0.0, 0.5);
         for(int i = 0; i < step; i++)
             glVertex2f(c->x() + radius*cos(2*Constant::pi/step*i), c->y() + radius*sin(2*Constant::pi/step*i));
         glEnd();
@@ -102,7 +99,7 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
         // IF ANNOYING
         if(this->isAnnoying(value)){
             glBegin(GL_TRIANGLES);
-            glColor4f(1.0, 0.0, 0.0, 0.1);
+            glColor4f(1.0, 0.282352941, 0.282352941, 0.2);
             glVertex2f(v0->x(), v0->y());
             glVertex2f(v1->x(), v1->y());
             glVertex2f(v2->x(), v2->y());
@@ -110,12 +107,12 @@ void Triangle::glDraw(Constant::GLTriangleType type, double value){
         }
         // TRIANGLE BORDER
         glBegin(GL_LINES);
-        glColor4f(0.0, 0.0, 1.0, 1.0);
         for(int i = 0; i < 3; i++){
-            if(this->hasNeighbour(i))
-                glColor4f(0.0, 0.0, 0.0, 0.1);
-            else
-                glColor4f(0.0, 0.0, 0.0, 1.0);
+            glColor4f(0.0, 0.0, 0.0, 0.1);
+            if( this->isRestricted(i) )
+                glColor4f(1.0, 0.0, 0.0, 1.0);
+            if( this->isBoundary(i) )
+                glColor4f(0.0, 0.0, 1.0, 1.0);
             glVertex2f(this->vertex((i+1)%3)->x(), this->vertex((i+1)%3)->y());
             glVertex2f(this->vertex((i+2)%3)->x(), this->vertex((i+2)%3)->y());
         }
@@ -340,6 +337,11 @@ int Triangle::getLongestEdge(){
         return 2;
 }
 
+double Triangle::getLongestEdgeValue(){
+    int i =  this->getLongestEdge();
+    return Util::distance(this->vertex((i+1)%3), this->vertex((i+2)%3));
+}
+
 int Triangle::getSecondLongestEdge(){
     double l0, l1, l2;
     l0 = Util::distance(this->vertex(1), this->vertex(2));
@@ -446,6 +448,18 @@ bool Triangle::isConstrained(int edge){
     if(this->restrictedEdgesp.at(edge) || this->neighbour(edge) == 0)
         return true;
     return false;
+}
+
+bool Triangle::isConstrained(){
+    return (this->isConstrained(0) || this->isConstrained(1) || this->isConstrained(2) );
+}
+
+bool Triangle::isBoundary(int edge){
+    return (this->neighbour(edge) == 0);
+}
+
+bool Triangle::isBoundary(){
+    return (this->isBoundary(0) || this->isBoundary(1) || this->isBoundary(2));
 }
 
 QVector<Triangle*> Triangle::neighbours(){

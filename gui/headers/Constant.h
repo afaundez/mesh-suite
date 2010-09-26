@@ -14,10 +14,12 @@ namespace Constant{
 
     extern char *preProcessNames[];
 
-    enum TriangleSelection{ SMALLEST_INTERNAL_ANGLE,
+    enum TriangleSelection{ NO_PRIORITY,
+                            SMALLEST_INTERNAL_ANGLE,
                             SMALLEST_EDGE,
                             SMALLEST_ANGLE_CONSTRAINED_EDGE_FIRST,
-                            SMALLEST_CIRCUMCIRCLE};
+                            SMALLEST_CIRCUMCIRCLE,
+                            LONG_EDGE_ONLY_BORDER};
 
     extern char *triangleSelectionNames[];
 

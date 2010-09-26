@@ -19,6 +19,7 @@ Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::New
         break;
     case Constant::LEPP_DELAUNAY:
         npm = new NewPointMethodLeppDelaunay(m, t);
+        break;
     case Constant::LEPP_CENTROID:
         npm = new NewPointMethodLeppCentroid(m, t);
         break;

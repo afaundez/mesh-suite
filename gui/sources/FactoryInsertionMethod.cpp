@@ -1,6 +1,7 @@
 #include "headers/FactoryInsertionMethod.h"
 #include "headers/InsideInsertionBasic.h"
 #include "headers/InsideInsertionFlipDiagonal.h"
+#include "headers/InsideInsertionCavity.h"
 
 InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
     InsertionMethod* ret;
@@ -13,17 +14,17 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
             ret = new InsideInsertionBasic(c);
             break;
         case Constant::FLIP_DIAGONAL:
-            qDebug("-->Using Recursive Diagonal Flip");
+            //qDebug("-->Using Recursive Diagonal Flip");
             ret = new InsideInsertionFlipDiagonal(c);
             break;
         case Constant::CAVITY:
-            qDebug("-->Using Cavity");
-            ret = new InsideInsertionFlipDiagonal(c);
+            //qDebug("-->Using Cavity");
+            ret = new InsideInsertionCavity(c);
             break;
         }
         break;
     case Constant::CORNER_INCLUDED:
-        qCritical("FactoryInsertionMethid::create() CORNER_INCLUDED case, it should not happen.");
+        throw QString("FlipDiagonal Perdida de presicion...");
         break;
     case Constant::NOT_INCLUDED:
         break;

@@ -3,6 +3,7 @@
 #include "headers/GLWidget.h"
 #include "headers/Mesh.h"
 #include "headers/MainWindow.h"
+#include "headers/RefineProcess.h"
 
 //! [0]
 GLWidget::GLWidget(QWidget *parent)
@@ -76,7 +77,8 @@ void GLWidget::paintGL(){
     glCallList(this->axis);
 
     // drawing the mesh
-    Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    //Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    Mesh* mesh = RefineProcess::getInstance().mesh();
     if( mesh != 0 )
         mesh->drawMesh();
 
@@ -93,14 +95,15 @@ void GLWidget::setEmpty(bool _empty){
 }
 
 void GLWidget::mousePressEvent(QMouseEvent *event){
-    Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    Mesh* mesh = RefineProcess::getInstance().mesh();
     switch(event->button()){
     case Qt::LeftButton:
         if(mesh != 0 && mesh->hasTriangles()){
             int x = event->x();
             int y = event->y();
             Point* pos = new Point((x - this->width()/2)/mesh->scale() + mesh->center()->x(), (this->height()/2 - y)/mesh->scale() + mesh->center()->y());
-            mesh->setSelectedTriangle(mesh->getTriangle(pos));
+            //mesh->setSelectedTriangle(mesh->getTriangle(pos));
+            mesh->setSelectedTriangle(mesh->locate(pos));
             this->updateGL();
         }
         break;
@@ -123,7 +126,7 @@ void GLWidget::mousePressEvent(QMouseEvent *event){
 }
 
 void GLWidget::wheelEvent(QWheelEvent * event){
-    Mesh* mesh = ((MainWindow*)(this->parent))->getMesh();
+    Mesh* mesh = RefineProcess::getInstance().mesh();
     if(mesh != 0 && mesh->hasTriangles()){
         double numDegrees = event->delta() / 8;
         double numSteps = numDegrees / 15.0 / 10.0;

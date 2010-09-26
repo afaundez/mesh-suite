@@ -3,9 +3,13 @@
 
 #include "InsideInsertion.h"
 
-class InsertionTypeCavity: public InsideInsertion
+class InsideInsertionCavity: public InsideInsertion
 {
 
+public:
+    InsideInsertionCavity(Configuration* conf);
+    void execute();
+    ~InsideInsertionCavity();
 };
 
 #endif // INSIDEINSERTIONCAVITY_H

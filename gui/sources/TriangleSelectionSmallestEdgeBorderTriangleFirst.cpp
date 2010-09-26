@@ -15,7 +15,7 @@ Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh, 
             }
             else{
 
-                /*if( t->isConstrained(t->getSmallestEdge()) && ret->isConstrained(ret->getSmallestEdge()) ){
+                if( t->isConstrained(t->getSmallestEdge()) && ret->isConstrained(ret->getSmallestEdge()) ){
                    if( t->getSmallestEdgeValue() < ret->getSmallestEdgeValue() )
                         ret = t;
                 }
@@ -28,7 +28,7 @@ Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh, 
                 else{
                     if( t->getSmallestEdgeValue() < ret->getSmallestEdgeValue() )
                          ret = t;
-                }*/
+                }
             }
         }
     }

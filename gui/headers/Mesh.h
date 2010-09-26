@@ -3,6 +3,7 @@
 
 #include <QHash>
 #include <QPoint>
+#include <queue>
 #include "Triangle.h"
 
 class Mesh
@@ -12,6 +13,7 @@ public:
     Mesh(QString fileName);
     void addTriangle(Triangle* T);
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
+    QVector<Vertex*> createAndAddRestriction(Vertex* A, Vertex* B);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
     void drawMesh();
@@ -28,10 +30,12 @@ public:
     int vertexsSize();
     int trianglesSize();
     void setScale(double scale);
+    void scale(double w, double h);
     double scale();
     void setXCenter(double x);
     void setYCenter(double y);
     Point* center();
+
 
     double minAngle();
 
@@ -41,14 +45,20 @@ public:
     void setValue(double v);
     double value();
     Triangle* triangle(int id);
-    QHash<int, Triangle*>    triangles();
-    QHash<int, Vertex*>      vertexs();
+    QHash<int, Triangle*>   restrictedTriangles();
+    QHash<int, Triangle*>   triangles();
+    QHash<int, Vertex*>     vertexs();
+    Triangle* locate(Point* p);
+    Triangle* locate(Triangle* t, Point* p);
     ~Mesh();
 
 private:
-    QHash<int, Triangle*>    trianglesp;
-    QHash<int, Vertex*>      vertexsp;
-    int cv, ct;
+    QHash<int, Triangle*>   trianglesp;
+    QHash<int, Vertex*>     vertexsp;
+    QHash<int, QVector<Vertex*> > inputRestrictionsp;
+    QHash<int, QVector<Vertex*> > stitchedRstrictionsp;
+    int cv, ct, cr;
+    int lowerX, higherX, lowerY, higherY;
     double scalep;
     Point* centerp;
     Triangle* selectedTriangle;

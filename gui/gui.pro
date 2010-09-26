@@ -27,16 +27,12 @@ HEADERS += headers/MainWindow.h \
     headers/InsertionMethod.h \
     headers/NewPointMethodBisection.h \
     headers/NewPointMethodLeppBisection.h \
-    headers/NewPointMethodCircumcenter.h \
     headers/TriangleSelectionSmallestEdgeBorderTriangleFirst.h \
     headers/TriangleSelectionSmallestEdge.h \
     headers/TriangleSelectionSmallestInternalAngle.h \
     headers/FactoryInsertionMethod.h \
     headers/RefineProcess.h \
     headers/InsideInsertionBasic.h \
-    headers/NewPointMethodCentroid.h \
-    headers/NewPointMethodMidpointEncroachedBorder.h \
-    headers/NewPointMethodOffCenter.h \
     headers/NewPointMethodRuppert.h \
     headers/NewPointMethodLeppCentroid.h \
     headers/NewPointMethodUngor.h \
@@ -44,7 +40,9 @@ HEADERS += headers/MainWindow.h \
     headers/PreProcessFixEncroachedVertexs.h \
     headers/NewPointMethodLeppCircumcenter.h \
     headers/TriangleSelectionSmallestCircumradius.h \
-    headers/NewPointMethodLeppDelaunay.h
+    headers/NewPointMethodLeppDelaunay.h \
+    headers/TriangleSelectionLongEdgeOnlyBorder.h \
+    headers/TriangleSelectionNoPriority.h
 FORMS += forms/MainWindow.ui \
     forms/LoadMeshDialog.ui
 SOURCES += sources/Vertex.cpp \
@@ -69,17 +67,16 @@ SOURCES += sources/Vertex.cpp \
     sources/NewPointMethodBisection.cpp \
     sources/InsideInsertionBasic.cpp \
     sources/InsideInsertion.cpp \
-    sources/NewPointMethodCircumcenter.cpp \
     sources/InsideInsertionFlipDiagonal.cpp \
-    sources/NewPointMethodCentroid.cpp \
-    sources/NewPointMethodMidpointEncroachedBorder.cpp \
-    sources/NewPointMethodOffCenter.cpp \
     sources/NewPointMethodRuppert.cpp \
     sources/PreProcessFixEncroachedVertexs.cpp \
     sources/NewPointMethodLeppBisection.cpp \
-    sources/NewPointMethodLeppCentroid.cpp \
     sources/NewPointMethodLeppCircumcenter.cpp \
     sources/NewPointMethodUngor.cpp \
     sources/TriangleSelectionSmallestCircumradius.cpp \
     sources/NewPointMethodLeppDelaunay.cpp \
-    sources/Constant.cpp
+    sources/Constant.cpp \
+    sources/InsideInsertionCavity.cpp \
+    sources/TriangleSelectionLongEdgeOnlyBorder.cpp \
+    sources/NewPointMethodLeppCentroid.cpp \
+    sources/TriangleSelectionNoPriority.cpp

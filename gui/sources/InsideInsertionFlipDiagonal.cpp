@@ -17,7 +17,7 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                 i1 = (i0+1)%3;
                 i2 = (i1+1)%3;
 
-                if(T->getNeighbour(i0) != 0){
+                if( !T->isBoundary(i0) && !T->isRestricted(i0) ){
                     t0 = T->getNeighbour(i0);
                     t1 = T->getNeighbour(i1);
                     t2 = T->getNeighbour(i2);
@@ -41,6 +41,7 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         A = this->confp->mesh()->createAndAddTriangle(v0, v1, b0);
                         B = this->confp->mesh()->createAndAddTriangle(v0, b0, v2);
+                        //TODO: inherit restrictions
 
                         A->setNeighbours(l1, B, t2);
                         B->setNeighbours(l2, t1, A);
@@ -187,8 +188,10 @@ void InsideInsertionFlipDiagonal::execute(){
         }
         break;
     case Constant::NOT_INCLUDED:
+        throw QString("FlipDiagonal Perdida de presicion... NOT INCLUDED");
+        break;
     case Constant::CORNER_INCLUDED:
-        throw QString("FlipDiagonal Perdida de presicion...");
+        throw QString("FlipDiagonal Perdida de presicion... CORNER INCLUDED");
         break;
     }
     if(!tv.isEmpty())

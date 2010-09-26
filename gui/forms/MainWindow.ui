@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1061</width>
+    <width>1118</width>
     <height>662</height>
    </rect>
   </property>
@@ -17,11 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>MeshSuite</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0" colspan="2">
+    <item row="0" column="0" rowspan="6">
      <widget class="QFrame" name="viewerFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -49,7 +49,177 @@
       </layout>
      </widget>
     </item>
-    <item row="0" column="5" rowspan="6">
+    <item row="6" column="0" rowspan="2">
+     <widget class="QFrame" name="controlFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="infoControl">
+         <property name="text">
+          <string>Control</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="scaleLabel">
+           <property name="text">
+            <string>Zoom     </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="scaleSpinBox">
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="minimum">
+            <double>0.000001000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1000000005.999999046325684</double>
+           </property>
+           <property name="singleStep">
+            <double>0.500000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="openCenterLavel">
+           <property name="text">
+            <string>Center (</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="xTranslateDoubleSpinBox">
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="minimum">
+            <double>-999999999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999999999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="commaCenterLabel">
+           <property name="text">
+            <string>,</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="yTranslateDoubleSpinBox">
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="minimum">
+            <double>-999999999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>999999999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="closeCenterLabel">
+           <property name="text">
+            <string>)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="selectionTriangleLabel">
+           <property name="text">
+            <string>Selección Triángulo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="manualRadioButton">
+           <property name="text">
+            <string>Manual</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+M</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="automaticRadioButton">
+           <property name="text">
+            <string>Automático</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+A</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="stopButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>||</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="refineOnceButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>&gt;</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+Shift+Space</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="refineButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>&gt;&gt;</string>
+           </property>
+           <property name="shortcut">
+            <string>Ctrl+Space</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="4">
      <widget class="QFrame" name="optionFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -57,22 +227,25 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
         <widget class="QToolBox" name="optionToolBox">
          <property name="enabled">
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
+         </property>
+         <property name="tabSpacing">
+          <number>1</number>
          </property>
          <widget class="QWidget" name="preProcessPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>251</width>
-            <height>420</height>
+            <width>437</width>
+            <height>154</height>
            </rect>
           </property>
           <attribute name="label">
@@ -113,19 +286,67 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>426</width>
-            <height>100</height>
+            <width>437</width>
+            <height>154</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Selección de Triángulo</string>
+           <string>Priorización de Triángulo para Refinar</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_5">
-           <item row="0" column="0" colspan="2">
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Parámetro de calidad</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QDoubleSpinBox" name="automaticTriangleSelectionDoubleSpinBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="value">
+              <double>20.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Priorizar por:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="repeatSelectedTriangleCheckBox">
+             <property name="text">
+              <string>Repetir triángulo hasta destruir</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
             <widget class="QComboBox" name="automaticTriangleSelectionComboBox">
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>Sin Priorizar</string>
+              </property>
+             </item>
              <item>
               <property name="text">
                <string>Ángulo Interno Menor</string>
@@ -138,7 +359,7 @@
              </item>
              <item>
               <property name="text">
-               <string>Arista Más Pequeña, Prioridad Bordes y Aristas Restringidas</string>
+               <string>Arista Más Pequeña, Prioridad Bordes</string>
               </property>
              </item>
              <item>
@@ -146,30 +367,11 @@
                <string>Menor Circunradio</string>
               </property>
              </item>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string>Mínimo Ángulo Interior [º]</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QDoubleSpinBox" name="automaticTriangleSelectionDoubleSpinBox">
-             <property name="value">
-              <double>20.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="2">
-            <widget class="QCheckBox" name="repeatSelectedTriangleCheckBox">
-             <property name="text">
-              <string>Repetir triángulo hasta destruir</string>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
-             </property>
+             <item>
+              <property name="text">
+               <string>Largo Borde</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>
@@ -179,12 +381,12 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>192</width>
-            <height>70</height>
+            <width>437</width>
+            <height>154</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Nuevo Punto</string>
+           <string>Criterio Selección Nuevo Punto para Insertar</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout_3">
            <property name="fieldGrowthPolicy">
@@ -204,32 +406,32 @@
              </property>
              <item>
               <property name="text">
-               <string>Lepp-Bisección</string>
+               <string>Lepp - Bisección</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Ruppert</string>
+               <string>Circuncentro - Delaunay</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp-Delaunay</string>
+               <string>Lepp - Punto Medio - Delaunay</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp-Centroide</string>
+               <string>Lepp - Centroide</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Üngor</string>
+               <string>Off-Center - Delaunay</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Lepp-Ruppert</string>
+               <string>Lepp - Circuncentro - Delaunay</string>
               </property>
              </item>
             </widget>
@@ -241,12 +443,12 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>205</width>
-            <height>43</height>
+            <width>437</width>
+            <height>154</height>
            </rect>
           </property>
           <attribute name="label">
-           <string>Inserción</string>
+           <string>Método Inserción de Nuevo Punto</string>
           </attribute>
           <layout class="QFormLayout" name="formLayout">
            <property name="fieldGrowthPolicy">
@@ -281,8 +483,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>204</width>
-            <height>43</height>
+            <width>437</width>
+            <height>154</height>
            </rect>
           </property>
           <attribute name="label">
@@ -315,162 +517,7 @@
       </layout>
      </widget>
     </item>
-    <item row="4" column="0" rowspan="2">
-     <widget class="QFrame" name="controlFrame">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="infoControl">
-         <property name="text">
-          <string>Control</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="scaleLabel">
-           <property name="text">
-            <string>Zoom     </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="scaleSpinBox">
-           <property name="decimals">
-            <number>3</number>
-           </property>
-           <property name="maximum">
-            <double>999999999.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.500000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="openCenterLavel">
-           <property name="text">
-            <string>Center (</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="xTranslateDoubleSpinBox">
-           <property name="decimals">
-            <number>3</number>
-           </property>
-           <property name="minimum">
-            <double>-999999999.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>999999999.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="commaCenterLabel">
-           <property name="text">
-            <string>,</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="yTranslateDoubleSpinBox">
-           <property name="decimals">
-            <number>3</number>
-           </property>
-           <property name="minimum">
-            <double>-999999999.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>999999999.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="closeCenterLabel">
-           <property name="text">
-            <string>)</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="selectionTriangleLabel">
-           <property name="text">
-            <string>Selección Triángulo</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="manualRadioButton">
-           <property name="text">
-            <string>Manual</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="automaticRadioButton">
-           <property name="text">
-            <string>Automático</string>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QPushButton" name="stopButton">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>||</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="refineOnceButton">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="refineButton">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>&gt;&gt;</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="4" column="1" rowspan="2">
+    <item row="4" column="1" rowspan="4">
      <widget class="QFrame" name="frame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -478,11 +525,11 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0" rowspan="3" colspan="2">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
         <widget class="QTextEdit" name="infoTextEdit">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -499,7 +546,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1061</width>
+     <width>1118</width>
      <height>23</height>
     </rect>
    </property>
@@ -509,18 +556,9 @@
     </property>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuCombination">
-    <property name="title">
-     <string>Combinación</string>
-    </property>
-    <addaction name="actionNew"/>
-    <addaction name="actionOpen"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionSaveAs"/>
-   </widget>
    <widget class="QMenu" name="menuMesh">
     <property name="title">
-     <string>Malla</string>
+     <string>PSLG</string>
     </property>
     <addaction name="actionLoad"/>
     <addaction name="actionReload"/>
@@ -532,7 +570,6 @@
     <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuCombination"/>
    <addaction name="menuMesh"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -556,6 +593,9 @@
    <property name="text">
     <string>Salir</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
   </action>
   <action name="actionLoad">
    <property name="text">
@@ -571,6 +611,9 @@
   <action name="actionReload">
    <property name="text">
     <string>Recargar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="actionSaveAs">

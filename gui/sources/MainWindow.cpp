@@ -5,7 +5,6 @@
 #include "headers/Mesh.h"
 #include "headers/Options.h"
 #include "headers/RefineProcess.h"
-#include <pthread.h>
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
@@ -14,12 +13,22 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->glWidget = new GLWidget(this);
     ui->glLayout->addWidget( glWidget );
-    this->mesh = new Mesh("../data/b.mesh");
-    this->mesh->setValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
+    RefineProcess::getInstance().loadMesh("../data/b.mesh");
+    this->updateControl();
+    this->glWidget->updateGL();
     this->updateInfo();
     this->enableControl(true);
 }
 //! [0]
+
+void MainWindow::updateControl(){
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    // TODO: do this in other way mesh update
+    mesh->setValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
+    this->ui->scaleSpinBox->setValue(mesh->scale());
+    this->ui->xTranslateDoubleSpinBox->setValue(mesh->center()->x());
+    this->ui->yTranslateDoubleSpinBox->setValue(mesh->center()->y());
+}
 
 //! [1]
 MainWindow::~MainWindow()
@@ -27,12 +36,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 //! [1]
-
-//! [3]
-Mesh* MainWindow::getMesh(){
-    return this->mesh;
-}
-//! [3]
 
 void MainWindow::setManual(bool manual){
     this->ui->automaticRadioButton->setChecked(!manual);
@@ -49,10 +52,12 @@ void MainWindow::setCenter(Point *center){
 }
 
 void MainWindow::updateInfo(){
-    if(this->mesh != 0){
-        QString t   = QString::number(this->mesh->trianglesSize());
-        QString v   = QString::number(this->mesh->vertexsSize());
-        QString a   = QString::number(this->mesh->minAngle());
+    // TODO: get info from refinement process
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    if(mesh != 0){
+        QString t   = QString::number(mesh->trianglesSize());
+        QString v   = QString::number(mesh->vertexsSize());
+        QString a   = QString::number(mesh->minAngle());
         this->ui->infoTextEdit->append("<strong>&Aacute;ngulo M&iacute;nimo:</strong> " + a + "<br /><strong>Tri&aacute;ngulos:</strong> " + t + "<br /><strong>V&eacute;rtices:</strong> " + v);
     }
     else{
@@ -61,45 +66,21 @@ void MainWindow::updateInfo(){
     this->ui->infoTextEdit->append("===============<br />");
 }
 
+void MainWindow::on_actionReload_triggered(){
+    RefineProcess::getInstance().reloadMesh();
+    RefineProcess::getInstance().mesh()->scale(this->glWidget->width(),this->glWidget->height());
+    this->updateControl();
+    this->glWidget->updateGL();
+}
+
 //! [4]
 void MainWindow::on_actionLoad_triggered()
 {
-    if( this->mesh == 0 || mesh->isVirgin()){
-        QString filepath = QFileDialog::getOpenFileName(this, "Open Mesh...", "../data");
-        if(!filepath.isEmpty()){
-            this->ui->infoTextEdit->append("<strong>Opening:</strong> <code>" + filepath + "</code>");
-            this->mesh = new Mesh(filepath);
-            if(this->mesh != 0 && 0 < this->mesh->trianglesSize()){
-                this->enableControl(true);
-                this->glWidget->updateGL();
-            }
-            this->ui->infoTextEdit->append("===============<br />");
-            this->updateInfo();
-        }
-    }
-    else{
-        QMessageBox msgBox;
-        msgBox.setText("La malla ha sido modificada");
-        msgBox.setInformativeText("Desea guardar los cambios?");
-        msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
-        msgBox.setButtonText(QMessageBox::Save, "Guardar Cambios");
-        msgBox.setButtonText(QMessageBox::Discard, "Descartar cambios");
-        msgBox.setButtonText(QMessageBox::Cancel, "Cancelar");
-        msgBox.setDefaultButton(QMessageBox::Save);
-        int ret = msgBox.exec();
-        switch(ret){
-        case QMessageBox::Save:
-        case QMessageBox::Discard:
-            delete this->mesh;
-            this->mesh = new Mesh(QFileDialog::getOpenFileName());
-            this->glWidget->updateGL();
-            break;
-        case QMessageBox::Cancel:
-        default:
-            break;
-        }
-    }
-    return;
+    QString filePath = QFileDialog::getOpenFileName(this, "Open Mesh...", "../data");
+    RefineProcess::getInstance().loadMesh(filePath);
+    RefineProcess::getInstance().mesh()->scale(this->glWidget->width(),this->glWidget->height());
+    this->updateControl();
+    this->glWidget->updateGL();
 }
 //! [4]
 
@@ -118,14 +99,16 @@ Options* MainWindow::getOptions(){
 
 void MainWindow::enableControl(bool active){
     this->ui->refineOnceButton->setEnabled(active);
-    this->ui->refineButton->setEnabled(active);
+    if(this->ui->automaticRadioButton->isChecked())
+        this->ui->refineButton->setEnabled(active);
     this->ui->stopButton->setEnabled(!active);
     this->ui->automaticRadioButton->setEnabled(active);
     this->ui->manualRadioButton->setEnabled(active);
 }
 
 void MainWindow::addInfo(Options* options){
-    if(!options->onlyFirstPreProcess() || ( options->onlyFirstPreProcess() && this->mesh->isVirgin() ))
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    if(!options->onlyFirstPreProcess() || ( options->onlyFirstPreProcess() && mesh->isVirgin() ))
         this->ui->infoTextEdit->append("<strong>Pre-proceso:</strong>: " + QString(Constant::preProcessNames[options->preProcess()]) + "<br />");
     if(options->automatic())
         this->ui->infoTextEdit->append("<strong>Selecci&oacute;n Tri&aacute;ngulo:</strong> " + QString(Constant::triangleSelectionNames[options->triangleSelection()]) + "<br />");
@@ -144,7 +127,7 @@ void MainWindow::on_refineOnceButton_clicked()
         this->enableControl(false);
         Options* options = this->getOptions();
         this->addInfo(options);
-        RefineProcess::refine(mesh, options);
+        RefineProcess::getInstance().refine(options);
         this->glWidget->updateGL();
         this->enableControl(true);
         this->updateInfo();
@@ -155,44 +138,15 @@ void MainWindow::on_refineOnceButton_clicked()
 }
 //! [5]
 
-
-void MainWindow::test()
-{
-    try{
-        bool go = true;
-        this->enableControl(false);
-        Options* options = this->getOptions();
-        this->addInfo(options);
-        while(go){
-            go = RefineProcess::refine(mesh, options);
-            //this->glWidget->updateGL();
-        }
-        this->enableControl(true);
-        //this->glWidget->updateGL();
-        this->updateInfo();
-    }
-    catch(QString e){
-        qDebug(e.toUtf8());
-    }
-}
-
-void *ptest(void* ptr){
-    static_cast<MainWindow*>(ptr)->test();
-}
-
 void MainWindow::on_refineButton_clicked()
 {
     try{
-//        this->enableControl(false);
-//        pthread_t refine;
-//        int iret1 = pthread_create( &refine, NULL, ptest, (void*)this);
-
         bool go = true;
         this->enableControl(false);
         Options* options = this->getOptions();
         this->addInfo(options);
         while(go){
-            go = RefineProcess::refine(mesh, options);
+            go = RefineProcess::getInstance().refine(options);
             this->glWidget->updateGL();
         }
         this->enableControl(true);
@@ -201,6 +155,10 @@ void MainWindow::on_refineButton_clicked()
     }
     catch(QString e){
         qDebug(e.toUtf8());
+        this->enableControl(true);
+        this->glWidget->updateGL();
+        this->updateInfo();
+        return;
     }
 }
 
@@ -222,16 +180,18 @@ void MainWindow::on_manualRadioButton_clicked(){
 
 //! [8]
 void MainWindow::on_scaleSpinBox_editingFinished(){
-    if(this->mesh != 0)
-        this->mesh->setScale(this->ui->scaleSpinBox->value());
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    if(mesh != 0)
+        mesh->setScale(this->ui->scaleSpinBox->value());
     this->glWidget->updateGL();
 }
 //! [8]
 
 //! [9]
 void MainWindow::on_xTranslateDoubleSpinBox_editingFinished(){
-    if(this->mesh != 0){
-        this->mesh->setXCenter(this->ui->xTranslateDoubleSpinBox->value());
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    if(mesh != 0){
+        mesh->setXCenter(this->ui->xTranslateDoubleSpinBox->value());
     }
     this->glWidget->updateGL();
 }
@@ -239,8 +199,9 @@ void MainWindow::on_xTranslateDoubleSpinBox_editingFinished(){
 
 //! [10]
 void MainWindow::on_yTranslateDoubleSpinBox_editingFinished(){
-    if(this->mesh != 0){
-        this->mesh->setYCenter(this->ui->yTranslateDoubleSpinBox->value());
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    if(mesh != 0){
+        mesh->setYCenter(this->ui->yTranslateDoubleSpinBox->value());
     }
     this->glWidget->updateGL();
 }
@@ -248,6 +209,7 @@ void MainWindow::on_yTranslateDoubleSpinBox_editingFinished(){
 
 
 void MainWindow::on_automaticTriangleSelectionDoubleSpinBox_editingFinished(){
-    this->mesh->setValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
+    Mesh* mesh = RefineProcess::getInstance().mesh();
+    mesh->setValue(this->ui->automaticTriangleSelectionDoubleSpinBox->value());
     this->glWidget->updateGL();
 }
