@@ -13,10 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->glWidget = new GLWidget(this);
     ui->glLayout->addWidget( glWidget );
-    RefineProcess::getInstance().loadMesh("../data/b.mesh");
-    this->updateControl();
-    this->glWidget->updateGL();
-    this->updateInfo();
+    // TODO: check this seg fault
     this->enableControl(true);
 }
 //! [0]
