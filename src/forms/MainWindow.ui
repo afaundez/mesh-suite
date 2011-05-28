@@ -234,60 +234,18 @@
           <bool>true</bool>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <property name="tabSpacing">
           <number>1</number>
          </property>
-         <widget class="QWidget" name="preProcessPage">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>437</width>
-            <height>154</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Proceso Pre-Inserción</string>
-          </attribute>
-          <layout class="QFormLayout" name="formLayout_2">
-           <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="preProcessComboBox">
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <item>
-              <property name="text">
-               <string>Ninguno</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Arreglar Vértices Involucrados</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QCheckBox" name="preProcessCheckBox">
-             <property name="text">
-              <string>Sólo antes de primera inserción</string>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
          <widget class="QWidget" name="triangleSelectPage">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
             <width>437</width>
-            <height>154</height>
+            <height>202</height>
            </rect>
           </property>
           <attribute name="label">
@@ -382,7 +340,7 @@
             <x>0</x>
             <y>0</y>
             <width>437</width>
-            <height>154</height>
+            <height>202</height>
            </rect>
           </property>
           <attribute name="label">
@@ -444,7 +402,7 @@
             <x>0</x>
             <y>0</y>
             <width>437</width>
-            <height>154</height>
+            <height>202</height>
            </rect>
           </property>
           <attribute name="label">
@@ -457,55 +415,11 @@
            <item row="0" column="1">
             <widget class="QComboBox" name="insideNewPointCaseComboBox">
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <item>
               <property name="text">
-               <string>Inserción Básica</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
                <string>Flip Diagonal (Delaunay)</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Cavity (Delaunay)</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="restrictionRecoveryPage">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>437</width>
-            <height>154</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Recuperación de Restricciones</string>
-          </attribute>
-          <layout class="QFormLayout" name="formLayout_4">
-           <item row="0" column="0" colspan="2">
-            <widget class="QComboBox" name="algorithmComboBox">
-             <item>
-              <property name="text">
-               <string>No Recuperar</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Recuperar por Unión</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Recupearación Completa</string>
               </property>
              </item>
             </widget>
