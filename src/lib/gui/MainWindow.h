@@ -19,6 +19,7 @@ public:
     friend void *ptest(void*);
     MainWindow(QWidget *parent = 0);
     void enableControl(bool active);
+    void disableControl();
     void setManual(bool manual);
     void setScale(double scale);
     void setCenter(Point* center);

@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->glWidget = new GLWidget(this);
     ui->glLayout->addWidget( glWidget );
     // TODO: check this seg fault
-    this->enableControl(true);
+    this->disableControl();
 }
 //! [0]
 
@@ -76,6 +76,7 @@ void MainWindow::on_actionLoad_triggered()
     QString filePath = QFileDialog::getOpenFileName(this, "Open Mesh...", "../data");
     RefineProcess::getInstance().loadMesh(filePath);
     RefineProcess::getInstance().mesh()->scale(this->glWidget->width(),this->glWidget->height());
+    this->enableControl(true);
     this->updateControl();
     this->glWidget->updateGL();
 }
@@ -99,6 +100,15 @@ void MainWindow::enableControl(bool active){
     this->ui->stopButton->setEnabled(!active);
     this->ui->automaticRadioButton->setEnabled(active);
     this->ui->manualRadioButton->setEnabled(active);
+}
+
+void MainWindow::disableControl(){
+    this->ui->refineOnceButton->setEnabled(false);
+    if(this->ui->automaticRadioButton->isChecked())
+        this->ui->refineButton->setEnabled(false);
+    this->ui->stopButton->setEnabled(false);
+    this->ui->automaticRadioButton->setEnabled(false);
+    this->ui->manualRadioButton->setEnabled(false);
 }
 
 void MainWindow::addInfo(Options* options){
