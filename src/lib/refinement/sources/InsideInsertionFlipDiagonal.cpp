@@ -59,9 +59,11 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         this->confp->mesh()->removeAndDeleteTriangle(T);
                         this->confp->mesh()->removeAndDeleteTriangle(t0);
-
-                        tv.append(A->id());
-                        tv.append(B->id());
+                        qDebug("gonna push A and B");
+                        qDebug("A is %s NULL", A == 0? "":"NOT");
+                        tv.append(A->id()); //this->confp->mesh()->queueOfTrianglesToProcess()->push(A);
+                        tv.append(B->id()); //this->confp->mesh()->queueOfTrianglesToProcess()->push(B);
+                        qDebug("A y B pushed");
                         break;
                     }
                 }

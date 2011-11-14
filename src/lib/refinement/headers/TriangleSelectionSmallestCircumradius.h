@@ -5,8 +5,8 @@
 
 class TriangleSelectionSmallestCircumradius: public TriangleSelection{
 public:
-    TriangleSelectionSmallestCircumradius();
-    Triangle* process(Mesh* mesh, double value);
+    TriangleSelectionSmallestCircumradius(Mesh* mesh, double value);
+    Triangle* process(Mesh* mesh);
     ~TriangleSelectionSmallestCircumradius();
 };
 #endif // TRIANGLESELECTIONSMALLESTCIRCUMRADIUS_H

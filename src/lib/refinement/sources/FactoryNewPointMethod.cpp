@@ -29,7 +29,7 @@ Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::New
     case Constant::LEPP_CIRCUMCENTER:
         npm = new NewPointMethodLeppCircumcenter(m, t);
         break;
-    }
-    ret = npm->getConfiguration();
+    } qDebug("asdf");
+    ret = npm->getConfiguration(); qDebug("return new point method");
     return ret;
 }

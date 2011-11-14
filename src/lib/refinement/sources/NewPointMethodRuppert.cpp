@@ -1,6 +1,6 @@
 #include "src/lib/refinement/headers/NewPointMethodRuppert.h"
 
-NewPointMethodRuppert::NewPointMethodRuppert(Mesh* m, Triangle* t){
+NewPointMethodRuppert::NewPointMethodRuppert(Mesh* m, Triangle* t){ qDebug("New Ruppert");
     this->mp = m;
     this->tp = t;
 }

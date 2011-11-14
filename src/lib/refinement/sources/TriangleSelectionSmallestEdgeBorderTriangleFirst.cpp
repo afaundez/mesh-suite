@@ -1,11 +1,11 @@
 #include "src/lib/refinement/headers/TriangleSelectionSmallestEdgeBorderTriangleFirst.h"
 
-TriangleSelectionSmallestEdgeBorderTriangleFirst::TriangleSelectionSmallestEdgeBorderTriangleFirst(): TriangleSelection(){
+TriangleSelectionSmallestEdgeBorderTriangleFirst::TriangleSelectionSmallestEdgeBorderTriangleFirst(Mesh* mesh, double value): TriangleSelection(){
 
 }
 
-Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh, double value){
-    Triangle* ret = 0;
+Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh){
+   /* Triangle* ret = 0;
     foreach(Triangle* t, mesh->triangles()){
         if( t->getSmallestAngleValue() < value ){
             if( t->isConstrained(t->getSmallestEdge()) )
@@ -32,7 +32,7 @@ Triangle* TriangleSelectionSmallestEdgeBorderTriangleFirst::process(Mesh* mesh, 
             }
         }
     }
-    return ret;
+    return ret; */
 }
 
 TriangleSelectionSmallestEdgeBorderTriangleFirst::~TriangleSelectionSmallestEdgeBorderTriangleFirst(){

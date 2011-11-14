@@ -5,6 +5,7 @@
 #include <QPoint>
 #include <queue>
 #include "Triangle.h"
+#include "src/lib/refinement/headers/QueueOfTrianglesToProcess.h"
 
 class Mesh
 {
@@ -48,6 +49,8 @@ public:
     QHash<int, Triangle*>   restrictedTriangles();
     QHash<int, Triangle*>   triangles();
     QHash<int, Vertex*>     vertexs();
+    QueueOfTrianglesToProcess* queueOfTrianglesToProcess();
+    void setQueueOfTrianglesToProcess(QueueOfTrianglesToProcess* q);
     Triangle* locate(Point* p);
     Triangle* locate(Triangle* t, Point* p);
     ~Mesh();
@@ -57,6 +60,7 @@ private:
     QHash<int, Vertex*>     vertexsp;
     QHash<int, QVector<Vertex*> > inputRestrictionsp;
     QHash<int, QVector<Vertex*> > stitchedRstrictionsp;
+    QueueOfTrianglesToProcess *trianglesToProcessp;
     int cv, ct, cr;
     int lowerX, higherX, lowerY, higherY;
     double scalep;

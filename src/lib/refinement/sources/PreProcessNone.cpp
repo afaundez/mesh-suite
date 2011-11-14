@@ -5,7 +5,7 @@ PreProcessNone::PreProcessNone(): PreProcess(){
 }
 
 void PreProcessNone::execute(){
-
+    //qDebug("none");
 }
 
 PreProcessNone::~PreProcessNone(){

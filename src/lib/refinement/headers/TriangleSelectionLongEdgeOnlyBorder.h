@@ -5,8 +5,8 @@
 
 class TriangleSelectionLongEdgeOnlyBorder: public TriangleSelection{
 public:
-    TriangleSelectionLongEdgeOnlyBorder();
-    Triangle* process(Mesh* mesh, double value);
+    TriangleSelectionLongEdgeOnlyBorder(Mesh* mesh, double value);
+    Triangle* process(Mesh* mesh);
     ~TriangleSelectionLongEdgeOnlyBorder();
 };
 

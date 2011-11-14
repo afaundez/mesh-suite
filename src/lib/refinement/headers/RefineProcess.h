@@ -2,6 +2,7 @@
 #define REFINEPROCESS_H
 
 #include "src/lib/geometric/headers/Mesh.h"
+#include "src/lib/refinement/headers/TriangleSelection.h"
 #include "Options.h"
 
 class RefineProcess{
@@ -13,6 +14,8 @@ private:
      RefineProcess & operator=(const RefineProcess &); // intentionally undefined
      Mesh* meshp;
      QString currentLoadedMesh;
+     int lts; //last triangle selection
+     TriangleSelection* ts;
 
 public:
     bool refine(Options* options);

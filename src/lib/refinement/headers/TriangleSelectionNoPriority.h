@@ -2,11 +2,12 @@
 #define TRIANGLESELECTIONNOPRIORITY_H
 
 #include "TriangleSelection.h"
+#include "src/lib/geometric/headers/Mesh.h"
 
 class TriangleSelectionNoPriority: public TriangleSelection{
 public:
-    TriangleSelectionNoPriority();
-    Triangle* process(Mesh* mesh, double value);
+    TriangleSelectionNoPriority(Mesh* mesh, double value);
+    Triangle* process(Mesh* mesh);
     ~TriangleSelectionNoPriority();
 };
 

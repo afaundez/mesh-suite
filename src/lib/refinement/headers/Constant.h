@@ -42,6 +42,10 @@ namespace Constant{
                                         STITCHING,
                                         COMPLETE};
 
+    enum TriangleStatus{  ALIVE, //Triangulo esta en la malla pero no en la cola de procesamiento
+                          IN_DEATH_ROW, //Triangulo esta en la malla Y en la cola de procesamiento
+                          DEAD}; //Triangulo ha sido removido de la malla, pero podria estar en la cola, por lo que en vez de eliminar el objeto, se cambia su estado a DEAD.
+
     const double pi =  3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726024914127;
 }
 

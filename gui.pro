@@ -43,7 +43,10 @@ HEADERS += \
     src/lib/refinement/headers/TriangleSelectionSmallestCircumradius.h \
     src/lib/refinement/headers/NewPointMethodLeppDelaunay.h \
     src/lib/refinement/headers/TriangleSelectionLongEdgeOnlyBorder.h \
-    src/lib/refinement/headers/TriangleSelectionNoPriority.h
+    src/lib/refinement/headers/TriangleSelectionNoPriority.h \
+    src/lib/refinement/headers/QueueOfTrianglesToProcess.h \
+    src/lib/refinement/headers/Queue.h \
+    src/lib/refinement/headers/FactoryQueueOfTrianglesToProcess.h
 FORMS += \
     src/forms/MainWindow.ui \
     src/forms/LoadMeshDialog.ui
@@ -82,4 +85,6 @@ SOURCES += \
     src/lib/refinement/sources/InsideInsertionCavity.cpp \
     src/lib/refinement/sources/TriangleSelectionLongEdgeOnlyBorder.cpp \
     src/lib/refinement/sources/NewPointMethodLeppCentroid.cpp \
-    src/lib/refinement/sources/TriangleSelectionNoPriority.cpp
+    src/lib/refinement/sources/TriangleSelectionNoPriority.cpp \
+    src/lib/refinement/sources/Queue.cpp \
+    src/lib/refinement/sources/FactoryQueueOfTrianglesToProcess.cpp

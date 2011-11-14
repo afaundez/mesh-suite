@@ -97,7 +97,7 @@ Mesh::~Mesh(){
 
 //! [1]
 Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
-    Triangle* aux = new Triangle(++ct, v0, v1, v2);
+    Triangle* aux = new Triangle(++ct, v0, v1, v2, Constant::ALIVE);
     this->trianglesp.insert(aux->id(), aux);
     return aux;
 }
@@ -155,21 +155,29 @@ Triangle* Mesh::getTriangle(Point *p){
 
 void Mesh::removeTriangle(Triangle* T){
     if(T != 0){
-        if(this->trianglesp.contains(T->id()))
+        if(this->trianglesp.contains(T->id())){
+            T->setStatus(Constant::DEAD);
             this->trianglesp.remove(T->id());
+        }
     }
 }
 
 void Mesh::removeTriangle(int tid){
-    if(this->trianglesp.contains(tid))
+    if(this->trianglesp.contains(tid)){
+        this->trianglesp.value(tid)->setStatus(Constant::DEAD);
         this->trianglesp.remove(tid);
+    }
 }
 
 void Mesh::removeAndDeleteTriangle(Triangle* T){
     if(T != 0){
         if(this->trianglesp.contains(T->id())){
             this->trianglesp.remove(T->id());
-            delete T;
+            if(T->getStatus() == Constant::IN_DEATH_ROW || T->getStatus() == Constant::DEAD){
+                T->setStatus(Constant::DEAD);
+            } else { // ALIVE
+                delete T;
+            }
         }
     }
 }
@@ -177,7 +185,11 @@ void Mesh::removeAndDeleteTriangle(Triangle* T){
 void Mesh::removeAndDeleteTriangle(int tid){
     if(this->trianglesp.contains(tid)){
         Triangle* t = this->trianglesp.take(tid);
-        delete t;
+        if(t->getStatus() == Constant::IN_DEATH_ROW || t->getStatus() == Constant::DEAD){
+            t->setStatus(Constant::DEAD);
+        } else { // ALIVE
+            delete t;
+        }
     }
 }
 
@@ -268,6 +280,15 @@ QHash<int, Triangle*> Mesh::triangles(){
 QHash<int, Vertex*> Mesh::vertexs(){
     return this->vertexsp;
 }
+
+QueueOfTrianglesToProcess* Mesh::queueOfTrianglesToProcess(){ qDebug("triangles to process: %s NULL", this->trianglesToProcessp == 0? "" : "NOT");
+    return this->trianglesToProcessp;
+}
+
+void Mesh::setQueueOfTrianglesToProcess(QueueOfTrianglesToProcess* q){
+    this->trianglesToProcessp = q;
+}
+
 
 Triangle* Mesh::locate(Point *p){
     if(this->triangles().isEmpty())

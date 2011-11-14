@@ -5,8 +5,8 @@
 
 class TriangleSelectionSmallestEdge: public TriangleSelection{
 public:
-    TriangleSelectionSmallestEdge();
-    Triangle* process(Mesh* mesh, double value);
+    TriangleSelectionSmallestEdge(Mesh* mesh, double value);
+    Triangle* process(Mesh* mesh);
     ~TriangleSelectionSmallestEdge();
 };
 

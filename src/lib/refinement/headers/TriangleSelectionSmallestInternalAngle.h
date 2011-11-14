@@ -5,8 +5,8 @@
 
 class TriangleSelectionSmallestInternalAngle: public TriangleSelection{
 public:
-    TriangleSelectionSmallestInternalAngle();
-    Triangle* process(Mesh* mesh, double value);
+    TriangleSelectionSmallestInternalAngle(Mesh* mesh, double value);
+    Triangle* process(Mesh* mesh);
     ~TriangleSelectionSmallestInternalAngle();
 };
 

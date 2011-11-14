@@ -13,8 +13,11 @@ class Triangle
 {
 
 public:
-    Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2);
+    Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2, Constant::TriangleStatus status);
     int id();
+
+    void setStatus(Constant::TriangleStatus status);
+    Constant::TriangleStatus getStatus();
 
     void setNeighbours(Triangle* n0, Triangle* n1, Triangle* n2);
     Triangle* getNeighbour(Vertex* P);
@@ -66,6 +69,7 @@ public:
 
 private:
     int idp;
+    Constant::TriangleStatus statusp;
     QVector<bool> restrictedEdgesp;
     QVector<double> internalAnglesp;
     QVector<Vertex*> vertexsp;
