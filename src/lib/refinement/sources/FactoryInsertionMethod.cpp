@@ -3,7 +3,7 @@
 #include "src/lib/refinement/headers/InsideInsertionFlipDiagonal.h"
 #include "src/lib/refinement/headers/InsideInsertionCavity.h"
 
-InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
+InsertionMethod* FactoryInsertionMethod::create(Configuration *c, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe, Options *o){
     InsertionMethod* ret;
     switch(c->includeCase()){
     case Constant::INCLUDED:
@@ -11,15 +11,15 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, Options *o){
         switch(o->insideInsertion()){
         case Constant::BASIC:
             qDebug("--> Using Basic Insertion");
-            ret = new InsideInsertionBasic(c);
+            ret = new InsideInsertionBasic(c, qt);
             break;
         case Constant::FLIP_DIAGONAL:
             //qDebug("-->Using Recursive Diagonal Flip");
-            ret = new InsideInsertionFlipDiagonal(c);
+            ret = new InsideInsertionFlipDiagonal(c, qt);
             break;
         case Constant::CAVITY:
             //qDebug("-->Using Cavity");
-            ret = new InsideInsertionCavity(c);
+            ret = new InsideInsertionCavity(c, qt);
             break;
         }
         break;

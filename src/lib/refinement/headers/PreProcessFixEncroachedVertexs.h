@@ -4,14 +4,16 @@
 #include "PreProcess.h"
 #include "src/lib/geometric/headers/Mesh.h"
 #include "Options.h"
+#include "src/lib/refinement/headers/QueueOfTrianglesToProcess.h"
 
 class PreProcessFixEncroachedVertexs: public PreProcess{
 public:
-    PreProcessFixEncroachedVertexs(Mesh* m, Options* o);
+    PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, Options* o);
     void execute();
     ~PreProcessFixEncroachedVertexs();
 private:
     Mesh* mp;
+    QueueOfTrianglesToProcess* qtp;
     Options* op;
 };
 

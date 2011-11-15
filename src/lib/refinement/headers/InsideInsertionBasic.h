@@ -2,11 +2,12 @@
 #define INSIDEINSERTIONBASIC_H
 
 #include "InsideInsertion.h"
+#include "src/lib/refinement/headers/QueueOfTrianglesToProcess.h"
 
 class InsideInsertionBasic: public InsideInsertion
 {
 public:
-    InsideInsertionBasic(Configuration* conf);
+    InsideInsertionBasic(Configuration* conf, QueueOfTrianglesToProcess* qt);
     void execute();
     ~InsideInsertionBasic();
 

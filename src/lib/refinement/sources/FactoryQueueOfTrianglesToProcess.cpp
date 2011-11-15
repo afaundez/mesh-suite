@@ -1,12 +1,12 @@
 #include "src/lib/refinement/headers/FactoryQueueOfTrianglesToProcess.h"
 #include "src/lib/refinement/headers/Queue.h"
 
-QueueOfTrianglesToProcess* FactoryQueueOfTrianglesToProcess::build(Constant::TriangleSelection type, double value)
+QueueOfTrianglesToProcess* FactoryQueueOfTrianglesToProcess::build(Constant::TriangleSelection type, Mesh* m, double value)
 {
     QueueOfTrianglesToProcess* ret;
     switch(type){
     case Constant::NO_PRIORITY:
-        ret = new Queue(value);
+        ret = new Queue(m, value);
         break;
     /*case Constant::SMALLEST_INTERNAL_ANGLE:
         //qDebug("-->\tGetting triangle with smallest internal angle");

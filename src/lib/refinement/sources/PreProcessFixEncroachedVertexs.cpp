@@ -3,8 +3,9 @@
 #include "src/lib/refinement/headers/FactoryNewPointMethod.h"
 #include "src/lib/refinement/headers/FactoryInsertionMethod.h"
 
-PreProcessFixEncroachedVertexs::PreProcessFixEncroachedVertexs(Mesh* m, Options* o): PreProcess(){
+PreProcessFixEncroachedVertexs::PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, Options* o): PreProcess(){
     this->mp = m;
+    this->qtp = qt;
     this->op = o;
 }
 
@@ -23,7 +24,7 @@ void PreProcessFixEncroachedVertexs::execute(){
                             ps.insert(0, t->midpoint(i));
                             es.insert(0, i);
                             Configuration* conf = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
-                            InsertionMethod* im = FactoryInsertionMethod::create(conf, this->op);
+                            InsertionMethod* im = FactoryInsertionMethod::create(conf, this->qtp, 0, this->op);
                             im->execute();
                             go = true;
                             break;

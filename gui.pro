@@ -46,7 +46,9 @@ HEADERS += \
     src/lib/refinement/headers/TriangleSelectionNoPriority.h \
     src/lib/refinement/headers/QueueOfTrianglesToProcess.h \
     src/lib/refinement/headers/Queue.h \
-    src/lib/refinement/headers/FactoryQueueOfTrianglesToProcess.h
+    src/lib/refinement/headers/FactoryQueueOfTrianglesToProcess.h \
+    src/lib/geometric/headers/Edge.h \
+    src/lib/refinement/headers/QueueOfEncroachedEdges.h
 FORMS += \
     src/forms/MainWindow.ui \
     src/forms/LoadMeshDialog.ui
@@ -87,4 +89,6 @@ SOURCES += \
     src/lib/refinement/sources/NewPointMethodLeppCentroid.cpp \
     src/lib/refinement/sources/TriangleSelectionNoPriority.cpp \
     src/lib/refinement/sources/Queue.cpp \
-    src/lib/refinement/sources/FactoryQueueOfTrianglesToProcess.cpp
+    src/lib/refinement/sources/FactoryQueueOfTrianglesToProcess.cpp \
+    src/lib/geometric/sources/Edge.cpp \
+    src/lib/refinement/sources/QueueOfEncroachedEdges.cpp

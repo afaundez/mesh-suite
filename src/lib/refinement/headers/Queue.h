@@ -12,10 +12,10 @@ private:
     std::queue<Triangle*> *q;
 
 public:
-    Queue(double value);
-    void addTrianglesToProcessToQueue(Mesh* mesh);
-    Triangle* pop();
-    bool push(Triangle* t);
+    Queue(Mesh* mesh, double value);
+    void addTrianglesToProcessToQueue(Mesh* mesh, double value);
+    Triangle* getNextTriangleToProcess();
+    void push(Triangle* t);
     bool empty();
     ~Queue();
 };

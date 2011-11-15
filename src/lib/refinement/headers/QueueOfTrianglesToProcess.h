@@ -6,9 +6,10 @@
 class QueueOfTrianglesToProcess{
 public:
     virtual ~QueueOfTrianglesToProcess() {}
-    virtual void addTrianglesToProcessToQueue(class Mesh* mesh) = 0;
-    virtual Triangle* pop() = 0;
-    virtual bool push(Triangle* t) = 0;
+    virtual void addTrianglesToProcessToQueue(class Mesh* mesh, double value) = 0;
+
+    virtual Triangle* getNextTriangleToProcess() = 0;
+    virtual void push(Triangle* t) = 0;
     virtual bool empty() = 0;
 protected:
     double tsvp;

@@ -43,6 +43,8 @@ Mesh::Mesh(QString fileName){
         else if( line.toLower().startsWith('r') ){
             splitLine = line.split(' ');
             if( 2 < splitLine.length()){
+                /*this->createAndAddRestrictionOld(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
+                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
                 this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                               this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);
             }
@@ -61,6 +63,19 @@ Mesh::Mesh(QString fileName){
                     qDebug("Match");
                     t1->setRestricted(i);
                     break;
+                }
+            }
+        }
+        foreach(Edge* edge, this->restrictionsp){
+            for(int i = 0; i < 3; i++){
+                if(t1->vertex((i+1)%3) == edge->getVertex(0) && t1->vertex((i+2)%3) == edge->getVertex(1)){
+                    qDebug("Match");
+                    t1->setRestricted(i);
+
+                    edge->setAdjacentTriangles(t1, 0);
+                    break;
+
+                    /* TODO: considerar aristas restringidas no de borde */
                 }
             }
         }
@@ -103,11 +118,17 @@ Triangle* Mesh::createAndAddTriangle(Vertex* v0, Vertex* v1, Vertex* v2){
 }
 //! [1]
 
-QVector<Vertex*> Mesh::createAndAddRestriction(Vertex* A, Vertex* B){
+QVector<Vertex*> Mesh::createAndAddRestrictionOld(Vertex* A, Vertex* B){
     QVector<Vertex*> aux;
     aux.insert(0, A);
     aux.insert(1, B);
     this->inputRestrictionsp.insert(++cr, aux);
+    return aux;
+}
+
+Edge* Mesh::createAndAddRestriction(Vertex *A, Vertex *B){
+    Edge* aux = new Edge(++cr, A, B, Constant::ALIVE);
+    this->restrictionsp.insert(aux->id(), aux);
     return aux;
 }
 
@@ -279,6 +300,10 @@ QHash<int, Triangle*> Mesh::triangles(){
 
 QHash<int, Vertex*> Mesh::vertexs(){
     return this->vertexsp;
+}
+
+QHash<int, Edge*> Mesh::restrictions(){
+    return this->restrictionsp;
 }
 
 QueueOfTrianglesToProcess* Mesh::queueOfTrianglesToProcess(){ qDebug("triangles to process: %s NULL", this->trianglesToProcessp == 0? "" : "NOT");

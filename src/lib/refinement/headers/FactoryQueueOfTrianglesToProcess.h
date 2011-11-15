@@ -3,11 +3,12 @@
 
 #include "QueueOfTrianglesToProcess.h"
 #include "Constant.h"
+#include "src/lib/geometric/headers/Mesh.h"
 
 class FactoryQueueOfTrianglesToProcess
 {
 public:
-    static QueueOfTrianglesToProcess* build(Constant::TriangleSelection type, double value);
+    static QueueOfTrianglesToProcess* build(Constant::TriangleSelection type, Mesh* m, double value);
 
 };
 

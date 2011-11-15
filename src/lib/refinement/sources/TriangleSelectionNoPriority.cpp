@@ -3,8 +3,8 @@
 #include "src/lib/refinement/headers/Queue.h"
 
 TriangleSelectionNoPriority::TriangleSelectionNoPriority(Mesh* mesh, double value): TriangleSelection(){
-    QueueOfTrianglesToProcess* q = new Queue(value);
-    q->addTrianglesToProcessToQueue(mesh);
+    QueueOfTrianglesToProcess* q = new Queue(mesh, value);
+    q->addTrianglesToProcessToQueue(mesh, value);
     mesh->setQueueOfTrianglesToProcess(q);
 }
 
@@ -16,7 +16,7 @@ Triangle* TriangleSelectionNoPriority::process(Mesh* mesh){
             return t; */
     if(!mesh->queueOfTrianglesToProcess()->empty()){
         qDebug("return T from queue");
-        return mesh->queueOfTrianglesToProcess()->pop();
+        return mesh->queueOfTrianglesToProcess()->getNextTriangleToProcess();
     }
     qDebug("T");
     return ret;

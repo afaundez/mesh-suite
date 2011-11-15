@@ -1,6 +1,6 @@
 #include "src/lib/refinement/headers/InsideInsertionFlipDiagonal.h"
 
-InsideInsertionFlipDiagonal::InsideInsertionFlipDiagonal(Configuration* conf): InsideInsertion(conf){
+InsideInsertionFlipDiagonal::InsideInsertionFlipDiagonal(Configuration* conf, QueueOfTrianglesToProcess* qt): InsideInsertion(conf, qt){
 
 }
 
@@ -12,6 +12,8 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
     foreach(int id, ids){
         if(this->confp->mesh()->triangles().contains(id)){
             T = this->confp->mesh()->triangle(id);
+
+            //if(T->isAnnoying(this->confp->mesh()->value())) this->qtp->push(T);
             for(int i = 0; i < 3; i++){
                 i0 = i;
                 i1 = (i0+1)%3;
@@ -59,11 +61,10 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         this->confp->mesh()->removeAndDeleteTriangle(T);
                         this->confp->mesh()->removeAndDeleteTriangle(t0);
-                        qDebug("gonna push A and B");
-                        qDebug("A is %s NULL", A == 0? "":"NOT");
-                        tv.append(A->id()); //this->confp->mesh()->queueOfTrianglesToProcess()->push(A);
-                        tv.append(B->id()); //this->confp->mesh()->queueOfTrianglesToProcess()->push(B);
-                        qDebug("A y B pushed");
+
+                        tv.append(A->id()); if(A->isAnnoying(this->confp->mesh()->value())) this->qtp->push(A);//this->confp->mesh()->queueOfTrianglesToProcess()->push(A);
+                        tv.append(B->id()); if(B->isAnnoying(this->confp->mesh()->value())) this->qtp->push(B);//this->confp->mesh()->queueOfTrianglesToProcess()->push(B);
+
                         break;
                     }
                 }
@@ -196,8 +197,14 @@ void InsideInsertionFlipDiagonal::execute(){
         throw QString("FlipDiagonal Perdida de presicion... CORNER INCLUDED");
         break;
     }
-    if(!tv.isEmpty())
+    if(!tv.isEmpty()){
+        foreach(int id, tv){
+            Triangle* triangle = this->confp->mesh()->triangle(id);
+            if(triangle->isAnnoying(this->confp->mesh()->value())) this->qtp->push(triangle);
+        }
+
         this->fixDelaunay(tv);
+    }
 }
 
 InsideInsertionFlipDiagonal::~InsideInsertionFlipDiagonal(){

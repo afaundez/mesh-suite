@@ -1,31 +1,31 @@
 #include "src/lib/refinement/headers/Queue.h"
 #include "src/lib/refinement/headers/Constant.h"
 int triangles = 0;
-Queue::Queue(double value): QueueOfTrianglesToProcess(){
+Queue::Queue(Mesh* mesh, double value): QueueOfTrianglesToProcess(){
     this->q = new std::queue<Triangle*>();
-    this->tsvp = value;
+    //this->tsvp = value;
+    this->addTrianglesToProcessToQueue(mesh, value);
 }
 
-void Queue::addTrianglesToProcessToQueue(Mesh* mesh){
+void Queue::addTrianglesToProcessToQueue(Mesh* mesh, double value){
     foreach(Triangle* t, mesh->triangles()){
-        if( t->getSmallestAngleValue() < this->tsvp){
+        //if( t->getSmallestAngleValue() < this->tsvp){
+        if( t->isAnnoying(value)){
             this->push(t);
         }
     }
-    qDebug("M size: %d", mesh->triangles().size());
-    qDebug("Q size: %d", this->q->size());
 }
 
-Triangle* Queue::pop(){
+Triangle* Queue::getNextTriangleToProcess(){
     Triangle* t = 0;
     /*while( !this->q->empty() && (t = this->q->front())->getStatus() == Constant::DEAD ){
         this->q->pop();
         delete t;
     }*/
     while(!this->q->empty()){
-        t = this->q->front();qDebug("%d status: %d", t->id(), t->getStatus());
-        if(t->getStatus() == Constant::DEAD){ qDebug("%d is dead", t->id());
-            this->q->pop();
+        t = this->q->front(); this->q->pop();
+        if(t->getStatus() == Constant::DEAD){
+            // ****** this->q->pop();
             delete t;
             t = 0;
         } else {
@@ -35,16 +35,16 @@ Triangle* Queue::pop(){
     return t;
 }
 
-bool Queue::push(Triangle *t){
-    qDebug("pushing method :D");
-    if(t == 0) qDebug("triangle NULL"); else qDebug("pushing %d", t->id());
+void Queue::push(Triangle *t){
+
+
     //if(t->getSmallestAngleValue() < this->tsvp){
-        //qDebug("pushed %d", t->id());
+
         t->setStatus(Constant::IN_DEATH_ROW);
         this->q->push(t);
-        return true;
+
     //}
-    return false;
+
 }
 
 bool Queue::empty(){
@@ -52,6 +52,6 @@ bool Queue::empty(){
 }
 
 Queue::~Queue(){
-    delete q;
+    delete this->q;
 }
 

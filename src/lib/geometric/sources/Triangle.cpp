@@ -4,7 +4,7 @@
 #include "src/lib/refinement/headers/Util.h"
 
 //! [0]
-Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2, Constant::TriangleStatus status){
+Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2, Constant::ObjectStatus status){
     this->idp =  id;
     this->vertexsp.insert(0, v0);
     this->vertexsp.insert(1, v1);
@@ -42,11 +42,12 @@ bool Triangle::isRestricted(int edge){
     return this->restrictedEdgesp.at(edge);
 }
 
-void Triangle::setStatus(Constant::TriangleStatus status){
+
+void Triangle::setStatus(Constant::ObjectStatus status){
     this->statusp = status;
 }
 
-Constant::TriangleStatus Triangle::getStatus(){
+Constant::ObjectStatus Triangle::getStatus(){
     return this->statusp;
 }
 

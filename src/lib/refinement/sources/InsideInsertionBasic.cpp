@@ -1,6 +1,6 @@
 #include "src/lib/refinement/headers/InsideInsertionBasic.h"
 
-InsideInsertionBasic::InsideInsertionBasic(Configuration* conf): InsideInsertion(conf){
+InsideInsertionBasic::InsideInsertionBasic(Configuration* conf, QueueOfTrianglesToProcess* qt): InsideInsertion(conf, qt){
 
 }
 

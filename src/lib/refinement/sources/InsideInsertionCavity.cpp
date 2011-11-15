@@ -2,7 +2,7 @@
 #include "src/lib/refinement/headers/InsideInsertionCavity.h"
 #include "src/lib/refinement/headers/Util.h"
 
-InsideInsertionCavity::InsideInsertionCavity(Configuration* conf): InsideInsertion(conf){
+InsideInsertionCavity::InsideInsertionCavity(Configuration* conf, QueueOfTrianglesToProcess* qt): InsideInsertion(conf, qt){
 
 }
 
