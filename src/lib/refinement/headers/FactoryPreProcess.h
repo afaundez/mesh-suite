@@ -6,11 +6,12 @@
 #include "src/lib/geometric/headers/Mesh.h"
 #include "Options.h"
 #include "src/lib/refinement/headers/QueueOfTrianglesToProcess.h"
+#include "src/lib/refinement/headers/QueueOfEncroachedEdges.h"
 
 class FactoryPreProcess
 {
 public:
-    static PreProcess* build(Constant::PreProcess type, Mesh* m, QueueOfTrianglesToProcess* qt, Options* options);
+    static PreProcess* build(Constant::PreProcess type, Mesh* m, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe, Options* options);
 
 };
 

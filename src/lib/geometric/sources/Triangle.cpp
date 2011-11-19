@@ -26,20 +26,20 @@ Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2, Constant::ObjectS
     this->internalAnglesp.insert(1, a1);
     this->internalAnglesp.insert(2, a2);
 
-    this->restrictedEdgesp.insert(0, false);
-    this->restrictedEdgesp.insert(1, false);
-    this->restrictedEdgesp.insert(2, false);
+    this->restrictedEdgesp.insert(0, -1);
+    this->restrictedEdgesp.insert(1, -1);
+    this->restrictedEdgesp.insert(2, -1);
 
     this->statusp = status;
 }
 //! [0]
 
-void Triangle::setRestricted(int edge){
-    this->restrictedEdgesp.replace(edge, true);
+void Triangle::setRestricted(int t_edge, int edge_id){
+    this->restrictedEdgesp.replace(t_edge, edge_id);
 }
 
-bool Triangle::isRestricted(int edge){
-    return this->restrictedEdgesp.at(edge);
+bool Triangle::isRestricted(int t_edge){
+    return this->restrictedEdgesp.at(t_edge) > 0;
 }
 
 
@@ -79,6 +79,12 @@ Vertex* Triangle::getVertex(int p){
     return 0;
 }
 //! [5]
+
+int Triangle::getRestricted(int t_edge){
+    if(0 <= t_edge && t_edge < 3)
+        return this->restrictedEdgesp.at(t_edge);
+    return 0;
+}
 
 void Triangle::glDraw(Constant::GLTriangleType type, double value){
     Vertex* v0 = this->getVertex(0);
@@ -186,11 +192,11 @@ Constant::IncludeCase Triangle::circumcircleInclude(Point *p){
     return ic;
 }
 
-Constant::IncludeCase Triangle::edgeInclude(int edge, Point *p){
+Constant::IncludeCase Triangle::edgeInclude(int t_edge, Point *p){
     Constant::IncludeCase ic;
-    Point* c =  this->midpoint(edge);
+    Point* c =  this->midpoint(t_edge);
     double R, r;
-    R = Util::distance(this->vertex((edge+1)%3), c);
+    R = Util::distance(this->vertex((t_edge+1)%3), c);
     r = Util::distance(c, p);
     if (r < R)
         ic = Constant::INCLUDED;
@@ -406,6 +412,15 @@ int Triangle::getIndex(Vertex *v){
     return -1;
 }
 
+int Triangle::getIndex(int edge_id){
+    for(int i = 0; i < 3; i++){
+        if( this->restrictedEdgesp.at(i) == edge_id){
+            return i;
+        }
+    }
+    return -1;
+}
+
 void Triangle::replaceNeighbour(Triangle *ti, Triangle *tf){
     for(unsigned int i = 0; i < 3; i++)
         if(this->neighboursp.at(i) == ti){
@@ -455,8 +470,8 @@ bool Triangle::isAnnoying(double angle){
     return false;
 }
 
-bool Triangle::isConstrained(int edge){
-    if(this->restrictedEdgesp.at(edge) || this->neighbour(edge) == 0)
+bool Triangle::isConstrained(int t_edge){
+    if(this->restrictedEdgesp.at(t_edge) > 0 || this->neighbour(t_edge) == 0)
         return true;
     return false;
 }
@@ -465,8 +480,8 @@ bool Triangle::isConstrained(){
     return (this->isConstrained(0) || this->isConstrained(1) || this->isConstrained(2) );
 }
 
-bool Triangle::isBoundary(int edge){
-    return (this->neighbour(edge) == 0);
+bool Triangle::isBoundary(int t_edge){
+    return (this->neighbour(t_edge) == 0);
 }
 
 bool Triangle::isBoundary(){
@@ -493,8 +508,8 @@ Vertex* Triangle::vertex(int i){
     return this->vertexsp.at(i);
 }
 
-Point* Triangle::midpoint(int edge){
-    return Util::midpoint(this->vertex((edge+1)%3), this->vertex((edge+2)%3));
+Point* Triangle::midpoint(int t_edge){
+    return Util::midpoint(this->vertex((t_edge+1)%3), this->vertex((t_edge+2)%3));
 }
 
 Triangle* Triangle::neighbour(int i){

@@ -15,7 +15,7 @@ InsertionMethod* FactoryInsertionMethod::create(Configuration *c, QueueOfTriangl
             break;
         case Constant::FLIP_DIAGONAL:
             //qDebug("-->Using Recursive Diagonal Flip");
-            ret = new InsideInsertionFlipDiagonal(c, qt);
+            ret = new InsideInsertionFlipDiagonal(c, qt, qe);
             break;
         case Constant::CAVITY:
             //qDebug("-->Using Cavity");

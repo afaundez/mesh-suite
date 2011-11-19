@@ -9,11 +9,11 @@
 #include "src/lib/geometric/headers/Point.h"
 #include "src/lib/refinement/headers/Constant.h"
 
-class Edge
+class RestrictedEdge
 {
 
 public:
-    Edge(int id, Vertex* v0, Vertex* v1, Constant::ObjectStatus status); // direction: v0 -> v1
+    RestrictedEdge(int id, Vertex* v0, Vertex* v1, Constant::ObjectStatus status); // direction: v0 -> v1
 
     int id();
 
@@ -27,12 +27,15 @@ public:
     Triangle* getAdjacentTriangle(int i);
     bool hasAdjacentTriangle(int i);
     QVector<Vertex*> getVertexs();
+    /*int edgeIndexInTriangle(Triangle* t);*/
+    int belongsTo(Triangle* t);
     bool isConstrained();
-    //Constant::IncludeCase diametralCircleInclude(Point *p);
+    Constant::IncludeCase diametralCircleInclude(Point *p);
     bool isEncroached();
+    //Vertex* getEncroachedVertex();
     Point* midpoint();
 
-    ~Edge();
+    ~RestrictedEdge();
 
 private:
     int idp;

@@ -45,8 +45,8 @@ Mesh::Mesh(QString fileName){
             if( 2 < splitLine.length()){
                 /*this->createAndAddRestrictionOld(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                               this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
-                this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
-                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);
+                /*this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
+                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
             }
         }
     }
@@ -57,7 +57,7 @@ Mesh::Mesh(QString fileName){
                 t1->setNeighbour(pos, t2);
             }
         }
-        foreach(QVector<Vertex*> rest, this->inputRestrictionsp){
+        /*foreach(QVector<Vertex*> rest, this->inputRestrictionsp){
             for(int i = 0; i < 3; i++){
                 if(t1->vertex((i+1)%3) == rest.at(0) && t1->vertex((i+2)%3) == rest.at(1)){
                     qDebug("Match");
@@ -65,8 +65,18 @@ Mesh::Mesh(QString fileName){
                     break;
                 }
             }
+        }*/ //qDebug("restrictions: %d", this->restrictionsp.size());
+
+        /* Solucion chanta mientras no tengo las restricciones en el archivo */
+
+        for(int i = 0; i < 3; i++){
+            if(!t1->hasNeighbour(i)){
+                  RestrictedEdge *e = this->createAndAddRestriction(t1->vertex((i+1)%3), t1->vertex((i+2)%3));
+                  t1->setRestricted(i, e->id());
+                  e->setAdjacentTriangles(t1,0);
+             }
         }
-        foreach(Edge* edge, this->restrictionsp){
+       /* foreach(Edge* edge, this->restrictionsp){
             for(int i = 0; i < 3; i++){
                 if(t1->vertex((i+1)%3) == edge->getVertex(0) && t1->vertex((i+2)%3) == edge->getVertex(1)){
                     qDebug("Match");
@@ -75,10 +85,10 @@ Mesh::Mesh(QString fileName){
                     edge->setAdjacentTriangles(t1, 0);
                     break;
 
-                    /* TODO: considerar aristas restringidas no de borde */
+                    // TODO: considerar aristas restringidas no de borde
                 }
             }
-        }
+        } */
     }
 
     this->lowerX = this->vertexsp[1]->x();
@@ -126,8 +136,8 @@ QVector<Vertex*> Mesh::createAndAddRestrictionOld(Vertex* A, Vertex* B){
     return aux;
 }
 
-Edge* Mesh::createAndAddRestriction(Vertex *A, Vertex *B){
-    Edge* aux = new Edge(++cr, A, B, Constant::ALIVE);
+RestrictedEdge* Mesh::createAndAddRestriction(Vertex *A, Vertex *B){
+    RestrictedEdge* aux = new RestrictedEdge(++cr, A, B, Constant::ALIVE);
     this->restrictionsp.insert(aux->id(), aux);
     return aux;
 }
@@ -214,6 +224,48 @@ void Mesh::removeAndDeleteTriangle(int tid){
     }
 }
 
+
+void Mesh::removeRestriction(RestrictedEdge* E){
+    if(E != 0){
+        if(this->restrictionsp.contains(E->id())){
+            E->setStatus(Constant::DEAD);
+            this->restrictionsp.remove(E->id());
+        }
+    }
+}
+
+void Mesh::removeRestriction(int eid){
+    if(this->restrictionsp.contains(eid)){
+        this->restrictionsp.value(eid)->setStatus(Constant::DEAD);
+        this->restrictionsp.remove(eid);
+    }
+}
+
+void Mesh::removeAndDeleteRestriction(RestrictedEdge* E){
+    if(E != 0){
+        if(this->restrictionsp.contains(E->id())){
+            this->restrictionsp.remove(E->id());
+            if(E->getStatus() == Constant::IN_DEATH_ROW || E->getStatus() == Constant::DEAD){
+                E->setStatus(Constant::DEAD);
+            } else { // ALIVE
+                delete E;
+            }
+        }
+    }
+}
+
+void Mesh::removeAndDeleteRestriction(int eid){
+    if(this->restrictionsp.contains(eid)){
+        RestrictedEdge* e = this->restrictionsp.take(eid);
+        if(e->getStatus() == Constant::IN_DEATH_ROW || e->getStatus() == Constant::DEAD){
+            e->setStatus(Constant::DEAD);
+        } else { // ALIVE
+            delete e;
+        }
+    }
+}
+
+
 bool Mesh::isVirgin(){
     return this->virginp;
 }
@@ -294,6 +346,12 @@ Triangle* Mesh::triangle(int id){
     return 0;
 }
 
+RestrictedEdge* Mesh::restriction(int id){
+    if(this->restrictions().contains(id))
+        return this->restrictions().value(id);
+    return 0;
+}
+
 QHash<int, Triangle*> Mesh::triangles(){
     return this->trianglesp;
 }
@@ -302,7 +360,7 @@ QHash<int, Vertex*> Mesh::vertexs(){
     return this->vertexsp;
 }
 
-QHash<int, Edge*> Mesh::restrictions(){
+QHash<int, RestrictedEdge*> Mesh::restrictions(){
     return this->restrictionsp;
 }
 

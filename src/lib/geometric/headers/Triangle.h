@@ -24,8 +24,8 @@ public:
     Triangle* getNeighbour(int p);
     bool hasNeighbour(int pos);
     int isNeighbour(Triangle* neighbour);
-
     Vertex* getVertex(int p);
+
     void glDraw(Constant::GLTriangleType type, double value);
     Constant::IncludeCase include(Point* point);
     Constant::IncludeCase circumcircleInclude(Point* p);
@@ -42,24 +42,26 @@ public:
     double getSmallestAngleValue();
     double getSmallestEdgeValue();
     int getIndex(Vertex* v);
+    int getIndex(int edge_id);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     bool isAnnoying(double angle);
-    void setRestricted(int edge);
-    bool isRestricted(int edge);
-    bool isConstrained(int edge);
+    void setRestricted(int t_edge, int edge_id);
+    bool isRestricted(int t_edge);
+    int getRestricted(int t_edge);
+    bool isConstrained(int t_edge);
     bool isConstrained();
-    bool isBoundary(int edge);
+    bool isBoundary(int t_edge);
     bool isBoundary();
     int wichBorder(Point* p);
     void printInfo();
 
 
 
-    Constant::IncludeCase edgeInclude(int edge, Point* p);
+    Constant::IncludeCase edgeInclude(int t_edge, Point* p);
     QVector<Triangle*> lepp();
 
-    Point* midpoint(int edge);
-    Triangle* neighbour(int edge);
+    Point* midpoint(int t_edge);
+    Triangle* neighbour(int t_edge);
     Vertex* vertex(int i);
     QVector<Vertex*> vertexs();
     QVector<Triangle*> neighbours();
@@ -70,7 +72,7 @@ public:
 private:
     int idp;
     Constant::ObjectStatus statusp;
-    QVector<bool> restrictedEdgesp;
+    QVector<int> restrictedEdgesp;
     QVector<double> internalAnglesp;
     QVector<Vertex*> vertexsp;
     QVector<Triangle*> neighboursp;

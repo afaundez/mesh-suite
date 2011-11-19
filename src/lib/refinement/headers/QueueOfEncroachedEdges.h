@@ -9,17 +9,17 @@
 class QueueOfEncroachedEdges{
 
 private:
-    std::queue<Edge*> *q;
+    std::queue<RestrictedEdge*> *q;
 
 public:
     QueueOfEncroachedEdges(Mesh* mesh);
     ~QueueOfEncroachedEdges();
     void addEdgesToProcessToQueue(Mesh* mesh);
 
-    Edge* getNextEdgeToProcess();
-    void push(Edge* e);
+    RestrictedEdge* getNextEdgeToProcess();
+    void push(RestrictedEdge* e);
     bool empty();
-
+    int size();
 };
 
 #endif // QUEUEOFENCROACHEDEDGES_H

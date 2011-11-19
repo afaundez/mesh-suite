@@ -3,41 +3,49 @@
 #include "src/lib/refinement/headers/FactoryNewPointMethod.h"
 #include "src/lib/refinement/headers/FactoryInsertionMethod.h"
 
-PreProcessFixEncroachedVertexs::PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, Options* o): PreProcess(){
+PreProcessFixEncroachedVertexs::PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe, Options* o): PreProcess(){
     this->mp = m;
     this->qtp = qt;
+    this->qep = qe;
     this->op = o;
 }
 
 void PreProcessFixEncroachedVertexs::execute(){
+
     bool go = true;
-    while(go){
-        go = false;
-        foreach(Triangle* t, this->mp->triangles()){
-            foreach(Vertex* v, this->mp->vertexs()){
-                for(int i = 0; i < 3; i++){
-                    if(t->getIndex(v) == i && !t->hasNeighbour(i)){
-                        Constant::IncludeCase ic = t->edgeInclude(i, v);
-                        if(ic == Constant::INCLUDED || ic == Constant::BORDER_INCLUDED){
-                            QVector<Point*> ps;
-                            QVector<int>    es;
-                            ps.insert(0, t->midpoint(i));
-                            es.insert(0, i);
-                            Configuration* conf = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
-                            InsertionMethod* im = FactoryInsertionMethod::create(conf, this->qtp, 0, this->op);
+        while(go){
+            go = false;
+
+            while(!this->qep->empty()){
+                Triangle* triangle;
+                QVector<Point*> ps;
+                QVector<int>    es;
+                RestrictedEdge* e = this->qep->getNextEdgeToProcess();
+
+                ps.insert(0, e->midpoint());
+
+                foreach(Triangle* t, e->getAdjacentTriangles()){
+                    if( t != 0){
+
+                        int i = t->getIndex(e->id());
+
+                        if( i != -1 && (e->diametralCircleInclude(t->getVertex(i))) == Constant::INCLUDED){
+                            triangle = t;
+                            es.insert(0, i); //es.insert(1,e->id());
+                            Configuration* conf = new Configuration(this->mp, triangle, ps, es, Constant::BORDER_INCLUDED);
+                            InsertionMethod* im = FactoryInsertionMethod::create(conf, this->qtp, this->qep, this->op);
                             im->execute();
                             go = true;
-                            break;
-                        }
+                            //break;
+                       }
                     }
                 }
-            if(go)
-                break;
+                if(go){
+                    //this->mp->removeAndDeleteRestriction(e);
+                    break;
+                }
             }
-            if(go)
-                break;
         }
-    }
 }
 
 PreProcessFixEncroachedVertexs::~PreProcessFixEncroachedVertexs(){

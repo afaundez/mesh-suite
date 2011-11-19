@@ -3,14 +3,14 @@
 #include "src/lib/refinement/headers/PreProcessNone.h"
 #include "src/lib/refinement/headers/PreProcessFixEncroachedVertexs.h"
 
-PreProcess* FactoryPreProcess::build(Constant::PreProcess type, Mesh* mesh, QueueOfTrianglesToProcess* qt, Options* options){
+PreProcess* FactoryPreProcess::build(Constant::PreProcess type, Mesh* mesh, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe, Options* options){
     PreProcess* ret;
     switch(type){
     case Constant::NO_PREPROCESS:
         ret = new PreProcessNone();
         break;
     case Constant::FIX_ENCROACHED_VERTEXS:
-        ret =  new PreProcessFixEncroachedVertexs(mesh, qt, options);
+        ret =  new PreProcessFixEncroachedVertexs(mesh, qt, qe, options);
         break;
     }
     return ret;
