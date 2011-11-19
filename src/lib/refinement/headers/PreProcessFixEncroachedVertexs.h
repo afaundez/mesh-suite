@@ -5,15 +5,17 @@
 #include "src/lib/geometric/headers/Mesh.h"
 #include "Options.h"
 #include "src/lib/refinement/headers/QueueOfTrianglesToProcess.h"
+#include "src/lib/refinement/headers/QueueOfEncroachedEdges.h"
 
 class PreProcessFixEncroachedVertexs: public PreProcess{
 public:
-    PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, Options* o);
+    PreProcessFixEncroachedVertexs(Mesh* m, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe, Options* o);
     void execute();
     ~PreProcessFixEncroachedVertexs();
 private:
     Mesh* mp;
     QueueOfTrianglesToProcess* qtp;
+    QueueOfEncroachedEdges* qep;
     Options* op;
 };
 

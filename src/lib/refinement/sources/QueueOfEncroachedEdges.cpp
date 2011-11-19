@@ -1,25 +1,25 @@
 #include "src/lib/refinement/headers/QueueOfEncroachedEdges.h"
 
 QueueOfEncroachedEdges::QueueOfEncroachedEdges(Mesh* mesh){
-    this->q = new std::queue<Edge*>();
+    this->q = new std::queue<RestrictedEdge*>();
     this->addEdgesToProcessToQueue(mesh);
 }
 
 void QueueOfEncroachedEdges::addEdgesToProcessToQueue(Mesh* mesh){
-    foreach(Edge* e, mesh->restrictions()){
+    foreach(RestrictedEdge* e, mesh->restrictions()){
         if(e->isEncroached()){
             this->push(e);
         }
     }
 }
 
-Edge* QueueOfEncroachedEdges::getNextEdgeToProcess(){
-    Edge* edge = 0;
+RestrictedEdge* QueueOfEncroachedEdges::getNextEdgeToProcess(){
+    //qDebug("cant: %d", this->q->size());
+    RestrictedEdge* edge = 0;
 
     while(!this->q->empty()){
         edge = this->q->front(); this->q->pop();
         if(edge->getStatus() == Constant::DEAD){
-
             delete edge;
             edge = 0;
         } else {
@@ -29,7 +29,7 @@ Edge* QueueOfEncroachedEdges::getNextEdgeToProcess(){
     return edge;
 }
 
-void QueueOfEncroachedEdges::push(Edge* e){
+void QueueOfEncroachedEdges::push(RestrictedEdge* e){
 
         e->setStatus(Constant::IN_DEATH_ROW);
         this->q->push(e);
@@ -39,6 +39,10 @@ void QueueOfEncroachedEdges::push(Edge* e){
 
 bool QueueOfEncroachedEdges::empty(){
     return this->q->empty();
+}
+
+int QueueOfEncroachedEdges::size(){
+    return this->q->size();
 }
 
 QueueOfEncroachedEdges::~QueueOfEncroachedEdges(){

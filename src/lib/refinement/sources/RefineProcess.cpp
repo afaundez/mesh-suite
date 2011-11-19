@@ -54,7 +54,7 @@ bool RefineProcess::refine(Options *options){
     // qDebug("--> Refining Process");
     if( !options->onlyFirstPreProcess()|| (options->onlyFirstPreProcess() && this->meshp->isVirgin()) ){
         // qDebug("----> Pre-processing mesh");
-        FactoryPreProcess::build((Constant::PreProcess)(options->preProcess()), this->meshp, this->trianglesToProcess, options)->execute();
+        FactoryPreProcess::build((Constant::PreProcess)(options->preProcess()), this->meshp, this->trianglesToProcess, this->encroachedEdges, options)->execute();
     }
 
     if(this->meshp->isVirgin()){
@@ -69,10 +69,6 @@ bool RefineProcess::refine(Options *options){
         }
         else {
             // qDebug("----> Getting new bad triangle");
-            /*if(this->lastTriangleSelection != options->triangleSelection()){ qDebug("last T selection: %d", this->lastTriangleSelection); qDebug("opt selection %d", options->triangleSelection());
-                this->ts = FactoryTriangleSelection::build(options->triangleSelection(), this->meshp, options->triangleSelectionValue());
-            }*/
-            //selectedTriangle = this->ts->process(this->meshp); if(selectedTriangle == 0) qDebug("selectedT == NULL");
             selectedTriangle = this->trianglesToProcess->getNextTriangleToProcess();
             this->lastTriangleSelection = options->triangleSelection();
         }
@@ -90,7 +86,6 @@ bool RefineProcess::refine(Options *options){
         conf = FactoryNewPointMethod::create(this->meshp, targetTriangle, options->newPointMethod(), options->triangleSelectionValue());
 
         if(conf->triangle() != 0){
-            // qDebug("--> Inserting configuration");
             im = FactoryInsertionMethod::create(conf, this->trianglesToProcess, this->encroachedEdges, options);
             im->execute();
             insertion = true;
@@ -108,4 +103,5 @@ bool RefineProcess::refine(Options *options){
         this->meshp->setSelectedTriangle(0);
     }
     return insertion;
+
 }

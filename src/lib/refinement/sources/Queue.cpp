@@ -23,9 +23,9 @@ Triangle* Queue::getNextTriangleToProcess(){
         delete t;
     }*/
     while(!this->q->empty()){
-        t = this->q->front(); this->q->pop();
+        t = this->q->front(); //this->q->pop();
         if(t->getStatus() == Constant::DEAD){
-            // ****** this->q->pop();
+            this->q->pop();
             delete t;
             t = 0;
         } else {

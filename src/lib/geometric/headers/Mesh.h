@@ -16,7 +16,7 @@ public:
     void addTriangle(Triangle* T);
     Triangle* createAndAddTriangle(Vertex* A, Vertex* B, Vertex *C);
     QVector<Vertex*> createAndAddRestrictionOld(Vertex* A, Vertex* B);
-    Edge* createAndAddRestriction(Vertex* A, Vertex* B);
+    RestrictedEdge* createAndAddRestriction(Vertex* A, Vertex* B);
     void addVertex(Vertex* A);
     Vertex* createAndAddVertex(double x, double y);
     void drawMesh();
@@ -28,6 +28,10 @@ public:
     void removeTriangle(int tid);
     void removeAndDeleteTriangle(Triangle* T);
     void removeAndDeleteTriangle(int tid);
+    void removeRestriction(RestrictedEdge* E);
+    void removeRestriction(int tid);
+    void removeAndDeleteRestriction(RestrictedEdge* E);
+    void removeAndDeleteRestriction(int tid);
     bool isVirgin();
     void setVirgin(bool virgin);
     int vertexsSize();
@@ -48,10 +52,11 @@ public:
     void setValue(double v);
     double value();
     Triangle* triangle(int id);
+    RestrictedEdge* restriction(int id);
     //QHash<int, Triangle*>   restrictedTriangles();
     QHash<int, Triangle*>   triangles();
     QHash<int, Vertex*>     vertexs();
-    QHash<int, Edge*>       restrictions();
+    QHash<int, RestrictedEdge*>       restrictions();
     QueueOfTrianglesToProcess* queueOfTrianglesToProcess();
     void setQueueOfTrianglesToProcess(QueueOfTrianglesToProcess* q);
     Triangle* locate(Point* p);
@@ -61,7 +66,7 @@ public:
 private:
     QHash<int, Triangle*>   trianglesp;
     QHash<int, Vertex*>     vertexsp;
-    QHash<int, Edge*>   restrictionsp;
+    QHash<int, RestrictedEdge*>   restrictionsp;
     QHash<int, QVector<Vertex*> > inputRestrictionsp;
     QHash<int, QVector<Vertex*> > stitchedRstrictionsp; //utilizado para recuperacion de aristas
     QueueOfTrianglesToProcess *trianglesToProcessp;
