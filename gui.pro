@@ -48,7 +48,9 @@ HEADERS += \
     src/lib/refinement/headers/Queue.h \
     src/lib/refinement/headers/FactoryQueueOfTrianglesToProcess.h \
     src/lib/geometric/headers/Edge.h \
-    src/lib/refinement/headers/QueueOfEncroachedEdges.h
+    src/lib/refinement/headers/QueueOfEncroachedEdges.h \
+    src/lib/refinement/headers/PriorityQueue.h \
+    src/lib/refinement/headers/Comparator.h
 FORMS += \
     src/forms/MainWindow.ui \
     src/forms/LoadMeshDialog.ui
@@ -91,4 +93,6 @@ SOURCES += \
     src/lib/refinement/sources/Queue.cpp \
     src/lib/refinement/sources/FactoryQueueOfTrianglesToProcess.cpp \
     src/lib/geometric/sources/Edge.cpp \
-    src/lib/refinement/sources/QueueOfEncroachedEdges.cpp
+    src/lib/refinement/sources/QueueOfEncroachedEdges.cpp \
+    src/lib/refinement/sources/PriorityQueue.cpp \
+    src/lib/refinement/sources/Comparator.cpp

@@ -60,37 +60,6 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         //qDebug("oldt1: %d oldt2: %d newt1: %d newt2: %d size", T->id(), t0->id(), A->id(), B->id(), this->confp->mesh()->trianglesSize());
 
-                        /* actualizar vecinos de aristas restringidas */
-                        /*int edge_id = edges.value(T->id());
-                        if(edge_id != -1){
-                            E = this->confp->mesh()->restriction(edge_id);
-                            for(int j = 0; j < 2; j++){
-                                Triangle *t = E->getAdjacentTriangle(j);
-                                if(t == T){
-                                    //E->setAdjacentTriangle(j,B);
-                                    int k = E->edgeIndexInTriangle(A);
-                                    if(k != -1){
-                                        E->setAdjacentTriangle(j,A);
-                                        A->setRestricted(k);
-                                        //te.insert(A->id(), edge_id);
-                                    } else {
-                                       // te.insert(A->id(), -1);
-                                    }
-                                    k = E->edgeIndexInTriangle(B);
-                                    if(k != -1){
-                                        E->setAdjacentTriangle(j,B);
-                                        B->setRestricted(k);
-                                        //te.insert(B->id(), edge_id);
-                                    } else {
-                                        //te.insert(B->id(), -1);
-                                    }
-                                }
-                            }
-                        } else {
-                            //te.insert(A->id(),-1);
-                            //te.insert(B->id(),-1);
-                        } */
-
                         /* Begin: update restricted edges. TODO: consider restricted edges other than border edges */
 
                         // update T restricted edges to point the new created triangles

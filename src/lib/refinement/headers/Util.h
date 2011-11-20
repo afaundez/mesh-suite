@@ -8,11 +8,11 @@ namespace Util{
 
 static double distance(Point* a, Point *b){
         return sqrt(pow(b->x() - a->x(), 2) + pow(b->y() - a->y(), 2));
-    };
+    }
 
     static Point* midpoint(Point* a, Point *b){
         return new Point( (b->x() + a->x())/2.0, (b->y() + a->y())/2.0 );
-    };
+    }
 
     static Point* centroid(Point *a, Point *b, Point *c, Point* d){
         double x0, y0, x1, y1, x2, y2, x3, y3;

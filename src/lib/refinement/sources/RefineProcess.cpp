@@ -41,7 +41,7 @@ bool RefineProcess::refine(Options *options){
     bool insertion = false;
 
     /* Obtaining encroached edges */
-    if(this->meshp->isVirgin() && options->preProcess() == Constant::FIX_ENCROACHED_VERTEXS /* and lastPreProcess != options.preProcess*/ ){
+    if(this->meshp->isVirgin() && options->preProcess() == Constant::FIX_ENCROACHED_VERTEXS ){ /* and lastPreProcess != options.preProcess*/
         this->encroachedEdges = new QueueOfEncroachedEdges(this->meshp);
     }
 

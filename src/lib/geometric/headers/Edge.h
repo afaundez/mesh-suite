@@ -34,6 +34,7 @@ public:
     bool isEncroached();
     //Vertex* getEncroachedVertex();
     Point* midpoint();
+    double length();
 
     ~RestrictedEdge();
 

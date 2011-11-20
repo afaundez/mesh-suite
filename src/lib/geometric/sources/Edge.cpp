@@ -116,6 +116,10 @@ Point* RestrictedEdge::midpoint(){
     return Util::midpoint(this->getVertex(0), this->getVertex(1));
 }
 
+double RestrictedEdge::length(){
+    return Util::distance(this->getVertex(0), this->getVertex(1));
+}
+
 RestrictedEdge::~RestrictedEdge(){
 
 }
