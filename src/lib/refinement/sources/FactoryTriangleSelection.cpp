@@ -28,9 +28,9 @@ TriangleSelection* FactoryTriangleSelection::build(Constant::TriangleSelection t
         //qDebug("-->\tGetting triangle with smallest circumcenter");
         ret =  new TriangleSelectionSmallestCircumradius(mesh, value);
         break;
-    case Constant::LONG_EDGE_ONLY_BORDER:
+    /*case Constant::LONG_EDGE_ONLY_BORDER:
         ret = new TriangleSelectionLongEdgeOnlyBorder(mesh, value);
-        break;
+        break;*/
     }
     return ret;
 }

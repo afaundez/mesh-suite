@@ -17,8 +17,8 @@ bool Comparator::operator()(Triangle *t1, Triangle *t2){
     case Constant::SMALLEST_CIRCUMCIRCLE:
         //qDebug("-->\tTriangles ordered by smallest circumcenter");
         return t1->circumradius() > t2->circumradius();
-    case Constant::LONG_EDGE_ONLY_BORDER: //corregir para considerar bordes
-        return t1->getLongestEdgeValue() > t2->getLongestEdgeValue();
+    /* case Constant::LONG_EDGE_ONLY_BORDER:
+        return t1->getLongestEdgeValue() > t2->getLongestEdgeValue(); */
     }
 }
 

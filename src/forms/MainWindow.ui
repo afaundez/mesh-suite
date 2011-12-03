@@ -244,8 +244,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>437</width>
-            <height>154</height>
+            <width>266</width>
+            <height>73</height>
            </rect>
           </property>
           <attribute name="label">
@@ -286,8 +286,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>437</width>
-            <height>154</height>
+            <width>454</width>
+            <height>130</height>
            </rect>
           </property>
           <attribute name="label">
@@ -367,11 +367,6 @@
                <string>Menor Circunradio</string>
               </property>
              </item>
-             <item>
-              <property name="text">
-               <string>Largo Borde</string>
-              </property>
-             </item>
             </widget>
            </item>
           </layout>
@@ -381,8 +376,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>437</width>
-            <height>154</height>
+            <width>250</width>
+            <height>74</height>
            </rect>
           </property>
           <attribute name="label">
@@ -443,8 +438,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>437</width>
-            <height>154</height>
+            <width>214</width>
+            <height>45</height>
            </rect>
           </property>
           <attribute name="label">
@@ -483,8 +478,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>437</width>
-            <height>154</height>
+            <width>215</width>
+            <height>45</height>
            </rect>
           </property>
           <attribute name="label">
@@ -547,7 +542,7 @@
      <x>0</x>
      <y>0</y>
      <width>1118</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

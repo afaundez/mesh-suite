@@ -19,7 +19,8 @@ namespace Constant{
                             SMALLEST_EDGE,
                             SMALLEST_ANGLE_CONSTRAINED_EDGE_FIRST,
                             SMALLEST_CIRCUMCIRCLE,
-                            LONG_EDGE_ONLY_BORDER};
+                            // LONG_EDGE_ONLY_BORDER
+                          };
 
     extern char *triangleSelectionNames[];
 
