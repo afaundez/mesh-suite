@@ -16,7 +16,7 @@ Triangle::Triangle(int id, Vertex* v0, Vertex* v1, Vertex* v2, Constant::ObjectS
 
     double d0 = Util::distance(v1, v2);
     double d1 = Util::distance(v2, v0);
-    double d2 = Util::distance(v0, v1);;
+    double d2 = Util::distance(v0, v1);
 
     double a0	= acos( (d1*d1+d2*d2-d0*d0)/(2*d1*d2) )/Constant::pi*180.0;
     double a1	= acos( (d2*d2+d0*d0-d1*d1)/(2*d2*d0) )/Constant::pi*180.0;
@@ -204,6 +204,7 @@ Constant::IncludeCase Triangle::edgeInclude(int t_edge, Point *p){
         ic = Constant::BORDER_INCLUDED;
     else
         ic = Constant::NOT_INCLUDED;
+    delete c;
     return ic;
 }
 

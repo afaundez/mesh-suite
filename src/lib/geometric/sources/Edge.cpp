@@ -97,6 +97,7 @@ Constant::IncludeCase RestrictedEdge::diametralCircleInclude(Point *p){
         ic = Constant::INCLUDED;
     else
         ic = Constant::NOT_INCLUDED;
+    delete c;
     return ic;
 }
 
