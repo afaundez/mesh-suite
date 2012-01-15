@@ -31,7 +31,6 @@ Triangle* Queue::getNextTriangleToProcess(){
 }
 
 void Queue::push(Triangle *t){
-
         t->setStatus(Constant::IN_DEATH_ROW);
         this->q->push(t);
 }
