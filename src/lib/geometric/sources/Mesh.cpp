@@ -118,6 +118,19 @@ Mesh::Mesh(QString fileName){
 //! [0]
 
 Mesh::~Mesh(){
+    foreach( RestrictedEdge* e, this->restrictionsp){
+        this->restrictionsp.remove(e->id());
+        delete e;
+
+    }
+    foreach( Triangle* t, this->trianglesp){
+        this->trianglesp.remove(t->id());
+        delete t;
+    }
+    foreach( Vertex* v, this->vertexsp ){
+        this->vertexsp.remove(v->id());
+        delete v;
+    }
 }
 
 //! [1]
@@ -182,6 +195,25 @@ Triangle* Mesh::getTriangle(Point *p){
             return aux;
     }
     return 0;
+}
+
+Triangle* Mesh::getTriangle(Triangle *initial, Point *p){
+    Triangle* current = initial;
+    bool next = true;
+    while(next){
+        next = false;
+        for(int i=0; i<3; i++){
+            if(Util::orientation(current->getVertex((i+1)%3),
+                    current->getVertex((i+2)%3),
+                                 p) < 0.0 + 0.000001){
+                current = current->getNeighbour(i);
+                next = true;
+                break;
+            }
+        }
+        if(next == false || current == NULL) break;
+    }
+    return current;
 }
 
 void Mesh::removeTriangle(Triangle* T){

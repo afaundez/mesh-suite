@@ -12,7 +12,8 @@ private:
     std::queue<RestrictedEdge*> *q;
 
 public:
-    QueueOfEncroachedEdges(Mesh* mesh);
+    QueueOfEncroachedEdges();
+    //QueueOfEncroachedEdges(Mesh* mesh);
     ~QueueOfEncroachedEdges();
     void addEdgesToProcessToQueue(Mesh* mesh);
 

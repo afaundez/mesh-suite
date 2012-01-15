@@ -19,15 +19,19 @@ RefineProcess &RefineProcess::getInstance()
   return _instance;
 }
 
-void RefineProcess::loadMesh(QString filePath){ this->lastTriangleSelection = -1; this->ts = 0;
+void RefineProcess::loadMesh(QString filePath){
+    this->lastTriangleSelection = -1; this->ts = 0;
     if(this->meshp != 0)
         delete meshp;
     this->currentLoadedMesh = filePath;
     this->meshp = new Mesh(filePath);
 }
 
-void RefineProcess::reloadMesh(){ this->lastTriangleSelection = -1; this->ts = 0;
-    delete this->meshp;
+void RefineProcess::reloadMesh(){
+    this->lastTriangleSelection = -1; this->ts = 0;
+    if(this->meshp != 0){
+        delete this->meshp;
+    }
     this->meshp = new Mesh(this->currentLoadedMesh);
 }
 
@@ -41,8 +45,10 @@ bool RefineProcess::refine(Options *options){
     bool insertion = false;
 
     /* Obtaining encroached edges */
-    if(this->meshp->isVirgin() && options->preProcess() == Constant::FIX_ENCROACHED_VERTEXS ){ /* and lastPreProcess != options.preProcess*/
-        this->encroachedEdges = new QueueOfEncroachedEdges(this->meshp);
+    if(this->meshp->isVirgin()  ){ /* and lastPreProcess != options.preProcess*/
+        this->encroachedEdges = new QueueOfEncroachedEdges();
+        if(options->preProcess() == Constant::FIX_ENCROACHED_VERTEXS)
+            this->encroachedEdges->addEdgesToProcessToQueue(this->meshp);
     }
 
     /* Obtaining bad triangles */
@@ -82,7 +88,6 @@ bool RefineProcess::refine(Options *options){
     if( selectedTriangle != 0){
         targetTriangle = selectedTriangle;
 
-        // qDebug("----> Getting configuration for new point...");
         conf = FactoryNewPointMethod::create(this->meshp, targetTriangle, options->newPointMethod(), options->triangleSelectionValue());
 
         if(conf->triangle() != 0){

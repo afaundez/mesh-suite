@@ -4,6 +4,7 @@
 #include "src/lib/refinement/headers/NewPointMethodLeppCentroid.h"
 #include "src/lib/refinement/headers/NewPointMethodLeppCircumcenter.h"
 #include "src/lib/refinement/headers/NewPointMethodLeppDelaunay.h"
+#include "src/lib/refinement/headers/NewPointMethodLeppMidpoint.h"
 #include "src/lib/refinement/headers/NewPointMethodBisection.h"
 #include "src/lib/refinement/headers/NewPointMethodUngor.h"
 
@@ -18,7 +19,8 @@ Configuration* FactoryNewPointMethod::create(Mesh *m, Triangle* t, Constant::New
         npm = new NewPointMethodRuppert(m, t);
         break;
     case Constant::LEPP_DELAUNAY:
-        npm = new NewPointMethodLeppDelaunay(m, t);
+        //npm = new NewPointMethodLeppDelaunay(m, t);
+        npm = new NewPointMethodLeppMidpoint(m, t);
         break;
     case Constant::LEPP_CENTROID:
         npm = new NewPointMethodLeppCentroid(m, t);

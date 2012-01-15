@@ -23,6 +23,7 @@ public:
     bool hasTriangles();
     Triangle* getSelectedTriangle();
     void setSelectedTriangle(Triangle* T);
+    Triangle* getTriangle(Triangle* initial, Point* p);
     Triangle* getTriangle(Point* p);
     void removeTriangle(Triangle* T);
     void removeTriangle(int tid);

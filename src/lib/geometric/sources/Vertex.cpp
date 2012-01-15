@@ -12,3 +12,6 @@ int Vertex::id(){
     return this->idp;
 }
 //! [1]
+
+Vertex::~Vertex(){
+}

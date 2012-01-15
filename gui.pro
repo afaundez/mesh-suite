@@ -50,7 +50,8 @@ HEADERS += \
     src/lib/geometric/headers/Edge.h \
     src/lib/refinement/headers/QueueOfEncroachedEdges.h \
     src/lib/refinement/headers/PriorityQueue.h \
-    src/lib/refinement/headers/Comparator.h
+    src/lib/refinement/headers/Comparator.h \
+    src/lib/refinement/headers/NewPointMethodLeppMidpoint.h
 FORMS += \
     src/forms/MainWindow.ui \
     src/forms/LoadMeshDialog.ui
@@ -95,4 +96,5 @@ SOURCES += \
     src/lib/geometric/sources/Edge.cpp \
     src/lib/refinement/sources/QueueOfEncroachedEdges.cpp \
     src/lib/refinement/sources/PriorityQueue.cpp \
-    src/lib/refinement/sources/Comparator.cpp
+    src/lib/refinement/sources/Comparator.cpp \
+    src/lib/refinement/sources/NewPointMethodLeppMidpoint.cpp

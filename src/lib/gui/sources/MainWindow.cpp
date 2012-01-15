@@ -6,6 +6,40 @@
 #include "src/lib/refinement/headers/Options.h"
 #include "src/lib/refinement/headers/RefineProcess.h"
 
+#include <sys/time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+long long
+timeval_diff(struct timeval *difference,
+             struct timeval *end_time,
+             struct timeval *start_time
+            )
+{
+  struct timeval temp_diff;
+
+  if(difference==NULL)
+  {
+    difference=&temp_diff;
+  }
+
+  difference->tv_sec =end_time->tv_sec -start_time->tv_sec ;
+  difference->tv_usec=end_time->tv_usec-start_time->tv_usec;
+
+  /* Using while instead of if below makes the code slightly more robust. */
+
+  while(difference->tv_usec<0)
+  {
+    difference->tv_usec+=1000000;
+    difference->tv_sec -=1;
+  }
+
+  return 1000000LL*difference->tv_sec+
+                   difference->tv_usec;
+
+} /* timeval_diff() */
+
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -142,10 +176,17 @@ void MainWindow::on_refineButton_clicked()
         this->enableControl(false);
         Options* options = this->getOptions();
         this->addInfo(options);
+        struct timeval earlier;
+        struct timeval later;
+        gettimeofday(&earlier,NULL); int i=0;
         while(go){
-            go = RefineProcess::getInstance().refine(options);
+            go = RefineProcess::getInstance().refine(options); i++; //qDebug("iteracion %d", i);
             this->glWidget->updateGL();
         }
+        gettimeofday(&later,NULL);
+        qDebug("difference is %lld miliseconds\n",
+                 timeval_diff(NULL,&later,&earlier)/1000
+                );
         this->enableControl(true);
         this->glWidget->updateGL();
         this->updateInfo();

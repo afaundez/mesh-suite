@@ -1,9 +1,13 @@
 #include "src/lib/refinement/headers/QueueOfEncroachedEdges.h"
 
-QueueOfEncroachedEdges::QueueOfEncroachedEdges(Mesh* mesh){
+QueueOfEncroachedEdges::QueueOfEncroachedEdges(){
+    this->q = new std::queue<RestrictedEdge*>();
+}
+
+/*QueueOfEncroachedEdges::QueueOfEncroachedEdges(Mesh* mesh){
     this->q = new std::queue<RestrictedEdge*>();
     this->addEdgesToProcessToQueue(mesh);
-}
+}*/
 
 void QueueOfEncroachedEdges::addEdgesToProcessToQueue(Mesh* mesh){
     foreach(RestrictedEdge* e, mesh->restrictions()){
