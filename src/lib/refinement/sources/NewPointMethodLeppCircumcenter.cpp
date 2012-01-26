@@ -17,19 +17,29 @@ Configuration* NewPointMethodLeppCircumcenter::getConfiguration(){
         t = t->neighbour(t->getLongestEdge());
 
     p = t->circumcenter();
-    foreach(Triangle* T, this->mp->triangles()){
-        for(int  i  = 0; i < 3; i++){
-            if(!T->hasNeighbour(i) && T->edgeInclude(i, p)){
-                ps.append(T->midpoint(i));
-                es.append(i);
-                t = T;
-                ret = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
-                return ret;
+    /* *************************************************************
+       Si p produce una arista encroached en algun lugar de la malla
+       entonces se inserta el punto medio de dicha arista
+    ************************************************************* */
+
+    /* TODO: Considerar que el punto podria generar varias aristas encroached */
+
+    foreach(RestrictedEdge* e, this->mp->restrictions()){
+        if(e->diametralCircleInclude(p) == Constant::INCLUDED){
+            ps.append(e->midpoint());
+            foreach(Triangle* ta, e->getAdjacentTriangles()){
+
+                if( ta != 0){
+                    es.append(ta->getIndexOfEdge(e->id()));
+                    t = ta;
+                    ret = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
+                    return ret;
+                }
             }
         }
     }
 
-    t = this->mp->getTriangle(p);
+    t = this->mp->getTriangle(t, p);
     ps.insert(0, p);
     if(t == 0){
         ic = Constant::NOT_INCLUDED;

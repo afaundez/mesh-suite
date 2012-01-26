@@ -45,8 +45,8 @@ Mesh::Mesh(QString fileName){
             if( 2 < splitLine.length()){
                 /*this->createAndAddRestrictionOld(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                               this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
-                /*this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
-                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
+                this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
+                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);
             }
         }
     }
@@ -67,28 +67,26 @@ Mesh::Mesh(QString fileName){
             }
         }*/ //qDebug("restrictions: %d", this->restrictionsp.size());
 
-        /* Solucion chanta mientras no tengo las restricciones en el archivo */
+        foreach(RestrictedEdge* e, this->restrictionsp){
+            int i = e->belongsTo(t1);
+            t1->setRestricted(i, e->id());
+            if(i >= 0){
+                if(t1->vertex((i+1)%3) == e->getVertex(0) && t1->vertex((i+2)%3) == e->getVertex(1))
+                    e->setAdjacentTriangle(0,t1);
+                else
+                    e->setAdjacentTriangle(1,t1);
+                //qDebug("Restricted Edge %d", e->id()); Triangle *aux0 = e->getAdjacentTriangle(0); Triangle *aux1 = e->getAdjacentTriangle(1);
+                //qDebug("Adjacent Triangles Left:%d Right:%d",aux0 != NULL ? aux0->id() : -1,aux1 != NULL ? aux1->id() : -1);
+            }
+        }
 
         for(int i = 0; i < 3; i++){
             if(!t1->hasNeighbour(i)){
                   RestrictedEdge *e = this->createAndAddRestriction(t1->vertex((i+1)%3), t1->vertex((i+2)%3));
                   t1->setRestricted(i, e->id());
-                  e->setAdjacentTriangles(t1,0);
+                  e->setAdjacentTriangle(0,t1);
              }
         }
-       /* foreach(Edge* edge, this->restrictionsp){
-            for(int i = 0; i < 3; i++){
-                if(t1->vertex((i+1)%3) == edge->getVertex(0) && t1->vertex((i+2)%3) == edge->getVertex(1)){
-                    qDebug("Match");
-                    t1->setRestricted(i);
-
-                    edge->setAdjacentTriangles(t1, 0);
-                    break;
-
-                    // TODO: considerar aristas restringidas no de borde
-                }
-            }
-        } */
     }
 
     this->lowerX = this->vertexsp[1]->x();
@@ -198,17 +196,20 @@ Triangle* Mesh::getTriangle(Point *p){
 }
 
 Triangle* Mesh::getTriangle(Triangle *initial, Point *p){
+
     Triangle* current = initial;
     bool next = true;
     while(next){
         next = false;
-        for(int i=0; i<3; i++){
-            if(Util::orientation(current->getVertex((i+1)%3),
-                    current->getVertex((i+2)%3),
-                                 p) < 0.0 + 0.000001){
-                current = current->getNeighbour(i);
-                next = true;
-                break;
+        if(!current->include(p)){
+            for(int i=0; i<3; i++){
+                if(Util::orientation(current->getVertex((i+1)%3),
+                        current->getVertex((i+2)%3),
+                                     p) < 0.0 + 0.000001){
+                    current = current->getNeighbour(i);
+                    next = true;
+                    break;
+                }
             }
         }
         if(next == false || current == NULL) break;

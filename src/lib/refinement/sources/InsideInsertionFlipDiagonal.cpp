@@ -44,7 +44,6 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         A = this->confp->mesh()->createAndAddTriangle(v0, v1, b0);
                         B = this->confp->mesh()->createAndAddTriangle(v0, b0, v2);
-                        //TODO: inherit restrictions
 
                         A->setNeighbours(l1, B, t2);
                         B->setNeighbours(l2, t1, A);
@@ -60,13 +59,13 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
 
                         //qDebug("oldt1: %d oldt2: %d newt1: %d newt2: %d size", T->id(), t0->id(), A->id(), B->id(), this->confp->mesh()->trianglesSize());
 
-                        /* Begin: update restricted edges. TODO: consider restricted edges other than border edges */
+                        /* Begin: update restricted edges */
 
                         // update T restricted edges to point the new created triangles
                         if(T->isRestricted(i1)){
                             eB = this->confp->mesh()->restriction(T->getRestricted(i1));
                             B->setRestricted(B->getIndex(b0), eB->id());
-                            eB->setAdjacentTriangle(0,B);
+                            eB->setAdjacentTriangle(eB->whichSide(T),B);//eB->setAdjacentTriangle(0,B);
                             if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
                                 this->qep->push(eB);
                             }
@@ -75,7 +74,7 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                         if(T->isRestricted(i2)){
                             eA = this->confp->mesh()->restriction(T->getRestricted(i2));
                             A->setRestricted(A->getIndex(b0), eA->id());
-                            eA->setAdjacentTriangle(0,A);
+                            eA->setAdjacentTriangle(eA->whichSide(T),A);//eA->setAdjacentTriangle(0,A);
                             if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
                                 this->qep->push(eA);
                             }
@@ -84,7 +83,7 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                         if(t0->isRestricted(j1)){
                             eA = this->confp->mesh()->restriction(t0->getRestricted(j1));
                             A->setRestricted(A->getIndex(v0), eA->id());
-                            eA->setAdjacentTriangle(0,A);
+                            eA->setAdjacentTriangle(eA->whichSide(t0),A);//eA->setAdjacentTriangle(0,A);
                             if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
                                 this->qep->push(eA);
                             }
@@ -93,7 +92,7 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                         if(t0->isRestricted(j2)){
                             eB = this->confp->mesh()->restriction(t0->getRestricted(j2));
                             B->setRestricted(B->getIndex(v0), eB->id());
-                            eB->setAdjacentTriangle(0,B);
+                            eB->setAdjacentTriangle(eB->whichSide(t0),B);//eB->setAdjacentTriangle(0,B);
                             if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
                                 this->qep->push(eB);
                             }
@@ -163,13 +162,13 @@ void InsideInsertionFlipDiagonal::execute(){
         if(t2 != 0)
             t2->replaceNeighbour(T, A);
 
-        /* Begin: update restricted edges. TODO: consider restricted edges other than border edges */
+        /* Begin: update restricted edges. */
 
         // update T restricted edges to point the new created triangles
         if(T->isRestricted(T->getIndex(v0))){
             eB = this->confp->mesh()->restriction(T->getRestricted(T->getIndex(v0)));
             B->setRestricted(B->getIndex(P), eB->id());
-            eB->setAdjacentTriangle(0,B);
+            eB->setAdjacentTriangle(eB->whichSide(T),B);//eB->setAdjacentTriangle(0,B);
             if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
                 this->qep->push(eB);
             }
@@ -178,7 +177,7 @@ void InsideInsertionFlipDiagonal::execute(){
         if(T->isRestricted(T->getIndex(v1))){
             eC = this->confp->mesh()->restriction(T->getRestricted(T->getIndex(v1)));
             C->setRestricted(C->getIndex(P), eC->id());
-            eC->setAdjacentTriangle(0,C);
+            eC->setAdjacentTriangle(eC->whichSide(T),C);//eC->setAdjacentTriangle(0,C);
             if(eC->isEncroached() && eC->getStatus() == Constant::ALIVE){
                 this->qep->push(eC);
             }
@@ -187,7 +186,7 @@ void InsideInsertionFlipDiagonal::execute(){
         if(T->isRestricted(T->getIndex(v2))){
             eA = this->confp->mesh()->restriction(T->getRestricted(T->getIndex(v2)));
             A->setRestricted(A->getIndex(P), eA->id());
-            eA->setAdjacentTriangle(0,A);
+            eA->setAdjacentTriangle(eA->whichSide(T),A);// eA->setAdjacentTriangle(0,A);
             if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
                 this->qep->push(eA);
             }
@@ -224,7 +223,7 @@ void InsideInsertionFlipDiagonal::execute(){
             if(t2 != 0)
                 t2->replaceNeighbour(T, A);
 
-            /* Begin: update restricted edges. TODO: consider restricted edges other than border edges */
+            /* Begin: update restricted edges. */
 
             // split T restricted edge where point has been inserted
             eA = this->confp->mesh()->createAndAddRestriction(v1,P);
@@ -233,8 +232,8 @@ void InsideInsertionFlipDiagonal::execute(){
             A->setRestricted(A->getIndex(v0), eA->id());
             B->setRestricted(B->getIndex(v0), eB->id());
 
-            eA->setAdjacentTriangles(A,0);
-            eB->setAdjacentTriangles(B,0);
+            eA->setAdjacentTriangle(0,A);
+            eB->setAdjacentTriangle(0,B);
 
             if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
                 this->qep->push(eA);
@@ -247,7 +246,7 @@ void InsideInsertionFlipDiagonal::execute(){
             if(T->isRestricted(i1)){
                 eB = this->confp->mesh()->restriction(T->getRestricted(i1));
                 B->setRestricted(B->getIndex(P), eB->id());
-                eB->setAdjacentTriangle(0,B);
+                eB->setAdjacentTriangle(eB->whichSide(T),B);//eB->setAdjacentTriangle(0,B);
                 if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
                     this->qep->push(eB);
                 }
@@ -256,7 +255,7 @@ void InsideInsertionFlipDiagonal::execute(){
             if(T->isRestricted(i2)){
                 eA = this->confp->mesh()->restriction(T->getRestricted(i2));
                 A->setRestricted(A->getIndex(P), eA->id());
-                eA->setAdjacentTriangle(0,A);
+                eA->setAdjacentTriangle(eA->whichSide(T),A);//eA->setAdjacentTriangle(0,A);
                 if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
                     this->qep->push(eA);
                 }
@@ -269,7 +268,7 @@ void InsideInsertionFlipDiagonal::execute(){
             if( A != 0) tv.append(A->id());
             if( B != 0) tv.append(B->id());
         }
-        else{
+        else{ /* Caso insercion en arista restringida */
             j2 = t0->getIndex(v1);
             j0 = (j2+1)%3;
             j1 = (j0+1)%3;
@@ -300,13 +299,52 @@ void InsideInsertionFlipDiagonal::execute(){
             if(l2 != 0)
                 l2->replaceNeighbour(t0, C);
 
-            /* Begin: update restricted edges. TODO: consider restricted edges other than border edges */
+            /* Begin: update restricted edges. */
+            if(T->isRestricted(i0)){
+                // split T restricted edge where point has been inserted
+                eA = this->confp->mesh()->createAndAddRestriction(v1,P);
+                eB = this->confp->mesh()->createAndAddRestriction(P,v2);
+
+                A->setRestricted(A->getIndex(v0), eA->id());
+                B->setRestricted(B->getIndex(v0), eB->id());
+                C->setRestricted(C->getIndex(b0), eB->id());
+                D->setRestricted(D->getIndex(b0), eA->id());
+
+                eA->setAdjacentTriangle(0,A); eA->setAdjacentTriangle(1,D);
+                eB->setAdjacentTriangle(0,B); eB->setAdjacentTriangle(1,C);
+
+                if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
+                    this->qep->push(eA);
+                }
+                if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
+                    this->qep->push(eB);
+                }
+            }
+
+            // update T restricted edges to point the new created triangles
+            if(T->isRestricted(i1)){
+                eB = this->confp->mesh()->restriction(T->getRestricted(i1));
+                B->setRestricted(B->getIndex(P), eB->id());
+                eB->setAdjacentTriangle(eB->whichSide(T),B);//eB->setAdjacentTriangle(0,B);
+                if(eB->isEncroached() && eB->getStatus() == Constant::ALIVE){
+                    this->qep->push(eB);
+                }
+            }
+
+            if(T->isRestricted(i2)){
+                eA = this->confp->mesh()->restriction(T->getRestricted(i2));
+                A->setRestricted(A->getIndex(P), eA->id());
+                eA->setAdjacentTriangle(eA->whichSide(T),A);//eA->setAdjacentTriangle(0,A);
+                if(eA->isEncroached() && eA->getStatus() == Constant::ALIVE){
+                    this->qep->push(eA);
+                }
+            }
 
             // update t0 restricted edges to point the new created triangles
             if(t0->isRestricted(j1)){
                 eD = this->confp->mesh()->restriction(t0->getRestricted(j1));
                 D->setRestricted(D->getIndex(P), eD->id());
-                eD->setAdjacentTriangle(0,D);
+                eD->setAdjacentTriangle(eD->whichSide(t0),D);//eD->setAdjacentTriangle(0,D);
                 if(eD->isEncroached() && eD->getStatus() == Constant::ALIVE){
                     this->qep->push(eD);
                 }
@@ -316,13 +354,13 @@ void InsideInsertionFlipDiagonal::execute(){
             if(t0->isRestricted(j2)){
                 eC = this->confp->mesh()->restriction(t0->getRestricted(j2));
                 C->setRestricted(C->getIndex(P), eC->id());
-                eC->setAdjacentTriangle(0,C);
+                eC->setAdjacentTriangle(eC->whichSide(t0),C);//eC->setAdjacentTriangle(0,C);
                 if(eC->isEncroached() && eC->getStatus() == Constant::ALIVE){
                     this->qep->push(eC);
                 }
             }
             /* End: update restricted edges */
-
+            this->confp->mesh()->removeAndDeleteRestriction(T->getRestricted(i0));
             this->confp->mesh()->removeAndDeleteTriangle(T);
             this->confp->mesh()->removeAndDeleteTriangle(t0);
             if( A != 0) tv.append(A->id());

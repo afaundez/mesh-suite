@@ -33,6 +33,7 @@ public:
     Constant::IncludeCase diametralCircleInclude(Point *p);
     bool isEncroached();
     //Vertex* getEncroachedVertex();
+    int whichSide(Triangle *t);
     Point* midpoint();
     double length();
 

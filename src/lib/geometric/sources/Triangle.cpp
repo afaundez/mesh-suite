@@ -413,7 +413,7 @@ int Triangle::getIndex(Vertex *v){
     return -1;
 }
 
-int Triangle::getIndex(int edge_id){
+int Triangle::getIndexOfEdge(int edge_id){
     for(int i = 0; i < 3; i++){
         if( this->restrictedEdgesp.at(i) == edge_id){
             return i;

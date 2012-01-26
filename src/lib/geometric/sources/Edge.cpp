@@ -7,8 +7,8 @@ RestrictedEdge::RestrictedEdge(int id, Vertex* v0, Vertex* v1, Constant::ObjectS
     this->vertexsp.insert(0, v0);
     this->vertexsp.insert(1, v1);
 
-    this->adjacenttrianglesp.insert(0,0);
-    this->adjacenttrianglesp.insert(1,0);
+    this->adjacenttrianglesp.insert(0,NULL);
+    this->adjacenttrianglesp.insert(1,NULL);
 
     this->statusp = status;
 }
@@ -105,12 +105,20 @@ bool RestrictedEdge::isEncroached(){
     foreach(Triangle* t, this->adjacenttrianglesp){
 
         if( t != 0){
-            if( this->diametralCircleInclude(t->getVertex(t->getIndex(this->id()))) == Constant::INCLUDED ){
+            if( this->diametralCircleInclude(t->getVertex(t->getIndexOfEdge(this->id()))) == Constant::INCLUDED ){
                 return true;
             }
         }
     }
     return false;
+}
+
+int RestrictedEdge::whichSide(Triangle *t){
+    if(this->getAdjacentTriangle(0) == t)
+        return 0;
+    else if(this->getAdjacentTriangle(1) == t)
+        return 1;
+    return -1;
 }
 
 Point* RestrictedEdge::midpoint(){

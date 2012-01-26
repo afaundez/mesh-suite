@@ -42,7 +42,7 @@ public:
     double getSmallestAngleValue();
     double getSmallestEdgeValue();
     int getIndex(Vertex* v);
-    int getIndex(int edge_id);
+    int getIndexOfEdge(int edge_id);
     void replaceNeighbour(Triangle* ti, Triangle* tf);
     bool isAnnoying(double angle);
     void setRestricted(int t_edge, int edge_id);

@@ -19,25 +19,14 @@ Configuration* NewPointMethodRuppert::getConfiguration(){
        entonces se inserta el punto medio de dicha arista
     ************************************************************* */
 
-    /*foreach(Triangle* T, this->mp->triangles()){
-        for(int  i  = 0; i < 3; i++){
-            if(!T->hasNeighbour(i) && T->edgeInclude(i, p)){
-                ps.append(T->midpoint(i));
-                es.append(i);
-                t = T;
-                ret = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
-                return ret;
-            }
-        }
-    }*/
-
+    /* TODO: Considerar que el punto podria generar varias aristas encroached */
     foreach(RestrictedEdge* e, this->mp->restrictions()){
         if(e->diametralCircleInclude(p) == Constant::INCLUDED){
             ps.append(e->midpoint());
             foreach(Triangle* ta, e->getAdjacentTriangles()){
-                //Corregir para considerar aristas restringidas que NO esten en el borde
+
                 if( ta != 0){
-                    es.append(ta->getIndex(e->id()));
+                    es.append(ta->getIndexOfEdge(e->id()));
                     t = ta;
                     ret = new Configuration(this->mp, t, ps, es, Constant::BORDER_INCLUDED);
                     return ret;
@@ -47,7 +36,6 @@ Configuration* NewPointMethodRuppert::getConfiguration(){
     }
 
 
-    //t = this->mp->getTriangle(p);
     t = this->mp->getTriangle(this->tp, p);
 
     ps.insert(0, p);
