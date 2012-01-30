@@ -55,12 +55,12 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
     }
     else{
         if( t1->isConstrained(t1->getSecondLongestEdge())){
-            qDebug("1");
+            // qDebug("1");
             i = t1->getLongestEdge();
             j = t2->getLongestEdge();
             p = Util::centroid(t1->vertex(i), t1->vertex((i+1)%3), t2->vertex(j), t1->vertex((i+2)%3));
             if(t1->include(p) == Constant::NOT_INCLUDED){
-                qDebug("2");
+                // qDebug("2");
                 i   = t1->getSecondLongestEdge();
                 a   = t1->vertex((i+1)%3);
                 b   = t1->vertex((i+2)%3);
@@ -97,7 +97,7 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
 
     ps.insert(0, p);
     es.insert(0, i);
-    qDebug("%d %d", i, ic);
+    // qDebug("%d %d", i, ic);
     ret = new Configuration(this->mp, t, ps, es, ic);
 
     return ret;
