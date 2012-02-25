@@ -1,6 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-04-14T15:48:19
 # -------------------------------------------------
+QMAKE_CXXFLAGS += -g
 QT += opengl
 TARGET = MeshSuite
 TEMPLATE = app

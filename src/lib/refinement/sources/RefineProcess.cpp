@@ -91,6 +91,9 @@ bool RefineProcess::refine(Options *options){
         conf = FactoryNewPointMethod::create(this->meshp, targetTriangle, options->newPointMethod(), options->triangleSelectionValue());
 
         if(conf->triangle() != 0){
+            if(conf->includeCase() == Constant::CORNER_INCLUDED){
+                qDebug("Point to be inserted lies on a vertex of a Triangle");
+            }
             im = FactoryInsertionMethod::create(conf, this->trianglesToProcess, this->encroachedEdges, options);
             im->execute();
             insertion = true;

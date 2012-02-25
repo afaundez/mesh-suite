@@ -5,67 +5,100 @@
 #include <QHashIterator>
 #include <QDebug>
 #include <GL/gl.h>
+#include <map>
+#include <set>
 #include "src/lib/geometric/headers/Mesh.h"
 #include "src/lib/refinement/headers/Util.h"
+
+using namespace std;
 
 //! [0]
 Mesh::Mesh(QString fileName){
     cv = 0;
     ct = 0;
     cr = 0;
+    multimap<int, Triangle*> vertexTriangleDictionary;
+    multimap<int, Triangle*>::iterator itMM;
+    multiset<Triangle*> neighboursCandidates;
+    multiset<Triangle*>::iterator itMS;
+
     QFile inputFile(fileName);
     if( !inputFile.open(QIODevice::ReadOnly)){
         return;
     }
 
     QTextStream in(&inputFile);
+
+    /* Reading file's content and creating vertexes, triangles and restrictions of the input mesh */
     while ( !in.atEnd() ) {
-        QString line = in.readLine();
+        QString line = in.readLine(); //qDebug(line.toStdString().c_str());
         QStringList splitLine;
         if( line.isNull() || line.trimmed().isEmpty())
             continue;
         else if( line.toLower().startsWith('v') ){
+            /* Read and create vertex */
             splitLine = line.split(' ');
             if( 2 < splitLine.length() ){
-                double newX = QString(splitLine.at(1).toLocal8Bit().constData()).toFloat();
-                double newY = QString(splitLine.at(2).toLocal8Bit().constData()).toFloat();
+                double newX = QString(splitLine.at(1).toLocal8Bit().constData()).toFloat(); // X coordinate
+                double newY = QString(splitLine.at(2).toLocal8Bit().constData()).toFloat(); // Y coordinate
                 this->createAndAddVertex(newX, newY);
             }
         }
         else if( line.toLower().startsWith('f') ){
+            /* Read and create triangle */
             splitLine = line.split(' ');
             if( 3 < splitLine.length() ){
-                this->createAndAddTriangle(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
+                Triangle* aux = this->createAndAddTriangle(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                            this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()],
                                            this->vertexsp[QString(splitLine.at(3).toLocal8Bit().constData()).toInt()]);
+                for(int i=0; i<3; i++){
+                    vertexTriangleDictionary.insert(pair<int, Triangle*>(aux->vertex(i)->id(), aux));
+                }
             }
         }
         else if( line.toLower().startsWith('r') ){
+            /* Read and create restriction */
             splitLine = line.split(' ');
             if( 2 < splitLine.length()){
-                /*this->createAndAddRestrictionOld(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
-                                              this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);*/
                 this->createAndAddRestriction(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                               this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()]);
             }
         }
     }
+    inputFile.close();
+
+    /* Associating each triangle with its neighbours and restricted edges */
     foreach(Triangle* t1, this->triangles()){
-        foreach(Triangle* t2, this->triangles()){
+        /*foreach(Triangle* t2, this->triangles()){
             int pos = t1->isNeighbour(t2);
             if( 0 <= pos ){
                 t1->setNeighbour(pos, t2);
             }
-        }
-        /*foreach(QVector<Vertex*> rest, this->inputRestrictionsp){
-            for(int i = 0; i < 3; i++){
-                if(t1->vertex((i+1)%3) == rest.at(0) && t1->vertex((i+2)%3) == rest.at(1)){
-                    qDebug("Match");
-                    t1->setRestricted(i);
-                    break;
-                }
+        }*/
+
+        /* Finding all triangles that share vertexes with t1 */
+        for(int i=0; i<3; i++){
+            /* Obtainging every triangle that contains vertex i */
+            for(itMM=vertexTriangleDictionary.equal_range(t1->vertex(i)->id()).first;
+                itMM!=vertexTriangleDictionary.equal_range(t1->vertex(i)->id()).second; ++itMM){
+                /* A triangle is inserted into neighboursCandidates set every time it shares a vertex with t1 */
+                neighboursCandidates.insert((*itMM).second);
             }
-        }*/ //qDebug("restrictions: %d", this->restrictionsp.size());
+        }
+        /* Finding neighbours of t1 */
+        /* If a triangle is found once in the neighboursCandidates set, then it only shares one vertex with t1
+         * If a triangle is found twice in the neighboursCandidates set, then it shares two vertexes with t1. Then it is a neighbour of t1
+         * If a triangle is fount three times in the neighboursCandidates set, then it shares three vertexes with t1. Then that triangle IS t1
+         */
+        Triangle* anterior = 0;
+        for(itMS=neighboursCandidates.begin(); itMS!=neighboursCandidates.end(); ++itMS){
+            if( (*itMS) != t1 && anterior == (*itMS) ){
+                t1->setNeighbour(t1->isNeighbour((*itMS)), (*itMS));
+            }
+            anterior = (*itMS);
+        }
+        neighboursCandidates.clear();
+
 
         foreach(RestrictedEdge* e, this->restrictionsp){
             int i = e->belongsTo(t1);
@@ -75,8 +108,6 @@ Mesh::Mesh(QString fileName){
                     e->setAdjacentTriangle(0,t1);
                 else
                     e->setAdjacentTriangle(1,t1);
-                //qDebug("Restricted Edge %d", e->id()); Triangle *aux0 = e->getAdjacentTriangle(0); Triangle *aux1 = e->getAdjacentTriangle(1);
-                //qDebug("Adjacent Triangles Left:%d Right:%d",aux0 != NULL ? aux0->id() : -1,aux1 != NULL ? aux1->id() : -1);
             }
         }
 
@@ -88,7 +119,9 @@ Mesh::Mesh(QString fileName){
              }
         }
     }
+    vertexTriangleDictionary.clear();
 
+    /* Finding endpoints and computing the center of the mesh */
     this->lowerX = this->vertexsp[1]->x();
     this->lowerY = this->vertexsp[1]->y();
     this->higherX = this->vertexsp[1]->x();
@@ -105,7 +138,6 @@ Mesh::Mesh(QString fileName){
             this->higherY = v->y();
     }
 
-    inputFile.close();
     this->valuep = 0.0;
     this->scalep = 1.0;
     this->centerp = new Point((this->lowerX + this->higherX)/2.0, (this->lowerY + this->higherY)/2.0);
