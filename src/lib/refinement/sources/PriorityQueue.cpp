@@ -36,8 +36,18 @@ void PriorityQueue::push(Triangle* t){
     this->q->push(t);
 }
 
+Triangle* PriorityQueue::pop(){
+    Triangle *aux = this->q->top();
+    this->q->pop();
+    return aux;
+}
+
 bool PriorityQueue::empty(){
     return this->q->empty();
+}
+
+int PriorityQueue::size(){
+    return this->q->size();
 }
 
 PriorityQueue::~PriorityQueue(){

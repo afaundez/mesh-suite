@@ -1,4 +1,5 @@
 #include "src/lib/refinement/headers/InsideInsertionFlipDiagonal.h"
+#include "src/lib/refinement/headers/Util.h"
 
 InsideInsertionFlipDiagonal::InsideInsertionFlipDiagonal(Configuration* conf, QueueOfTrianglesToProcess* qt, QueueOfEncroachedEdges* qe): InsideInsertion(conf, qt, qe){
 
@@ -34,6 +35,35 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                     j1 = (j0+1)%3;
 
                     b0 = t0->getVertex(j0);
+/* VALIDACION TRIANGULOS */
+double aa=Util::orientation(T->vertex(0), T->vertex(1), T->vertex(2));
+if(aa < 0.0) qDebug("Or T %d is %f", T->id(), aa);
+int share = 0;
+for(int i=0; i<3; i++){
+    Triangle* N = T->neighbour(i);
+    if(N != 0){
+    for(int j=0; j<3; j++){
+        if(N->vertex(j) == T->vertex((i+1)%3)) share++;
+        if(N->vertex(j) == T->vertex((i+2)%3)) share++;
+    }
+    if(share != 2) qDebug("T %d and N %d not valid NB", T->id(), N->id());
+    share = 0;
+    }
+}
+double bb=Util::orientation(t0->vertex(0), t0->vertex(1), t0->vertex(2));
+if(bb < 0.0) qDebug("Or T %d is %f", t0->id(), bb);
+share = 0;
+for(int i=0; i<3; i++){
+    Triangle* N = t0->neighbour(i);
+    if(N != 0){
+    for(int j=0; j<3; j++){
+        if(N->vertex(j) == t0->vertex((i+1)%3)) share++;
+        if(N->vertex(j) == t0->vertex((i+2)%3)) share++;
+    }
+    if(share != 2) qDebug("T %d and N %d not valid NB", t0->id(), N->id());
+    share = 0;
+    }
+}
 
                     A = 0;
                     B = 0;
@@ -56,7 +86,36 @@ void InsideInsertionFlipDiagonal::fixDelaunay(QVector<int> ids){
                             l2->replaceNeighbour(t0, B);
                         if(t1 != 0)
                             t1->replaceNeighbour(T, B);
+/* VALIDAR TRIANGULOS */
+double a=Util::orientation(A->vertex(0), A->vertex(1), A->vertex(2));
+if(a < 0.0) qDebug("Or T %d is %f", A->id(), a);
+share = 0;
+for(int i=0; i<3; i++){
+    Triangle* N = A->neighbour(i);
+    if(N != 0){
+    for(int j=0; j<3; j++){
+        if(N->vertex(j) == A->vertex((i+1)%3)) share++;
+        if(N->vertex(j) == A->vertex((i+2)%3)) share++;
+    }
+    if(share != 2) qDebug("T %d and N %d not valid NB", A->id(), N->id());
+    share = 0;
+    }
+}
 
+double b=Util::orientation(B->vertex(0), B->vertex(1), B->vertex(2));
+if(a < 0.0) qDebug("Or T %d is %f", B->id(), b);
+share = 0;
+for(int i=0; i<3; i++){
+    Triangle* N = B->neighbour(i);
+    if(N != 0){
+    for(int j=0; j<3; j++){
+        if(N->vertex(j) == B->vertex((i+1)%3)) share++;
+        if(N->vertex(j) == B->vertex((i+2)%3)) share++;
+    }
+    if(share != 2) qDebug("T %d and N %d not valid NB", B->id(), N->id());
+    share = 0;
+    }
+}
                         //qDebug("oldt1: %d oldt2: %d newt1: %d newt2: %d size", T->id(), t0->id(), A->id(), B->id(), this->confp->mesh()->trianglesSize());
 
                         /* Begin: update restricted edges */
@@ -382,7 +441,9 @@ void InsideInsertionFlipDiagonal::execute(){
             Triangle* triangle = this->confp->mesh()->triangle(id);
             if(triangle->isAnnoying(this->confp->mesh()->value())) this->qtp->push(triangle);
         }
-
+        if(tv.at(0)==47720) {
+            qDebug("CHECK POINT!");
+        }
         this->fixDelaunay(tv);
     }
 }

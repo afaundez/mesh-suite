@@ -18,7 +18,9 @@ public:
     void addTrianglesToProcessToQueue(Mesh* mesh, double value);
     Triangle* getNextTriangleToProcess();
     void push(Triangle* t);
+    Triangle* pop();
     bool empty();
+    int size();
     ~PriorityQueue();
 };
 

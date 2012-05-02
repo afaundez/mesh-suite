@@ -29,6 +29,10 @@ void PreProcessFixEncroachedVertexs::execute(){
                     if( t != 0){
                         int i = t->getIndexOfEdge(e->id());
                         if( i != -1 && (e->diametralCircleInclude(t->getVertex(i))) == Constant::INCLUDED){
+
+                            qDebug("--- Procesando encroached [%d %d] (%f %f) (%f %f)", e->getVertex(0)->id(), e->getVertex(1)->id()
+                                   , e->getVertex(0)->x(), e->getVertex(0)->y(), e->getVertex(1)->x(), e->getVertex(1)->y());
+
                             triangle = t;
                             es.insert(0, i); //es.insert(1,e->id());
                             Configuration* conf = new Configuration(this->mp, triangle, ps, es, Constant::BORDER_INCLUDED);

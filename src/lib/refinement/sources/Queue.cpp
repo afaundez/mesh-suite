@@ -35,8 +35,18 @@ void Queue::push(Triangle *t){
         this->q->push(t);
 }
 
+Triangle* Queue::pop(){
+    Triangle *aux = this->q->front();
+    this->q->pop();
+    return aux;
+}
+
 bool Queue::empty(){
     return this->q->empty();
+}
+
+int Queue::size(){
+    return this->q->size();
 }
 
 Queue::~Queue(){

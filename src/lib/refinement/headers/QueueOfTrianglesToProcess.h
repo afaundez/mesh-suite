@@ -10,7 +10,9 @@ public:
 
     virtual Triangle* getNextTriangleToProcess() = 0;
     virtual void push(Triangle* t) = 0;
+    virtual Triangle* pop() = 0;
     virtual bool empty() = 0;
+    virtual int size() = 0;
 protected:
     double tsvp;
 };

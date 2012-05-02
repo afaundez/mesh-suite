@@ -31,7 +31,7 @@ Mesh::Mesh(QString fileName){
 
     /* Reading file's content and creating vertexes, triangles and restrictions of the input mesh */
     while ( !in.atEnd() ) {
-        QString line = in.readLine(); //qDebug(line.toStdString().c_str());
+        QString line = in.readLine(); qDebug(line.toStdString().c_str());
         QStringList splitLine;
         if( line.isNull() || line.trimmed().isEmpty())
             continue;
@@ -47,7 +47,7 @@ Mesh::Mesh(QString fileName){
         else if( line.toLower().startsWith('f') ){
             /* Read and create triangle */
             splitLine = line.split(' ');
-            if( 3 < splitLine.length() ){
+            if( 3 < splitLine.length() ){ qDebug() << "sL 1" << splitLine.at(1) << " sL 2" << splitLine.at(2) << " sL 3" << splitLine.at(3);
                 Triangle* aux = this->createAndAddTriangle(this->vertexsp[QString(splitLine.at(1).toLocal8Bit().constData()).toInt()],
                                            this->vertexsp[QString(splitLine.at(2).toLocal8Bit().constData()).toInt()],
                                            this->vertexsp[QString(splitLine.at(3).toLocal8Bit().constData()).toInt()]);
@@ -144,6 +144,24 @@ Mesh::Mesh(QString fileName){
     this->selectedTriangle = 0;
     this->lastSelectedTriangleIDp = -1;
     this->virginp = true;
+
+    /* Validar */
+    foreach(Triangle* T, this->trianglesp){
+        double a=Util::orientation(T->vertex(0), T->vertex(1), T->vertex(2));
+        if(a < 0.0) qDebug("Or T %d is %f", T->id(), a);
+        int share = 0;
+        for(int i=0; i<3; i++){
+            Triangle* N = T->neighbour(i);
+            if(N != 0){
+            for(int j=0; j<3; j++){
+                if(N->vertex(j) == T->vertex((i+1)%3)) share++;
+                if(N->vertex(j) == T->vertex((i+2)%3)) share++;
+            }
+            if(share != 2) qDebug("T %d and N %d not valid NB", T->id(), N->id());
+            share = 0;
+            }
+        }
+    }
 }
 //! [0]
 
