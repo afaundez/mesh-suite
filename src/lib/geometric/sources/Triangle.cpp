@@ -181,14 +181,15 @@ Constant::IncludeCase Triangle::include(Point* p){
 
 Constant::IncludeCase Triangle::circumcircleInclude(Point *p){
     Constant::IncludeCase ic;
-    double det = Util::circleTest(this->vertex(0), this->vertex(1), this->vertex(2), p);
-    if (0.0 + 0.000001 < det){
+
+    double R = this->circumradius();
+    double r = Util::distance(this->circumcenter(), p);
+    if (r < R - 0.000001)
         ic = Constant::INCLUDED;
-    }
-    else if(0.0 - 0.000001 <= det && det <= 0.0 + 0.000001)
-        ic = Constant::BORDER_INCLUDED;
-    else
+    else if(r > R + 0.000001)
         ic = Constant::NOT_INCLUDED;
+    else
+        ic = Constant::BORDER_INCLUDED;
     return ic;
 }
 
@@ -367,7 +368,7 @@ int Triangle::getSecondLongestEdge(){
     l2 = Util::distance(this->vertex(0), this->vertex(1));
     if(l0 <= l1 && l1 <= l2)
         return 1;
-    else if(l0 <= l2 && l2 <= l2)
+    else if(l0 <= l2 && l2 <= l1)
         return 2;
     else return 0;
 

@@ -52,7 +52,8 @@ HEADERS += \
     src/lib/refinement/headers/QueueOfEncroachedEdges.h \
     src/lib/refinement/headers/PriorityQueue.h \
     src/lib/refinement/headers/Comparator.h \
-    src/lib/refinement/headers/NewPointMethodLeppMidpoint.h
+    src/lib/refinement/headers/NewPointMethodLeppMidpoint.h \
+    src/lib/refinement/headers/Time.h
 FORMS += \
     src/forms/MainWindow.ui \
     src/forms/LoadMeshDialog.ui

@@ -19,16 +19,6 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
     Constant::IncludeCase ic;
 
     QVector<Triangle*> lepp = this->tp->lepp();
-    int n=0; qDebug("**LEPP**");
-    foreach(Triangle *T, lepp){
-        qDebug("Triangulo %d: id %d vertices %d(%f %f) %d(%f %f) %d(%f %f) maslargo %f [%d %d]",
-              n, T->id(), T->vertex(0)->id(), T->vertex(0)->x(), T->vertex(0)->y()
-               , T->vertex(1)->id(), T->vertex(1)->x(), T->vertex(1)->y()
-               , T->vertex(2)->id(), T->vertex(2)->x(), T->vertex(2)->y()
-               , T->getLongestEdgeValue(), T->vertex((T->getLongestEdge()+1)%3)->id(), T->vertex((T->getLongestEdge()+2)%3)->id()
-               );
-        n++;
-    }
 
     t1 = lepp.last();
     t2 = t1->neighbour(t1->getLongestEdge());
@@ -109,7 +99,7 @@ Configuration* NewPointMethodLeppCentroid::getConfiguration(){
     ps.insert(0, p);
     es.insert(0, i);
     // qDebug("%d %d", i, ic);
-    ret = new Configuration(this->mp, t, ps, es, ic); qDebug("Lepp: punto a insertar (%f %f)", p->x(), p->y());
+    ret = new Configuration(this->mp, t, ps, es, ic);
 
     return ret;
 }

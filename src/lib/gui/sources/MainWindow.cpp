@@ -6,40 +6,6 @@
 #include "src/lib/refinement/headers/Options.h"
 #include "src/lib/refinement/headers/RefineProcess.h"
 
-#include <sys/time.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-long long
-timeval_diff(struct timeval *difference,
-             struct timeval *end_time,
-             struct timeval *start_time
-            )
-{
-  struct timeval temp_diff;
-
-  if(difference==NULL)
-  {
-    difference=&temp_diff;
-  }
-
-  difference->tv_sec =end_time->tv_sec -start_time->tv_sec ;
-  difference->tv_usec=end_time->tv_usec-start_time->tv_usec;
-
-  /* Using while instead of if below makes the code slightly more robust. */
-
-  while(difference->tv_usec<0)
-  {
-    difference->tv_usec+=1000000;
-    difference->tv_sec -=1;
-  }
-
-  return 1000000LL*difference->tv_sec+
-                   difference->tv_usec;
-
-} /* timeval_diff() */
-
 //! [0]
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -49,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->glLayout->addWidget( glWidget );
     // TODO: check this seg fault
     this->enableControl(true);
+
+    // Total running time of algorithm is shown only when refineButton is clicked
+    refineButtonClicked = false;
 }
 //! [0]
 
@@ -89,7 +58,12 @@ void MainWindow::updateInfo(){
         QString t   = QString::number(mesh->trianglesSize());
         QString v   = QString::number(mesh->vertexsSize());
         QString a   = QString::number(mesh->minAngle());
-        this->ui->infoTextEdit->append("<strong>&Aacute;ngulo M&iacute;nimo:</strong> " + a + "<br /><strong>Tri&aacute;ngulos:</strong> " + t + "<br /><strong>V&eacute;rtices:</strong> " + v);
+        QString time = QString::number(timeval_diff(NULL,&later,&earlier)/1000);
+        if(refineButtonClicked)
+            this->ui->infoTextEdit->append("<strong>Angulo Minimo:</strong> " + a + "<br /><strong>Triangulos:</strong> " + t + "<br /><strong>Vertices:</strong> " + v + "<br /><strong>Tiempo:</strong> " + time +  " ms");
+        else
+            this->ui->infoTextEdit->append("<strong>Angulo Minimo:</strong> " + a + "<br /><strong>Triangulos:</strong> " + t + "<br /><strong>Vertices:</strong> " + v);
+        refineButtonClicked = false;
     }
     else{
         this->ui->infoTextEdit->append("No hay malla cargada");
@@ -142,12 +116,12 @@ void MainWindow::addInfo(Options* options){
     if(!options->onlyFirstPreProcess() || ( options->onlyFirstPreProcess() && mesh->isVirgin() ))
         this->ui->infoTextEdit->append("<strong>Pre-proceso:</strong>: " + QString(Constant::preProcessNames[options->preProcess()]) + "<br />");
     if(options->automatic())
-        this->ui->infoTextEdit->append("<strong>Selecci&oacute;n Tri&aacute;ngulo:</strong> " + QString(Constant::triangleSelectionNames[options->triangleSelection()]) + "<br />");
+        this->ui->infoTextEdit->append("<strong>Seleccion Triangulo:</strong> " + QString(Constant::triangleSelectionNames[options->triangleSelection()]) + "<br />");
     else
-        this->ui->infoTextEdit->append("Selecci&oacute;n Manual<br />");
-    this->ui->infoTextEdit->append("<strong>&Aacute;ngulo exigido:</strong> " + QString::number(options->triangleSelectionValue()) + "&deg;<br />");
+        this->ui->infoTextEdit->append("Seleccion Manual<br />");
+    this->ui->infoTextEdit->append("<strong>Angulo exigido:</strong> " + QString::number(options->triangleSelectionValue()) + "&deg;<br />");
     this->ui->infoTextEdit->append("<strong>Nuevo Punto:</strong> " + QString(Constant::newPointNames[options->newPointMethod()]) + "<br />");
-    this->ui->infoTextEdit->append("<strong>Tipo Inserci&oacute;n:</strong> " + QString(Constant::insertionNames[options->insideInsertion()]) + "<br />");
+    this->ui->infoTextEdit->append("<strong>Tipo Insercion:</strong> " + QString(Constant::insertionNames[options->insideInsertion()]) + "<br />");
 }
 
 
@@ -172,21 +146,19 @@ void MainWindow::on_refineOnceButton_clicked()
 void MainWindow::on_refineButton_clicked()
 {
     try{
+        refineButtonClicked = true;
         bool go = true;
         this->enableControl(false);
         Options* options = this->getOptions();
         this->addInfo(options);
-        struct timeval earlier;
-        struct timeval later;
+
         gettimeofday(&earlier,NULL); int i=0;
         while(go){
-            go = RefineProcess::getInstance().refine(options); i++; //qDebug("iteracion %d", i);
+            go = RefineProcess::getInstance().refine(options);
             this->glWidget->updateGL();
         }
         gettimeofday(&later,NULL);
-        qDebug("difference is %lld miliseconds\n",
-                 timeval_diff(NULL,&later,&earlier)/1000
-                );
+
         this->enableControl(true);
         this->glWidget->updateGL();
         this->updateInfo();

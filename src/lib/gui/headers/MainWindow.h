@@ -5,6 +5,7 @@
 #include "src/lib/gui/headers/GLWidget.h"
 #include "src/lib/geometric/headers/Mesh.h"
 #include "src/lib/refinement/headers/Options.h"
+#include "src/lib/refinement/headers/Time.h"
 
 namespace Ui
 {
@@ -32,6 +33,9 @@ public:
 private:
     Ui::MainWindow *ui;
     GLWidget *glWidget;
+    struct timeval earlier;
+    struct timeval later;
+    bool refineButtonClicked;
 
 private slots:
     void on_automaticTriangleSelectionDoubleSpinBox_editingFinished();

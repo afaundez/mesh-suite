@@ -6,13 +6,7 @@ NewPointMethodRuppert::NewPointMethodRuppert(Mesh* m, Triangle* t){
 }
 
 Configuration* NewPointMethodRuppert::getConfiguration(){
-//    qDebug("Triangulo a procesar: id %d vertices %d(%f %f) %d(%f %f) %d(%f %f) maslargo %f [%d %d] circuns centro (%f %f) radio %f",
-//           tp->id(), tp->vertex(0)->id(), tp->vertex(0)->x(), tp->vertex(0)->y()
-//           , tp->vertex(1)->id(), tp->vertex(1)->x(), tp->vertex(1)->y()
-//           , tp->vertex(2)->id(), tp->vertex(2)->x(), tp->vertex(2)->y()
-//           , tp->getLongestEdgeValue(), tp->vertex((tp->getLongestEdge()+1)%3)->id(), tp->vertex((tp->getLongestEdge()+2)%3)->id()
-//           , tp->circumcenter()->x(), tp->circumcenter()->y(), tp->circumradius());
-//    qDebug("min angle: %f", tp->getSmallestAngleValue());
+
     Configuration* ret;
     Point* p;
     QVector<Point*> ps;
@@ -29,8 +23,6 @@ Configuration* NewPointMethodRuppert::getConfiguration(){
     /* TODO: Considerar que el punto podria generar varias aristas encroached */
     foreach(RestrictedEdge* e, this->mp->restrictions()){
         if(e->diametralCircleInclude(p) == Constant::INCLUDED){
-//            qDebug("--- Procesando encroached [%d %d] (%f %f) (%f %f)", e->getVertex(0)->id(), e->getVertex(1)->id()
-//                   , e->getVertex(0)->x(), e->getVertex(0)->y(), e->getVertex(1)->x(), e->getVertex(1)->y());
             ps.append(e->midpoint());
             foreach(Triangle* ta, e->getAdjacentTriangles()){
 
