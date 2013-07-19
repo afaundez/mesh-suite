@@ -1,0 +1,560 @@
+Cargando archivo a_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.5601 ; Triangulos: 33 ; Vertices: 26 ; Tiempo: 0 ms
+
+Cargando archivo a2_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 26.5434 ; Triangulos: 28 ; Vertices: 23 ; Tiempo: 0 ms
+
+Cargando archivo a3_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.7293 ; Triangulos: 22 ; Vertices: 18 ; Tiempo: 0 ms
+
+Cargando archivo a4_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.668 ; Triangulos: 39 ; Vertices: 29 ; Tiempo: 0 ms
+
+Cargando archivo a5_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 26.5595 ; Triangulos: 36 ; Vertices: 26 ; Tiempo: 0 ms
+
+Cargando archivo b_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0086 ; Triangulos: 575 ; Vertices: 331 ; Tiempo: 11 ms
+
+Cargando archivo b2_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.1897 ; Triangulos: 838 ; Vertices: 472 ; Tiempo: 20 ms
+
+Cargando archivo b2_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0049 ; Triangulos: 2768 ; Vertices: 1494 ; Tiempo: 72 ms
+
+Cargando archivo b3_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0085 ; Triangulos: 594 ; Vertices: 341 ; Tiempo: 12 ms
+
+Cargando archivo b3_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0098 ; Triangulos: 2810 ; Vertices: 1500 ; Tiempo: 87 ms
+
+Cargando archivo b4_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.134 ; Triangulos: 735 ; Vertices: 427 ; Tiempo: 16 ms
+
+Cargando archivo b4_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0544 ; Triangulos: 2495 ; Vertices: 1339 ; Tiempo: 57 ms
+
+Cargando archivo b_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0293 ; Triangulos: 3139 ; Vertices: 1677 ; Tiempo: 87 ms
+
+Cargando archivo b5_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0221 ; Triangulos: 576 ; Vertices: 327 ; Tiempo: 11 ms
+
+Cargando archivo b5_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0053 ; Triangulos: 2836 ; Vertices: 1521 ; Tiempo: 72 ms
+
+Cargando archivo c_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0025 ; Triangulos: 5711 ; Vertices: 3003 ; Tiempo: 182 ms
+
+Cargando archivo c2_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0129 ; Triangulos: 6051 ; Vertices: 3174 ; Tiempo: 201 ms
+
+Cargando archivo c2_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0008 ; Triangulos: 26466 ; Vertices: 13571 ; Tiempo: 1472 ms
+
+Cargando archivo c3_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0035 ; Triangulos: 5263 ; Vertices: 2784 ; Tiempo: 158 ms
+
+Cargando archivo c3_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0014 ; Triangulos: 27165 ; Vertices: 13902 ; Tiempo: 1433 ms
+
+Cargando archivo c4_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0216 ; Triangulos: 5821 ; Vertices: 3078 ; Tiempo: 190 ms
+
+Cargando archivo c4_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0015 ; Triangulos: 27331 ; Vertices: 13980 ; Tiempo: 1447 ms
+
+Cargando archivo c_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0021 ; Triangulos: 27076 ; Vertices: 13910 ; Tiempo: 1674 ms
+
+Cargando archivo c5_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.04 ; Triangulos: 5175 ; Vertices: 2728 ; Tiempo: 149 ms
+
+Cargando archivo c5_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0054 ; Triangulos: 27041 ; Vertices: 13889 ; Tiempo: 1716 ms
+
+Cargando archivo d_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0025 ; Triangulos: 52904 ; Vertices: 26926 ; Tiempo: 3727 ms
+
+Cargando archivo d2_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0005 ; Triangulos: 54211 ; Vertices: 27583 ; Tiempo: 4357 ms
+
+Cargando archivo d2_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0003 ; Triangulos: 262369 ; Vertices: 132209 ; Tiempo: 39652 ms
+
+Cargando archivo d3_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0014 ; Triangulos: 54871 ; Vertices: 27897 ; Tiempo: 4332 ms
+
+Cargando archivo d3_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0002 ; Triangulos: 261422 ; Vertices: 131756 ; Tiempo: 39717 ms
+
+Cargando archivo d4_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0004 ; Triangulos: 52875 ; Vertices: 26870 ; Tiempo: 3792 ms
+
+Cargando archivo d4_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 260030 ; Vertices: 131092 ; Tiempo: 41176 ms
+
+Cargando archivo d_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0002 ; Triangulos: 256895 ; Vertices: 129457 ; Tiempo: 40862 ms
+
+Cargando archivo d5_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0015 ; Triangulos: 53788 ; Vertices: 27354 ; Tiempo: 4030 ms
+
+Cargando archivo d5_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 260314 ; Vertices: 131280 ; Tiempo: 42315 ms
+
+Cargando archivo e_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0003 ; Triangulos: 522982 ; Vertices: 262964 ; Tiempo: 128847 ms
+
+Cargando archivo e2_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 519633 ; Vertices: 261389 ; Tiempo: 134943 ms
+
+Cargando archivo e3_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 520512 ; Vertices: 261795 ; Tiempo: 131008 ms
+
+Cargando archivo e4_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 522132 ; Vertices: 262565 ; Tiempo: 134996 ms
+
+Cargando archivo e5_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 521466 ; Vertices: 262178 ; Tiempo: 120500 ms
+

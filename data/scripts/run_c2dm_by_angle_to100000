@@ -1,0 +1,45 @@
+./run_c2dm_leppC_05deg_to100000 > out_c2dm_leppC_05deg_to100000
+./run_c2dm_leppC_05deg_co_to100000 > out_c2dm_leppC_05deg_co_to100000
+./run_c2dm_leppPM_05deg_to100000 > out_c2dm_leppPM_05deg_to100000
+./run_c2dm_leppPM_05deg_co_to100000 > out_c2dm_leppPM_05deg_co_to100000
+./run_c2dm_rupp_05deg_to100000 > out_c2dm_rupp_05deg_to100000
+./run_c2dm_rupp_05deg_co_to100000 > out_c2dm_rupp_05deg_co_to100000
+./run_c2dm_ung_05deg_to100000 > out_c2dm_ung_05deg_to100000
+./run_c2dm_ung_05deg_co_to100000 > out_c2dm_ung_05deg_co_to100000
+echo "ended 5 degrees test"
+./run_c2dm_leppC_10deg_to100000 > out_c2dm_leppC_10deg_to100000
+./run_c2dm_leppC_10deg_co_to100000 > out_c2dm_leppC_10deg_co_to100000
+./run_c2dm_leppPM_10deg_to100000 > out_c2dm_leppPM_10deg_to100000
+./run_c2dm_leppPM_10deg_co_to100000 > out_c2dm_leppPM_10deg_co_to100000
+./run_c2dm_rupp_10deg_to100000 > out_c2dm_rupp_10deg_to100000
+./run_c2dm_rupp_10deg_co_to100000 > out_c2dm_rupp_10deg_co_to100000
+./run_c2dm_ung_10deg_to100000 > out_c2dm_ung_10deg_to100000
+./run_c2dm_ung_10deg_co_to100000 > out_c2dm_ung_10deg_co_to100000
+echo "ended 10 degrees test"
+./run_c2dm_leppC_15deg_to100000 > out_c2dm_leppC_15deg_to100000
+./run_c2dm_leppC_15deg_co_to100000 > out_c2dm_leppC_15deg_co_to100000
+./run_c2dm_leppPM_15deg_to100000 > out_c2dm_leppPM_15deg_to100000
+./run_c2dm_leppPM_15deg_co_to100000 > out_c2dm_leppPM_15deg_co_to100000
+./run_c2dm_rupp_15deg_to100000 > out_c2dm_rupp_15deg_to100000
+./run_c2dm_rupp_15deg_co_to100000 > out_c2dm_rupp_15deg_co_to100000
+./run_c2dm_ung_15deg_to100000 > out_c2dm_ung_15deg_to100000
+./run_c2dm_ung_15deg_co_to100000 > out_c2dm_ung_15deg_co_to100000
+echo "ended 15 degrees test"
+./run_c2dm_leppC_20deg_to100000 > out_c2dm_leppC_20deg_to100000
+./run_c2dm_leppC_20deg_co_to100000 > out_c2dm_leppC_20deg_co_to100000
+./run_c2dm_leppPM_20deg_to100000 > out_c2dm_leppPM_20deg_to100000
+./run_c2dm_leppPM_20deg_co_to100000 > out_c2dm_leppPM_20deg_co_to100000
+./run_c2dm_rupp_20deg_to100000 > out_c2dm_rupp_20deg_to100000
+./run_c2dm_rupp_20deg_co_to100000 > out_c2dm_rupp_20deg_co_to100000
+./run_c2dm_ung_20deg_to100000 > out_c2dm_ung_20deg_to100000
+./run_c2dm_ung_20deg_co_to100000 > out_c2dm_ung_20deg_co_to100000
+echo "ended 20 degrees test"
+./run_c2dm_leppC_25deg_to100000 > out_c2dm_leppC_25deg_to100000
+./run_c2dm_leppC_25deg_co_to100000 > out_c2dm_leppC_25deg_co_to100000
+./run_c2dm_leppPM_25deg_to100000 > out_c2dm_leppPM_25deg_to100000
+./run_c2dm_leppPM_25deg_co_to100000 > out_c2dm_leppPM_25deg_co_to100000
+./run_c2dm_rupp_25deg_to100000 > out_c2dm_rupp_25deg_to100000
+./run_c2dm_rupp_25deg_co_to100000 > out_c2dm_rupp_25deg_co_to100000
+./run_c2dm_ung_25deg_to100000 > out_c2dm_ung_25deg_to100000
+./run_c2dm_ung_25deg_co_to100000 > out_c2dm_ung_25deg_co_to100000
+echo "ended 25 degrees test"

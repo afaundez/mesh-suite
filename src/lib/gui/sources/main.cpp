@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         QString filePath = QString(argv[1]);
         QString configText;
 
-        printf("Cargando archivo ..................\n\n");
+        printf("Cargando archivo %s ..................\n\n", filePath.toStdString().c_str());
         RefineProcess::getInstance().loadMesh(filePath);
         Mesh* mesh = RefineProcess::getInstance().mesh();
         mesh->setValue(options->triangleSelectionValue());

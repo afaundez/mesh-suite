@@ -1,0 +1,560 @@
+Cargando archivo a_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 11.2106 ; Triangulos: 21 ; Vertices: 17 ; Tiempo: 0 ms
+
+Cargando archivo a2_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 12.6249 ; Triangulos: 15 ; Vertices: 12 ; Tiempo: 0 ms
+
+Cargando archivo a3_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.9208 ; Triangulos: 12 ; Vertices: 10 ; Tiempo: 0 ms
+
+Cargando archivo a4_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 13.7345 ; Triangulos: 12 ; Vertices: 11 ; Tiempo: 0 ms
+
+Cargando archivo a5_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.1871 ; Triangulos: 13 ; Vertices: 11 ; Tiempo: 0 ms
+
+Cargando archivo b_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.5041 ; Triangulos: 269 ; Vertices: 154 ; Tiempo: 2 ms
+
+Cargando archivo b2_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.1681 ; Triangulos: 509 ; Vertices: 286 ; Tiempo: 6 ms
+
+Cargando archivo b2_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0487 ; Triangulos: 1530 ; Vertices: 814 ; Tiempo: 12 ms
+
+Cargando archivo b3_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0442 ; Triangulos: 287 ; Vertices: 165 ; Tiempo: 2 ms
+
+Cargando archivo b3_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.1814 ; Triangulos: 1563 ; Vertices: 830 ; Tiempo: 13 ms
+
+Cargando archivo b4_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.2379 ; Triangulos: 444 ; Vertices: 254 ; Tiempo: 5 ms
+
+Cargando archivo b4_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.2174 ; Triangulos: 1365 ; Vertices: 719 ; Tiempo: 8 ms
+
+Cargando archivo b_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0325 ; Triangulos: 1672 ; Vertices: 888 ; Tiempo: 15 ms
+
+Cargando archivo b5_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.11 ; Triangulos: 301 ; Vertices: 169 ; Tiempo: 2 ms
+
+Cargando archivo b5_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0075 ; Triangulos: 1578 ; Vertices: 840 ; Tiempo: 13 ms
+
+Cargando archivo c_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0026 ; Triangulos: 3118 ; Vertices: 1631 ; Tiempo: 26 ms
+
+Cargando archivo c2_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0388 ; Triangulos: 3488 ; Vertices: 1823 ; Tiempo: 33 ms
+
+Cargando archivo c2_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0023 ; Triangulos: 14613 ; Vertices: 7461 ; Tiempo: 107 ms
+
+Cargando archivo c3_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0049 ; Triangulos: 2834 ; Vertices: 1488 ; Tiempo: 20 ms
+
+Cargando archivo c3_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0018 ; Triangulos: 15335 ; Vertices: 7814 ; Tiempo: 126 ms
+
+Cargando archivo c4_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0212 ; Triangulos: 3205 ; Vertices: 1685 ; Tiempo: 27 ms
+
+Cargando archivo c4_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0016 ; Triangulos: 15236 ; Vertices: 7763 ; Tiempo: 120 ms
+
+Cargando archivo c_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0049 ; Triangulos: 14778 ; Vertices: 7560 ; Tiempo: 112 ms
+
+Cargando archivo c5_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0103 ; Triangulos: 2782 ; Vertices: 1453 ; Tiempo: 18 ms
+
+Cargando archivo c5_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0028 ; Triangulos: 14952 ; Vertices: 7650 ; Tiempo: 124 ms
+
+Cargando archivo d_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 29086 ; Vertices: 14759 ; Tiempo: 223 ms
+
+Cargando archivo d2_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 30110 ; Vertices: 15288 ; Tiempo: 251 ms
+
+Cargando archivo d2_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0008 ; Triangulos: 146657 ; Vertices: 73805 ; Tiempo: 1155 ms
+
+Cargando archivo d3_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0003 ; Triangulos: 30258 ; Vertices: 15346 ; Tiempo: 248 ms
+
+Cargando archivo d3_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0015 ; Triangulos: 146790 ; Vertices: 73858 ; Tiempo: 1101 ms
+
+Cargando archivo d4_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0055 ; Triangulos: 29566 ; Vertices: 14986 ; Tiempo: 234 ms
+
+Cargando archivo d4_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 144550 ; Vertices: 72774 ; Tiempo: 1116 ms
+
+Cargando archivo d_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0012 ; Triangulos: 143856 ; Vertices: 72404 ; Tiempo: 1198 ms
+
+Cargando archivo d5_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0015 ; Triangulos: 29893 ; Vertices: 15156 ; Tiempo: 231 ms
+
+Cargando archivo d5_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 145459 ; Vertices: 73275 ; Tiempo: 1231 ms
+
+Cargando archivo e_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 293601 ; Vertices: 147483 ; Tiempo: 2324 ms
+
+Cargando archivo e2_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 291195 ; Vertices: 146381 ; Tiempo: 2517 ms
+
+Cargando archivo e3_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 291692 ; Vertices: 146568 ; Tiempo: 2279 ms
+
+Cargando archivo e4_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0004 ; Triangulos: 294077 ; Vertices: 147746 ; Tiempo: 2560 ms
+
+Cargando archivo e5_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0004 ; Triangulos: 293733 ; Vertices: 147560 ; Tiempo: 2335 ms
+

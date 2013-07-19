@@ -1,0 +1,560 @@
+Cargando archivo a_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.5601 ; Triangulos: 33 ; Vertices: 26 ; Tiempo: 0 ms
+
+Cargando archivo a2_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 26.5434 ; Triangulos: 28 ; Vertices: 23 ; Tiempo: 0 ms
+
+Cargando archivo a3_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.7293 ; Triangulos: 22 ; Vertices: 18 ; Tiempo: 0 ms
+
+Cargando archivo a4_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.668 ; Triangulos: 39 ; Vertices: 29 ; Tiempo: 0 ms
+
+Cargando archivo a5_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.5657 ; Triangulos: 32 ; Vertices: 24 ; Tiempo: 0 ms
+
+Cargando archivo b_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0086 ; Triangulos: 489 ; Vertices: 287 ; Tiempo: 9 ms
+
+Cargando archivo b2_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.1113 ; Triangulos: 722 ; Vertices: 414 ; Tiempo: 16 ms
+
+Cargando archivo b2_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0733 ; Triangulos: 2314 ; Vertices: 1265 ; Tiempo: 53 ms
+
+Cargando archivo b3_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.4552 ; Triangulos: 482 ; Vertices: 283 ; Tiempo: 8 ms
+
+Cargando archivo b3_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0476 ; Triangulos: 2375 ; Vertices: 1282 ; Tiempo: 53 ms
+
+Cargando archivo b4_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.1477 ; Triangulos: 658 ; Vertices: 383 ; Tiempo: 14 ms
+
+Cargando archivo b4_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0094 ; Triangulos: 2201 ; Vertices: 1192 ; Tiempo: 45 ms
+
+Cargando archivo b_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0056 ; Triangulos: 2547 ; Vertices: 1382 ; Tiempo: 62 ms
+
+Cargando archivo b5_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.1232 ; Triangulos: 486 ; Vertices: 280 ; Tiempo: 8 ms
+
+Cargando archivo b5_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0103 ; Triangulos: 2366 ; Vertices: 1283 ; Tiempo: 53 ms
+
+Cargando archivo c_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0402 ; Triangulos: 4673 ; Vertices: 2479 ; Tiempo: 129 ms
+
+Cargando archivo c2_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.028 ; Triangulos: 4823 ; Vertices: 2558 ; Tiempo: 139 ms
+
+Cargando archivo c2_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0108 ; Triangulos: 21887 ; Vertices: 11278 ; Tiempo: 1141 ms
+
+Cargando archivo c3_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0067 ; Triangulos: 4443 ; Vertices: 2373 ; Tiempo: 119 ms
+
+Cargando archivo c3_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0007 ; Triangulos: 22259 ; Vertices: 11445 ; Tiempo: 1107 ms
+
+Cargando archivo c4_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0205 ; Triangulos: 4829 ; Vertices: 2572 ; Tiempo: 140 ms
+
+Cargando archivo c4_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0015 ; Triangulos: 22060 ; Vertices: 11338 ; Tiempo: 1062 ms
+
+Cargando archivo c_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0013 ; Triangulos: 22258 ; Vertices: 11494 ; Tiempo: 1115 ms
+
+Cargando archivo c5_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0273 ; Triangulos: 4387 ; Vertices: 2330 ; Tiempo: 110 ms
+
+Cargando archivo c5_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0053 ; Triangulos: 22287 ; Vertices: 11505 ; Tiempo: 1216 ms
+
+Cargando archivo d_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0003 ; Triangulos: 43184 ; Vertices: 22059 ; Tiempo: 2573 ms
+
+Cargando archivo d2_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0005 ; Triangulos: 43998 ; Vertices: 22470 ; Tiempo: 2951 ms
+
+Cargando archivo d2_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0003 ; Triangulos: 213591 ; Vertices: 107796 ; Tiempo: 26438 ms
+
+Cargando archivo d3_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0011 ; Triangulos: 44482 ; Vertices: 22685 ; Tiempo: 2914 ms
+
+Cargando archivo d3_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0002 ; Triangulos: 213585 ; Vertices: 107815 ; Tiempo: 27395 ms
+
+Cargando archivo d4_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0008 ; Triangulos: 43187 ; Vertices: 22020 ; Tiempo: 2343 ms
+
+Cargando archivo d4_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 211866 ; Vertices: 106984 ; Tiempo: 28907 ms
+
+Cargando archivo d_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0004 ; Triangulos: 211709 ; Vertices: 106844 ; Tiempo: 26023 ms
+
+Cargando archivo d5_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0006 ; Triangulos: 43915 ; Vertices: 22416 ; Tiempo: 2862 ms
+
+Cargando archivo d5_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0003 ; Triangulos: 212854 ; Vertices: 107539 ; Tiempo: 28979 ms
+
+Cargando archivo e_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 425245 ; Vertices: 214074 ; Tiempo: 84796 ms
+
+Cargando archivo e2_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 423684 ; Vertices: 213392 ; Tiempo: 91582 ms
+
+Cargando archivo e3_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 423782 ; Vertices: 213397 ; Tiempo: 88775 ms
+
+Cargando archivo e4_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 424392 ; Vertices: 213670 ; Tiempo: 84906 ms
+
+Cargando archivo e5_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0004 ; Triangulos: 424055 ; Vertices: 213444 ; Tiempo: 84907 ms
+

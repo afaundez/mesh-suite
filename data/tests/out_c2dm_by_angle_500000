@@ -1,0 +1,2538 @@
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00002 ; Triangulos: 1125025 ; Vertices: 563526 ; Tiempo: 3623 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1124205 ; Vertices: 563108 ; Tiempo: 3686 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1128433 ; Vertices: 565199 ; Tiempo: 3680 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1127675 ; Vertices: 564853 ; Tiempo: 3726 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1125457 ; Vertices: 563777 ; Tiempo: 3630 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00002 ; Triangulos: 1125157 ; Vertices: 563593 ; Tiempo: 4140 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1124184 ; Vertices: 563098 ; Tiempo: 4073 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1128308 ; Vertices: 565140 ; Tiempo: 4170 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1127738 ; Vertices: 564883 ; Tiempo: 4202 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1125483 ; Vertices: 563788 ; Tiempo: 4185 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1126979 ; Vertices: 564515 ; Tiempo: 3469 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1126333 ; Vertices: 564177 ; Tiempo: 3445 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1130006 ; Vertices: 565998 ; Tiempo: 3506 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1128957 ; Vertices: 565491 ; Tiempo: 3480 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1127559 ; Vertices: 564834 ; Tiempo: 3538 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1127078 ; Vertices: 564566 ; Tiempo: 3749 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1126405 ; Vertices: 564212 ; Tiempo: 3725 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1130093 ; Vertices: 566040 ; Tiempo: 3814 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1129035 ; Vertices: 565534 ; Tiempo: 3789 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1127555 ; Vertices: 564835 ; Tiempo: 3778 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1044988 ; Vertices: 524805 ; Tiempo: 51605 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1044994 ; Vertices: 524755 ; Tiempo: 49904 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1046043 ; Vertices: 525306 ; Tiempo: 51857 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1045687 ; Vertices: 525147 ; Tiempo: 52582 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1045260 ; Vertices: 524928 ; Tiempo: 72906 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1044948 ; Vertices: 524785 ; Tiempo: 50511 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1044924 ; Vertices: 524720 ; Tiempo: 48447 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1046012 ; Vertices: 525290 ; Tiempo: 50226 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1045661 ; Vertices: 525134 ; Tiempo: 51241 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1045255 ; Vertices: 524925 ; Tiempo: 50680 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1034365 ; Vertices: 519492 ; Tiempo: 36914 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1034485 ; Vertices: 519500 ; Tiempo: 36544 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1035195 ; Vertices: 519881 ; Tiempo: 37502 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1034959 ; Vertices: 519782 ; Tiempo: 38629 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1034845 ; Vertices: 519719 ; Tiempo: 37174 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1034197 ; Vertices: 519408 ; Tiempo: 36553 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1034300 ; Vertices: 519407 ; Tiempo: 35549 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1035081 ; Vertices: 519824 ; Tiempo: 37456 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1034793 ; Vertices: 519699 ; Tiempo: 38009 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1034685 ; Vertices: 519639 ; Tiempo: 37380 ms
+
+ended 5 degrees test
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1445481 ; Vertices: 724287 ; Tiempo: 11008 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1446231 ; Vertices: 724648 ; Tiempo: 11058 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1456353 ; Vertices: 729712 ; Tiempo: 11950 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1450781 ; Vertices: 726957 ; Tiempo: 11104 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0003 ; Triangulos: 1448475 ; Vertices: 725840 ; Tiempo: 11667 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1445212 ; Vertices: 724150 ; Tiempo: 12708 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1446262 ; Vertices: 724658 ; Tiempo: 12037 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1455755 ; Vertices: 729414 ; Tiempo: 12737 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1450563 ; Vertices: 726847 ; Tiempo: 12143 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0003 ; Triangulos: 1448368 ; Vertices: 725788 ; Tiempo: 12530 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1451345 ; Vertices: 727234 ; Tiempo: 10692 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1451915 ; Vertices: 727495 ; Tiempo: 10713 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1460568 ; Vertices: 731848 ; Tiempo: 10380 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1453871 ; Vertices: 728521 ; Tiempo: 10743 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0003 ; Triangulos: 1453285 ; Vertices: 728255 ; Tiempo: 10309 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1450871 ; Vertices: 727009 ; Tiempo: 10629 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1451456 ; Vertices: 727272 ; Tiempo: 11033 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1459391 ; Vertices: 731260 ; Tiempo: 10781 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1453782 ; Vertices: 728481 ; Tiempo: 11124 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0003 ; Triangulos: 1453170 ; Vertices: 728206 ; Tiempo: 11071 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1173852 ; Vertices: 589328 ; Tiempo: 215219 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1173660 ; Vertices: 589186 ; Tiempo: 211822 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1176829 ; Vertices: 590795 ; Tiempo: 216770 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1174625 ; Vertices: 589712 ; Tiempo: 216448 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1173727 ; Vertices: 589258 ; Tiempo: 215988 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1173155 ; Vertices: 588979 ; Tiempo: 220964 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1172964 ; Vertices: 588838 ; Tiempo: 215587 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1175784 ; Vertices: 590271 ; Tiempo: 221905 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1174053 ; Vertices: 589424 ; Tiempo: 224511 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1172928 ; Vertices: 588856 ; Tiempo: 219186 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1127077 ; Vertices: 565934 ; Tiempo: 158266 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1126742 ; Vertices: 565717 ; Tiempo: 151708 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1128580 ; Vertices: 566665 ; Tiempo: 156596 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1126814 ; Vertices: 565797 ; Tiempo: 156786 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 1127027 ; Vertices: 565903 ; Tiempo: 159110 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1125108 ; Vertices: 564948 ; Tiempo: 161045 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0001 ; Triangulos: 1124782 ; Vertices: 564737 ; Tiempo: 158167 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1126439 ; Vertices: 565593 ; Tiempo: 161530 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10 ; Triangulos: 1124796 ; Vertices: 564790 ; Tiempo: 160542 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 10 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.0002 ; Triangulos: 1124996 ; Vertices: 564886 ; Tiempo: 159438 ms
+
+ended 10 degrees test
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1880043 ; Vertices: 942067 ; Tiempo: 20922 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1881760 ; Vertices: 942873 ; Tiempo: 21258 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1892702 ; Vertices: 948356 ; Tiempo: 21322 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1883554 ; Vertices: 943833 ; Tiempo: 19946 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0002 ; Triangulos: 1882441 ; Vertices: 943277 ; Tiempo: 21095 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1878757 ; Vertices: 941408 ; Tiempo: 23733 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1880216 ; Vertices: 942098 ; Tiempo: 22804 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1891311 ; Vertices: 947664 ; Tiempo: 23083 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1883005 ; Vertices: 943554 ; Tiempo: 23699 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0002 ; Triangulos: 1881990 ; Vertices: 943054 ; Tiempo: 22960 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1891741 ; Vertices: 947971 ; Tiempo: 18231 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1891905 ; Vertices: 947993 ; Tiempo: 19065 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1901664 ; Vertices: 952911 ; Tiempo: 18350 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1891112 ; Vertices: 947658 ; Tiempo: 18993 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1892449 ; Vertices: 948335 ; Tiempo: 18228 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1891328 ; Vertices: 947764 ; Tiempo: 20079 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1890502 ; Vertices: 947299 ; Tiempo: 20670 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1901334 ; Vertices: 952747 ; Tiempo: 20303 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1890576 ; Vertices: 947401 ; Tiempo: 20610 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1891577 ; Vertices: 947897 ; Tiempo: 20171 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1421549 ; Vertices: 713344 ; Tiempo: 548547 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1421398 ; Vertices: 713231 ; Tiempo: 531148 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1426128 ; Vertices: 715617 ; Tiempo: 548011 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1422730 ; Vertices: 713953 ; Tiempo: 548656 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1421355 ; Vertices: 713268 ; Tiempo: 545022 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1412489 ; Vertices: 708812 ; Tiempo: 564180 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1412612 ; Vertices: 708836 ; Tiempo: 562506 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1417186 ; Vertices: 711144 ; Tiempo: 564715 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1413570 ; Vertices: 709375 ; Tiempo: 570552 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1412234 ; Vertices: 708705 ; Tiempo: 564949 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1295602 ; Vertices: 650353 ; Tiempo: 373860 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1295364 ; Vertices: 650186 ; Tiempo: 365893 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1298300 ; Vertices: 651684 ; Tiempo: 373518 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0002 ; Triangulos: 1296445 ; Vertices: 650786 ; Tiempo: 372847 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1295359 ; Vertices: 650250 ; Tiempo: 374266 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1286733 ; Vertices: 645915 ; Tiempo: 387141 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15 ; Triangulos: 1286424 ; Vertices: 645712 ; Tiempo: 375750 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1289321 ; Vertices: 647195 ; Tiempo: 381821 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0002 ; Triangulos: 1287757 ; Vertices: 646441 ; Tiempo: 390437 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 15 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.0001 ; Triangulos: 1286730 ; Vertices: 645931 ; Tiempo: 385755 ms
+
+ended 15 degrees test
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2361992 ; Vertices: 1183482 ; Tiempo: 30776 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20.0001 ; Triangulos: 2365018 ; Vertices: 1184910 ; Tiempo: 29888 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2380912 ; Vertices: 1192914 ; Tiempo: 30089 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2366669 ; Vertices: 1185814 ; Tiempo: 29847 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2367100 ; Vertices: 1186050 ; Tiempo: 29817 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2361419 ; Vertices: 1183176 ; Tiempo: 35242 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2363878 ; Vertices: 1184334 ; Tiempo: 35324 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2379357 ; Vertices: 1192152 ; Tiempo: 36319 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2365927 ; Vertices: 1185442 ; Tiempo: 35752 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2366047 ; Vertices: 1185528 ; Tiempo: 35910 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2402934 ; Vertices: 1204046 ; Tiempo: 27575 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2403743 ; Vertices: 1204360 ; Tiempo: 27582 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2417490 ; Vertices: 1211318 ; Tiempo: 28498 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20.0001 ; Triangulos: 2407414 ; Vertices: 1206285 ; Tiempo: 28247 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2406363 ; Vertices: 1205808 ; Tiempo: 27649 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2402163 ; Vertices: 1203670 ; Tiempo: 31748 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2402827 ; Vertices: 1203912 ; Tiempo: 31747 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2416451 ; Vertices: 1210789 ; Tiempo: 32270 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20.0001 ; Triangulos: 2406562 ; Vertices: 1205861 ; Tiempo: 32251 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 2405774 ; Vertices: 1205516 ; Tiempo: 31721 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1829105 ; Vertices: 917431 ; Tiempo: 1167577 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1830671 ; Vertices: 918140 ; Tiempo: 1137104 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1838154 ; Vertices: 921947 ; Tiempo: 1171099 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1832345 ; Vertices: 919068 ; Tiempo: 1196306 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1828605 ; Vertices: 917198 ; Tiempo: 1177561 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1811099 ; Vertices: 908415 ; Tiempo: 1220193 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20.0001 ; Triangulos: 1812584 ; Vertices: 909082 ; Tiempo: 1190912 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1820506 ; Vertices: 913107 ; Tiempo: 1246607 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1814069 ; Vertices: 909909 ; Tiempo: 1243708 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1811273 ; Vertices: 908522 ; Tiempo: 1240154 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1593347 ; Vertices: 799521 ; Tiempo: 854201 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1593360 ; Vertices: 799447 ; Tiempo: 815454 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1597719 ; Vertices: 801691 ; Tiempo: 815717 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1594406 ; Vertices: 800055 ; Tiempo: 842151 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1592768 ; Vertices: 799258 ; Tiempo: 818480 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1558354 ; Vertices: 782019 ; Tiempo: 834294 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1557931 ; Vertices: 781717 ; Tiempo: 818397 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1562603 ; Vertices: 784124 ; Tiempo: 832594 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20.0001 ; Triangulos: 1559003 ; Vertices: 782346 ; Tiempo: 839364 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 20 grados
+Nuevo Punto: Ungor
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 20 ; Triangulos: 1557477 ; Vertices: 781609 ; Tiempo: 827590 ms
+
+ended 20 degrees test
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 2875963 ; Vertices: 1440875 ; Tiempo: 39979 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2877305 ; Vertices: 1441464 ; Tiempo: 39930 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2895242 ; Vertices: 1450509 ; Tiempo: 40440 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2880484 ; Vertices: 1443131 ; Tiempo: 42787 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2879164 ; Vertices: 1442489 ; Tiempo: 39939 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25.0001 ; Triangulos: 2874626 ; Vertices: 1440208 ; Tiempo: 49125 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2875534 ; Vertices: 1440575 ; Tiempo: 51117 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2894051 ; Vertices: 1449924 ; Tiempo: 49647 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2879421 ; Vertices: 1442591 ; Tiempo: 49151 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Centroid
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2877456 ; Vertices: 1441629 ; Tiempo: 51509 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3006769 ; Vertices: 1506466 ; Tiempo: 40747 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3007071 ; Vertices: 1506550 ; Tiempo: 38760 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3025488 ; Vertices: 1515831 ; Tiempo: 40936 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3008528 ; Vertices: 1507349 ; Tiempo: 38071 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3007817 ; Vertices: 1507034 ; Tiempo: 38124 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3007171 ; Vertices: 1506694 ; Tiempo: 47982 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3007140 ; Vertices: 1506578 ; Tiempo: 47730 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3025514 ; Vertices: 1515858 ; Tiempo: 48539 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3008274 ; Vertices: 1507205 ; Tiempo: 47800 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 25 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 3007602 ; Vertices: 1506926 ; Tiempo: 46200 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Arreglar Aristas Involucradas
+Seleccion Triangulo: No Priorizar
+Angulo exigido: 25 grados
+Nuevo Punto: Ruppert
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 25 ; Triangulos: 2579708 ; Vertices: 1293202 ; Tiempo: 2538427 ms
+

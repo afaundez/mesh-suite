@@ -3,7 +3,7 @@
 # -------------------------------------------------
 QMAKE_CXXFLAGS += -g
 QT += opengl
-TARGET = MeshSuite
+TARGET = Compare2DMesh
 TEMPLATE = app
 HEADERS += \
     src/lib/gui/headers/MainWindow.h \

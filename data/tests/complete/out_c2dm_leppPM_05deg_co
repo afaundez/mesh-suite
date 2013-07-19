@@ -1,0 +1,700 @@
+Cargando archivo a_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 6.86356 ; Triangulos: 13 ; Vertices: 11 ; Tiempo: 0 ms
+
+Cargando archivo a2_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 7.28595 ; Triangulos: 13 ; Vertices: 10 ; Tiempo: 0 ms
+
+Cargando archivo a3_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 15.9208 ; Triangulos: 12 ; Vertices: 10 ; Tiempo: 0 ms
+
+Cargando archivo a4_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 8.42176 ; Triangulos: 11 ; Vertices: 10 ; Tiempo: 0 ms
+
+Cargando archivo a5_10.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 10.1871 ; Triangulos: 13 ; Vertices: 11 ; Tiempo: 0 ms
+
+Cargando archivo b_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.23846 ; Triangulos: 202 ; Vertices: 114 ; Tiempo: 0 ms
+
+Cargando archivo b2_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.05141 ; Triangulos: 392 ; Vertices: 222 ; Tiempo: 4 ms
+
+Cargando archivo b2_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00764 ; Triangulos: 1122 ; Vertices: 594 ; Tiempo: 3 ms
+
+Cargando archivo b3_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.09917 ; Triangulos: 212 ; Vertices: 120 ; Tiempo: 0 ms
+
+Cargando archivo b3_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.10032 ; Triangulos: 1215 ; Vertices: 642 ; Tiempo: 5 ms
+
+Cargando archivo b4_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.09441 ; Triangulos: 288 ; Vertices: 166 ; Tiempo: 4 ms
+
+Cargando archivo b4_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.11069 ; Triangulos: 1093 ; Vertices: 572 ; Tiempo: 3 ms
+
+Cargando archivo b_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.0568 ; Triangulos: 1181 ; Vertices: 626 ; Tiempo: 4 ms
+
+Cargando archivo b5_100.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.29248 ; Triangulos: 234 ; Vertices: 130 ; Tiempo: 1 ms
+
+Cargando archivo b5_500.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.02488 ; Triangulos: 1156 ; Vertices: 610 ; Tiempo: 4 ms
+
+Cargando archivo c_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.01107 ; Triangulos: 2348 ; Vertices: 1221 ; Tiempo: 9 ms
+
+Cargando archivo c2_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.01349 ; Triangulos: 2467 ; Vertices: 1283 ; Tiempo: 11 ms
+
+Cargando archivo c2_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00032 ; Triangulos: 11342 ; Vertices: 5769 ; Tiempo: 35 ms
+
+Cargando archivo c3_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.02559 ; Triangulos: 2244 ; Vertices: 1169 ; Tiempo: 7 ms
+
+Cargando archivo c3_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00291 ; Triangulos: 11810 ; Vertices: 6001 ; Tiempo: 46 ms
+
+Cargando archivo c4_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.01353 ; Triangulos: 2431 ; Vertices: 1276 ; Tiempo: 10 ms
+
+Cargando archivo c4_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.01015 ; Triangulos: 11564 ; Vertices: 5879 ; Tiempo: 45 ms
+
+Cargando archivo c_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00293 ; Triangulos: 11355 ; Vertices: 5786 ; Tiempo: 45 ms
+
+Cargando archivo c5_1000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.06814 ; Triangulos: 2166 ; Vertices: 1122 ; Tiempo: 8 ms
+
+Cargando archivo c5_5000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.01032 ; Triangulos: 11529 ; Vertices: 5881 ; Tiempo: 38 ms
+
+Cargando archivo d_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00913 ; Triangulos: 22799 ; Vertices: 11542 ; Tiempo: 72 ms
+
+Cargando archivo d2_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 23172 ; Vertices: 11738 ; Tiempo: 80 ms
+
+Cargando archivo d2_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00226 ; Triangulos: 113842 ; Vertices: 57234 ; Tiempo: 381 ms
+
+Cargando archivo d3_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00157 ; Triangulos: 23304 ; Vertices: 11796 ; Tiempo: 83 ms
+
+Cargando archivo d3_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00121 ; Triangulos: 113500 ; Vertices: 57069 ; Tiempo: 419 ms
+
+Cargando archivo d4_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00494 ; Triangulos: 22820 ; Vertices: 11547 ; Tiempo: 73 ms
+
+Cargando archivo d4_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00097 ; Triangulos: 112632 ; Vertices: 56635 ; Tiempo: 359 ms
+
+Cargando archivo d_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.0003 ; Triangulos: 112636 ; Vertices: 56626 ; Tiempo: 394 ms
+
+Cargando archivo d5_10000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00201 ; Triangulos: 23053 ; Vertices: 11669 ; Tiempo: 78 ms
+
+Cargando archivo d5_50000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00036 ; Triangulos: 112604 ; Vertices: 56665 ; Tiempo: 355 ms
+
+Cargando archivo e_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.0009 ; Triangulos: 227393 ; Vertices: 114142 ; Tiempo: 808 ms
+
+Cargando archivo e2_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00173 ; Triangulos: 226370 ; Vertices: 113710 ; Tiempo: 739 ms
+
+Cargando archivo e2_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00012 ; Triangulos: 1127078 ; Vertices: 564566 ; Tiempo: 4178 ms
+
+Cargando archivo e3_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00014 ; Triangulos: 226423 ; Vertices: 113704 ; Tiempo: 740 ms
+
+Cargando archivo e3_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1126405 ; Vertices: 564212 ; Tiempo: 4150 ms
+
+Cargando archivo e4_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00004 ; Triangulos: 227838 ; Vertices: 114376 ; Tiempo: 847 ms
+
+Cargando archivo e4_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00005 ; Triangulos: 1130093 ; Vertices: 566040 ; Tiempo: 3875 ms
+
+Cargando archivo e_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00009 ; Triangulos: 1129035 ; Vertices: 565534 ; Tiempo: 4204 ms
+
+Cargando archivo e5_100000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00033 ; Triangulos: 226763 ; Vertices: 113843 ; Tiempo: 823 ms
+
+Cargando archivo e5_500000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00003 ; Triangulos: 1127555 ; Vertices: 564835 ; Tiempo: 3818 ms
+
+Cargando archivo f_1000000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00001 ; Triangulos: 2251624 ; Vertices: 1127290 ; Tiempo: 7856 ms
+
+Cargando archivo f2_1000000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00002 ; Triangulos: 2250098 ; Vertices: 1126438 ; Tiempo: 7906 ms
+
+Cargando archivo f3_1000000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.0001 ; Triangulos: 2254604 ; Vertices: 1128775 ; Tiempo: 7851 ms
+
+Cargando archivo f4_1000000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5.00002 ; Triangulos: 2255897 ; Vertices: 1129488 ; Tiempo: 7955 ms
+
+Cargando archivo f5_1000000.mesh ..................
+
+Configuracion:
+Pre-proceso: Ninguno
+Seleccion Triangulo: Menor Angulo interno
+Angulo exigido: 5 grados
+Nuevo Punto: Lepp-Delaunay
+Tipo Insercion: Insercion Intercambio Diagonales
+
+Ejecutando algoritmo ..................
+
+Resultados:
+Angulo Minimo: 5 ; Triangulos: 2252142 ; Vertices: 1127527 ; Tiempo: 7755 ms
+
